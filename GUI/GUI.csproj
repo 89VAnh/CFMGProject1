@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A51F516B-B777-462B-B89A-740C7DAB2CB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.4\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GUI_Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Account.Designer.cs">
+      <DependentUpon>GUI_Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_BillAtShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_BillAtShop.Designer.cs">
+      <DependentUpon>GUI_BillAtShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_BillDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_BillDelivery.Designer.cs">
+      <DependentUpon>GUI_BillDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_BillTakeAway.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_BillTakeAway.Designer.cs">
+      <DependentUpon>GUI_BillTakeAway.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_CategoryProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_CategoryProduct.Designer.cs">
+      <DependentUpon>GUI_CategoryProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Customer.Designer.cs">
+      <DependentUpon>GUI_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Info.Designer.cs">
+      <DependentUpon>GUI_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Login.Designer.cs">
+      <DependentUpon>GUI_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Main.Designer.cs">
+      <DependentUpon>GUI_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_PayBillAtShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_PayBillAtShop.Designer.cs">
+      <DependentUpon>GUI_PayBillAtShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_PayBillDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_PayBillDelivery.Designer.cs">
+      <DependentUpon>GUI_PayBillDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_PayBillTakeAway.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_PayBillTakeAway.Designer.cs">
+      <DependentUpon>GUI_PayBillTakeAway.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Product.Designer.cs">
+      <DependentUpon>GUI_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Register.Designer.cs">
+      <DependentUpon>GUI_Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_SelectCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_SelectCustomer.Designer.cs">
+      <DependentUpon>GUI_SelectCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Staff.Designer.cs">
+      <DependentUpon>GUI_Staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Table.Designer.cs">
+      <DependentUpon>GUI_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table.Designer.cs">
+      <DependentUpon>Table.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI_Account.resx">
+      <DependentUpon>GUI_Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_BillAtShop.resx">
+      <DependentUpon>GUI_BillAtShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_BillDelivery.resx">
+      <DependentUpon>GUI_BillDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_BillTakeAway.resx">
+      <DependentUpon>GUI_BillTakeAway.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_CategoryProduct.resx">
+      <DependentUpon>GUI_CategoryProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Customer.resx">
+      <DependentUpon>GUI_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Info.resx">
+      <DependentUpon>GUI_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Login.resx">
+      <DependentUpon>GUI_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Main.resx">
+      <DependentUpon>GUI_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_PayBillAtShop.resx">
+      <DependentUpon>GUI_PayBillAtShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_PayBillDelivery.resx">
+      <DependentUpon>GUI_PayBillDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_PayBillTakeAway.resx">
+      <DependentUpon>GUI_PayBillTakeAway.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Product.resx">
+      <DependentUpon>GUI_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Register.resx">
+      <DependentUpon>GUI_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_SelectCustomer.resx">
+      <DependentUpon>GUI_SelectCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Staff.resx">
+      <DependentUpon>GUI_Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Table.resx">
+      <DependentUpon>GUI_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Table.resx">
+      <DependentUpon>Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login-Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\add.png" />
+    <Content Include="Resources\analytics.png" />
+    <Content Include="Resources\arrow.png" />
+    <None Include="Resources\bill.png" />
+    <Content Include="Resources\blogger.png" />
+    <Content Include="Resources\chair.png" />
+    <Content Include="Resources\check.png" />
+    <None Include="Resources\create-bill.png" />
+    <Content Include="Resources\cup-of-coffee.png" />
+    <None Include="Resources\customer.png" />
+    <Content Include="Resources\delete.png" />
+    <None Include="Resources\delivery-package-person.png" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\hide-pw.png" />
+    <Content Include="Resources\information.png" />
+    <Content Include="Resources\logout.png" />
+    <Content Include="Resources\menu.png" />
+    <Content Include="Resources\pw.png" />
+    <Content Include="Resources\refresh.png" />
+    <Content Include="Resources\salary.png" />
+    <Content Include="Resources\search.png" />
+    <None Include="Resources\shop.png" />
+    <Content Include="Resources\show-pw.png" />
+    <Content Include="Resources\skills.png" />
+    <None Include="Resources\staff.png" />
+    <Content Include="Resources\swap.png" />
+    <Content Include="Resources\system.png" />
+    <Content Include="Resources\table.png" />
+    <Content Include="Resources\tableEmpty.png" />
+    <Content Include="Resources\task.png" />
+    <Content Include="Resources\un.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{d1187549-a8ca-43ef-a700-de2f4f6d98ee}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{a969a119-224e-4829-8e41-a2ac8ab98fdd}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

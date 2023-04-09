@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLCPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ban">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="int" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CTHDGiaoHang">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="int" Nullable="false" />
+    <Property Name="MaHD" Type="int" Nullable="false" />
+    <Property Name="MaSP" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="GhiChu" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CTHDTaiQuan">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="int" Nullable="false" />
+    <Property Name="MaHD" Type="int" Nullable="false" />
+    <Property Name="MaSP" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="GhiChu" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DanhMucSanPham">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="int" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HDGiaoHang">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="int" Nullable="false" />
+    <Property Name="GiamGia" Type="nvarchar" MaxLength="20" />
+    <Property Name="TongTien" Type="int" />
+    <Property Name="MaKH" Type="int" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
+    <Property Name="ThoiGianNhan" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HDTaiQuan">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="int" Nullable="false" />
+    <Property Name="MaBan" Type="int" />
+    <Property Name="GiamGia" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaNV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TongTien" Type="int" Nullable="false" />
+    <Property Name="MaKH" Type="int" />
+    <Property Name="ThoiGianVao" Type="datetime" Nullable="false" />
+    <Property Name="ThoiGianRa" Type="datetime" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="int" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+    <Property Name="SDT" Type="varchar" MaxLength="10" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="MaQuyen" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Quyen">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="int" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MaDM" Type="int" Nullable="false" />
+    <Property Name="DonGia" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="TenDangNhap" />
+    </Key>
+    <Property Name="TenDangNhap" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="MaQuyen" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__CTHDGiaoHa__MaHD__571DF1D5">
+    <End Role="HDGiaoHang" Type="Self.HDGiaoHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CTHDGiaoHang" Type="Self.CTHDGiaoHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDGiaoHang">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="CTHDGiaoHang">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTHDGiaoHa__MaSP__5812160E">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CTHDGiaoHang" Type="Self.CTHDGiaoHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="CTHDGiaoHang">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTHDTaiQua__MaHD__5070F446">
+    <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CTHDTaiQuan" Type="Self.CTHDTaiQuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDTaiQuan">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="CTHDTaiQuan">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTHDTaiQua__MaSP__5165187F">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CTHDTaiQuan" Type="Self.CTHDTaiQuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="CTHDTaiQuan">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HDGiaoHang__MaKH__5441852A">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HDGiaoHang" Type="Self.HDGiaoHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="HDGiaoHang">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HDTaiQuan__MaBan__4BAC3F29">
+    <End Role="Ban" Type="Self.Ban" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ban">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="HDTaiQuan">
+        <PropertyRef Name="MaBan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HDTaiQuan__MaKH__4D94879B">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="HDTaiQuan">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HDTaiQuan__MaNV__4CA06362">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="HDTaiQuan">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NhanVien__MaQuye__3D5E1FD2">
+    <End Role="Quyen" Type="Self.Quyen" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quyen">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="MaQuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham__MaDM__4222D4EF">
+    <End Role="DanhMucSanPham" Type="Self.DanhMucSanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMucSanPham">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaDM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaiKhoan__MaQuye__398D8EEE">
+    <End Role="Quyen" Type="Self.Quyen" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quyen">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="MaQuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLCPModelStoreContainer">
+    <EntitySet Name="Ban" EntityType="Self.Ban" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTHDGiaoHang" EntityType="Self.CTHDGiaoHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTHDTaiQuan" EntityType="Self.CTHDTaiQuan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhMucSanPham" EntityType="Self.DanhMucSanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HDGiaoHang" EntityType="Self.HDGiaoHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HDTaiQuan" EntityType="Self.HDTaiQuan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quyen" EntityType="Self.Quyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CTHDGiaoHa__MaHD__571DF1D5" Association="Self.FK__CTHDGiaoHa__MaHD__571DF1D5">
+      <End Role="HDGiaoHang" EntitySet="HDGiaoHang" />
+      <End Role="CTHDGiaoHang" EntitySet="CTHDGiaoHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTHDGiaoHa__MaSP__5812160E" Association="Self.FK__CTHDGiaoHa__MaSP__5812160E">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="CTHDGiaoHang" EntitySet="CTHDGiaoHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTHDTaiQua__MaHD__5070F446" Association="Self.FK__CTHDTaiQua__MaHD__5070F446">
+      <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
+      <End Role="CTHDTaiQuan" EntitySet="CTHDTaiQuan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTHDTaiQua__MaSP__5165187F" Association="Self.FK__CTHDTaiQua__MaSP__5165187F">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="CTHDTaiQuan" EntitySet="CTHDTaiQuan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HDGiaoHang__MaKH__5441852A" Association="Self.FK__HDGiaoHang__MaKH__5441852A">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="HDGiaoHang" EntitySet="HDGiaoHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HDTaiQuan__MaBan__4BAC3F29" Association="Self.FK__HDTaiQuan__MaBan__4BAC3F29">
+      <End Role="Ban" EntitySet="Ban" />
+      <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HDTaiQuan__MaKH__4D94879B" Association="Self.FK__HDTaiQuan__MaKH__4D94879B">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HDTaiQuan__MaNV__4CA06362" Association="Self.FK__HDTaiQuan__MaNV__4CA06362">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NhanVien__MaQuye__3D5E1FD2" Association="Self.FK__NhanVien__MaQuye__3D5E1FD2">
+      <End Role="Quyen" EntitySet="Quyen" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham__MaDM__4222D4EF" Association="Self.FK__SanPham__MaDM__4222D4EF">
+      <End Role="DanhMucSanPham" EntitySet="DanhMucSanPham" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaiKhoan__MaQuye__398D8EEE" Association="Self.FK__TaiKhoan__MaQuye__398D8EEE">
+      <End Role="Quyen" EntitySet="Quyen" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
