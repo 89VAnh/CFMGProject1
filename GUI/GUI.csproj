@@ -259,6 +259,8 @@
     <Content Include="Resources\chair.png" />
     <Content Include="Resources\check.png" />
     <None Include="Resources\create-bill.png" />
+    <None Include="Resources\coffee.jpg" />
+    <None Include="Resources\coffee1.jpg" />
     <Content Include="Resources\cup-of-coffee.png" />
     <None Include="Resources\customer.png" />
     <Content Include="Resources\delete.png" />
@@ -266,6 +268,7 @@
     <Content Include="Resources\edit.png" />
     <Content Include="Resources\hide-pw.png" />
     <Content Include="Resources\information.png" />
+    <None Include="Resources\login2.png" />
     <Content Include="Resources\logout.png" />
     <Content Include="Resources\menu.png" />
     <Content Include="Resources\pw.png" />

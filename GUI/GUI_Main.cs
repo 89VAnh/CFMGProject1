@@ -111,5 +111,20 @@ namespace GUI
             frm.Show();
             frm.WindowState = FormWindowState.Maximized;
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button3_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

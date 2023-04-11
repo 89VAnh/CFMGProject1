@@ -5,17 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="51c74d2aeae849daaa111a5c8088c9e1" Name="Diagram1">
-        <EntityTypeShape EntityType="QLCPModel.Ban" Width="1.5" PointX="3" PointY="12.25" />
-        <EntityTypeShape EntityType="QLCPModel.CTHDGiaoHang" Width="1.5" PointX="7.5" PointY="12.125" />
-        <EntityTypeShape EntityType="QLCPModel.CTHDTaiQuan" Width="1.5" PointX="7.5" PointY="4.375" />
-        <EntityTypeShape EntityType="QLCPModel.DanhMucSanPham" Width="1.5" PointX="3" PointY="15.75" />
-        <EntityTypeShape EntityType="QLCPModel.HDGiaoHang" Width="1.5" PointX="5.25" PointY="9" />
-        <EntityTypeShape EntityType="QLCPModel.HDTaiQuan" Width="1.5" PointX="5.25" PointY="3.875" />
-        <EntityTypeShape EntityType="QLCPModel.KhachHang" Width="1.5" PointX="3" PointY="9" />
-        <EntityTypeShape EntityType="QLCPModel.NhanVien" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="QLCPModel.Ban" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="QLCPModel.CTHDGiaoHang" Width="1.5" PointX="7.5" PointY="12.75" />
+        <EntityTypeShape EntityType="QLCPModel.CTHDTaiQuan" Width="1.5" PointX="7.5" PointY="1.625" />
+        <EntityTypeShape EntityType="QLCPModel.DanhMucSanPham" Width="1.5" PointX="3" PointY="15" />
+        <EntityTypeShape EntityType="QLCPModel.HDGiaoHang" Width="1.5" PointX="5.25" PointY="10.875" />
+        <EntityTypeShape EntityType="QLCPModel.HDTaiQuan" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="QLCPModel.KhachHang" Width="1.5" PointX="3" PointY="10.875" />
+        <EntityTypeShape EntityType="QLCPModel.NhanVien" Width="1.5" PointX="3" PointY="1.375" />
         <EntityTypeShape EntityType="QLCPModel.Quyen" Width="1.5" PointX="0.75" PointY="3.25" />
-        <EntityTypeShape EntityType="QLCPModel.SanPham" Width="1.5" PointX="5.25" PointY="15.375" />
-        <EntityTypeShape EntityType="QLCPModel.TaiKhoan" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="QLCPModel.SanPham" Width="1.5" PointX="5.25" PointY="14.625" />
+        <EntityTypeShape EntityType="QLCPModel.TaiKhoan" Width="1.5" PointX="3" PointY="4.875" />
         <AssociationConnector Association="QLCPModel.FK__HDTaiQuan__MaBan__4BAC3F29" />
         <AssociationConnector Association="QLCPModel.FK__CTHDGiaoHa__MaHD__571DF1D5" />
         <AssociationConnector Association="QLCPModel.FK__CTHDGiaoHa__MaSP__5812160E" />

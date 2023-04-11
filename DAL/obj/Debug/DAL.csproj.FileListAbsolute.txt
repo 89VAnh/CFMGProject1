@@ -10,3 +10,15 @@ C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\A
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\Anh21 Coffee\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\Anh21 Coffee\DAL\obj\Debug\DAL.dll
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\Anh21 Coffee\DAL\obj\Debug\DAL.pdb
+D:\DATA\HOCTAP\CFMGProject1\DAL\bin\Debug\DAL.dll.config
+D:\DATA\HOCTAP\CFMGProject1\DAL\bin\Debug\DAL.dll
+D:\DATA\HOCTAP\CFMGProject1\DAL\bin\Debug\DAL.pdb
+D:\DATA\HOCTAP\CFMGProject1\DAL\bin\Debug\EntityFramework.dll
+D:\DATA\HOCTAP\CFMGProject1\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\DATA\HOCTAP\CFMGProject1\DAL\bin\Debug\EntityFramework.xml
+D:\DATA\HOCTAP\CFMGProject1\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\DATA\HOCTAP\CFMGProject1\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\DATA\HOCTAP\CFMGProject1\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\DATA\HOCTAP\CFMGProject1\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\DATA\HOCTAP\CFMGProject1\DAL\obj\Debug\DAL.dll
+D:\DATA\HOCTAP\CFMGProject1\DAL\obj\Debug\DAL.pdb

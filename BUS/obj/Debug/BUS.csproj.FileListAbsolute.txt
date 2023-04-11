@@ -13,3 +13,18 @@ C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\A
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\Anh21 Coffee\BUS\obj\Debug\BUS.pdb
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\Anh21 Coffee\BUS\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\Anh21 Coffee\BUS\bin\Debug\EntityFramework.SqlServer.xml
+D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\BUS.dll.config
+D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\BUS.dll
+D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\BUS.pdb
+D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\DAL.dll
+D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\EntityFramework.dll
+D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\DAL.pdb
+D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\DAL.dll.config
+D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\EntityFramework.xml
+D:\DATA\HOCTAP\CFMGProject1\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\DATA\HOCTAP\CFMGProject1\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\DATA\HOCTAP\CFMGProject1\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\DATA\HOCTAP\CFMGProject1\BUS\obj\Debug\BUS.dll
+D:\DATA\HOCTAP\CFMGProject1\BUS\obj\Debug\BUS.pdb
+D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\EntityFramework.SqlServer.dll
+D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\EntityFramework.SqlServer.xml

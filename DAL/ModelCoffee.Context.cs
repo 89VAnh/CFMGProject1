@@ -9,22 +9,25 @@
 
 namespace DAL
 {
+    using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class QLCPEntities : DbContext
     {
         System.Data.Entity.SqlServer.SqlProviderServices instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+
         public QLCPEntities()
             : base("name=QLCPEntities")
         {
-        }
 
+        }
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<Ban> Bans { get; set; }
         public virtual DbSet<CTHDGiaoHang> CTHDGiaoHangs { get; set; }
         public virtual DbSet<CTHDTaiQuan> CTHDTaiQuans { get; set; }
