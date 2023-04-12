@@ -54,7 +54,7 @@
             this.btnTable.Margin = new System.Windows.Forms.Padding(40);
             this.btnTable.Name = "btnTable";
             this.btnTable.Padding = new System.Windows.Forms.Padding(20);
-            this.btnTable.Size = new System.Drawing.Size(180, 179);
+            this.btnTable.Size = new System.Drawing.Size(160, 180);
             this.btnTable.TabIndex = 0;
             this.btnTable.Text = "Bàn 1";
             this.btnTable.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -67,7 +67,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btnTable);
             this.Name = "Table";
-            this.Size = new System.Drawing.Size(180, 179);
+            this.Size = new System.Drawing.Size(160, 180);
             this.ResumeLayout(false);
 
         }

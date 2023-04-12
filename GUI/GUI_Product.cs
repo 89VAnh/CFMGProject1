@@ -9,19 +9,22 @@ namespace GUI
 {
     public partial class GUI_Product : Form
     {
-        BUS_Product busProduct = new BUS_Product();
-        BUS_CategoryProduct busCategoryProduct = new BUS_CategoryProduct();
+        private BUS_Product busProduct = new BUS_Product();
+        private BUS_CategoryProduct busCategoryProduct = new BUS_CategoryProduct();
 
-        List<SanPham> productList = new List<SanPham>();
-        int selectedProductID = 0;
+        private List<SanPham> productList = new List<SanPham>();
+        private int selectedProductID = 0;
+
         public GUI_Product()
         {
             InitializeComponent();
         }
+
         private void UpdateDgv(List<SanPham> productList)
         {
             dgvProduct.DataSource = productList.Select(x => new { x.Ma, x.Ten, TenDanhMuc = x.DanhMucSanPham.Ten, x.DonGia }).ToList();
         }
+
         private void GUI_Product_Load(object sender, EventArgs e)
         {
             cboCategoryProduct.DataSource = busCategoryProduct.GetCategoryProducts();

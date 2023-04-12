@@ -10,10 +10,10 @@ namespace GUI
 {
     public partial class GUI_PayBillDelivery : Form
     {
-        BUS_BillDelivery busBillDelivery = new BUS_BillDelivery();
-        HDGiaoHang b;
-        EventHandler AcceptPay;
-        int id;
+        private BUS_BillDelivery busBillDelivery = new BUS_BillDelivery();
+        private HDGiaoHang b;
+        private EventHandler AcceptPay;
+        private int id;
 
         public GUI_PayBillDelivery()
         {
@@ -48,6 +48,7 @@ namespace GUI
         {
             this.Close();
         }
+
         private void btnAccept_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Xác nhận hoàn tất thanh toán", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -61,7 +62,6 @@ namespace GUI
 
         private void guna2HtmlLabel3_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

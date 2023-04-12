@@ -78,3 +78,43 @@ D:\DATA\HOCTAP\CFMGProject1\GUI\bin\Debug\EntityFramework.xml
 D:\DATA\HOCTAP\CFMGProject1\GUI\obj\Debug\GUI.csproj.CopyComplete
 D:\DATA\HOCTAP\CFMGProject1\GUI\bin\Debug\EntityFramework.SqlServer.dll
 D:\DATA\HOCTAP\CFMGProject1\GUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\GUI.exe.config
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\GUI.exe
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\GUI.pdb
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\BUS.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\DAL.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Guna.UI2.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\BUS.pdb
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\BUS.dll.config
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\DAL.pdb
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\DAL.dll.config
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.xml
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Account.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_BillAtShop.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_BillDelivery.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_BillTakeAway.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_CategoryProduct.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Customer.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Info.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Login.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Main.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_PayBillAtShop.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_PayBillDelivery.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_PayBillTakeAway.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Product.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Register.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_SelectCustomer.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Staff.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Table.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.Table.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.exe
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.pdb

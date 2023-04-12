@@ -5,7 +5,7 @@ namespace DAL
 {
     public class DAL_CategoryProduct
     {
-        QLCPEntities db = new QLCPEntities();
+        private QLCPEntities db = new QLCPEntities();
 
         public List<DanhMucSanPham> GetCategoryProducts()
         {
@@ -24,6 +24,7 @@ namespace DAL
             cp.Ten = categoryProduct.Ten;
             db.SaveChanges();
         }
+
         public void Delete(DanhMucSanPham categoryProduct)
         {
             db.DanhMucSanPhams.Remove(categoryProduct);

@@ -12,46 +12,64 @@ namespace GUI
 {
     public partial class GUI_BillAtShop : Form
     {
-        BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
+        private BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
 
-        BUS_Table busTable = new BUS_Table();
-        BUS_Staff busStaff = new BUS_Staff();
-        BUS_BillDetailAtShop busBillDetailAtShop = new BUS_BillDetailAtShop();
-        BUS_CategoryProduct busCategoryProduct = new BUS_CategoryProduct();
-        BUS_Product busProduct = new BUS_Product();
+        private BUS_Table busTable = new BUS_Table();
+        private BUS_Staff busStaff = new BUS_Staff();
+        private BUS_BillDetailAtShop busBillDetailAtShop = new BUS_BillDetailAtShop();
+        private BUS_CategoryProduct busCategoryProduct = new BUS_CategoryProduct();
+        private BUS_Product busProduct = new BUS_Product();
 
         // Variable
-        int selectedProductID = 0;
-        int selectedTableID = 0;
-        int selectedBillDetailAtShopID = 0;
-        int totalPrice = 0;
-        string selectedStaffID = "";
+        private int selectedProductID = 0;
 
-        List<SanPham> productList = new List<SanPham>();
-        List<CTHDTaiQuan> billDetailAtShopListInSelectedTable = new List<CTHDTaiQuan>();
-        List<Ban> tableList = new List<Ban>();
+        private int selectedTableID = 0;
+        private int selectedBillID = 0;
+        private int selectedBillDetailID = 0;
+        private int totalPrice = 0;
+        private string selectedStaffID = "";
+
+        private List<SanPham> productList = new List<SanPham>();
+        private List<CTHDTaiQuan> bills = new List<CTHDTaiQuan>();
+        private List<CTHDTaiQuan> billDetails = new List<CTHDTaiQuan>();
+        private List<Ban> tableList = new List<Ban>();
 
         public GUI_BillAtShop()
         {
             InitializeComponent();
+
+            tableList = busTable.GetTableCoffees();
+            foreach (Ban t in tableList)
+            {
+                Table tb = new Table(t.Ma, t.Ten, t.TrangThai, table_Click);
+                flpTable.Controls.Add(tb);
+            }
         }
 
-        private void UpdateDgvBillAtShop()
+        private void UpdateDgvBillDetail()
         {
-            dgvBillAtShop.DataSource = billDetailAtShopListInSelectedTable.Select(b =>
-            new { b.Ma, b.SanPham.Ten, b.SoLuong, b.SanPham.DonGia, ThanhTien = b.SoLuong * b.SanPham.DonGia, b.GhiChu }
-            ).ToList();
+            if (busBillAtShop.GetBillAtShopByTableID(selectedTableID) != null)
+                selectedBillID = busBillAtShop.GetBillAtShopByTableID(selectedTableID).Ma;
+            else
+                selectedBillID = 0;
+
+            dgvBillDetail.DataSource = billDetails.Where(x => x.MaHD == selectedBillID).Select(b =>
+               new { b.Ma, b.SanPham.Ten, b.SoLuong, b.SanPham.DonGia, ThanhTien = b.SoLuong * b.SanPham.DonGia, b.GhiChu }
+               ).ToList();
         }
+
         private void UpdateDgvProduct(List<SanPham> products)
         {
             dgvProduct.DataSource = products.Select(p => new { p.Ma, p.Ten, p.DonGia, TenDM = p.DanhMucSanPham.Ten }).ToList();
         }
+
         private void setCboChangeTableData()
         {
             cboChangeTable.DataSource = tableList.Where(x => x.TrangThai == "Trống").ToList();
             cboChangeTable.ValueMember = "Ma";
             cboChangeTable.DisplayMember = "Ten";
         }
+
         private void setTableStatus(int tableID, string status)
         {
             Table tb = flpTable.Controls[tableID - 1] as Table;
@@ -66,12 +84,6 @@ namespace GUI
         //BillDetailAtShop
         private void GUI_BillAtShop_Load(object sender, EventArgs e)
         {
-            tableList = busTable.GetTableCoffees();
-            foreach (Ban t in tableList)
-            {
-                Table tb = new Table(t.Ma, t.Ten, t.TrangThai, table_Click);
-                flpTable.Controls.Add(tb);
-            }
             // cboTable
             cboTable.DataSource = tableList;
             cboTable.ValueMember = "Ma";
@@ -97,8 +109,10 @@ namespace GUI
             cboProduct.DisplayMember = "Ten";
             UpdateDgvProduct(productList);
 
+            billDetails = busBillDetailAtShop.GetBillDetailAtShopes();
+
             dgvProduct.DefaultCellStyle.Font = new Font("SegoeUI", 10);
-            dgvBillAtShop.DefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvBillDetail.DefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
 
         private void table_Click(object sender, EventArgs e)
@@ -106,14 +120,14 @@ namespace GUI
             Guna2Button btn = sender as Guna2Button;
             selectedTableID = (int)btn.Tag;
             cboTable.SelectedValue = selectedTableID;
-            billDetailAtShopListInSelectedTable = busBillDetailAtShop.GetBillDetailAtShopesInTable(selectedTableID);
-            UpdateDgvBillAtShop();
+            UpdateDgvBillDetail();
             numAmount.Value = 1;
             txtNote.Text = "";
         }
+
         private void dgvBillAtShop_DataSourceChanged(object sender, EventArgs e)
         {
-            if (dgvBillAtShop.Rows.Count == 0)
+            if (dgvBillDetail.Rows.Count == 0)
             {
                 numTotalPrice.Value = 0;
                 totalPrice = 0;
@@ -122,7 +136,7 @@ namespace GUI
                 try
                 {
                     int sum = 0;
-                    foreach (DataGridViewRow r in dgvBillAtShop.Rows)
+                    foreach (DataGridViewRow r in dgvBillDetail.Rows)
                     {
                         sum += (int)r.Cells[4].Value;
                     }
@@ -132,11 +146,12 @@ namespace GUI
                 }
                 catch { }
         }
+
         private void dgvBillAtShop_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedBillDetailAtShopID = (int)dgvBillAtShop.SelectedRows[0].Cells[0].Value;
-            numAmount.Value = (int)dgvBillAtShop.SelectedRows[0].Cells[2].Value;
-            txtNote.Text = dgvBillAtShop.SelectedRows[0].Cells[5].Value.ToString();
+            selectedBillDetailID = (int)dgvBillDetail.SelectedRows[0].Cells[0].Value;
+            numAmount.Value = (int)dgvBillDetail.SelectedRows[0].Cells[2].Value;
+            txtNote.Text = dgvBillDetail.SelectedRows[0].Cells[5].Value.ToString();
         }
 
         private void btnChangeTable_Click(object sender, EventArgs e)
@@ -152,36 +167,37 @@ namespace GUI
                     MessageBox.Show($"Đã đổi bàn {selectedTableID} => {newTableID} thành công");
                     selectedTableID = newTableID;
                     cboTable.SelectedValue = selectedTableID;
-                    billDetailAtShopListInSelectedTable = busBillDetailAtShop.GetBillDetailAtShopesInTable(selectedTableID);
-                    UpdateDgvBillAtShop();
+                    UpdateDgvBillDetail();
                 }
                 else MessageBox.Show("Không chuyển được bàn đang trống!");
             else MessageBox.Show("Vui lòng lựa chọn bàn!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
         //Del
         private void btnDel_Click(object sender, EventArgs e)
         {
-            CTHDTaiQuan billDetailAtShop = billDetailAtShopListInSelectedTable.SingleOrDefault(x => x.Ma == selectedBillDetailAtShopID);
+            CTHDTaiQuan billDetailAtShop = billDetails.SingleOrDefault(x => x.Ma == selectedBillDetailID);
             if (billDetailAtShop != null)
             {
                 busBillDetailAtShop.Delete(billDetailAtShop);
-                billDetailAtShopListInSelectedTable.Remove(billDetailAtShop);
-                UpdateDgvBillAtShop();
+                billDetails.Remove(billDetailAtShop);
+                UpdateDgvBillDetail();
             }
             else MessageBox.Show("Vui lòng chọn món!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
         //Update
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (selectedBillDetailAtShopID > 0)
+            if (selectedBillDetailID > 0)
             {
                 if (MessageBox.Show("Xác nhận đổi số lượng và ghi chú", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    CTHDTaiQuan bI = billDetailAtShopListInSelectedTable.SingleOrDefault(x => x.Ma == selectedBillDetailAtShopID);
-                    bI.SoLuong = (int)numAmount.Value;
-                    bI.GhiChu = txtNote.Text;
-                    busBillDetailAtShop.Update(bI);
-                    UpdateDgvBillAtShop();
+                    CTHDTaiQuan bd = billDetails.SingleOrDefault(x => x.Ma == selectedBillDetailID);
+                    bd.SoLuong = (int)numAmount.Value;
+                    bd.GhiChu = txtNote.Text;
+                    busBillDetailAtShop.Update(bd);
+                    UpdateDgvBillDetail();
                 }
             }
             else MessageBox.Show("Vui lòng chọn món!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -205,30 +221,30 @@ namespace GUI
                         }
                         else
                             id = billAtShop.Ma;
-                        CTHDTaiQuan newBillDetail = new CTHDTaiQuan { Ma = busBillDetailAtShop.GetNewID(), MaHD = id, MaSP = selectedProductID, SoLuong = (int)numAmount.Value, GhiChu = txtNote.Text };
+                        CTHDTaiQuan newBillDetail = new CTHDTaiQuan { Ma = busBillDetailAtShop.GetNewID(), MaHD = selectedBillID, MaSP = selectedProductID, SoLuong = (int)numAmount.Value, GhiChu = txtNote.Text };
 
-                        MessageBox.Show($"Đã thêm vào bàn {selectedTableID} : {newBillDetail.SoLuong} {productList.SingleOrDefault(x => x.Ma == newBillDetail.MaSP).Ten}");
-
-                        CTHDTaiQuan billDetailAtShop = billDetailAtShopListInSelectedTable.SingleOrDefault(x => x.MaHD == newBillDetail.MaHD && x.MaSP == newBillDetail.MaSP);
+                        CTHDTaiQuan billDetailAtShop = billDetails.SingleOrDefault(x => x.MaHD == newBillDetail.MaHD && x.MaSP == newBillDetail.MaSP);
                         if (billDetailAtShop == null)
                         {
                             busBillDetailAtShop.Add(newBillDetail);
-                            billDetailAtShopListInSelectedTable.Add(newBillDetail);
+                            billDetails.Add(newBillDetail);
                         }
                         else
                         {
                             busBillDetailAtShop.AddAmount(billDetailAtShop, newBillDetail.SoLuong, newBillDetail.GhiChu);
                         }
-                        UpdateDgvBillAtShop();
+
+                        MessageBox.Show($"Đã thêm vào bàn {selectedTableID} : {newBillDetail.SoLuong} {productList.SingleOrDefault(x => x.Ma == newBillDetail.MaSP).Ten}");
 
                         setTableStatus(selectedTableID, "Có người");
                         setCboChangeTableData();
+
+                        UpdateDgvBillDetail();
                     }
                     else MessageBox.Show("Vui lòng chọn mã nhân viên!");
                 else MessageBox.Show("Vui lòng chọn món!");
             else MessageBox.Show("Vui lòng lựa chọn bàn!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
 
         private void cboCategoryProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -265,6 +281,7 @@ namespace GUI
         {
             selectedProductID = (int)cboProduct.SelectedValue;
         }
+
         private void cboStaff_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboStaff.SelectedValue != null)
@@ -305,9 +322,9 @@ namespace GUI
         {
             setTableStatus(selectedTableID, "Trống");
             setCboChangeTableData();
-            billDetailAtShopListInSelectedTable = new List<CTHDTaiQuan>();
-            UpdateDgvBillAtShop();
+            UpdateDgvBillDetail();
         }
+
         private void btnPay_Click(object sender, EventArgs e)
         {
             if (selectedTableID > 0)
@@ -332,7 +349,7 @@ namespace GUI
                         billAtShop.GiamGia = discount;
                         billAtShop.TongTien = (int)numTotalPrice.Value;
                         billAtShop.Ban = table;
-                        GUI_PayBillAtShop f = new GUI_PayBillAtShop(billAtShop, billDetailAtShopListInSelectedTable, totalPrice, AcceptPay);
+                        GUI_PayBillAtShop f = new GUI_PayBillAtShop(billAtShop, billDetails.Where(x => x.MaHD == selectedBillID).ToList(), totalPrice, AcceptPay);
                         f.ShowDialog();
                     }
                     else MessageBox.Show("Bàn được chọn đang trống!");

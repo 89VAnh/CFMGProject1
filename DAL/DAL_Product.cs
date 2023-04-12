@@ -5,7 +5,8 @@ namespace DAL
 {
     public class DAL_Product
     {
-        QLCPEntities db = new QLCPEntities();
+        private QLCPEntities db = new QLCPEntities();
+
         public List<SanPham> GetProducts()
         {
             return db.SanPhams.ToList();
@@ -16,6 +17,7 @@ namespace DAL
             db.SanPhams.Add(product);
             db.SaveChanges();
         }
+
         public void Update(SanPham product)
         {
             SanPham p = db.SanPhams.Find(product.Ma);
@@ -24,6 +26,7 @@ namespace DAL
             p.DonGia = product.DonGia;
             db.SaveChanges();
         }
+
         public void Delete(SanPham product)
         {
             db.SanPhams.Remove(product);

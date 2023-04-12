@@ -22,3 +22,15 @@ D:\DATA\HOCTAP\CFMGProject1\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\DATA\HOCTAP\CFMGProject1\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\DATA\HOCTAP\CFMGProject1\DAL\obj\Debug\DAL.dll
 D:\DATA\HOCTAP\CFMGProject1\DAL\obj\Debug\DAL.pdb
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\bin\Debug\DAL.dll.config
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\bin\Debug\DAL.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\bin\Debug\DAL.pdb
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\bin\Debug\EntityFramework.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\bin\Debug\EntityFramework.xml
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\obj\Debug\DAL.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\obj\Debug\DAL.pdb

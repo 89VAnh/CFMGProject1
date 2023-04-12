@@ -10,21 +10,21 @@ namespace GUI
 {
     public partial class GUI_BillDelivery : Form
     {
-        BUS_BillDelivery busBillDelivery = new BUS_BillDelivery();
-        BUS_BillDetailDelivery busBillDetailDelivery = new BUS_BillDetailDelivery();
-        BUS_CategoryProduct busCategoryProduct = new BUS_CategoryProduct();
-        BUS_Product busProduct = new BUS_Product();
-        BUS_Customer busCustomer = new BUS_Customer();
+        private BUS_BillDelivery busBillDelivery = new BUS_BillDelivery();
+        private BUS_BillDetailDelivery busBillDetailDelivery = new BUS_BillDetailDelivery();
+        private BUS_CategoryProduct busCategoryProduct = new BUS_CategoryProduct();
+        private BUS_Product busProduct = new BUS_Product();
+        private BUS_Customer busCustomer = new BUS_Customer();
 
-        List<SanPham> productList = new List<SanPham>();
-        List<HDGiaoHang> billDeliveries = new List<HDGiaoHang>();
-        List<CTHDGiaoHang> billDetailDeliveries = new List<CTHDGiaoHang>();
-        List<KhachHang> customers = new List<KhachHang>();
+        private List<SanPham> productList = new List<SanPham>();
+        private List<HDGiaoHang> bills = new List<HDGiaoHang>();
+        private List<CTHDGiaoHang> billDetails = new List<CTHDGiaoHang>();
+        private List<KhachHang> customers = new List<KhachHang>();
 
-        int selectedProductID = 0;
-        int totalPrice = 0;
-        int selectedCustomerID = -1;
-        int selectedBillDetailDelivery = 0;
+        private int selectedProductID = 0;
+        private int totalPrice = 0;
+        private int selectedCustomerID = -1;
+        private int selectedBillDetailID = 0;
 
         public GUI_BillDelivery()
         {
@@ -38,13 +38,15 @@ namespace GUI
 
         private void UpdateDgvBill()
         {
-            dgvBillDelivery.DataSource = billDeliveries.Select(x => new { x.Ma, x.GiamGia, x.TongTien, x.MaKH, x.DiaChi }).ToList();
+            dgvBillDelivery.DataSource = bills.Select(x => new { x.Ma, x.GiamGia, x.TongTien, x.MaKH, x.DiaChi }).ToList();
         }
+
         private void UpdateDgvBillDetail(int billID)
         {
-            dgvBillDetailDelivery.DataSource = billDetailDeliveries.Where(x => x.MaHD == billID).Select(b =>
+            dgvBillDetailDelivery.DataSource = billDetails.Where(x => x.MaHD == billID).Select(b =>
             new { b.Ma, b.SanPham.Ten, b.SoLuong, b.SanPham.DonGia, ThanhTien = b.SoLuong * b.SanPham.DonGia, b.GhiChu }).ToList();
         }
+
         private void GUI_BillDelivery_Load(object sender, EventArgs e)
         {
             // cboCategoryProduct
@@ -58,12 +60,12 @@ namespace GUI
             cboProduct.ValueMember = "Ma";
             cboProduct.DisplayMember = "Ten";
 
-            billDeliveries = busBillDelivery.GetBillDeliveriesUnPaid();
+            bills = busBillDelivery.GetBillDeliveriesUnPaid();
             UpdateDgvBill();
 
             customers = busCustomer.GetCustomers();
 
-            billDetailDeliveries = busBillDetailDelivery.GetBillDetailDeliveries();
+            billDetails = busBillDetailDelivery.GetBillDetailDeliveries();
 
             dgvProduct.DefaultCellStyle.Font = new Font("SegoeUI", 10);
             dgvBillDelivery.DefaultCellStyle.Font = new Font("SegoeUI", 10);
@@ -126,6 +128,7 @@ namespace GUI
         {
             Discount();
         }
+
         private bool CheckCustomerID()
         {
             string text = txtCustomer.Text;
@@ -144,6 +147,7 @@ namespace GUI
             selectedCustomerID = -1;
             return false;
         }
+
         private void dgvBillDelivery_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -160,6 +164,7 @@ namespace GUI
             }
             catch { }
         }
+
         private void btnAddBill_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(txtAddress.Text))
@@ -172,7 +177,7 @@ namespace GUI
                         if (selectedCustomerID > 0)
                             bill.MaKH = selectedCustomerID;
                         busBillDelivery.Add(bill);
-                        billDeliveries.Add(bill);
+                        bills.Add(bill);
                         UpdateDgvBill();
                     }
                 }
@@ -184,13 +189,13 @@ namespace GUI
         private void btnDelBill_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txtBillID.Text);
-            HDGiaoHang bill = billDeliveries.SingleOrDefault(x => x.Ma == id);
+            HDGiaoHang bill = bills.SingleOrDefault(x => x.Ma == id);
             if (bill != null)
             {
                 if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     busBillDelivery.Delete(bill);
-                    billDeliveries.Remove(bill);
+                    bills.Remove(bill);
                     UpdateDgvBill();
                     MessageBox.Show("Xoá thành công!");
                 }
@@ -201,22 +206,32 @@ namespace GUI
         private void btnUpdateBill_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txtBillID.Text);
-            HDGiaoHang bill = billDeliveries.SingleOrDefault(x => x.Ma == id);
+            HDGiaoHang bill = bills.SingleOrDefault(x => x.Ma == id);
             if (bill != null)
             {
-                if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (CheckCustomerID())
                 {
-                    busBillDelivery.Update(bill);
-                    MessageBox.Show("Sửa thành công!");
-                    GUI_BillDelivery_Load(sender, e);
+                    bill.DiaChi = txtAddress.Text;
+                    if (selectedCustomerID > 0)
+                    {
+                        bill.MaKH = selectedCustomerID;
+                    }
+
+                    if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        busBillDelivery.Update(bill);
+                        MessageBox.Show("Sửa thành công!");
+                        GUI_BillDelivery_Load(sender, e);
+                    }
                 }
+                else MessageBox.Show("Mã khách hàng không hợp lệ");
             }
             else MessageBox.Show("Mã hoá đơn không hợp lệ!");
         }
 
         private void dgvBillDetailDelivery_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedBillDetailDelivery = (int)dgvBillDetailDelivery[0, e.RowIndex].Value;
+            selectedBillDetailID = (int)dgvBillDetailDelivery[0, e.RowIndex].Value;
             txtNote.Text = dgvBillDetailDelivery[5, e.RowIndex].Value.ToString();
             numAmount.Value = (int)dgvBillDetailDelivery[2, e.RowIndex].Value;
             cboProduct.SelectedValue = selectedProductID;
@@ -251,21 +266,22 @@ namespace GUI
             numAmount.Value = 1;
             cboProduct.SelectedValue = selectedProductID;
         }
+
         private void btnAddBillDetail_Click(object sender, EventArgs e)
         {
             int billID = Convert.ToInt32(txtBillID.Text);
-            if (billDeliveries.SingleOrDefault(x => x.Ma == billID) != null)
+            if (bills.SingleOrDefault(x => x.Ma == billID) != null)
                 if (selectedProductID > 0)
                 {
                     CTHDGiaoHang newBillDetail = new CTHDGiaoHang { Ma = busBillDetailDelivery.GetNewID(), MaHD = billID, MaSP = selectedProductID, SoLuong = (int)numAmount.Value, GhiChu = txtNote.Text };
 
                     MessageBox.Show($"Đã thêm vào hoá đơn {billID} : {newBillDetail.SoLuong} {productList.SingleOrDefault(x => x.Ma == newBillDetail.MaSP).Ten}");
 
-                    CTHDGiaoHang billDetailDelivery = billDetailDeliveries.SingleOrDefault(x => x.MaHD == newBillDetail.MaHD && x.MaSP == newBillDetail.MaSP);
+                    CTHDGiaoHang billDetailDelivery = billDetails.SingleOrDefault(x => x.MaHD == newBillDetail.MaHD && x.MaSP == newBillDetail.MaSP);
                     if (billDetailDelivery == null)
                     {
                         busBillDetailDelivery.Add(newBillDetail);
-                        billDetailDeliveries.Add(newBillDetail);
+                        billDetails.Add(newBillDetail);
                     }
                     else
                     {
@@ -280,34 +296,33 @@ namespace GUI
         private void btnDelBillDetail_Click(object sender, EventArgs e)
         {
             int billID = Convert.ToInt32(txtBillID.Text);
-            if (billDeliveries.SingleOrDefault(x => x.Ma == billID) != null)
+            if (bills.SingleOrDefault(x => x.Ma == billID) != null)
             {
-                if (selectedBillDetailDelivery > 0)
+                if (selectedBillDetailID > 0)
                 {
-                    CTHDGiaoHang billDetailDelivery = billDetailDeliveries.SingleOrDefault(x => x.Ma == selectedBillDetailDelivery);
+                    CTHDGiaoHang billDetailDelivery = billDetails.SingleOrDefault(x => x.Ma == selectedBillDetailID);
                     if (billDetailDelivery != null)
                     {
                         busBillDetailDelivery.Delete(billDetailDelivery);
-                        billDetailDeliveries.Remove(billDetailDelivery);
+                        billDetails.Remove(billDetailDelivery);
                         UpdateDgvBillDetail(billID);
                     }
                     else MessageBox.Show("Vui lòng chọn món!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else MessageBox.Show("Mã hoá đơn không hợp lệ!");
-
         }
 
         private void btnUpdateBillDetail_Click(object sender, EventArgs e)
         {
             int billID = Convert.ToInt32(txtBillID.Text);
-            if (billDeliveries.SingleOrDefault(x => x.Ma == billID) != null)
+            if (bills.SingleOrDefault(x => x.Ma == billID) != null)
             {
-                if (selectedBillDetailDelivery > 0)
+                if (selectedBillDetailID > 0)
                 {
                     if (MessageBox.Show("Xác nhận đổi số lượng và ghi chú", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        CTHDGiaoHang bI = billDetailDeliveries.SingleOrDefault(x => x.Ma == selectedBillDetailDelivery);
+                        CTHDGiaoHang bI = billDetails.SingleOrDefault(x => x.Ma == selectedBillDetailID);
                         bI.SoLuong = (int)numAmount.Value;
                         bI.GhiChu = txtNote.Text;
                         busBillDetailDelivery.Update(bI);
@@ -322,16 +337,17 @@ namespace GUI
 
         private void AcceptPay(object sender, EventArgs e)
         {
-            billDeliveries.Remove(billDeliveries.SingleOrDefault(x => x.Ma == Convert.ToInt32(txtBillID.Text)));
+            bills.Remove(bills.SingleOrDefault(x => x.Ma == Convert.ToInt32(txtBillID.Text)));
             UpdateDgvBill();
             txtBillID.Clear();
             txtAddress.Clear();
             txtCustomer.Clear();
         }
+
         private void btnPay_Click(object sender, EventArgs e)
         {
             int billID = Convert.ToInt32(txtBillID.Text);
-            HDGiaoHang bill = billDeliveries.SingleOrDefault(x => x.Ma == billID);
+            HDGiaoHang bill = bills.SingleOrDefault(x => x.Ma == billID);
             if (bill != null)
             {
                 string discount = numDiscount.Value.ToString();
@@ -346,7 +362,7 @@ namespace GUI
                 }
                 bill.GiamGia = discount;
                 bill.TongTien = (int)numTotalPrice.Value;
-                GUI_PayBillDelivery f = new GUI_PayBillDelivery(bill, billDetailDeliveries.Where(x => x.MaHD == bill.Ma).ToList(), totalPrice, AcceptPay);
+                GUI_PayBillDelivery f = new GUI_PayBillDelivery(bill, billDetails.Where(x => x.MaHD == bill.Ma).ToList(), totalPrice, AcceptPay);
                 f.ShowDialog();
             }
             else MessageBox.Show("Vui lòng chọn hoá đơn");

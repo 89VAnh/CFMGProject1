@@ -5,23 +5,19 @@ namespace DAL
 {
     public class DAL_BillAtShop
     {
-        QLCPEntities db = new QLCPEntities();
+        private QLCPEntities db = new QLCPEntities();
 
-        public List<HDTaiQuan> GetBillAtShops()
+        public List<HDTaiQuan> GetBillAtShopes()
         {
             return db.HDTaiQuans.ToList();
         }
 
-        public HDTaiQuan GetBillAtShopByTableID(int tableID)
-        {
-            return db.HDTaiQuans
-                .SingleOrDefault(x => x.MaBan == tableID && x.ThoiGianRa == null);
-        }
         public void Add(HDTaiQuan billAtShop)
         {
             db.HDTaiQuans.Add(billAtShop);
             db.SaveChanges();
         }
+
         public void Update(HDTaiQuan billAtShop)
         {
             HDTaiQuan b = db.HDTaiQuans.Find(billAtShop.Ma);

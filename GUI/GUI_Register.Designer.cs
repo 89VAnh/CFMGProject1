@@ -52,14 +52,16 @@
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.TargetControl = this.btnRegister;
+            this.guna2Elipse1.BorderRadius = 40;
+            this.guna2Elipse1.TargetControl = this;
             // 
             // btnRegister
             // 
-            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegister.AutoRoundedCorners = true;
             this.btnRegister.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegister.BorderRadius = 21;
+            this.btnRegister.BorderRadius = 22;
             this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRegister.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -68,9 +70,9 @@
             this.btnRegister.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(580, 538);
+            this.btnRegister.Location = new System.Drawing.Point(782, 582);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(180, 45);
+            this.btnRegister.Size = new System.Drawing.Size(159, 46);
             this.btnRegister.TabIndex = 27;
             this.btnRegister.Text = "Đăng ký";
             this.btnRegister.UseTransparentBackground = true;
@@ -88,8 +90,11 @@
             // 
             // cboPosition
             // 
+            this.cboPosition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboPosition.AutoRoundedCorners = true;
             this.cboPosition.BackColor = System.Drawing.Color.Transparent;
+            this.cboPosition.BorderColor = System.Drawing.Color.IndianRed;
             this.cboPosition.BorderRadius = 17;
             this.cboPosition.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -99,14 +104,15 @@
             this.cboPosition.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboPosition.ItemHeight = 30;
-            this.cboPosition.Location = new System.Drawing.Point(546, 483);
+            this.cboPosition.Location = new System.Drawing.Point(722, 516);
             this.cboPosition.Name = "cboPosition";
             this.cboPosition.Size = new System.Drawing.Size(259, 36);
             this.cboPosition.TabIndex = 37;
             // 
             // txtEmail
             // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtEmail.BorderColor = System.Drawing.Color.IndianRed;
             this.txtEmail.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
@@ -125,20 +131,21 @@
             this.txtEmail.IconLeft = global::GUI.Properties.Resources.un;
             this.txtEmail.IconLeftOffset = new System.Drawing.Point(-8, 0);
             this.txtEmail.IconLeftSize = new System.Drawing.Size(24, 24);
-            this.txtEmail.Location = new System.Drawing.Point(546, 417);
+            this.txtEmail.Location = new System.Drawing.Point(722, 426);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtEmail.PlaceholderText = "Email ";
             this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(259, 36);
+            this.txtEmail.Size = new System.Drawing.Size(259, 51);
             this.txtEmail.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtEmail.TabIndex = 36;
             // 
             // txtRePw
             // 
-            this.txtRePw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRePw.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRePw.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtRePw.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.txtRePw.BorderColor = System.Drawing.Color.IndianRed;
@@ -160,7 +167,7 @@
             this.txtRePw.IconRight = global::GUI.Properties.Resources.show_pw;
             this.txtRePw.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.txtRePw.IconRightSize = new System.Drawing.Size(16, 16);
-            this.txtRePw.Location = new System.Drawing.Point(546, 345);
+            this.txtRePw.Location = new System.Drawing.Point(722, 345);
             this.txtRePw.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtRePw.Name = "txtRePw";
             this.txtRePw.Padding = new System.Windows.Forms.Padding(2);
@@ -168,7 +175,7 @@
             this.txtRePw.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtRePw.PlaceholderText = "Nhập lại mật khẩu";
             this.txtRePw.SelectedText = "";
-            this.txtRePw.Size = new System.Drawing.Size(259, 36);
+            this.txtRePw.Size = new System.Drawing.Size(259, 51);
             this.txtRePw.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtRePw.TabIndex = 35;
             this.txtRePw.IconRightClick += new System.EventHandler(this.txtRePw_IconRightClick);
@@ -182,7 +189,7 @@
             this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox3.HoverState.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.SaddleBrown;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(805, 1);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(981, 1);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(48, 38);
             this.guna2ControlBox3.TabIndex = 34;
@@ -195,17 +202,18 @@
             this.guna2ControlBox4.HoverState.FillColor = System.Drawing.Color.Red;
             this.guna2ControlBox4.HoverState.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox4.IconColor = System.Drawing.Color.SaddleBrown;
-            this.guna2ControlBox4.Location = new System.Drawing.Point(853, 1);
+            this.guna2ControlBox4.Location = new System.Drawing.Point(1029, 1);
             this.guna2ControlBox4.Name = "guna2ControlBox4";
             this.guna2ControlBox4.Size = new System.Drawing.Size(46, 38);
             this.guna2ControlBox4.TabIndex = 33;
             // 
             // btnLogin
             // 
-            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogin.AutoRoundedCorners = true;
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogin.BorderRadius = 20;
+            this.btnLogin.BorderRadius = 21;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -218,9 +226,9 @@
             this.btnLogin.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnLogin.Image = global::GUI.Properties.Resources.arrow;
             this.btnLogin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnLogin.Location = new System.Drawing.Point(580, 589);
+            this.btnLogin.Location = new System.Drawing.Point(757, 645);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(180, 42);
+            this.btnLogin.Size = new System.Drawing.Size(194, 44);
             this.btnLogin.TabIndex = 32;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseTransparentBackground = true;
@@ -228,13 +236,15 @@
             // 
             // guna2HtmlLabel2
             // 
+            this.guna2HtmlLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2HtmlLabel2.AutoSize = false;
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(630, 136);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(782, 87);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(199, 54);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(199, 86);
             this.guna2HtmlLabel2.TabIndex = 31;
             this.guna2HtmlLabel2.Text = "ĐĂNG KÝ";
             // 
@@ -252,20 +262,22 @@
             // 
             // guna2HtmlLabel1
             // 
-            this.guna2HtmlLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2HtmlLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Lucida Calligraphy", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(494, 12);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(748, 12);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(281, 56);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(281, 88);
             this.guna2HtmlLabel1.TabIndex = 28;
             this.guna2HtmlLabel1.Text = "A - COFFEE";
             // 
             // txtUn
             // 
-            this.txtUn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtUn.BorderColor = System.Drawing.Color.IndianRed;
             this.txtUn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
@@ -284,20 +296,21 @@
             this.txtUn.IconLeft = global::GUI.Properties.Resources.un;
             this.txtUn.IconLeftOffset = new System.Drawing.Point(-8, 0);
             this.txtUn.IconLeftSize = new System.Drawing.Size(24, 24);
-            this.txtUn.Location = new System.Drawing.Point(546, 224);
+            this.txtUn.Location = new System.Drawing.Point(722, 181);
             this.txtUn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtUn.Name = "txtUn";
             this.txtUn.PasswordChar = '\0';
             this.txtUn.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtUn.PlaceholderText = "Tên đăng nhập";
             this.txtUn.SelectedText = "";
-            this.txtUn.Size = new System.Drawing.Size(259, 36);
+            this.txtUn.Size = new System.Drawing.Size(259, 50);
             this.txtUn.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtUn.TabIndex = 25;
             // 
             // txtPw
             // 
-            this.txtPw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPw.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPw.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtPw.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.txtPw.BorderColor = System.Drawing.Color.IndianRed;
@@ -319,7 +332,7 @@
             this.txtPw.IconRight = global::GUI.Properties.Resources.show_pw;
             this.txtPw.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.txtPw.IconRightSize = new System.Drawing.Size(16, 16);
-            this.txtPw.Location = new System.Drawing.Point(546, 284);
+            this.txtPw.Location = new System.Drawing.Point(722, 259);
             this.txtPw.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPw.Name = "txtPw";
             this.txtPw.Padding = new System.Windows.Forms.Padding(2);
@@ -327,18 +340,21 @@
             this.txtPw.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtPw.PlaceholderText = "Mật khẩu";
             this.txtPw.SelectedText = "";
-            this.txtPw.Size = new System.Drawing.Size(259, 36);
+            this.txtPw.Size = new System.Drawing.Size(259, 52);
             this.txtPw.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtPw.TabIndex = 26;
             this.txtPw.IconRightClick += new System.EventHandler(this.txtPw_IconRightClick);
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox1.Image = global::GUI.Properties.Resources.coffee;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(-4, -1);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(492, 711);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(668, 743);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 29;
             this.guna2PictureBox1.TabStop = false;
@@ -348,7 +364,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(898, 659);
+            this.ClientSize = new System.Drawing.Size(1074, 691);
             this.Controls.Add(this.cboPosition);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtRePw);

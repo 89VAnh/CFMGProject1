@@ -5,17 +5,19 @@ namespace DAL
 {
     public class DAL_Customer
     {
-        QLCPEntities db = new QLCPEntities();
+        private QLCPEntities db = new QLCPEntities();
 
         public List<KhachHang> GetCustomers()
         {
             return db.KhachHangs.ToList();
         }
+
         public void Add(KhachHang customer)
         {
             db.KhachHangs.Add(customer);
             db.SaveChanges();
         }
+
         public void Update(KhachHang customer)
         {
             KhachHang s = db.KhachHangs.SingleOrDefault(x => x.Ma == customer.Ma);
@@ -26,6 +28,7 @@ namespace DAL
             s.DiaChi = customer.DiaChi;
             db.SaveChanges();
         }
+
         public void Delete(KhachHang customer)
         {
             db.KhachHangs.Remove(customer);

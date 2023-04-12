@@ -11,10 +11,10 @@ namespace GUI
 {
     public partial class GUI_Customer : Form
     {
-        BUS_Customer busCustomer = new BUS_Customer();
-        int selectedCustomerID = 0;
-        List<KhachHang> customerList = new List<KhachHang>();
-        KhachHang customerFromForm;
+        private BUS_Customer busCustomer = new BUS_Customer();
+        private int selectedCustomerID = 0;
+        private List<KhachHang> customerList = new List<KhachHang>();
+        private KhachHang customerFromForm;
 
         public GUI_Customer()
         {
@@ -25,6 +25,7 @@ namespace GUI
         {
             dgvCustomer.DataSource = customerList.Select(x => new { x.Ma, x.Ten, x.GioiTinh, x.SDT, x.Email, x.DiaChi }).ToList();
         }
+
         private void GUI_Customer_Load(object sender, EventArgs e)
         {
             customerList = busCustomer.GetCustomers();
@@ -44,7 +45,6 @@ namespace GUI
                 txtAddress.Text = c.DiaChi;
             }
             catch { }
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -67,6 +67,7 @@ namespace GUI
             txtAddress.Clear();
             UpdateDgv(customerList);
         }
+
         private bool checkTextBox(Guna2TextBox textBox)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
@@ -76,15 +77,17 @@ namespace GUI
             }
             else return true;
         }
+
         private bool checkPhone(string phone)
         {
             return Regex.Match(phone, @"^\d{10}$").Success;
-
         }
+
         private bool checkEmail(string email)
         {
             return Regex.Match(email, @"^([\w\.-]+)@([\w-]+)((\.(\w){2,3})+)$").Success;
         }
+
         private void GetCustomerFromForm()
         {
             if (checkTextBox(txtName) && checkTextBox(txtGender) && checkTextBox(txtPhone) && checkTextBox(txtEmail) && checkTextBox(txtAddress))
@@ -120,6 +123,7 @@ namespace GUI
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin");
             }
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             GetCustomerFromForm();
@@ -133,6 +137,7 @@ namespace GUI
                 }
             }
         }
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             GetCustomerFromForm();
@@ -152,6 +157,7 @@ namespace GUI
                 else MessageBox.Show("Mã nhân viên không tồn tại!");
             }
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try

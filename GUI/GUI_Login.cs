@@ -7,10 +7,9 @@ namespace GUI
 {
     public partial class GUI_Login : Form
     {
-        BUS_Account busAccount = new BUS_Account();
+        private BUS_Account busAccount = new BUS_Account();
 
         private bool isHidePw = true;
-
 
         public GUI_Login()
         {
@@ -76,7 +75,7 @@ namespace GUI
             errorProvider.Clear();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void lklRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             GUI_Register f = new GUI_Register();
             this.Hide();

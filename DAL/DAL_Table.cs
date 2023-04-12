@@ -5,11 +5,13 @@ namespace DAL
 {
     public class DAL_Table
     {
-        QLCPEntities db = new QLCPEntities();
+        private QLCPEntities db = new QLCPEntities();
+
         public List<Ban> GetTableCoffees()
         {
             return db.Bans.ToList();
         }
+
         public void Add(Ban tableCoffee)
         {
             db.Bans.Add(tableCoffee);
@@ -22,6 +24,7 @@ namespace DAL
             t.Ten = tableCoffee.Ten;
             db.SaveChanges();
         }
+
         public void Delete(Ban tableCoffee)
         {
             db.Bans.Remove(tableCoffee);

@@ -5,7 +5,7 @@ namespace DAL
 {
     public class DAL_BillDelivery
     {
-        QLCPEntities db = new QLCPEntities();
+        private QLCPEntities db = new QLCPEntities();
 
         public List<HDGiaoHang> GetBillDeliveries()
         {
@@ -17,6 +17,7 @@ namespace DAL
             db.HDGiaoHangs.Add(billDelivery);
             db.SaveChanges();
         }
+
         public void Update(HDGiaoHang billDelivery)
         {
             HDGiaoHang b = db.HDGiaoHangs.Find(billDelivery.Ma);
@@ -27,6 +28,7 @@ namespace DAL
             b.ThoiGianNhan = billDelivery.ThoiGianNhan;
             db.SaveChanges();
         }
+
         public void Delete(HDGiaoHang billDelivery)
         {
             db.HDGiaoHangs.Remove(billDelivery);

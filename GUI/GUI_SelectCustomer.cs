@@ -7,10 +7,10 @@ namespace GUI
 {
     public partial class GUI_SelectCustomer : Form
     {
-        BUS_Customer busCustomer = new BUS_Customer();
-        BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
-        int selectedCustomerID = 0;
-        HDTaiQuan _billAtShop = null;
+        private BUS_Customer busCustomer = new BUS_Customer();
+        private BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
+        private int selectedCustomerID = 0;
+        private HDTaiQuan _billAtShop = null;
 
         public GUI_SelectCustomer(HDTaiQuan billAtShop)
         {
@@ -25,7 +25,6 @@ namespace GUI
 
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             selectedCustomerID = (int)dgvCustomer[1, e.RowIndex].Value;
         }
 

@@ -10,16 +10,18 @@ namespace GUI
 {
     public partial class GUI_Account : Form
     {
-        BUS_Account busAccount = new BUS_Account();
-        BUS_Position busPosition = new BUS_Position();
+        private BUS_Account busAccount = new BUS_Account();
+        private BUS_Position busPosition = new BUS_Position();
 
-        List<TaiKhoan> accountList = new List<TaiKhoan>();
-        List<Quyen> positionList = new List<Quyen>();
-        TaiKhoan accountFromForm;
+        private List<TaiKhoan> accountList = new List<TaiKhoan>();
+        private List<Quyen> positionList = new List<Quyen>();
+        private TaiKhoan accountFromForm;
+
         public GUI_Account()
         {
             InitializeComponent();
         }
+
         private void UpdateDgv(List<TaiKhoan> accountList)
         {
             dgvAccount.DataSource = accountList.Select(x => new { x.TenDangNhap, x.MatKhau, x.Email, Quyen = x.Quyen.Ten }).ToList();
@@ -46,7 +48,6 @@ namespace GUI
             cboPosition.SelectedValue = a.MaQuyen;
         }
 
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             UpdateDgv(accountList.Where(x => x.TenDangNhap.ToLower().Contains(txtSearch.Text)).ToList());
@@ -66,6 +67,7 @@ namespace GUI
             cboPosition.SelectedIndex = 0;
             UpdateDgv(accountList);
         }
+
         private bool checkTextBox(Guna2TextBox textBox)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
@@ -100,6 +102,7 @@ namespace GUI
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin");
             }
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             GetAccountFromForm();
@@ -113,7 +116,8 @@ namespace GUI
                         {
                             busAccount.Add(accountFromForm);
                             MessageBox.Show("Thêm thành công!");
-                            GUI_Account_Load(sender, e);
+                            accountList = busAccount.GetAccounts();
+                            UpdateDgv(accountList);
                         }
                     }
                     else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
@@ -121,6 +125,7 @@ namespace GUI
                 else MessageBox.Show("Tên tài khoản đã tồn tại!");
             }
         }
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             GetAccountFromForm();
@@ -135,15 +140,16 @@ namespace GUI
                         {
                             busAccount.Update(accountFromForm);
                             MessageBox.Show("Sửa thông tin thành công!");
-                            GUI_Account_Load(sender, e);
+                            accountList = busAccount.GetAccounts();
+                            UpdateDgv(accountList);
                         }
-
                     }
                     else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
                 }
                 else MessageBox.Show("Tên đăng nhập không tồn tại!");
             }
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (checkTextBox(txtUn))
@@ -153,11 +159,13 @@ namespace GUI
                     TaiKhoan a = accountList.SingleOrDefault(x => x.TenDangNhap == txtUn.Text);
                     busAccount.Delete(a);
                     MessageBox.Show("Xoá thành công!");
-                    GUI_Account_Load(sender, e);
+                    accountList = busAccount.GetAccounts();
+                    UpdateDgv(accountList);
                 }
             }
             else MessageBox.Show("Chưa có tài khoản nào được chọn!");
         }
+
         private void txtUn_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();

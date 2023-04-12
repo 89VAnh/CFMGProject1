@@ -5,7 +5,8 @@ namespace DAL
 {
     public class DAL_Position
     {
-        QLCPEntities db = new QLCPEntities();
+        private QLCPEntities db = new QLCPEntities();
+
         public List<Quyen> GetPositions()
         {
             return db.Quyens.ToList();

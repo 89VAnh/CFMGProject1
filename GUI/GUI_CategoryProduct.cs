@@ -9,11 +9,10 @@ namespace GUI
 {
     public partial class GUI_CategoryProduct : Form
     {
-        BUS_CategoryProduct busCategoryProduct = new BUS_CategoryProduct();
+        private BUS_CategoryProduct busCategoryProduct = new BUS_CategoryProduct();
 
-        List<DanhMucSanPham> categoryProductList;
-        int selectedCategoryProductID = 0;
-
+        private List<DanhMucSanPham> categoryProductList;
+        private int selectedCategoryProductID = 0;
 
         public GUI_CategoryProduct()
         {
@@ -23,8 +22,8 @@ namespace GUI
         private void UpdateDgv(List<DanhMucSanPham> categoryProductList)
         {
             dgvCategoryProduct.DataSource = categoryProductList.Select(x => new { x.Ma, x.Ten, SoLuong = x.SanPhams.Count }).ToList();
-
         }
+
         private void GUI_CategoryProduct_Load(object sender, EventArgs e)
         {
             categoryProductList = busCategoryProduct.GetCategoryProducts();

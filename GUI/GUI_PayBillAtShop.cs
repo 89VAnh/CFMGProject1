@@ -10,14 +10,13 @@ namespace GUI
 {
     public partial class GUI_PayBillAtShop : Form
     {
-        BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
-        BUS_Customer busCustomer = new BUS_Customer();
+        private BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
+        private BUS_Customer busCustomer = new BUS_Customer();
 
-        List<KhachHang> customers = new List<KhachHang>();
-        HDTaiQuan b;
-        EventHandler AcceptPay;
-        int id;
-
+        private List<KhachHang> customers = new List<KhachHang>();
+        private HDTaiQuan b;
+        private EventHandler AcceptPay;
+        private int id;
 
         public GUI_PayBillAtShop()
         {
@@ -50,6 +49,7 @@ namespace GUI
         {
             this.Close();
         }
+
         private bool CheckCustomerID()
         {
             string text = txtCustomer.Text;
@@ -63,6 +63,7 @@ namespace GUI
             }
             return false;
         }
+
         private void btnAccept_Click(object sender, EventArgs e)
         {
             if (CheckCustomerID())
@@ -78,6 +79,5 @@ namespace GUI
             }
             else MessageBox.Show("Mã khách hàng không tồn tại!");
         }
-
     }
 }

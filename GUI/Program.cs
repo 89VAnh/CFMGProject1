@@ -9,13 +9,11 @@ namespace GUI
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new GUI_Login());
-            Application.Run(new GUI_Main());
-
+            Application.Run(new GUI_Login());
         }
     }
 }

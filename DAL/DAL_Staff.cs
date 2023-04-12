@@ -5,21 +5,24 @@ namespace DAL
 {
     public class DAL_Staff
     {
+        private QLCPEntities db = new QLCPEntities();
 
-        QLCPEntities db = new QLCPEntities();
         public NhanVien GetStaffByID(string id)
         {
             return db.NhanViens.Find(id);
         }
+
         public List<NhanVien> GetStaffs()
         {
             return db.NhanViens.ToList();
         }
+
         public void Add(NhanVien staff)
         {
             db.NhanViens.Add(staff);
             db.SaveChanges();
         }
+
         public void Update(NhanVien staff)
         {
             NhanVien s = db.NhanViens.SingleOrDefault(x => x.Ma == staff.Ma);
@@ -31,6 +34,7 @@ namespace DAL
             s.MaQuyen = staff.MaQuyen;
             db.SaveChanges();
         }
+
         public void Delete(NhanVien staff)
         {
             db.NhanViens.Remove(staff);

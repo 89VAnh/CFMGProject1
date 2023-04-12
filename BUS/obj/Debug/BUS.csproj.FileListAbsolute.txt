@@ -28,3 +28,18 @@ D:\DATA\HOCTAP\CFMGProject1\BUS\obj\Debug\BUS.dll
 D:\DATA\HOCTAP\CFMGProject1\BUS\obj\Debug\BUS.pdb
 D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\EntityFramework.SqlServer.dll
 D:\DATA\HOCTAP\CFMGProject1\BUS\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\bin\Debug\BUS.dll.config
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\bin\Debug\BUS.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\bin\Debug\BUS.pdb
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\bin\Debug\DAL.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\bin\Debug\EntityFramework.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\bin\Debug\DAL.pdb
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\bin\Debug\DAL.dll.config
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\bin\Debug\EntityFramework.xml
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\obj\Debug\BUS.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\BUS\obj\Debug\BUS.pdb

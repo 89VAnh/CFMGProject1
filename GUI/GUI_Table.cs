@@ -9,17 +9,20 @@ namespace GUI
 {
     public partial class GUI_Table : Form
     {
-        BUS_Table busTable = new BUS_Table();
-        List<Ban> tableList;
-        int selectedTableID = 0;
+        private BUS_Table busTable = new BUS_Table();
+        private List<Ban> tableList;
+        private int selectedTableID = 0;
+
         public GUI_Table()
         {
             InitializeComponent();
         }
+
         private void UpdateDgv(List<Ban> tables)
         {
             dgvTable.DataSource = tables.Select(x => new { x.Ma, x.Ten, x.TrangThai }).ToList();
         }
+
         private void GUI_Table_Load(object sender, EventArgs e)
         {
             tableList = busTable.GetTableCoffees();
@@ -49,11 +52,9 @@ namespace GUI
             UpdateDgv(tableList);
         }
 
-
         private string getTableStatus(int tableID)
         {
             return tableList.SingleOrDefault(x => x.Ma == selectedTableID).TrangThai;
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -108,7 +109,6 @@ namespace GUI
             {
                 if (getTableStatus(selectedTableID) == "Trống")
                 {
-
                     if (MessageBox.Show("Bạn có chắc chắn muốn xoá bàn này không?", "Cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         Ban t = tableList
@@ -123,6 +123,5 @@ namespace GUI
             }
             else MessageBox.Show("Vui lòng chọn 1 bàn!", "Thao tác không hợp lệ");
         }
-
     }
 }

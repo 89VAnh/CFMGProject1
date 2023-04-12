@@ -6,39 +6,48 @@ namespace BUS
 {
     public class BUS_BillAtShop
     {
-        DAL_BillAtShop dalBillAtShop = new DAL_BillAtShop();
-        public List<HDTaiQuan> GetBillAtShops()
+        private DAL_BillAtShop dalBillAtShop = new DAL_BillAtShop();
+
+        public List<HDTaiQuan> GetBillAtShopes()
         {
-            return dalBillAtShop.GetBillAtShops();
+            return dalBillAtShop.GetBillAtShopes();
         }
+
         public int GetNewID()
         {
-            List<HDTaiQuan> billAtShops = dalBillAtShop.GetBillAtShops();
+            List<HDTaiQuan> billAtShops = dalBillAtShop.GetBillAtShopes();
             if (billAtShops.Count == 0) return 1;
             else return billAtShops.Last().Ma + 1;
         }
+
         public HDTaiQuan GetBillAtShopByTableID(int tableID)
         {
-            return dalBillAtShop.GetBillAtShopByTableID(tableID);
+            return GetBillAtShopes().SingleOrDefault(x => x.MaBan == tableID && x.ThoiGianRa == null);
         }
+
         public List<HDTaiQuan> GetBillTakeAwayUnPaid()
         {
-            return GetBillAtShops().Where(x => x.Ban == null && x.ThoiGianRa == null).ToList();
+            var bills = GetBillAtShopes();
+            return GetBillAtShopes().Where(x => x.MaBan == null && x.ThoiGianRa == null).ToList();
         }
+
         public void SwapTable(int oldTableID, int newTableID)
         {
             HDTaiQuan b = GetBillAtShopByTableID(oldTableID);
             b.MaBan = newTableID;
-            dalBillAtShop.Update(b);
+            Update(b);
         }
+
         public void Add(HDTaiQuan billAtShop)
         {
             dalBillAtShop.Add(billAtShop);
         }
+
         public void Update(HDTaiQuan billAtShop)
         {
             dalBillAtShop.Update(billAtShop);
         }
+
         public void Delete(HDTaiQuan billAtShop)
         {
             dalBillAtShop.Delete(billAtShop);

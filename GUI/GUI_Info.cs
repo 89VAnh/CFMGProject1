@@ -8,12 +8,14 @@ namespace GUI
 {
     public partial class GUI_Info : Form
     {
-        BUS_Account busAccount = new BUS_Account();
-        TaiKhoan account;
+        private BUS_Account busAccount = new BUS_Account();
+        private TaiKhoan account;
+
         public GUI_Info()
         {
             InitializeComponent();
         }
+
         private void GUI_Info_Load(object sender, EventArgs e)
         {
             account = BUS_Account.currentAccount;
@@ -53,7 +55,6 @@ namespace GUI
                 {
                     if (txtNewPw.Text.Length >= 6)
                     {
-
                         if (txtRePw.Text == txtNewPw.Text)
                         {
                             busAccount.Update(new TaiKhoan

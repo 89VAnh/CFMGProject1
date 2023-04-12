@@ -10,10 +10,11 @@ namespace GUI
 {
     public partial class GUI_Register : Form
     {
-        bool isHidePw = true;
-        bool isHideRePw = true;
-        BUS_Position busPosition = new BUS_Position();
-        BUS_Account busAccount = new BUS_Account();
+        private bool isHidePw = true;
+        private bool isHideRePw = true;
+        private BUS_Position busPosition = new BUS_Position();
+        private BUS_Account busAccount = new BUS_Account();
+
         public GUI_Register()
         {
             InitializeComponent();
@@ -63,6 +64,7 @@ namespace GUI
             f.ShowDialog();
             this.Close();
         }
+
         private bool checkTextBox(Guna2TextBox textBox)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
@@ -72,6 +74,7 @@ namespace GUI
             }
             else return true;
         }
+
         private TaiKhoan getAccountFromForm()
         {
             if (checkTextBox(txtUn) && checkTextBox(txtPw) && checkTextBox(txtEmail))
@@ -90,10 +93,12 @@ namespace GUI
                 return null;
             }
         }
+
         private bool checkEmail(string email)
         {
             return Regex.Match(email, @"^([\w\.-]+)@([\w-]+)((\.(\w){2,3})+)$").Success;
         }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             TaiKhoan accountFromForm = getAccountFromForm();
@@ -120,7 +125,6 @@ namespace GUI
                 else MessageBox.Show("Mật khẩu chứa tối thiểu 6 ký tự");
             }
             else MessageBox.Show("Tên tài khoản đã tồn tại!");
-
         }
     }
 }

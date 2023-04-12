@@ -7,6 +7,7 @@ namespace GUI
     public partial class Table : UserControl
     {
         private string status = "Trống";
+
         public Table(int id, string text, string status, EventHandler table_Click)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace GUI
             this.btnTable.Image = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + "Resources/" + s + ".png");
         }
 
-        public string GetStatus() { return status; }
+        public string GetStatus()
+        { return status; }
     }
 }

@@ -11,12 +11,13 @@ namespace GUI
 {
     public partial class GUI_Staff : Form
     {
-        BUS_Staff busStaff = new BUS_Staff();
-        BUS_Position busPosition = new BUS_Position();
+        private BUS_Staff busStaff = new BUS_Staff();
+        private BUS_Position busPosition = new BUS_Position();
 
-        List<NhanVien> staffList = new List<NhanVien>();
-        List<Quyen> positionList = new List<Quyen>();
-        NhanVien staffFromForm;
+        private List<NhanVien> staffList = new List<NhanVien>();
+        private List<Quyen> positionList = new List<Quyen>();
+        private NhanVien staffFromForm;
+
         public GUI_Staff()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace GUI
         {
             dgvStaff.DataSource = staffList.Select(x => new { x.Ma, x.Ten, x.GioiTinh, x.SDT, x.Email, x.DiaChi, ChucVu = x.Quyen.Ten }).ToList();
         }
+
         private void GUI_Staff_Load(object sender, EventArgs e)
         {
             positionList = busPosition.GetPositions();
@@ -72,6 +74,7 @@ namespace GUI
             cboPosition.SelectedIndex = -1;
             UpdateDgv(staffList);
         }
+
         private bool checkTextBox(Guna2TextBox textBox)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
@@ -86,20 +89,21 @@ namespace GUI
         {
             if (cboPosition.SelectedIndex != -1)
             {
-
                 UpdateDgv(staffList
                     .Where(x => x.MaQuyen == cboPosition.SelectedValue.ToString()).ToList());
             }
         }
+
         private bool checkPhone(string phone)
         {
             return Regex.Match(phone, @"^\d{10}$").Success;
-
         }
+
         private bool checkEmail(string email)
         {
             return Regex.Match(email, @"^([\w\.-]+)@([\w-]+)((\.(\w){2,3})+)$").Success;
         }
+
         private void GetStaffFromForm()
         {
             if (checkTextBox(txtID) && checkTextBox(txtName) && checkTextBox(txtGender) && checkTextBox(txtPhone) && checkTextBox(txtEmail) && checkTextBox(txtAddress))
@@ -137,6 +141,7 @@ namespace GUI
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin");
             }
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             GetStaffFromForm();
@@ -148,18 +153,19 @@ namespace GUI
                     {
                         busStaff.Add(staffFromForm);
                         MessageBox.Show("Thêm thành công!");
-                        GUI_Staff_Load(sender, e);
+                        staffList = busStaff.GetStaffs();
+                        UpdateDgv(staffList);
                     }
                 }
                 else MessageBox.Show("Mã nhân viên đã tồn tại!");
             }
         }
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             GetStaffFromForm();
             if (staffFromForm != null)
             {
-
                 NhanVien staff = staffList.SingleOrDefault(x => x.Ma == staffFromForm.Ma);
                 if (staff != null)
                 {
@@ -167,12 +173,14 @@ namespace GUI
                     {
                         busStaff.Update(staffFromForm);
                         MessageBox.Show("Sửa thông tin thành công!");
-                        GUI_Staff_Load(sender, e);
+                        staffList = busStaff.GetStaffs();
+                        UpdateDgv(staffList);
                     }
                 }
                 else MessageBox.Show("Mã nhân viên không tồn tại!");
             }
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (checkTextBox(txtID))
@@ -182,11 +190,13 @@ namespace GUI
                     NhanVien a = staffList.SingleOrDefault(x => x.Ma == txtID.Text);
                     busStaff.Delete(a);
                     MessageBox.Show("Xoá thành công!");
-                    GUI_Staff_Load(sender, e);
+                    staffList = busStaff.GetStaffs();
+                    UpdateDgv(staffList);
                 }
             }
             else MessageBox.Show("Chưa có nhân viên nào được chọn!");
         }
+
         private void txtID_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
