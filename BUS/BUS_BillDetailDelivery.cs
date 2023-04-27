@@ -17,9 +17,7 @@ namespace BUS
 
         public int GetNewID()
         {
-            billDetailDeliveries = GetBillDetailDeliveries();
-            if (billDetailDeliveries.Count == 0) return 1;
-            else return billDetailDeliveries.Last().Ma + 1;
+            return GetBillDetailDeliveries().Count() == 0 ? 1 : GetBillDetailDeliveries().Last().Ma + 1;
         }
 
         public void AddAmount(CTHDGiaoHang bd, int amount, string note)

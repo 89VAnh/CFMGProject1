@@ -67,6 +67,8 @@
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtNote = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPay = new Guna.UI2.WinForms.Guna2Button();
@@ -85,8 +87,6 @@
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtBillID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
@@ -113,7 +113,7 @@
             this.btnSearch.Location = new System.Drawing.Point(290, 17);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(103, 36);
-            this.btnSearch.TabIndex = 3;
+            this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.UseTransparentBackground = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -126,7 +126,7 @@
             this.label3.Location = new System.Drawing.Point(45, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 23);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 14;
             this.label3.Text = "Số lượng :";
             // 
             // label2
@@ -137,7 +137,7 @@
             this.label2.Location = new System.Drawing.Point(45, 248);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 23);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Ghi chú :";
             // 
             // guna2HtmlLabel1
@@ -147,7 +147,7 @@
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(-19, -64);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(175, 25);
-            this.guna2HtmlLabel1.TabIndex = 24;
+            this.guna2HtmlLabel1.TabIndex = 1;
             this.guna2HtmlLabel1.Text = "Chọn danh mục món :";
             // 
             // cboProduct
@@ -166,7 +166,7 @@
             this.cboProduct.Location = new System.Drawing.Point(222, 117);
             this.cboProduct.Name = "cboProduct";
             this.cboProduct.Size = new System.Drawing.Size(247, 36);
-            this.cboProduct.TabIndex = 1;
+            this.cboProduct.TabIndex = 3;
             this.cboProduct.SelectedIndexChanged += new System.EventHandler(this.cboProduct_SelectedIndexChanged);
             // 
             // txtSearch
@@ -193,7 +193,7 @@
             this.txtSearch.PlaceholderText = "Tìm kiếm";
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(220, 36);
-            this.txtSearch.TabIndex = 3;
+            this.txtSearch.TabIndex = 7;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // cboDiscountType
@@ -218,7 +218,7 @@
             this.cboDiscountType.Name = "cboDiscountType";
             this.cboDiscountType.Size = new System.Drawing.Size(95, 30);
             this.cboDiscountType.StartIndex = 0;
-            this.cboDiscountType.TabIndex = 46;
+            this.cboDiscountType.TabIndex = 5;
             this.cboDiscountType.SelectedIndexChanged += new System.EventHandler(this.cboDiscountType_SelectedIndexChanged);
             // 
             // cboCategoryProduct
@@ -237,7 +237,7 @@
             this.cboCategoryProduct.Location = new System.Drawing.Point(222, 61);
             this.cboCategoryProduct.Name = "cboCategoryProduct";
             this.cboCategoryProduct.Size = new System.Drawing.Size(247, 36);
-            this.cboCategoryProduct.TabIndex = 0;
+            this.cboCategoryProduct.TabIndex = 2;
             this.cboCategoryProduct.SelectedIndexChanged += new System.EventHandler(this.cboCategoryProduct_SelectedIndexChanged);
             // 
             // numDiscount
@@ -258,7 +258,7 @@
             0});
             this.numDiscount.Name = "numDiscount";
             this.numDiscount.Size = new System.Drawing.Size(203, 36);
-            this.numDiscount.TabIndex = 49;
+            this.numDiscount.TabIndex = 4;
             this.numDiscount.ThousandsSeparator = true;
             this.numDiscount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.numDiscount.UseTransparentBackground = true;
@@ -273,8 +273,8 @@
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProduct.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -317,7 +317,7 @@
             this.dgvProduct.RowHeadersWidth = 51;
             this.dgvProduct.RowTemplate.Height = 24;
             this.dgvProduct.Size = new System.Drawing.Size(660, 111);
-            this.dgvProduct.TabIndex = 25;
+            this.dgvProduct.TabIndex = 6;
             this.dgvProduct.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.dgvProduct.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.dgvProduct.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -385,7 +385,7 @@
             this.numAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numAmount.Name = "numAmount";
             this.numAmount.Size = new System.Drawing.Size(100, 28);
-            this.numAmount.TabIndex = 27;
+            this.numAmount.TabIndex = 4;
             this.numAmount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.numAmount.UseTransparentBackground = true;
             this.numAmount.Value = new decimal(new int[] {
@@ -411,7 +411,7 @@
             0});
             this.numTotalPrice.Name = "numTotalPrice";
             this.numTotalPrice.Size = new System.Drawing.Size(292, 41);
-            this.numTotalPrice.TabIndex = 48;
+            this.numTotalPrice.TabIndex = 6;
             this.numTotalPrice.ThousandsSeparator = true;
             this.numTotalPrice.UpDownButtonFillColor = System.Drawing.Color.Transparent;
             this.numTotalPrice.UpDownButtonForeColor = System.Drawing.Color.Transparent;
@@ -435,7 +435,7 @@
             this.btnDelBillDetail.Location = new System.Drawing.Point(504, 187);
             this.btnDelBillDetail.Name = "btnDelBillDetail";
             this.btnDelBillDetail.Size = new System.Drawing.Size(146, 36);
-            this.btnDelBillDetail.TabIndex = 37;
+            this.btnDelBillDetail.TabIndex = 11;
             this.btnDelBillDetail.Text = "Xoá món";
             this.btnDelBillDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDelBillDetail.Click += new System.EventHandler(this.btnDelBillDetail_Click);
@@ -458,7 +458,7 @@
             this.btnUpdateBillDetail.Location = new System.Drawing.Point(504, 122);
             this.btnUpdateBillDetail.Name = "btnUpdateBillDetail";
             this.btnUpdateBillDetail.Size = new System.Drawing.Size(146, 36);
-            this.btnUpdateBillDetail.TabIndex = 38;
+            this.btnUpdateBillDetail.TabIndex = 10;
             this.btnUpdateBillDetail.Text = "Sửa món";
             this.btnUpdateBillDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnUpdateBillDetail.Click += new System.EventHandler(this.btnUpdateBillDetail_Click);
@@ -481,7 +481,7 @@
             this.btnAddBillDetail.Location = new System.Drawing.Point(504, 61);
             this.btnAddBillDetail.Name = "btnAddBillDetail";
             this.btnAddBillDetail.Size = new System.Drawing.Size(146, 36);
-            this.btnAddBillDetail.TabIndex = 36;
+            this.btnAddBillDetail.TabIndex = 9;
             this.btnAddBillDetail.Text = "Thêm món";
             this.btnAddBillDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAddBillDetail.Click += new System.EventHandler(this.btnAddBillDetail_Click);
@@ -495,8 +495,8 @@
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBillDetailDelivery.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
-            this.dgvBillDetailDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvBillDetailDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBillDetailDelivery.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -541,7 +541,7 @@
             this.dgvBillDetailDelivery.RowHeadersWidth = 51;
             this.dgvBillDetailDelivery.RowTemplate.Height = 24;
             this.dgvBillDetailDelivery.Size = new System.Drawing.Size(800, 418);
-            this.dgvBillDetailDelivery.TabIndex = 44;
+            this.dgvBillDetailDelivery.TabIndex = 10;
             this.dgvBillDetailDelivery.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.dgvBillDetailDelivery.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.dgvBillDetailDelivery.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -612,7 +612,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.guna2Panel1.BorderThickness = 2;
@@ -635,7 +635,29 @@
             this.guna2Panel1.Location = new System.Drawing.Point(808, 393);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(675, 430);
-            this.guna2Panel1.TabIndex = 35;
+            this.guna2Panel1.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
+            this.label4.Location = new System.Drawing.Point(45, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Chọn món :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
+            this.label5.Location = new System.Drawing.Point(45, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(138, 23);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Danh mục món :";
             // 
             // txtNote
             // 
@@ -659,7 +681,7 @@
             this.txtNote.PlaceholderText = "";
             this.txtNote.SelectedText = "";
             this.txtNote.Size = new System.Drawing.Size(247, 70);
-            this.txtNote.TabIndex = 26;
+            this.txtNote.TabIndex = 5;
             // 
             // label1
             // 
@@ -670,7 +692,7 @@
             this.label1.Location = new System.Drawing.Point(834, 256);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 23);
-            this.label1.TabIndex = 41;
+            this.label1.TabIndex = 12;
             this.label1.Text = "Giảm giá :";
             // 
             // btnPay
@@ -688,7 +710,7 @@
             this.btnPay.Location = new System.Drawing.Point(1142, 297);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(299, 61);
-            this.btnPay.TabIndex = 43;
+            this.btnPay.TabIndex = 11;
             this.btnPay.Text = "XÁC NHẬN THANH TOÁN";
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
@@ -701,7 +723,7 @@
             dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBillDelivery.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
-            this.dgvBillDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvBillDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBillDelivery.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -745,7 +767,7 @@
             this.dgvBillDelivery.RowHeadersWidth = 51;
             this.dgvBillDelivery.RowTemplate.Height = 24;
             this.dgvBillDelivery.Size = new System.Drawing.Size(800, 388);
-            this.dgvBillDelivery.TabIndex = 53;
+            this.dgvBillDelivery.TabIndex = 0;
             this.dgvBillDelivery.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.dgvBillDelivery.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.dgvBillDelivery.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -824,7 +846,7 @@
             this.btnDelBill.Location = new System.Drawing.Point(1055, 12);
             this.btnDelBill.Name = "btnDelBill";
             this.btnDelBill.Size = new System.Drawing.Size(181, 43);
-            this.btnDelBill.TabIndex = 55;
+            this.btnDelBill.TabIndex = 8;
             this.btnDelBill.Text = "Xoá hoá đơn";
             this.btnDelBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDelBill.Click += new System.EventHandler(this.btnDelBill_Click);
@@ -848,7 +870,7 @@
             this.btnUpdateBill.Location = new System.Drawing.Point(1255, 12);
             this.btnUpdateBill.Name = "btnUpdateBill";
             this.btnUpdateBill.Size = new System.Drawing.Size(186, 43);
-            this.btnUpdateBill.TabIndex = 56;
+            this.btnUpdateBill.TabIndex = 9;
             this.btnUpdateBill.Text = "Sửa hoá đơn";
             this.btnUpdateBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnUpdateBill.Click += new System.EventHandler(this.btnUpdateBill_Click);
@@ -872,7 +894,7 @@
             this.btnAddBill.Location = new System.Drawing.Point(827, 12);
             this.btnAddBill.Name = "btnAddBill";
             this.btnAddBill.Size = new System.Drawing.Size(197, 43);
-            this.btnAddBill.TabIndex = 54;
+            this.btnAddBill.TabIndex = 7;
             this.btnAddBill.Text = "Thêm hoá đơn";
             this.btnAddBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAddBill.Click += new System.EventHandler(this.btnAddBill_Click);
@@ -888,7 +910,7 @@
             this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(149, 44);
-            this.guna2HtmlLabel6.TabIndex = 58;
+            this.guna2HtmlLabel6.TabIndex = 14;
             this.guna2HtmlLabel6.Text = "Mã khách hàng :";
             // 
             // txtCustomer
@@ -914,7 +936,7 @@
             this.txtCustomer.PlaceholderText = "";
             this.txtCustomer.SelectedText = "";
             this.txtCustomer.Size = new System.Drawing.Size(191, 36);
-            this.txtCustomer.TabIndex = 57;
+            this.txtCustomer.TabIndex = 2;
             // 
             // guna2HtmlLabel4
             // 
@@ -927,7 +949,7 @@
             this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(83, 44);
-            this.guna2HtmlLabel4.TabIndex = 60;
+            this.guna2HtmlLabel4.TabIndex = 15;
             this.guna2HtmlLabel4.Text = "Địa chỉ :";
             // 
             // txtAddress
@@ -953,7 +975,7 @@
             this.txtAddress.PlaceholderText = "";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(485, 36);
-            this.txtAddress.TabIndex = 59;
+            this.txtAddress.TabIndex = 3;
             // 
             // guna2HtmlLabel5
             // 
@@ -966,7 +988,7 @@
             this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(119, 44);
-            this.guna2HtmlLabel5.TabIndex = 62;
+            this.guna2HtmlLabel5.TabIndex = 13;
             this.guna2HtmlLabel5.Text = "Mã hoá đơn:";
             // 
             // txtBillID
@@ -993,29 +1015,7 @@
             this.txtBillID.ReadOnly = true;
             this.txtBillID.SelectedText = "";
             this.txtBillID.Size = new System.Drawing.Size(103, 36);
-            this.txtBillID.TabIndex = 61;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
-            this.label5.Location = new System.Drawing.Point(45, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 23);
-            this.label5.TabIndex = 40;
-            this.label5.Text = "Danh mục món :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
-            this.label4.Location = new System.Drawing.Point(45, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Chọn món :";
+            this.txtBillID.TabIndex = 1;
             // 
             // GUI_BillDelivery
             // 

@@ -76,7 +76,7 @@ namespace GUI
                     MessageBox.Show("Thêm bàn thành công!");
                 }
             }
-            else MessageBox.Show("Vui lòng nhập tên bàn");
+            else MessageBox.Show("Vui lòng nhập tên bàn!");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

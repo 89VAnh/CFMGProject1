@@ -17,9 +17,7 @@ namespace BUS
 
         public int GetNewID()
         {
-            List<Ban> tables = GetTableCoffees();
-            if (tables.Count == 0) return 1;
-            else return tables.Last().Ma + 1;
+            return GetTableCoffees().Count() > 0 ? 1 : GetTableCoffees().Last().Ma + 1;
         }
 
         public void Add(Ban table)

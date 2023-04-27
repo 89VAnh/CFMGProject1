@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -8,12 +9,12 @@ namespace GUI
     {
         private string status = "Trống";
 
-        public Table(int id, string text, string status, EventHandler table_Click)
+        public Table(Ban t, EventHandler table_Click)
         {
             InitializeComponent();
-            this.btnTable.Tag = id;
-            this.btnTable.Text = text;
-            UpdateStatus(status);
+            this.btnTable.Tag = t.Ma;
+            this.btnTable.Text = t.Ten;
+            UpdateStatus(t.TrangThai);
             this.btnTable.Click += table_Click;
         }
 

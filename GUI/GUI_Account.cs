@@ -40,7 +40,7 @@ namespace GUI
 
         private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string un = dgvAccount.SelectedRows[0].Cells[0].Value.ToString();
+            string un = dgvAccount[0, e.RowIndex].Value.ToString();
             TaiKhoan a = accountList.SingleOrDefault(x => x.TenDangNhap == un);
             txtUn.Text = un;
             txtPw.Text = a.MatKhau;
@@ -116,7 +116,7 @@ namespace GUI
                         {
                             busAccount.Add(accountFromForm);
                             MessageBox.Show("Thêm thành công!");
-                            accountList = busAccount.GetAccounts();
+                            accountList.Add(accountFromForm);
                             UpdateDgv(accountList);
                         }
                     }
@@ -140,7 +140,6 @@ namespace GUI
                         {
                             busAccount.Update(accountFromForm);
                             MessageBox.Show("Sửa thông tin thành công!");
-                            accountList = busAccount.GetAccounts();
                             UpdateDgv(accountList);
                         }
                     }
@@ -154,12 +153,12 @@ namespace GUI
         {
             if (checkTextBox(txtUn))
             {
-                if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show($"Xác nhận xoá tài khoản '{txtUn.Text}'", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     TaiKhoan a = accountList.SingleOrDefault(x => x.TenDangNhap == txtUn.Text);
                     busAccount.Delete(a);
                     MessageBox.Show("Xoá thành công!");
-                    accountList = busAccount.GetAccounts();
+                    accountList.Remove(a);
                     UpdateDgv(accountList);
                 }
             }

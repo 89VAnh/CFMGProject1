@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -50,6 +54,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -139,17 +144,11 @@
     <Compile Include="GUI_Product.Designer.cs">
       <DependentUpon>GUI_Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI_Register.cs">
+    <Compile Include="GUI_Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI_Register.Designer.cs">
-      <DependentUpon>GUI_Register.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_SelectCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI_SelectCustomer.Designer.cs">
-      <DependentUpon>GUI_SelectCustomer.cs</DependentUpon>
+    <Compile Include="GUI_Report.Designer.cs">
+      <DependentUpon>GUI_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_Staff.cs">
       <SubType>Form</SubType>
@@ -210,11 +209,8 @@
     <EmbeddedResource Include="GUI_Product.resx">
       <DependentUpon>GUI_Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI_Register.resx">
-      <DependentUpon>GUI_Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI_SelectCustomer.resx">
-      <DependentUpon>GUI_SelectCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_Report.resx">
+      <DependentUpon>GUI_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Staff.resx">
       <DependentUpon>GUI_Staff.cs</DependentUpon>

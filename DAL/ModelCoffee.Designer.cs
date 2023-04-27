@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\DATA\HOCTAP\CFMGProject1\DAL\ModelCoffee.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\DAL\ModelCoffee.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

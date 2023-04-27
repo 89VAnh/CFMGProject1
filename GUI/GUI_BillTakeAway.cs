@@ -173,25 +173,23 @@ namespace GUI
 
         private void btnAddBill_Click(object sender, EventArgs e)
         {
-            if (selectedProductID > 0)
-                if (cboStaff.SelectedValue != null)
+            if (cboStaff.SelectedValue != null)
+            {
+                HDTaiQuan bill = new HDTaiQuan { Ma = busBillAtShop.GetNewID(), MaNV = cboStaff.SelectedValue.ToString(), GiamGia = "", TongTien = 0, ThoiGianVao = DateTime.Now };
+                if (CheckCustomerID())
                 {
-                    HDTaiQuan bill = new HDTaiQuan { Ma = busBillAtShop.GetNewID(), MaNV = cboStaff.SelectedValue.ToString(), GiamGia = "", TongTien = 0, ThoiGianVao = DateTime.Now };
-                    if (CheckCustomerID())
+                    if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            if (selectedCustomerID > 0)
-                                bill.MaKH = selectedCustomerID;
-                            busBillAtShop.Add(bill);
-                            billTakeAways.Add(bill);
-                            UpdateDgvBill();
-                        }
+                        if (selectedCustomerID > 0)
+                            bill.MaKH = selectedCustomerID;
+                        busBillAtShop.Add(bill);
+                        billTakeAways.Add(bill);
+                        UpdateDgvBill();
                     }
-                    else MessageBox.Show("Mã khách hàng không hợp lệ!");
                 }
-                else MessageBox.Show("Vui lòng chọn mã nhân viên!");
-            else MessageBox.Show("Vui lòng chọn món!");
+                else MessageBox.Show("Mã khách hàng không hợp lệ!");
+            }
+            else MessageBox.Show("Vui lòng chọn mã nhân viên!");
         }
 
         private void btnDelBill_Click(object sender, EventArgs e)

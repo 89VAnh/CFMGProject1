@@ -32,8 +32,8 @@ namespace GUI
 
         private void dgvCategoryProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedCategoryProductID = (int)dgvCategoryProduct.SelectedRows[0].Cells[0].Value;
-            txtName.Text = dgvCategoryProduct.SelectedRows[0].Cells[1].Value.ToString();
+            selectedCategoryProductID = (int)dgvCategoryProduct[0, e.RowIndex].Value;
+            txtName.Text = dgvCategoryProduct[1, e.RowIndex].Value.ToString();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

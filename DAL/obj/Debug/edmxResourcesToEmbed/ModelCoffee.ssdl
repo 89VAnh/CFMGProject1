@@ -53,7 +53,7 @@
     <Property Name="Ma" Type="int" Nullable="false" />
     <Property Name="MaBan" Type="int" />
     <Property Name="GiamGia" Type="nvarchar" MaxLength="20" />
-    <Property Name="MaNV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaNV" Type="varchar" MaxLength="10" />
     <Property Name="TongTien" Type="int" Nullable="false" />
     <Property Name="MaKH" Type="int" />
     <Property Name="ThoiGianVao" Type="datetime" Nullable="false" />
@@ -135,7 +135,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CTHDTaiQua__MaHD__5070F446">
+  <Association Name="FK__CTHDTaiQua__MaHD__74AE54BC">
     <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -149,7 +149,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CTHDTaiQua__MaSP__5165187F">
+  <Association Name="FK__CTHDTaiQua__MaSP__75A278F5">
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -177,7 +177,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HDTaiQuan__MaBan__4BAC3F29">
+  <Association Name="FK__HDTaiQuan__MaBan__6FE99F9F">
     <End Role="Ban" Type="Self.Ban" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
@@ -191,7 +191,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HDTaiQuan__MaKH__4D94879B">
+  <Association Name="FK__HDTaiQuan__MaKH__71D1E811">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
@@ -205,8 +205,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HDTaiQuan__MaNV__4CA06362">
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1">
+  <Association Name="FK__HDTaiQuan__MaNV__70DDC3D8">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
     <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="*" />
@@ -281,11 +281,11 @@
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="CTHDGiaoHang" EntitySet="CTHDGiaoHang" />
     </AssociationSet>
-    <AssociationSet Name="FK__CTHDTaiQua__MaHD__5070F446" Association="Self.FK__CTHDTaiQua__MaHD__5070F446">
+    <AssociationSet Name="FK__CTHDTaiQua__MaHD__74AE54BC" Association="Self.FK__CTHDTaiQua__MaHD__74AE54BC">
       <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
       <End Role="CTHDTaiQuan" EntitySet="CTHDTaiQuan" />
     </AssociationSet>
-    <AssociationSet Name="FK__CTHDTaiQua__MaSP__5165187F" Association="Self.FK__CTHDTaiQua__MaSP__5165187F">
+    <AssociationSet Name="FK__CTHDTaiQua__MaSP__75A278F5" Association="Self.FK__CTHDTaiQua__MaSP__75A278F5">
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="CTHDTaiQuan" EntitySet="CTHDTaiQuan" />
     </AssociationSet>
@@ -293,15 +293,15 @@
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="HDGiaoHang" EntitySet="HDGiaoHang" />
     </AssociationSet>
-    <AssociationSet Name="FK__HDTaiQuan__MaBan__4BAC3F29" Association="Self.FK__HDTaiQuan__MaBan__4BAC3F29">
+    <AssociationSet Name="FK__HDTaiQuan__MaBan__6FE99F9F" Association="Self.FK__HDTaiQuan__MaBan__6FE99F9F">
       <End Role="Ban" EntitySet="Ban" />
       <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
     </AssociationSet>
-    <AssociationSet Name="FK__HDTaiQuan__MaKH__4D94879B" Association="Self.FK__HDTaiQuan__MaKH__4D94879B">
+    <AssociationSet Name="FK__HDTaiQuan__MaKH__71D1E811" Association="Self.FK__HDTaiQuan__MaKH__71D1E811">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
     </AssociationSet>
-    <AssociationSet Name="FK__HDTaiQuan__MaNV__4CA06362" Association="Self.FK__HDTaiQuan__MaNV__4CA06362">
+    <AssociationSet Name="FK__HDTaiQuan__MaNV__70DDC3D8" Association="Self.FK__HDTaiQuan__MaNV__70DDC3D8">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
     </AssociationSet>

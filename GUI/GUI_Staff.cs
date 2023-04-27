@@ -41,7 +41,7 @@ namespace GUI
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string staffID = dgvStaff.SelectedRows[0].Cells[0].Value.ToString();
+            string staffID = dgvStaff[0, e.RowIndex].Value.ToString();
             NhanVien s = staffList.SingleOrDefault(x => x.Ma == staffID);
             txtID.Text = staffID;
             txtName.Text = s.Ten;

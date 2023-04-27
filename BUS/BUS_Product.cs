@@ -15,9 +15,7 @@ namespace BUS
 
         public int GetNewID()
         {
-            List<SanPham> products = GetProducts();
-            if (products.Count == 0) return 1;
-            else return products.Last().Ma + 1;
+            return GetProducts().Count() == 0 ? 1 : GetProducts().Last().Ma + 1;
         }
 
         public void Add(SanPham product)

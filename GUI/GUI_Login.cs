@@ -74,13 +74,5 @@ namespace GUI
         {
             errorProvider.Clear();
         }
-
-        private void lklRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            GUI_Register f = new GUI_Register();
-            this.Hide();
-            f.ShowDialog();
-            this.Close();
-        }
     }
 }

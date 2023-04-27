@@ -15,9 +15,7 @@ namespace BUS
 
         public int GetNewID()
         {
-            List<HDTaiQuan> billAtShops = dalBillAtShop.GetBillAtShopes();
-            if (billAtShops.Count == 0) return 1;
-            else return billAtShops.Last().Ma + 1;
+            return GetBillAtShopes().Count() == 0 ? 1 : GetBillAtShopes().Last().Ma + 1;
         }
 
         public HDTaiQuan GetBillAtShopByTableID(int tableID)

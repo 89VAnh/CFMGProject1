@@ -65,7 +65,6 @@
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cboTable = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cboChangeTable = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -75,8 +74,11 @@
             this.btnPay = new Guna.UI2.WinForms.Guna2Button();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.btnChangeTable = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCustomer = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDiscount)).BeginInit();
@@ -98,7 +100,7 @@
             this.numAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numAmount.Name = "numAmount";
             this.numAmount.Size = new System.Drawing.Size(140, 28);
-            this.numAmount.TabIndex = 27;
+            this.numAmount.TabIndex = 2;
             this.numAmount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.numAmount.UseTransparentBackground = true;
             this.numAmount.Value = new decimal(new int[] {
@@ -129,7 +131,7 @@
             this.txtNote.PlaceholderText = "";
             this.txtNote.SelectedText = "";
             this.txtNote.Size = new System.Drawing.Size(263, 70);
-            this.txtNote.TabIndex = 26;
+            this.txtNote.TabIndex = 3;
             // 
             // dgvProduct
             // 
@@ -140,8 +142,8 @@
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProduct.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -184,8 +186,8 @@
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvProduct.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvProduct.RowTemplate.Height = 24;
-            this.dgvProduct.Size = new System.Drawing.Size(499, 137);
-            this.dgvProduct.TabIndex = 25;
+            this.dgvProduct.Size = new System.Drawing.Size(499, 176);
+            this.dgvProduct.TabIndex = 4;
             this.dgvProduct.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.dgvProduct.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.dgvProduct.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -256,11 +258,12 @@
             this.cboDiscountType.Items.AddRange(new object[] {
             "k ₫",
             "%"});
-            this.cboDiscountType.Location = new System.Drawing.Point(1334, 579);
+            this.cboDiscountType.Location = new System.Drawing.Point(1400, 618);
             this.cboDiscountType.Name = "cboDiscountType";
             this.cboDiscountType.Size = new System.Drawing.Size(92, 30);
             this.cboDiscountType.StartIndex = 0;
-            this.cboDiscountType.TabIndex = 28;
+            this.cboDiscountType.TabIndex = 5;
+            this.cboDiscountType.SelectedIndexChanged += new System.EventHandler(this.cboDiscountType_SelectedIndexChanged);
             // 
             // guna2HtmlLabel3
             // 
@@ -282,7 +285,7 @@
             this.numDiscount.BorderRadius = 17;
             this.numDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numDiscount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numDiscount.Location = new System.Drawing.Point(1114, 578);
+            this.numDiscount.Location = new System.Drawing.Point(1180, 617);
             this.numDiscount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numDiscount.Maximum = new decimal(new int[] {
             9999999,
@@ -291,7 +294,7 @@
             0});
             this.numDiscount.Name = "numDiscount";
             this.numDiscount.Size = new System.Drawing.Size(203, 36);
-            this.numDiscount.TabIndex = 30;
+            this.numDiscount.TabIndex = 4;
             this.numDiscount.ThousandsSeparator = true;
             this.numDiscount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.numDiscount.UseTransparentBackground = true;
@@ -381,7 +384,7 @@
             this.txtSearch.PlaceholderText = "Tìm kiếm";
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(316, 36);
-            this.txtSearch.TabIndex = 3;
+            this.txtSearch.TabIndex = 5;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // cboStaff
@@ -399,10 +402,10 @@
             this.cboStaff.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboStaff.ItemHeight = 30;
-            this.cboStaff.Location = new System.Drawing.Point(829, 495);
+            this.cboStaff.Location = new System.Drawing.Point(770, 532);
             this.cboStaff.Name = "cboStaff";
-            this.cboStaff.Size = new System.Drawing.Size(153, 36);
-            this.cboStaff.TabIndex = 32;
+            this.cboStaff.Size = new System.Drawing.Size(123, 36);
+            this.cboStaff.TabIndex = 0;
             this.cboStaff.SelectedIndexChanged += new System.EventHandler(this.cboStaff_SelectedIndexChanged);
             // 
             // numTotalPrice
@@ -414,7 +417,7 @@
             this.numTotalPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numTotalPrice.Enabled = false;
             this.numTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numTotalPrice.Location = new System.Drawing.Point(1118, 655);
+            this.numTotalPrice.Location = new System.Drawing.Point(1184, 694);
             this.numTotalPrice.Margin = new System.Windows.Forms.Padding(4);
             this.numTotalPrice.Maximum = new decimal(new int[] {
             999999999,
@@ -423,7 +426,7 @@
             0});
             this.numTotalPrice.Name = "numTotalPrice";
             this.numTotalPrice.Size = new System.Drawing.Size(328, 42);
-            this.numTotalPrice.TabIndex = 29;
+            this.numTotalPrice.TabIndex = 6;
             this.numTotalPrice.ThousandsSeparator = true;
             this.numTotalPrice.UpDownButtonFillColor = System.Drawing.Color.Transparent;
             this.numTotalPrice.UpDownButtonForeColor = System.Drawing.Color.Transparent;
@@ -444,10 +447,10 @@
             this.btnDel.ForeColor = System.Drawing.Color.White;
             this.btnDel.Image = global::GUI.Properties.Resources.delete;
             this.btnDel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDel.Location = new System.Drawing.Point(1118, 495);
+            this.btnDel.Location = new System.Drawing.Point(1184, 534);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(148, 36);
-            this.btnDel.TabIndex = 20;
+            this.btnDel.TabIndex = 2;
             this.btnDel.Text = "Xoá món";
             this.btnDel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -467,10 +470,10 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Image = global::GUI.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnUpdate.Location = new System.Drawing.Point(961, 495);
+            this.btnUpdate.Location = new System.Drawing.Point(1027, 534);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(144, 36);
-            this.btnUpdate.TabIndex = 21;
+            this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Sửa món";
             this.btnUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -490,10 +493,10 @@
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = global::GUI.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdd.Location = new System.Drawing.Point(1270, 495);
+            this.btnAdd.Location = new System.Drawing.Point(1336, 534);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(172, 36);
-            this.btnAdd.TabIndex = 19;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Thêm món";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -517,7 +520,7 @@
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBillDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvBillDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvBillDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBillDetail.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -547,7 +550,7 @@
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBillDetail.DefaultCellStyle = dataGridViewCellStyle17;
             this.dgvBillDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.dgvBillDetail.Location = new System.Drawing.Point(0, 562);
+            this.dgvBillDetail.Location = new System.Drawing.Point(0, 601);
             this.dgvBillDetail.Name = "dgvBillDetail";
             this.dgvBillDetail.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -561,8 +564,8 @@
             this.dgvBillDetail.RowHeadersVisible = false;
             this.dgvBillDetail.RowHeadersWidth = 51;
             this.dgvBillDetail.RowTemplate.Height = 24;
-            this.dgvBillDetail.Size = new System.Drawing.Size(1048, 216);
-            this.dgvBillDetail.TabIndex = 27;
+            this.dgvBillDetail.Size = new System.Drawing.Size(1114, 216);
+            this.dgvBillDetail.TabIndex = 8;
             this.dgvBillDetail.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.dgvBillDetail.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.dgvBillDetail.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -631,19 +634,6 @@
             this.Column16.MinimumWidth = 6;
             this.Column16.Name = "Column16";
             // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2HtmlLabel4.AutoSize = false;
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(12, 499);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(142, 32);
-            this.guna2HtmlLabel4.TabIndex = 22;
-            this.guna2HtmlLabel4.Text = "Bàn đang chọn :";
-            // 
             // cboTable
             // 
             this.cboTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -659,10 +649,11 @@
             this.cboTable.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTable.ItemHeight = 30;
-            this.cboTable.Location = new System.Drawing.Point(160, 495);
+            this.cboTable.Location = new System.Drawing.Point(174, 532);
             this.cboTable.Name = "cboTable";
-            this.cboTable.Size = new System.Drawing.Size(140, 36);
-            this.cboTable.TabIndex = 23;
+            this.cboTable.Size = new System.Drawing.Size(130, 36);
+            this.cboTable.TabIndex = 2;
+            this.cboTable.SelectedIndexChanged += new System.EventHandler(this.cboTable_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -689,14 +680,15 @@
             this.cboChangeTable.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboChangeTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboChangeTable.ItemHeight = 30;
-            this.cboChangeTable.Location = new System.Drawing.Point(491, 495);
+            this.cboChangeTable.Location = new System.Drawing.Point(495, 533);
             this.cboChangeTable.Name = "cboChangeTable";
-            this.cboChangeTable.Size = new System.Drawing.Size(140, 36);
-            this.cboChangeTable.TabIndex = 31;
+            this.cboChangeTable.Size = new System.Drawing.Size(130, 36);
+            this.cboChangeTable.Sorted = true;
+            this.cboChangeTable.TabIndex = 3;
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.Controls.Add(this.dgvProduct);
@@ -713,10 +705,10 @@
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.ForeColor = System.Drawing.Color.Maroon;
-            this.guna2Panel1.Location = new System.Drawing.Point(961, 0);
+            this.guna2Panel1.Location = new System.Drawing.Point(1027, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(499, 472);
-            this.guna2Panel1.TabIndex = 18;
+            this.guna2Panel1.Size = new System.Drawing.Size(499, 511);
+            this.guna2Panel1.TabIndex = 1;
             // 
             // btnSearch
             // 
@@ -735,7 +727,7 @@
             this.btnSearch.Location = new System.Drawing.Point(356, 12);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(103, 36);
-            this.btnSearch.TabIndex = 3;
+            this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.UseTransparentBackground = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -746,10 +738,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
-            this.label1.Location = new System.Drawing.Point(1114, 551);
+            this.label1.Location = new System.Drawing.Point(1180, 590);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 23);
-            this.label1.TabIndex = 24;
+            this.label1.TabIndex = 13;
             this.label1.Text = "Giảm giá :";
             // 
             // btnPay
@@ -764,17 +756,17 @@
             this.btnPay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.btnPay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(222)))));
-            this.btnPay.Location = new System.Drawing.Point(1202, 713);
+            this.btnPay.Location = new System.Drawing.Point(1268, 752);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(180, 52);
-            this.btnPay.TabIndex = 26;
+            this.btnPay.TabIndex = 7;
             this.btnPay.Text = "THANH TOÁN";
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // flpTable
             // 
-            this.flpTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.flpTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpTable.AutoScroll = true;
             this.flpTable.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -782,8 +774,8 @@
             this.flpTable.Margin = new System.Windows.Forms.Padding(10);
             this.flpTable.Name = "flpTable";
             this.flpTable.Padding = new System.Windows.Forms.Padding(20);
-            this.flpTable.Size = new System.Drawing.Size(959, 472);
-            this.flpTable.TabIndex = 17;
+            this.flpTable.Size = new System.Drawing.Size(1025, 511);
+            this.flpTable.TabIndex = 0;
             // 
             // btnChangeTable
             // 
@@ -801,27 +793,14 @@
             this.btnChangeTable.ForeColor = System.Drawing.Color.Black;
             this.btnChangeTable.Image = global::GUI.Properties.Resources.swap;
             this.btnChangeTable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnChangeTable.Location = new System.Drawing.Point(306, 495);
+            this.btnChangeTable.Location = new System.Drawing.Point(310, 533);
             this.btnChangeTable.Name = "btnChangeTable";
             this.btnChangeTable.Size = new System.Drawing.Size(179, 44);
-            this.btnChangeTable.TabIndex = 25;
+            this.btnChangeTable.TabIndex = 10;
             this.btnChangeTable.Text = "Chuyển bàn";
             this.btnChangeTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnChangeTable.UseTransparentBackground = true;
             this.btnChangeTable.Click += new System.EventHandler(this.btnChangeTable_Click);
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2HtmlLabel5.AutoSize = false;
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Maroon;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(670, 507);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(153, 32);
-            this.guna2HtmlLabel5.TabIndex = 33;
-            this.guna2HtmlLabel5.Text = "Mã nhân viên :";
             // 
             // label4
             // 
@@ -829,22 +808,85 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
-            this.label4.Location = new System.Drawing.Point(1114, 628);
+            this.label4.Location = new System.Drawing.Point(1180, 667);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 23);
-            this.label4.TabIndex = 24;
+            this.label4.TabIndex = 14;
             this.label4.Text = "Thành tiền:";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
+            this.label5.Location = new System.Drawing.Point(899, 547);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 23);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Mã khách hàng :";
+            // 
+            // txtCustomer
+            // 
+            this.txtCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCustomer.AutoRoundedCorners = true;
+            this.txtCustomer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
+            this.txtCustomer.BorderRadius = 21;
+            this.txtCustomer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCustomer.DefaultText = "";
+            this.txtCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomer.Location = new System.Drawing.Point(1052, 532);
+            this.txtCustomer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCustomer.Name = "txtCustomer";
+            this.txtCustomer.PasswordChar = '\0';
+            this.txtCustomer.PlaceholderText = "";
+            this.txtCustomer.SelectedText = "";
+            this.txtCustomer.Size = new System.Drawing.Size(159, 45);
+            this.txtCustomer.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
+            this.label6.Location = new System.Drawing.Point(631, 545);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 23);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Mã nhân viên :";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
+            this.label7.Location = new System.Drawing.Point(12, 538);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(135, 23);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Bàn đang chọn :";
             // 
             // GUI_BillAtShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1462, 777);
+            this.ClientSize = new System.Drawing.Size(1528, 816);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtCustomer);
             this.Controls.Add(this.cboChangeTable);
             this.Controls.Add(this.btnChangeTable);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.cboDiscountType);
             this.Controls.Add(this.numDiscount);
             this.Controls.Add(this.cboStaff);
@@ -852,7 +894,6 @@
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvBillDetail);
-            this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.cboTable);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label4);
@@ -896,7 +937,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2DataGridView dgvBillDetail;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2ComboBox cboTable;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2ComboBox cboChangeTable;
@@ -904,7 +944,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnPay;
         private System.Windows.Forms.FlowLayoutPanel flpTable;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
@@ -917,5 +956,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler1;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2TextBox txtCustomer;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

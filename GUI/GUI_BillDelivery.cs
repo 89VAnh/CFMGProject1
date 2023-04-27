@@ -211,11 +211,11 @@ namespace GUI
             {
                 if (CheckCustomerID())
                 {
-                    bill.DiaChi = txtAddress.Text;
                     if (selectedCustomerID > 0)
                     {
                         bill.MaKH = selectedCustomerID;
                     }
+                    bill.DiaChi = txtAddress.Text;
 
                     if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {

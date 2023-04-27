@@ -12,12 +12,6 @@ namespace DAL
             return db.CTHDTaiQuans.ToList();
         }
 
-        public int GetNewID()
-        {
-            if (db.CTHDTaiQuans.Count() == 0) return 1;
-            else return db.CTHDTaiQuans.ToList().Last().Ma + 1;
-        }
-
         public void Add(CTHDTaiQuan billDetail)
         {
             billDetail.SanPham = db.SanPhams.Find(billDetail.MaSP);

@@ -98,6 +98,7 @@ namespace GUI
                     {
                         customerFromForm = new KhachHang
                         {
+                            Ma = busCustomer.GetNewID(),
                             Ten = txtName.Text,
                             GioiTinh = txtGender.Text,
                             SDT = txtPhone.Text,
@@ -133,7 +134,8 @@ namespace GUI
                 {
                     busCustomer.Add(customerFromForm);
                     MessageBox.Show("Thêm thành công!");
-                    GUI_Customer_Load(sender, e);
+                    customerList.Add(customerFromForm);
+                    UpdateDgv(customerList);
                 }
             }
         }
@@ -151,7 +153,7 @@ namespace GUI
                         customerFromForm.Ma = selectedCustomerID;
                         busCustomer.Update(customerFromForm);
                         MessageBox.Show("Sửa thông tin thành công!");
-                        GUI_Customer_Load(sender, e);
+                        UpdateDgv(customerList);
                     }
                 }
                 else MessageBox.Show("Mã nhân viên không tồn tại!");
@@ -164,10 +166,11 @@ namespace GUI
             {
                 if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    KhachHang a = customerList.SingleOrDefault(x => x.Ma == Convert.ToInt32(selectedCustomerID));
-                    busCustomer.Delete(a);
+                    KhachHang c = customerList.SingleOrDefault(x => x.Ma == Convert.ToInt32(selectedCustomerID));
+                    busCustomer.Delete(c);
                     MessageBox.Show("Xoá thành công!");
-                    GUI_Customer_Load(sender, e);
+                    customerList.Remove(c);
+                    UpdateDgv(customerList);
                 }
             }
             catch

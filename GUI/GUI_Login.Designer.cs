@@ -39,10 +39,6 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox4 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.lklRegister = new System.Windows.Forms.LinkLabel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2CustomCheckBox2 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtUn = new Guna.UI2.WinForms.Guna2TextBox();
@@ -152,62 +148,6 @@
             this.guna2ControlBox4.TabIndex = 32;
             this.guna2ControlBox4.UseWaitCursor = true;
             // 
-            // lklRegister
-            // 
-            this.lklRegister.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklRegister.ForeColor = System.Drawing.Color.White;
-            this.lklRegister.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(68)))), ((int)(((byte)(72)))));
-            this.lklRegister.Location = new System.Drawing.Point(931, 552);
-            this.lklRegister.Name = "lklRegister";
-            this.lklRegister.Size = new System.Drawing.Size(121, 29);
-            this.lklRegister.TabIndex = 30;
-            this.lklRegister.TabStop = true;
-            this.lklRegister.Text = "Đăng ký";
-            this.lklRegister.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lklRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklRegister_LinkClicked);
-            // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.AutoSize = false;
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(705, 554);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(238, 34);
-            this.guna2HtmlLabel4.TabIndex = 29;
-            this.guna2HtmlLabel4.Text = "Bạn đã có tài khoản chưa?";
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.AutoSize = false;
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(752, 353);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(165, 20);
-            this.guna2HtmlLabel3.TabIndex = 27;
-            this.guna2HtmlLabel3.Text = "Ghi nhớ mật khẩu";
-            // 
-            // guna2CustomCheckBox2
-            // 
-            this.guna2CustomCheckBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomCheckBox2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.guna2CustomCheckBox2.CheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox2.CheckedState.BorderThickness = 2;
-            this.guna2CustomCheckBox2.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomCheckBox2.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.guna2CustomCheckBox2.Location = new System.Drawing.Point(716, 351);
-            this.guna2CustomCheckBox2.Name = "guna2CustomCheckBox2";
-            this.guna2CustomCheckBox2.Size = new System.Drawing.Size(30, 20);
-            this.guna2CustomCheckBox2.TabIndex = 26;
-            this.guna2CustomCheckBox2.Text = "guna2CustomCheckBox2";
-            this.guna2CustomCheckBox2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            this.guna2CustomCheckBox2.UncheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox2.UncheckedState.BorderThickness = 2;
-            this.guna2CustomCheckBox2.UncheckedState.FillColor = System.Drawing.Color.MintCream;
-            // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.AutoSize = false;
@@ -255,7 +195,7 @@
             this.txtUn.PlaceholderText = "Tên đăng nhập";
             this.txtUn.SelectedText = "";
             this.txtUn.Size = new System.Drawing.Size(320, 40);
-            this.txtUn.TabIndex = 33;
+            this.txtUn.TabIndex = 0;
             this.txtUn.TextOffset = new System.Drawing.Point(8, 0);
             this.txtUn.TextChanged += new System.EventHandler(this.txtUn_TextChanged);
             // 
@@ -284,7 +224,7 @@
             this.txtPw.PlaceholderText = "Mật khẩu";
             this.txtPw.SelectedText = "";
             this.txtPw.Size = new System.Drawing.Size(320, 40);
-            this.txtPw.TabIndex = 34;
+            this.txtPw.TabIndex = 1;
             this.txtPw.TextOffset = new System.Drawing.Point(8, 0);
             this.txtPw.IconRightClick += new System.EventHandler(this.txtPw_IconRightClick);
             this.txtPw.TextChanged += new System.EventHandler(this.txtPw_TextChanged);
@@ -304,10 +244,10 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Image = global::GUI.Properties.Resources.login2;
             this.btnLogin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnLogin.Location = new System.Drawing.Point(767, 394);
+            this.btnLogin.Location = new System.Drawing.Point(733, 368);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(166, 47);
-            this.btnLogin.TabIndex = 35;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -333,9 +273,9 @@
             this.guna2ControlBox5.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox5.HoverState.IconColor = System.Drawing.Color.SkyBlue;
             this.guna2ControlBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(68)))), ((int)(((byte)(72)))));
-            this.guna2ControlBox5.Location = new System.Drawing.Point(1002, 3);
+            this.guna2ControlBox5.Location = new System.Drawing.Point(984, -3);
             this.guna2ControlBox5.Name = "guna2ControlBox5";
-            this.guna2ControlBox5.Size = new System.Drawing.Size(38, 29);
+            this.guna2ControlBox5.Size = new System.Drawing.Size(38, 35);
             this.guna2ControlBox5.TabIndex = 36;
             // 
             // guna2ControlBox6
@@ -346,9 +286,9 @@
             this.guna2ControlBox6.HoverState.FillColor = System.Drawing.Color.Red;
             this.guna2ControlBox6.HoverState.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(68)))), ((int)(((byte)(72)))));
-            this.guna2ControlBox6.Location = new System.Drawing.Point(1036, 1);
+            this.guna2ControlBox6.Location = new System.Drawing.Point(1030, -3);
             this.guna2ControlBox6.Name = "guna2ControlBox6";
-            this.guna2ControlBox6.Size = new System.Drawing.Size(44, 35);
+            this.guna2ControlBox6.Size = new System.Drawing.Size(60, 35);
             this.guna2ControlBox6.TabIndex = 37;
             this.guna2ControlBox6.UseWaitCursor = true;
             // 
@@ -367,10 +307,6 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2ControlBox3);
             this.Controls.Add(this.guna2ControlBox4);
-            this.Controls.Add(this.lklRegister);
-            this.Controls.Add(this.guna2HtmlLabel4);
-            this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.guna2CustomCheckBox2);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2CirclePictureBox1);
@@ -399,10 +335,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox4;
-        private System.Windows.Forms.LinkLabel lklRegister;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;

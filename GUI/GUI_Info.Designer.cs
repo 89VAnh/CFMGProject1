@@ -67,7 +67,7 @@
             this.txtRePw.PlaceholderText = "";
             this.txtRePw.SelectedText = "";
             this.txtRePw.Size = new System.Drawing.Size(257, 40);
-            this.txtRePw.TabIndex = 29;
+            this.txtRePw.TabIndex = 5;
             this.txtRePw.UseSystemPasswordChar = true;
             this.txtRePw.TextChanged += new System.EventHandler(this.txtRePw_TextChanged);
             // 
@@ -92,7 +92,7 @@
             this.txtNewPw.PlaceholderText = "";
             this.txtNewPw.SelectedText = "";
             this.txtNewPw.Size = new System.Drawing.Size(257, 40);
-            this.txtNewPw.TabIndex = 28;
+            this.txtNewPw.TabIndex = 4;
             this.txtNewPw.UseSystemPasswordChar = true;
             this.txtNewPw.TextChanged += new System.EventHandler(this.txtNewPw_TextChanged);
             // 
@@ -117,7 +117,7 @@
             this.txtOldPw.PlaceholderText = "";
             this.txtOldPw.SelectedText = "";
             this.txtOldPw.Size = new System.Drawing.Size(257, 40);
-            this.txtOldPw.TabIndex = 27;
+            this.txtOldPw.TabIndex = 3;
             this.txtOldPw.UseSystemPasswordChar = true;
             this.txtOldPw.TextChanged += new System.EventHandler(this.txtOldPw_TextChanged);
             // 
@@ -142,7 +142,7 @@
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(257, 40);
-            this.txtEmail.TabIndex = 25;
+            this.txtEmail.TabIndex = 2;
             // 
             // txtUn
             // 
@@ -166,7 +166,7 @@
             this.txtUn.ReadOnly = true;
             this.txtUn.SelectedText = "";
             this.txtUn.Size = new System.Drawing.Size(257, 40);
-            this.txtUn.TabIndex = 26;
+            this.txtUn.TabIndex = 1;
             this.txtUn.TabStop = false;
             // 
             // errorProvider
@@ -183,7 +183,7 @@
             this.guna2HtmlLabel10.Location = new System.Drawing.Point(37, 56);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(602, 103);
-            this.guna2HtmlLabel10.TabIndex = 37;
+            this.guna2HtmlLabel10.TabIndex = 0;
             this.guna2HtmlLabel10.Text = "THÔNG TIN TÀI KHOẢN";
             // 
             // btnSave
@@ -202,7 +202,7 @@
             this.btnSave.Location = new System.Drawing.Point(295, 455);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(180, 45);
-            this.btnSave.TabIndex = 35;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu thông tin";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -224,7 +224,7 @@
             this.btnChangePw.Location = new System.Drawing.Point(526, 455);
             this.btnChangePw.Name = "btnChangePw";
             this.btnChangePw.Size = new System.Drawing.Size(180, 45);
-            this.btnChangePw.TabIndex = 38;
+            this.btnChangePw.TabIndex = 6;
             this.btnChangePw.Text = "Đổi mật khẩu";
             this.btnChangePw.Click += new System.EventHandler(this.btnChangePw_Click);
             // 

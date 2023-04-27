@@ -19,7 +19,6 @@ namespace DAL
         public QLCPEntities()
             : base("name=QLCPEntities")
         {
-
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -29,14 +28,14 @@ namespace DAL
 
         public virtual DbSet<Ban> Bans { get; set; }
         public virtual DbSet<CTHDGiaoHang> CTHDGiaoHangs { get; set; }
-        public virtual DbSet<CTHDTaiQuan> CTHDTaiQuans { get; set; }
         public virtual DbSet<DanhMucSanPham> DanhMucSanPhams { get; set; }
         public virtual DbSet<HDGiaoHang> HDGiaoHangs { get; set; }
-        public virtual DbSet<HDTaiQuan> HDTaiQuans { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Quyen> Quyens { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+        public virtual DbSet<CTHDTaiQuan> CTHDTaiQuans { get; set; }
+        public virtual DbSet<HDTaiQuan> HDTaiQuans { get; set; }
     }
 }

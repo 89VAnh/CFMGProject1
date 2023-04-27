@@ -8,8 +8,6 @@ namespace BUS
     {
         private DAL_Customer dalCustomer = new DAL_Customer();
 
-        private List<KhachHang> customerList = new List<KhachHang>();
-
         public List<KhachHang> GetCustomers()
         {
             return dalCustomer.GetCustomers();
@@ -17,13 +15,11 @@ namespace BUS
 
         public int GetNewID()
         {
-            if (dalCustomer.GetCustomers().Count == 0) return 1;
-            else return customerList.Last().Ma + 1;
+            return GetCustomers().Count() == 0 ? 1 : GetCustomers().Last().Ma + 1;
         }
 
         public void Add(KhachHang customer)
         {
-            customer.Ma = GetNewID();
             dalCustomer.Add(customer);
         }
 

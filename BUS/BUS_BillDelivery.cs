@@ -22,9 +22,7 @@ namespace BUS
 
         public int GetNewID()
         {
-            billDeliveries = GetBillDeliveries();
-            if (billDeliveries.Count == 0) return 1;
-            else return billDeliveries.Last().Ma + 1;
+            return GetBillDeliveries().Count() == 0 ? 1 : GetBillDeliveries().Last().Ma + 1;
         }
 
         public void Add(HDGiaoHang billDelivery)

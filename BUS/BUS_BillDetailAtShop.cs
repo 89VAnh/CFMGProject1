@@ -29,7 +29,7 @@ namespace BUS
 
         public int GetNewID()
         {
-            return dalBillDetailAtShop.GetNewID();
+            return GetBillDetailAtShopes().Count() == 0 ? 1 : GetBillDetailAtShopes().Last().Ma + 1;
         }
 
         public void AddAmount(CTHDTaiQuan bd, int amount, string note)

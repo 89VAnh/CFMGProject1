@@ -55,7 +55,7 @@ namespace GUI
 
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedProductID = (int)dgvProduct.SelectedRows[0].Cells[0].Value;
+            selectedProductID = (int)dgvProduct[0, e.RowIndex].Value;
             SanPham product = productList.SingleOrDefault(x => x.Ma == selectedProductID);
             txtName.Text = product.Ten;
             cboCategoryProduct.SelectedValue = product.MaDM;
@@ -90,7 +90,7 @@ namespace GUI
                     MessageBox.Show("Thêm thành công!");
                 }
             }
-            else MessageBox.Show("Vui lòng nhập tên đồ ăn!");
+            else MessageBox.Show("Vui lòng nhập tên sản phẩm!");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

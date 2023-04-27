@@ -21,17 +21,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CTHDTaiQuans">
-      <EntityTypeMapping TypeName="QLCPModel.CTHDTaiQuan">
-        <MappingFragment StoreEntitySet="CTHDTaiQuan">
-          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
-          <ScalarProperty Name="Ma" ColumnName="Ma" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="DanhMucSanPhams">
       <EntityTypeMapping TypeName="QLCPModel.DanhMucSanPham">
         <MappingFragment StoreEntitySet="DanhMucSanPham">
@@ -48,20 +37,6 @@
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
-          <ScalarProperty Name="Ma" ColumnName="Ma" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="HDTaiQuans">
-      <EntityTypeMapping TypeName="QLCPModel.HDTaiQuan">
-        <MappingFragment StoreEntitySet="HDTaiQuan">
-          <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
-          <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
-          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-          <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
-          <ScalarProperty Name="MaBan" ColumnName="MaBan" />
           <ScalarProperty Name="Ma" ColumnName="Ma" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -116,6 +91,31 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
           <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTHDTaiQuans">
+      <EntityTypeMapping TypeName="QLCPModel.CTHDTaiQuan">
+        <MappingFragment StoreEntitySet="CTHDTaiQuan">
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="Ma" ColumnName="Ma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HDTaiQuans">
+      <EntityTypeMapping TypeName="QLCPModel.HDTaiQuan">
+        <MappingFragment StoreEntitySet="HDTaiQuan">
+          <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
+          <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
+          <ScalarProperty Name="MaBan" ColumnName="MaBan" />
+          <ScalarProperty Name="Ma" ColumnName="Ma" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

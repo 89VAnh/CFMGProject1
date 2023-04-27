@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DAL;
 using System;
 using System.Windows.Forms;
 
@@ -13,8 +14,14 @@ namespace GUI
 
         private void GUI_Main_Load(object sender, System.EventArgs e)
         {
-            //lblName.Text = BUS_Account.currentAccount.TenDangNhap;
-            //lblPosition.Text = BUS_Account.currentAccount.Quyen.Ten;
+            TaiKhoan currentAccount = BUS_Account.currentAccount;
+            lblName.Text = currentAccount.TenDangNhap;
+            lblPosition.Text = currentAccount.Quyen.Ten;
+            if (currentAccount.Quyen.Ten == "Nhân viên")
+            {
+                btnManage.Visible = false;
+                pnlManage.Visible = false;
+            }
         }
 
         private void timerTime_Tick(object sender, System.EventArgs e)

@@ -107,8 +107,6 @@ C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\C
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_PayBillDelivery.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_PayBillTakeAway.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Product.resources
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Register.resources
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_SelectCustomer.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Staff.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Table.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.Properties.Resources.resources

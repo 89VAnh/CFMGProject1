@@ -11,12 +11,9 @@ namespace GUI
     public partial class GUI_PayBillAtShop : Form
     {
         private BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
-        private BUS_Customer busCustomer = new BUS_Customer();
 
-        private List<KhachHang> customers = new List<KhachHang>();
         private HDTaiQuan b;
         private EventHandler AcceptPay;
-        private int id;
 
         public GUI_PayBillAtShop()
         {
@@ -37,12 +34,14 @@ namespace GUI
             lblTotalPrice.Text = totalPrice.ToString("N", nfi) + " đ";
             lblDiscount.Text = billAtShop.GiamGia;
             lblPriceAfterDiscount.Text = billAtShop.TongTien.ToString("N", nfi) + " đ";
+            if (billAtShop.MaKH == null) lblCustomer.Text = "Khách hàng mới";
+            else lblCustomer.Text = billAtShop.MaKH.ToString();
+
             dgvBillAtShop.DataSource = billDetailAtShops.Select(b => new { b.Ma, b.SanPham.Ten, b.SoLuong, b.SanPham.DonGia, Total = b.SoLuong * b.SanPham.DonGia, b.GhiChu }).ToList();
             this.AcceptPay = AcceptPay;
 
             b = billAtShop;
             b.ThoiGianRa = DateTime.Now;
-            customers = busCustomer.GetCustomers();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -50,34 +49,15 @@ namespace GUI
             this.Close();
         }
 
-        private bool CheckCustomerID()
-        {
-            string text = txtCustomer.Text;
-            if (String.IsNullOrWhiteSpace(text)) return true;
-            if (Int32.TryParse(text, out id))
-            {
-                if (customers.SingleOrDefault(x => x.Ma == id) != null)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (CheckCustomerID())
+            if (MessageBox.Show("Xác nhận hoàn tất thanh toán", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Xác nhận hoàn tất thanh toán", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    b.MaKH = id;
-                    busBillAtShop.Update(b);
-                    MessageBox.Show("Thanh toán thành công!");
-                    this.AcceptPay(sender, e);
-                    this.Close();
-                }
+                busBillAtShop.Update(b);
+                MessageBox.Show("Thanh toán thành công!");
+                this.AcceptPay(sender, e);
+                this.Close();
             }
-            else MessageBox.Show("Mã khách hàng không tồn tại!");
         }
     }
 }

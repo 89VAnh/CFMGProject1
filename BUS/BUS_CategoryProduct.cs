@@ -7,7 +7,6 @@ namespace BUS
     public class BUS_CategoryProduct
     {
         private DAL_CategoryProduct dalCategoryProduct = new DAL_CategoryProduct();
-        private List<DanhMucSanPham> categoryProducts = new List<DanhMucSanPham>();
 
         public List<DanhMucSanPham> GetCategoryProducts()
         {
@@ -16,9 +15,7 @@ namespace BUS
 
         public int GetNewID()
         {
-            List<DanhMucSanPham> categoryproducts = GetCategoryProducts();
-            if (categoryproducts.Count == 0) return 1;
-            else return categoryproducts.Last().Ma + 1;
+            return GetCategoryProducts().Count() == 0 ? 1 : GetCategoryProducts().Last().Ma + 1;
         }
 
         public void Add(DanhMucSanPham categoryProduct)

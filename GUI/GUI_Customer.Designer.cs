@@ -81,7 +81,7 @@
             this.txtGender.PlaceholderText = "";
             this.txtGender.SelectedText = "";
             this.txtGender.Size = new System.Drawing.Size(181, 36);
-            this.txtGender.TabIndex = 80;
+            this.txtGender.TabIndex = 3;
             this.txtGender.TextChanged += new System.EventHandler(this.txtGender_TextChanged);
             // 
             // txtAddress
@@ -104,7 +104,7 @@
             this.txtAddress.PlaceholderText = "";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(481, 36);
-            this.txtAddress.TabIndex = 65;
+            this.txtAddress.TabIndex = 9;
             this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // txtEmail
@@ -127,7 +127,7 @@
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(346, 36);
-            this.txtEmail.TabIndex = 64;
+            this.txtEmail.TabIndex = 7;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtPhone
@@ -150,7 +150,7 @@
             this.txtPhone.PlaceholderText = "";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(220, 36);
-            this.txtPhone.TabIndex = 63;
+            this.txtPhone.TabIndex = 5;
             this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // txtSearch
@@ -175,7 +175,7 @@
             this.txtSearch.PlaceholderText = "Tìm kiếm";
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(287, 36);
-            this.txtSearch.TabIndex = 72;
+            this.txtSearch.TabIndex = 15;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // txtName
@@ -198,7 +198,7 @@
             this.txtName.PlaceholderText = "";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(278, 36);
-            this.txtName.TabIndex = 62;
+            this.txtName.TabIndex = 1;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // dgvCustomer
@@ -210,8 +210,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvCustomer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
@@ -254,7 +254,7 @@
             this.dgvCustomer.RowHeadersWidth = 51;
             this.dgvCustomer.RowTemplate.Height = 28;
             this.dgvCustomer.Size = new System.Drawing.Size(1259, 315);
-            this.dgvCustomer.TabIndex = 71;
+            this.dgvCustomer.TabIndex = 14;
             this.dgvCustomer.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.dgvCustomer.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.dgvCustomer.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -346,7 +346,7 @@
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(137, 43);
-            this.btnRefresh.TabIndex = 70;
+            this.btnRefresh.TabIndex = 13;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnRefresh.UseTransparentBackground = true;
@@ -372,7 +372,7 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(117, 43);
-            this.btnDelete.TabIndex = 69;
+            this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "Xoá";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDelete.UseTransparentBackground = true;
@@ -398,7 +398,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(134, 43);
-            this.btnAdd.TabIndex = 67;
+            this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Thêm ";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAdd.UseTransparentBackground = true;
@@ -424,7 +424,7 @@
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(116, 43);
-            this.btnEdit.TabIndex = 68;
+            this.btnEdit.TabIndex = 11;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnEdit.UseTransparentBackground = true;
@@ -447,7 +447,7 @@
             this.btnSearch.Location = new System.Drawing.Point(537, 14);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(144, 36);
-            this.btnSearch.TabIndex = 74;
+            this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseTransparentBackground = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -460,7 +460,7 @@
             this.label8.Location = new System.Drawing.Point(30, 113);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(139, 23);
-            this.label8.TabIndex = 82;
+            this.label8.TabIndex = 0;
             this.label8.Text = "Tên khách hàng :";
             // 
             // label1
@@ -471,7 +471,7 @@
             this.label1.Location = new System.Drawing.Point(533, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 23);
-            this.label1.TabIndex = 83;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Số điện thoại :";
             // 
             // label2
@@ -482,7 +482,7 @@
             this.label2.Location = new System.Drawing.Point(593, 205);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 23);
-            this.label2.TabIndex = 84;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Email :";
             // 
             // label3
@@ -493,7 +493,7 @@
             this.label3.Location = new System.Drawing.Point(85, 216);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 23);
-            this.label3.TabIndex = 85;
+            this.label3.TabIndex = 2;
             this.label3.Text = "Giới tính :";
             // 
             // label4
@@ -504,7 +504,7 @@
             this.label4.Location = new System.Drawing.Point(98, 316);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 23);
-            this.label4.TabIndex = 86;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Địa chỉ :";
             // 
             // GUI_Customer

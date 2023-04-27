@@ -193,7 +193,7 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(297, 45);
-            this.btnLogout.TabIndex = 15;
+            this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -218,7 +218,7 @@
             this.btnBill.Name = "btnBill";
             this.btnBill.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnBill.Size = new System.Drawing.Size(297, 60);
-            this.btnBill.TabIndex = 2;
+            this.btnBill.TabIndex = 0;
             this.btnBill.Text = "Tạo hoá đơn";
             this.btnBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBill.UseTransparentBackground = true;
@@ -236,7 +236,7 @@
             this.pnlBill.Location = new System.Drawing.Point(0, 200);
             this.pnlBill.Name = "pnlBill";
             this.pnlBill.Size = new System.Drawing.Size(297, 219);
-            this.pnlBill.TabIndex = 3;
+            this.pnlBill.TabIndex = 1;
             this.pnlBill.Visible = false;
             // 
             // btnCustomer
@@ -256,7 +256,7 @@
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnCustomer.Size = new System.Drawing.Size(308, 45);
-            this.btnCustomer.TabIndex = 0;
+            this.btnCustomer.TabIndex = 3;
             this.btnCustomer.Text = "Khách hàng";
             this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
@@ -278,7 +278,7 @@
             this.btnBillDelivery.Name = "btnBillDelivery";
             this.btnBillDelivery.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnBillDelivery.Size = new System.Drawing.Size(308, 45);
-            this.btnBillDelivery.TabIndex = 0;
+            this.btnBillDelivery.TabIndex = 2;
             this.btnBillDelivery.Text = "Hoá đơn giao hàng";
             this.btnBillDelivery.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBillDelivery.Click += new System.EventHandler(this.btnBillDelivery_Click);
@@ -322,7 +322,7 @@
             this.btnBillTakeAway.Name = "btnBillTakeAway";
             this.btnBillTakeAway.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnBillTakeAway.Size = new System.Drawing.Size(308, 45);
-            this.btnBillTakeAway.TabIndex = 0;
+            this.btnBillTakeAway.TabIndex = 1;
             this.btnBillTakeAway.Text = "Hoá đơn mang về";
             this.btnBillTakeAway.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBillTakeAway.Click += new System.EventHandler(this.btnBillTakeAway_Click);
@@ -363,7 +363,7 @@
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnInfo.Size = new System.Drawing.Size(297, 45);
-            this.btnInfo.TabIndex = 15;
+            this.btnInfo.TabIndex = 3;
             this.btnInfo.Text = "Thông tin tài khoản";
             this.btnInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
@@ -403,7 +403,7 @@
             this.btn_ThongKe.Name = "btn_ThongKe";
             this.btn_ThongKe.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btn_ThongKe.Size = new System.Drawing.Size(308, 45);
-            this.btn_ThongKe.TabIndex = 0;
+            this.btn_ThongKe.TabIndex = 6;
             this.btn_ThongKe.Text = "Thống kê";
             this.btn_ThongKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -424,7 +424,7 @@
             this.btn_DoanhThu.Name = "btn_DoanhThu";
             this.btn_DoanhThu.Padding = new System.Windows.Forms.Padding(36, 0, 0, 0);
             this.btn_DoanhThu.Size = new System.Drawing.Size(306, 45);
-            this.btn_DoanhThu.TabIndex = 0;
+            this.btn_DoanhThu.TabIndex = 5;
             this.btn_DoanhThu.Text = "Doanh thu";
             this.btn_DoanhThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -445,7 +445,7 @@
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAccount.Size = new System.Drawing.Size(308, 45);
-            this.btnAccount.TabIndex = 0;
+            this.btnAccount.TabIndex = 4;
             this.btnAccount.Text = "Tài khoản";
             this.btnAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
@@ -467,7 +467,7 @@
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnStaff.Size = new System.Drawing.Size(308, 45);
-            this.btnStaff.TabIndex = 0;
+            this.btnStaff.TabIndex = 3;
             this.btnStaff.Text = "Nhân viên";
             this.btnStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
@@ -489,7 +489,7 @@
             this.btnTable.Name = "btnTable";
             this.btnTable.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnTable.Size = new System.Drawing.Size(308, 45);
-            this.btnTable.TabIndex = 0;
+            this.btnTable.TabIndex = 2;
             this.btnTable.Text = "Bàn";
             this.btnTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
@@ -533,7 +533,7 @@
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnMenu.Size = new System.Drawing.Size(308, 45);
-            this.btnMenu.TabIndex = 0;
+            this.btnMenu.TabIndex = 1;
             this.btnMenu.Text = "Thực đơn";
             this.btnMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
@@ -558,7 +558,7 @@
             this.btnManage.Name = "btnManage";
             this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnManage.Size = new System.Drawing.Size(297, 60);
-            this.btnManage.TabIndex = 4;
+            this.btnManage.TabIndex = 2;
             this.btnManage.Text = "Quản lý";
             this.btnManage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
