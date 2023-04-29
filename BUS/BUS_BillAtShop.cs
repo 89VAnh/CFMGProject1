@@ -17,7 +17,6 @@ namespace BUS
         {
             return GetBillAtShopes().Count() == 0 ? 1 : GetBillAtShopes().Last().Ma + 1;
         }
-
         public HDTaiQuan GetBillAtShopByTableID(int tableID)
         {
             return GetBillAtShopes().SingleOrDefault(x => x.MaBan == tableID && x.ThoiGianRa == null);

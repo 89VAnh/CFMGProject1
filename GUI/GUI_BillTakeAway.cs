@@ -276,76 +276,89 @@ namespace GUI
 
         private void btnAddBillDetail_Click(object sender, EventArgs e)
         {
-            int billID = Convert.ToInt32(txtBillID.Text);
-            if (billTakeAways.SingleOrDefault(x => x.Ma == billID) != null)
-                if (selectedProductID > 0)
-                {
-                    CTHDTaiQuan newBillDetail = new CTHDTaiQuan { Ma = busBillDetailAtShop.GetNewID(), MaHD = billID, MaSP = selectedProductID, SoLuong = (int)numAmount.Value, GhiChu = txtNote.Text };
-
-                    MessageBox.Show($"Đã thêm vào hoá đơn {billID} : {newBillDetail.SoLuong} {productList.SingleOrDefault(x => x.Ma == newBillDetail.MaSP).Ten}");
-
-                    CTHDTaiQuan billDetailTakeAway = billDetails.SingleOrDefault(x => x.MaHD == newBillDetail.MaHD && x.MaSP == newBillDetail.MaSP);
-                    if (billDetailTakeAway == null)
+            if (!String.IsNullOrWhiteSpace(txtBillID.Text))
+            {
+                int billID = Convert.ToInt32(txtBillID.Text);
+                if (billTakeAways.SingleOrDefault(x => x.Ma == billID) != null)
+                    if (selectedProductID > 0)
                     {
-                        busBillDetailAtShop.Add(newBillDetail);
-                        billDetails.Add(newBillDetail);
+                        CTHDTaiQuan newBillDetail = new CTHDTaiQuan { Ma = busBillDetailAtShop.GetNewID(), MaHD = billID, MaSP = selectedProductID, SoLuong = (int)numAmount.Value, GhiChu = txtNote.Text };
+
+                        MessageBox.Show($"Đã thêm vào hoá đơn {billID} : {newBillDetail.SoLuong} {productList.SingleOrDefault(x => x.Ma == newBillDetail.MaSP).Ten}");
+
+                        CTHDTaiQuan billDetailTakeAway = billDetails.SingleOrDefault(x => x.MaHD == newBillDetail.MaHD && x.MaSP == newBillDetail.MaSP);
+                        if (billDetailTakeAway == null)
+                        {
+                            busBillDetailAtShop.Add(newBillDetail);
+                            billDetails.Add(newBillDetail);
+                        }
+                        else
+                        {
+                            busBillDetailAtShop.AddAmount(billDetailTakeAway, newBillDetail.SoLuong, newBillDetail.GhiChu);
+                        }
+                        UpdateDgvBillDetail(billID);
                     }
-                    else
-                    {
-                        busBillDetailAtShop.AddAmount(billDetailTakeAway, newBillDetail.SoLuong, newBillDetail.GhiChu);
-                    }
-                    UpdateDgvBillDetail(billID);
-                }
-                else MessageBox.Show("Vui lòng chọn món!");
-            else MessageBox.Show("Mã đơn không hợp lệ");
+                    else MessageBox.Show("Vui lòng chọn món!");
+                else MessageBox.Show("Mã đơn không hợp lệ");
+            }
+            else MessageBox.Show("Vui lòng chọn hoá đơn");
         }
 
         private void btnDelBillDetail_Click(object sender, EventArgs e)
         {
-            int billID = Convert.ToInt32(txtBillID.Text);
-            if (billTakeAways.SingleOrDefault(x => x.Ma == billID) != null)
+            if (!String.IsNullOrWhiteSpace(txtBillID.Text))
             {
-                if (selectedBillDetail > 0)
+                int billID = Convert.ToInt32(txtBillID.Text);
+                if (billTakeAways.SingleOrDefault(x => x.Ma == billID) != null)
                 {
-                    CTHDTaiQuan billDetailTakeAway = billDetails.SingleOrDefault(x => x.Ma == selectedBillDetail);
-                    if (billDetailTakeAway != null)
+                    if (selectedBillDetail > 0)
                     {
-                        busBillDetailAtShop.Delete(billDetailTakeAway);
-                        billDetails.Remove(billDetailTakeAway);
-                        UpdateDgvBillDetail(billID);
+                        CTHDTaiQuan billDetailTakeAway = billDetails.SingleOrDefault(x => x.Ma == selectedBillDetail);
+                        if (billDetailTakeAway != null)
+                        {
+                            busBillDetailAtShop.Delete(billDetailTakeAway);
+                            billDetails.Remove(billDetailTakeAway);
+                            UpdateDgvBillDetail(billID);
+                        }
+                        else MessageBox.Show("Vui lòng chọn món!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    else MessageBox.Show("Vui lòng chọn món!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else MessageBox.Show("Mã hoá đơn không hợp lệ!");
             }
-            else MessageBox.Show("Mã hoá đơn không hợp lệ!");
+            else MessageBox.Show("Vui lòng chọn hoá đơn");
         }
 
         private void btnUpdateBillDetail_Click(object sender, EventArgs e)
         {
-            int billID = Convert.ToInt32(txtBillID.Text);
-            if (billTakeAways.SingleOrDefault(x => x.Ma == billID) != null)
+            if (!String.IsNullOrWhiteSpace(txtBillID.Text))
             {
-                if (selectedBillDetail > 0)
+                int billID = Convert.ToInt32(txtBillID.Text);
+                if (billTakeAways.SingleOrDefault(x => x.Ma == billID) != null)
                 {
-                    if (MessageBox.Show("Xác nhận đổi số lượng và ghi chú", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (selectedBillDetail > 0)
                     {
-                        CTHDTaiQuan bd = billDetails.SingleOrDefault(x => x.Ma == selectedBillDetail);
-                        bd.SoLuong = (int)numAmount.Value;
-                        bd.GhiChu = txtNote.Text;
-                        busBillDetailAtShop.Update(bd);
-                        UpdateDgvBillDetail(billID);
-                        MessageBox.Show("Sửa thành công");
+                        if (MessageBox.Show("Xác nhận đổi số lượng và ghi chú", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            CTHDTaiQuan bd = billDetails.SingleOrDefault(x => x.Ma == selectedBillDetail);
+                            bd.SoLuong = (int)numAmount.Value;
+                            bd.GhiChu = txtNote.Text;
+                            busBillDetailAtShop.Update(bd);
+                            UpdateDgvBillDetail(billID);
+                            MessageBox.Show("Sửa thành công");
+                        }
                     }
+                    else MessageBox.Show("Vui lòng chọn món!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else MessageBox.Show("Vui lòng chọn món!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else MessageBox.Show("Mã hoá đơn không hợp lệ!");
             }
-            else MessageBox.Show("Mã hoá đơn không hợp lệ!");
+            else MessageBox.Show("Vui lòng chọn hoá đơn");
         }
 
         private void AcceptPay(object sender, EventArgs e)
         {
             billTakeAways.Remove(billTakeAways.SingleOrDefault(x => x.Ma == Convert.ToInt32(txtBillID.Text)));
             UpdateDgvBill();
+            UpdateDgvBillDetail(0);
             txtBillID.Clear();
             cboStaff.SelectedValue = "";
             txtCustomer.Clear();
@@ -353,24 +366,28 @@ namespace GUI
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            int billID = Convert.ToInt32(txtBillID.Text);
-            HDTaiQuan bill = billTakeAways.SingleOrDefault(x => x.Ma == billID);
-            if (bill != null)
+            if (!String.IsNullOrWhiteSpace(txtBillID.Text))
             {
-                string discount = numDiscount.Value.ToString();
-                if (discount != "0")
+                int billID = Convert.ToInt32(txtBillID.Text);
+                HDTaiQuan bill = billTakeAways.SingleOrDefault(x => x.Ma == billID);
+                if (bill != null)
                 {
-                    switch (cboDiscountType.SelectedIndex)
+                    string discount = numDiscount.Value.ToString();
+                    if (discount != "0")
                     {
-                        case 0: discount += "000 đ"; break;
-                        case 1: discount += " %"; break;
-                        default: break;
+                        switch (cboDiscountType.SelectedIndex)
+                        {
+                            case 0: discount += "000 đ"; break;
+                            case 1: discount += " %"; break;
+                            default: break;
+                        }
                     }
+                    bill.GiamGia = discount;
+                    bill.TongTien = (int)numTotalPrice.Value;
+                    GUI_PayBillTakeAway f = new GUI_PayBillTakeAway(bill, billDetails.Where(x => x.MaHD == bill.Ma).ToList(), totalPrice, AcceptPay);
+                    f.ShowDialog();
                 }
-                bill.GiamGia = discount;
-                bill.TongTien = (int)numTotalPrice.Value;
-                GUI_PayBillTakeAway f = new GUI_PayBillTakeAway(bill, billDetails.Where(x => x.MaHD == bill.Ma).ToList(), totalPrice, AcceptPay);
-                f.ShowDialog();
+                else MessageBox.Show("Hoá đơn được chọn không hợp lệ");
             }
             else MessageBox.Show("Vui lòng chọn hoá đơn");
         }

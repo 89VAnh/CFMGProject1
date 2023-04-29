@@ -14,6 +14,7 @@ namespace DAL
 
         public void Add(HDTaiQuan billAtShop)
         {
+            billAtShop.Ban = db.Bans.Find(billAtShop.MaBan);
             db.HDTaiQuans.Add(billAtShop);
             db.SaveChanges();
         }

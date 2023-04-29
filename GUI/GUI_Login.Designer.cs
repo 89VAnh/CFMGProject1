@@ -281,7 +281,7 @@
             // guna2ControlBox6
             // 
             this.guna2ControlBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox6.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.guna2ControlBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox6.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox6.HoverState.FillColor = System.Drawing.Color.Red;
             this.guna2ControlBox6.HoverState.IconColor = System.Drawing.Color.White;
@@ -290,7 +290,6 @@
             this.guna2ControlBox6.Name = "guna2ControlBox6";
             this.guna2ControlBox6.Size = new System.Drawing.Size(60, 35);
             this.guna2ControlBox6.TabIndex = 37;
-            this.guna2ControlBox6.UseWaitCursor = true;
             // 
             // GUI_Login
             // 
@@ -312,6 +311,7 @@
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.guna2ControlBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GUI_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

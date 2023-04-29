@@ -21,6 +21,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CTHDTaiQuans">
+      <EntityTypeMapping TypeName="QLCPModel.CTHDTaiQuan">
+        <MappingFragment StoreEntitySet="CTHDTaiQuan">
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="Ma" ColumnName="Ma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="DanhMucSanPhams">
       <EntityTypeMapping TypeName="QLCPModel.DanhMucSanPham">
         <MappingFragment StoreEntitySet="DanhMucSanPham">
@@ -37,6 +48,20 @@
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
+          <ScalarProperty Name="Ma" ColumnName="Ma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HDTaiQuans">
+      <EntityTypeMapping TypeName="QLCPModel.HDTaiQuan">
+        <MappingFragment StoreEntitySet="HDTaiQuan">
+          <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
+          <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
+          <ScalarProperty Name="MaBan" ColumnName="MaBan" />
           <ScalarProperty Name="Ma" ColumnName="Ma" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -94,30 +119,35 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CTHDTaiQuans">
-      <EntityTypeMapping TypeName="QLCPModel.CTHDTaiQuan">
-        <MappingFragment StoreEntitySet="CTHDTaiQuan">
-          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
-          <ScalarProperty Name="Ma" ColumnName="Ma" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="HDTaiQuans">
-      <EntityTypeMapping TypeName="QLCPModel.HDTaiQuan">
-        <MappingFragment StoreEntitySet="HDTaiQuan">
-          <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
-          <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
-          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-          <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
-          <ScalarProperty Name="MaBan" ColumnName="MaBan" />
-          <ScalarProperty Name="Ma" ColumnName="Ma" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DoanhThuTheoNam" FunctionName="QLCPModel.Store.DoanhThuTheoNam">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLCPModel.DoanhThuTheoNam_Result">
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="DoanhThuTaiQuan" ColumnName="DoanhThuTaiQuan" />
+          <ScalarProperty Name="DoanhThuMangVe" ColumnName="DoanhThuMangVe" />
+          <ScalarProperty Name="DoanhThuGiaoHang" ColumnName="DoanhThuGiaoHang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DoanhThuTheoNgay" FunctionName="QLCPModel.Store.DoanhThuTheoNgay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLCPModel.DoanhThuTheoNgay_Result">
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="DoanhThuTaiQuan" ColumnName="DoanhThuTaiQuan" />
+          <ScalarProperty Name="DoanhThuMangVe" ColumnName="DoanhThuMangVe" />
+          <ScalarProperty Name="DoanhThuGiaoHang" ColumnName="DoanhThuGiaoHang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DoanhThuTheoThang" FunctionName="QLCPModel.Store.DoanhThuTheoThang">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLCPModel.DoanhThuTheoThang_Result">
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="DoanhThuTaiQuan" ColumnName="DoanhThuTaiQuan" />
+          <ScalarProperty Name="DoanhThuMangVe" ColumnName="DoanhThuMangVe" />
+          <ScalarProperty Name="DoanhThuGiaoHang" ColumnName="DoanhThuGiaoHang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

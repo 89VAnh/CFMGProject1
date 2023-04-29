@@ -3,13 +3,19 @@
   <EntityContainer Name="QLCPEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Bans" EntityType="QLCPModel.Ban" />
     <EntitySet Name="CTHDGiaoHangs" EntityType="QLCPModel.CTHDGiaoHang" />
+    <EntitySet Name="CTHDTaiQuans" EntityType="QLCPModel.CTHDTaiQuan" />
     <EntitySet Name="DanhMucSanPhams" EntityType="QLCPModel.DanhMucSanPham" />
     <EntitySet Name="HDGiaoHangs" EntityType="QLCPModel.HDGiaoHang" />
+    <EntitySet Name="HDTaiQuans" EntityType="QLCPModel.HDTaiQuan" />
     <EntitySet Name="KhachHangs" EntityType="QLCPModel.KhachHang" />
     <EntitySet Name="NhanViens" EntityType="QLCPModel.NhanVien" />
     <EntitySet Name="Quyens" EntityType="QLCPModel.Quyen" />
     <EntitySet Name="SanPhams" EntityType="QLCPModel.SanPham" />
     <EntitySet Name="TaiKhoans" EntityType="QLCPModel.TaiKhoan" />
+    <AssociationSet Name="FK__HDTaiQuan__MaBan__6FE99F9F" Association="QLCPModel.FK__HDTaiQuan__MaBan__6FE99F9F">
+      <End Role="Ban" EntitySet="Bans" />
+      <End Role="HDTaiQuan" EntitySet="HDTaiQuans" />
+    </AssociationSet>
     <AssociationSet Name="FK__CTHDGiaoHa__MaHD__571DF1D5" Association="QLCPModel.FK__CTHDGiaoHa__MaHD__571DF1D5">
       <End Role="HDGiaoHang" EntitySet="HDGiaoHangs" />
       <End Role="CTHDGiaoHang" EntitySet="CTHDGiaoHangs" />
@@ -17,28 +23,6 @@
     <AssociationSet Name="FK__CTHDGiaoHa__MaSP__5812160E" Association="QLCPModel.FK__CTHDGiaoHa__MaSP__5812160E">
       <End Role="SanPham" EntitySet="SanPhams" />
       <End Role="CTHDGiaoHang" EntitySet="CTHDGiaoHangs" />
-    </AssociationSet>
-    <AssociationSet Name="FK__SanPham__MaDM__4222D4EF" Association="QLCPModel.FK__SanPham__MaDM__4222D4EF">
-      <End Role="DanhMucSanPham" EntitySet="DanhMucSanPhams" />
-      <End Role="SanPham" EntitySet="SanPhams" />
-    </AssociationSet>
-    <AssociationSet Name="FK__HDGiaoHang__MaKH__5441852A" Association="QLCPModel.FK__HDGiaoHang__MaKH__5441852A">
-      <End Role="KhachHang" EntitySet="KhachHangs" />
-      <End Role="HDGiaoHang" EntitySet="HDGiaoHangs" />
-    </AssociationSet>
-    <AssociationSet Name="FK__NhanVien__MaQuye__3D5E1FD2" Association="QLCPModel.FK__NhanVien__MaQuye__3D5E1FD2">
-      <End Role="Quyen" EntitySet="Quyens" />
-      <End Role="NhanVien" EntitySet="NhanViens" />
-    </AssociationSet>
-    <AssociationSet Name="FK__TaiKhoan__MaQuye__398D8EEE" Association="QLCPModel.FK__TaiKhoan__MaQuye__398D8EEE">
-      <End Role="Quyen" EntitySet="Quyens" />
-      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
-    </AssociationSet>
-    <EntitySet Name="CTHDTaiQuans" EntityType="QLCPModel.CTHDTaiQuan" />
-    <EntitySet Name="HDTaiQuans" EntityType="QLCPModel.HDTaiQuan" />
-    <AssociationSet Name="FK__HDTaiQuan__MaBan__6FE99F9F" Association="QLCPModel.FK__HDTaiQuan__MaBan__6FE99F9F">
-      <End Role="Ban" EntitySet="Bans" />
-      <End Role="HDTaiQuan" EntitySet="HDTaiQuans" />
     </AssociationSet>
     <AssociationSet Name="FK__CTHDTaiQua__MaHD__74AE54BC" Association="QLCPModel.FK__CTHDTaiQua__MaHD__74AE54BC">
       <End Role="HDTaiQuan" EntitySet="HDTaiQuans" />
@@ -48,6 +32,14 @@
       <End Role="SanPham" EntitySet="SanPhams" />
       <End Role="CTHDTaiQuan" EntitySet="CTHDTaiQuans" />
     </AssociationSet>
+    <AssociationSet Name="FK__SanPham__MaDM__4222D4EF" Association="QLCPModel.FK__SanPham__MaDM__4222D4EF">
+      <End Role="DanhMucSanPham" EntitySet="DanhMucSanPhams" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HDGiaoHang__MaKH__5441852A" Association="QLCPModel.FK__HDGiaoHang__MaKH__5441852A">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="HDGiaoHang" EntitySet="HDGiaoHangs" />
+    </AssociationSet>
     <AssociationSet Name="FK__HDTaiQuan__MaKH__71D1E811" Association="QLCPModel.FK__HDTaiQuan__MaKH__71D1E811">
       <End Role="KhachHang" EntitySet="KhachHangs" />
       <End Role="HDTaiQuan" EntitySet="HDTaiQuans" />
@@ -56,6 +48,17 @@
       <End Role="NhanVien" EntitySet="NhanViens" />
       <End Role="HDTaiQuan" EntitySet="HDTaiQuans" />
     </AssociationSet>
+    <AssociationSet Name="FK__NhanVien__MaQuye__3D5E1FD2" Association="QLCPModel.FK__NhanVien__MaQuye__3D5E1FD2">
+      <End Role="Quyen" EntitySet="Quyens" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaiKhoan__MaQuye__398D8EEE" Association="QLCPModel.FK__TaiKhoan__MaQuye__398D8EEE">
+      <End Role="Quyen" EntitySet="Quyens" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+    </AssociationSet>
+    <FunctionImport Name="DoanhThuTheoNam" ReturnType="Collection(QLCPModel.DoanhThuTheoNam_Result)" />
+    <FunctionImport Name="DoanhThuTheoNgay" ReturnType="Collection(QLCPModel.DoanhThuTheoNgay_Result)" />
+    <FunctionImport Name="DoanhThuTheoThang" ReturnType="Collection(QLCPModel.DoanhThuTheoThang_Result)" />
   </EntityContainer>
   <EntityType Name="Ban">
     <Key>
@@ -78,6 +81,18 @@
     <NavigationProperty Name="HDGiaoHang" Relationship="QLCPModel.FK__CTHDGiaoHa__MaHD__571DF1D5" FromRole="CTHDGiaoHang" ToRole="HDGiaoHang" />
     <NavigationProperty Name="SanPham" Relationship="QLCPModel.FK__CTHDGiaoHa__MaSP__5812160E" FromRole="CTHDGiaoHang" ToRole="SanPham" />
   </EntityType>
+  <EntityType Name="CTHDTaiQuan">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="Int32" Nullable="false" />
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HDTaiQuan" Relationship="QLCPModel.FK__CTHDTaiQua__MaHD__74AE54BC" FromRole="CTHDTaiQuan" ToRole="HDTaiQuan" />
+    <NavigationProperty Name="SanPham" Relationship="QLCPModel.FK__CTHDTaiQua__MaSP__75A278F5" FromRole="CTHDTaiQuan" ToRole="SanPham" />
+  </EntityType>
   <EntityType Name="DanhMucSanPham">
     <Key>
       <PropertyRef Name="Ma" />
@@ -98,6 +113,23 @@
     <Property Name="ThoiGianNhan" Type="DateTime" Precision="3" />
     <NavigationProperty Name="CTHDGiaoHangs" Relationship="QLCPModel.FK__CTHDGiaoHa__MaHD__571DF1D5" FromRole="HDGiaoHang" ToRole="CTHDGiaoHang" />
     <NavigationProperty Name="KhachHang" Relationship="QLCPModel.FK__HDGiaoHang__MaKH__5441852A" FromRole="HDGiaoHang" ToRole="KhachHang" />
+  </EntityType>
+  <EntityType Name="HDTaiQuan">
+    <Key>
+      <PropertyRef Name="Ma" />
+    </Key>
+    <Property Name="Ma" Type="Int32" Nullable="false" />
+    <Property Name="MaBan" Type="Int32" />
+    <Property Name="GiamGia" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TongTien" Type="Int32" Nullable="false" />
+    <Property Name="MaKH" Type="Int32" />
+    <Property Name="ThoiGianVao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ThoiGianRa" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Ban" Relationship="QLCPModel.FK__HDTaiQuan__MaBan__6FE99F9F" FromRole="HDTaiQuan" ToRole="Ban" />
+    <NavigationProperty Name="CTHDTaiQuans" Relationship="QLCPModel.FK__CTHDTaiQua__MaHD__74AE54BC" FromRole="HDTaiQuan" ToRole="CTHDTaiQuan" />
+    <NavigationProperty Name="KhachHang" Relationship="QLCPModel.FK__HDTaiQuan__MaKH__71D1E811" FromRole="HDTaiQuan" ToRole="KhachHang" />
+    <NavigationProperty Name="NhanVien" Relationship="QLCPModel.FK__HDTaiQuan__MaNV__70DDC3D8" FromRole="HDTaiQuan" ToRole="NhanVien" />
   </EntityType>
   <EntityType Name="KhachHang">
     <Key>
@@ -123,8 +155,8 @@
     <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="DiaChi" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="MaQuyen" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Quyen" Relationship="QLCPModel.FK__NhanVien__MaQuye__3D5E1FD2" FromRole="NhanVien" ToRole="Quyen" />
     <NavigationProperty Name="HDTaiQuans" Relationship="QLCPModel.FK__HDTaiQuan__MaNV__70DDC3D8" FromRole="NhanVien" ToRole="HDTaiQuan" />
+    <NavigationProperty Name="Quyen" Relationship="QLCPModel.FK__NhanVien__MaQuye__3D5E1FD2" FromRole="NhanVien" ToRole="Quyen" />
   </EntityType>
   <EntityType Name="Quyen">
     <Key>
@@ -144,8 +176,8 @@
     <Property Name="MaDM" Type="Int32" Nullable="false" />
     <Property Name="DonGia" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CTHDGiaoHangs" Relationship="QLCPModel.FK__CTHDGiaoHa__MaSP__5812160E" FromRole="SanPham" ToRole="CTHDGiaoHang" />
-    <NavigationProperty Name="DanhMucSanPham" Relationship="QLCPModel.FK__SanPham__MaDM__4222D4EF" FromRole="SanPham" ToRole="DanhMucSanPham" />
     <NavigationProperty Name="CTHDTaiQuans" Relationship="QLCPModel.FK__CTHDTaiQua__MaSP__75A278F5" FromRole="SanPham" ToRole="CTHDTaiQuan" />
+    <NavigationProperty Name="DanhMucSanPham" Relationship="QLCPModel.FK__SanPham__MaDM__4222D4EF" FromRole="SanPham" ToRole="DanhMucSanPham" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -157,6 +189,20 @@
     <Property Name="MaQuyen" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Quyen" Relationship="QLCPModel.FK__TaiKhoan__MaQuye__398D8EEE" FromRole="TaiKhoan" ToRole="Quyen" />
   </EntityType>
+  <Association Name="FK__HDTaiQuan__MaBan__6FE99F9F">
+    <End Type="QLCPModel.Ban" Role="Ban" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="QLCPModel.HDTaiQuan" Role="HDTaiQuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ban">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="HDTaiQuan">
+        <PropertyRef Name="MaBan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__CTHDGiaoHa__MaHD__571DF1D5">
     <End Type="QLCPModel.HDGiaoHang" Role="HDGiaoHang" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -181,6 +227,34 @@
         <PropertyRef Name="Ma" />
       </Principal>
       <Dependent Role="CTHDGiaoHang">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTHDTaiQua__MaHD__74AE54BC">
+    <End Type="QLCPModel.HDTaiQuan" Role="HDTaiQuan" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="QLCPModel.CTHDTaiQuan" Role="CTHDTaiQuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDTaiQuan">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="CTHDTaiQuan">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTHDTaiQua__MaSP__75A278F5">
+    <End Type="QLCPModel.SanPham" Role="SanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="QLCPModel.CTHDTaiQuan" Role="CTHDTaiQuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="CTHDTaiQuan">
         <PropertyRef Name="MaSP" />
       </Dependent>
     </ReferentialConstraint>
@@ -213,105 +287,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__NhanVien__MaQuye__3D5E1FD2">
-    <End Type="QLCPModel.Quyen" Role="Quyen" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="QLCPModel.NhanVien" Role="NhanVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Quyen">
-        <PropertyRef Name="Ma" />
-      </Principal>
-      <Dependent Role="NhanVien">
-        <PropertyRef Name="MaQuyen" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__TaiKhoan__MaQuye__398D8EEE">
-    <End Type="QLCPModel.Quyen" Role="Quyen" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="QLCPModel.TaiKhoan" Role="TaiKhoan" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Quyen">
-        <PropertyRef Name="Ma" />
-      </Principal>
-      <Dependent Role="TaiKhoan">
-        <PropertyRef Name="MaQuyen" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="CTHDTaiQuan">
-    <Key>
-      <PropertyRef Name="Ma" />
-    </Key>
-    <Property Name="Ma" Type="Int32" Nullable="false" />
-    <Property Name="MaHD" Type="Int32" Nullable="false" />
-    <Property Name="MaSP" Type="Int32" Nullable="false" />
-    <Property Name="SoLuong" Type="Int32" Nullable="false" />
-    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="HDTaiQuan" Relationship="QLCPModel.FK__CTHDTaiQua__MaHD__74AE54BC" FromRole="CTHDTaiQuan" ToRole="HDTaiQuan" />
-    <NavigationProperty Name="SanPham" Relationship="QLCPModel.FK__CTHDTaiQua__MaSP__75A278F5" FromRole="CTHDTaiQuan" ToRole="SanPham" />
-  </EntityType>
-  <EntityType Name="HDTaiQuan">
-    <Key>
-      <PropertyRef Name="Ma" />
-    </Key>
-    <Property Name="Ma" Type="Int32" Nullable="false" />
-    <Property Name="MaBan" Type="Int32" />
-    <Property Name="GiamGia" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="TongTien" Type="Int32" Nullable="false" />
-    <Property Name="MaKH" Type="Int32" />
-    <Property Name="ThoiGianVao" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ThoiGianRa" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Ban" Relationship="QLCPModel.FK__HDTaiQuan__MaBan__6FE99F9F" FromRole="HDTaiQuan" ToRole="Ban" />
-    <NavigationProperty Name="CTHDTaiQuans" Relationship="QLCPModel.FK__CTHDTaiQua__MaHD__74AE54BC" FromRole="HDTaiQuan" ToRole="CTHDTaiQuan" />
-    <NavigationProperty Name="KhachHang" Relationship="QLCPModel.FK__HDTaiQuan__MaKH__71D1E811" FromRole="HDTaiQuan" ToRole="KhachHang" />
-    <NavigationProperty Name="NhanVien" Relationship="QLCPModel.FK__HDTaiQuan__MaNV__70DDC3D8" FromRole="HDTaiQuan" ToRole="NhanVien" />
-  </EntityType>
-  <Association Name="FK__HDTaiQuan__MaBan__6FE99F9F">
-    <End Type="QLCPModel.Ban" Role="Ban" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="QLCPModel.HDTaiQuan" Role="HDTaiQuan" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Ban">
-        <PropertyRef Name="Ma" />
-      </Principal>
-      <Dependent Role="HDTaiQuan">
-        <PropertyRef Name="MaBan" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__CTHDTaiQua__MaHD__74AE54BC">
-    <End Type="QLCPModel.HDTaiQuan" Role="HDTaiQuan" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="QLCPModel.CTHDTaiQuan" Role="CTHDTaiQuan" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HDTaiQuan">
-        <PropertyRef Name="Ma" />
-      </Principal>
-      <Dependent Role="CTHDTaiQuan">
-        <PropertyRef Name="MaHD" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__CTHDTaiQua__MaSP__75A278F5">
-    <End Type="QLCPModel.SanPham" Role="SanPham" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="QLCPModel.CTHDTaiQuan" Role="CTHDTaiQuan" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SanPham">
-        <PropertyRef Name="Ma" />
-      </Principal>
-      <Dependent Role="CTHDTaiQuan">
-        <PropertyRef Name="MaSP" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__HDTaiQuan__MaKH__71D1E811">
     <End Type="QLCPModel.KhachHang" Role="KhachHang" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -340,4 +315,50 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__NhanVien__MaQuye__3D5E1FD2">
+    <End Type="QLCPModel.Quyen" Role="Quyen" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="QLCPModel.NhanVien" Role="NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quyen">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="MaQuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaiKhoan__MaQuye__398D8EEE">
+    <End Type="QLCPModel.Quyen" Role="Quyen" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="QLCPModel.TaiKhoan" Role="TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quyen">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="MaQuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="DoanhThuTheoNam_Result">
+    <Property Type="Int32" Name="ThoiGian" Nullable="true" />
+    <Property Type="Int32" Name="DoanhThuTaiQuan" Nullable="true" />
+    <Property Type="Int32" Name="DoanhThuMangVe" Nullable="true" />
+    <Property Type="Int32" Name="DoanhThuGiaoHang" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DoanhThuTheoNgay_Result">
+    <Property Type="DateTime" Name="ThoiGian" Nullable="true" />
+    <Property Type="Int32" Name="DoanhThuTaiQuan" Nullable="true" />
+    <Property Type="Int32" Name="DoanhThuMangVe" Nullable="true" />
+    <Property Type="Int32" Name="DoanhThuGiaoHang" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DoanhThuTheoThang_Result">
+    <Property Type="String" Name="ThoiGian" Nullable="true" MaxLength="7" />
+    <Property Type="Int32" Name="DoanhThuTaiQuan" Nullable="true" />
+    <Property Type="Int32" Name="DoanhThuMangVe" Nullable="true" />
+    <Property Type="Int32" Name="DoanhThuGiaoHang" Nullable="true" />
+  </ComplexType>
 </Schema>

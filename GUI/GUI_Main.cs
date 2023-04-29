@@ -30,6 +30,16 @@ namespace GUI
             lbTime.Text = dt.ToString("HH:mm:ss");
         }
 
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            pnlBill.Visible = !pnlBill.Visible;
+        }
+
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+            pnlManage.Visible = !pnlManage.Visible;
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn đăng xuât không?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -122,14 +132,20 @@ namespace GUI
             frm.WindowState = FormWindowState.Maximized;
         }
 
-        private void btnBill_Click(object sender, EventArgs e)
+        private void btn_DoanhThu_Click(object sender, EventArgs e)
         {
-            pnlBill.Visible = !pnlBill.Visible;
+            GUI_Bills frm = new GUI_Bills();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.WindowState = FormWindowState.Maximized;
         }
 
-        private void btnManage_Click(object sender, EventArgs e)
+        private void btn_ThongKe_Click(object sender, EventArgs e)
         {
-            pnlManage.Visible = !pnlManage.Visible;
+            GUI_Statistic frm = new GUI_Statistic();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.WindowState = FormWindowState.Maximized;
         }
     }
 }

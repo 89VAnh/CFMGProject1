@@ -28,8 +28,8 @@ namespace DAL
         public string DiaChi { get; set; }
         public string MaQuyen { get; set; }
     
-        public virtual Quyen Quyen { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HDTaiQuan> HDTaiQuans { get; set; }
+        public virtual Quyen Quyen { get; set; }
     }
 }

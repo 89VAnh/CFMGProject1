@@ -10,6 +10,7 @@
 namespace DAL
 {
     using System.Data.Entity;
+    using System.Data.Entity.Core.Objects;
     using System.Data.Entity.Infrastructure;
 
     public partial class QLCPEntities : DbContext
@@ -28,14 +29,29 @@ namespace DAL
 
         public virtual DbSet<Ban> Bans { get; set; }
         public virtual DbSet<CTHDGiaoHang> CTHDGiaoHangs { get; set; }
+        public virtual DbSet<CTHDTaiQuan> CTHDTaiQuans { get; set; }
         public virtual DbSet<DanhMucSanPham> DanhMucSanPhams { get; set; }
         public virtual DbSet<HDGiaoHang> HDGiaoHangs { get; set; }
+        public virtual DbSet<HDTaiQuan> HDTaiQuans { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Quyen> Quyens { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
-        public virtual DbSet<CTHDTaiQuan> CTHDTaiQuans { get; set; }
-        public virtual DbSet<HDTaiQuan> HDTaiQuans { get; set; }
+
+        public virtual ObjectResult<DoanhThuTheoNam_Result> DoanhThuTheoNam()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DoanhThuTheoNam_Result>("DoanhThuTheoNam");
+        }
+
+        public virtual ObjectResult<DoanhThuTheoNgay_Result> DoanhThuTheoNgay()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DoanhThuTheoNgay_Result>("DoanhThuTheoNgay");
+        }
+
+        public virtual ObjectResult<DoanhThuTheoThang_Result> DoanhThuTheoThang()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DoanhThuTheoThang_Result>("DoanhThuTheoThang");
+        }
     }
 }

@@ -63,6 +63,7 @@
       <DependentUpon>ModelCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL_Account.cs" />
+    <Compile Include="DAL_Bill.cs" />
     <Compile Include="DAL_BillAtShop.cs" />
     <Compile Include="DAL_BillDelivery.cs" />
     <Compile Include="DAL_BillDetailAtShop.cs" />
@@ -74,6 +75,15 @@
     <Compile Include="DAL_Staff.cs" />
     <Compile Include="DAL_Table.cs" />
     <Compile Include="DanhMucSanPham.cs">
+      <DependentUpon>ModelCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhThuTheoNam_Result.cs">
+      <DependentUpon>ModelCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhThuTheoNgay_Result.cs">
+      <DependentUpon>ModelCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhThuTheoThang_Result.cs">
       <DependentUpon>ModelCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="HDGiaoHang.cs">

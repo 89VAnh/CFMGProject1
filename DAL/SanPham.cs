@@ -28,8 +28,8 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHDGiaoHang> CTHDGiaoHangs { get; set; }
-        public virtual DanhMucSanPham DanhMucSanPham { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHDTaiQuan> CTHDTaiQuans { get; set; }
+        public virtual DanhMucSanPham DanhMucSanPham { get; set; }
     }
 }

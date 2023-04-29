@@ -55,6 +55,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,6 +84,12 @@
     </Compile>
     <Compile Include="GUI_BillDelivery.Designer.cs">
       <DependentUpon>GUI_BillDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Bills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Bills.Designer.cs">
+      <DependentUpon>GUI_Bills.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_BillTakeAway.cs">
       <SubType>Form</SubType>
@@ -156,6 +163,12 @@
     <Compile Include="GUI_Staff.Designer.cs">
       <DependentUpon>GUI_Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_Statistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Statistic.Designer.cs">
+      <DependentUpon>GUI_Statistic.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Table.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_BillDelivery.resx">
       <DependentUpon>GUI_BillDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Bills.resx">
+      <DependentUpon>GUI_Bills.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_BillTakeAway.resx">
       <DependentUpon>GUI_BillTakeAway.cs</DependentUpon>
@@ -214,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Staff.resx">
       <DependentUpon>GUI_Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Statistic.resx">
+      <DependentUpon>GUI_Statistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Table.resx">
       <DependentUpon>GUI_Table.cs</DependentUpon>

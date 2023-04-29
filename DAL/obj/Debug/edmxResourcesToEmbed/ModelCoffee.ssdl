@@ -107,6 +107,14 @@
     <Property Name="Email" Type="varchar" MaxLength="200" />
     <Property Name="MaQuyen" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'QLCP.dbo.VW_DoanhThu' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_DoanhThu">
+          <Property Name="ThoiGian" Type="datetime" />
+          <Property Name="DoanhThuTaiQuan" Type="int" />
+          <Property Name="DoanhThuMangVe" Type="int" />
+          <Property Name="DoanhThuGiaoHang" Type="int" />
+        </EntityType>-->
   <Association Name="FK__CTHDGiaoHa__MaHD__571DF1D5">
     <End Role="HDGiaoHang" Type="Self.HDGiaoHang" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -261,6 +269,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="DoanhThuTheoNam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="DoanhThuTheoNgay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="DoanhThuTheoThang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="QLCPModelStoreContainer">
     <EntitySet Name="Ban" EntityType="Self.Ban" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHDGiaoHang" EntityType="Self.CTHDGiaoHang" Schema="dbo" store:Type="Tables" />

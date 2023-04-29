@@ -406,6 +406,7 @@
             this.btn_ThongKe.TabIndex = 6;
             this.btn_ThongKe.Text = "Thống kê";
             this.btn_ThongKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_ThongKe.Click += new System.EventHandler(this.btn_ThongKe_Click);
             // 
             // btn_DoanhThu
             // 
@@ -427,6 +428,7 @@
             this.btn_DoanhThu.TabIndex = 5;
             this.btn_DoanhThu.Text = "Doanh thu";
             this.btn_DoanhThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_DoanhThu.Click += new System.EventHandler(this.btn_DoanhThu_Click);
             // 
             // btnAccount
             // 

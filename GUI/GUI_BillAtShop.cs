@@ -221,9 +221,9 @@ namespace GUI
                     }
                     else
                         id = billAtShop.Ma;
-                    CTHDTaiQuan newBillDetail = new CTHDTaiQuan { Ma = busBillDetailAtShop.GetNewID(), MaHD = selectedBillID, MaSP = selectedProductID, SoLuong = (int)numAmount.Value, GhiChu = txtNote.Text };
+                    CTHDTaiQuan newBillDetail = new CTHDTaiQuan { Ma = busBillDetailAtShop.GetNewID(), MaHD = id, MaSP = selectedProductID, SoLuong = (int)numAmount.Value, GhiChu = txtNote.Text };
 
-                    CTHDTaiQuan billDetailAtShop = billDetails.SingleOrDefault(x => x.MaHD == newBillDetail.MaHD && x.MaSP == newBillDetail.MaSP);
+                    CTHDTaiQuan billDetailAtShop = billDetails.SingleOrDefault(x => x.MaHD == billAtShop.Ma && x.MaSP == newBillDetail.MaSP);
                     if (billDetailAtShop == null)
                     {
                         busBillDetailAtShop.Add(newBillDetail);
