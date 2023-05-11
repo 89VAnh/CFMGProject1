@@ -17,10 +17,9 @@ namespace BUS
             return dalAccount.GetAccounts();
         }
 
-        public bool CheckUn(string un)
+        public TaiKhoan GetAccountByUn(string un)
         {
-            accounts = GetAccounts();
-            return accounts.SingleOrDefault(a => a.TenDangNhap == un) != null;
+            return GetAccounts().SingleOrDefault(a => a.TenDangNhap == un);
         }
 
         public TaiKhoan GetAccount(string un, string pw)
@@ -29,19 +28,45 @@ namespace BUS
             return accounts.SingleOrDefault(a => a.TenDangNhap == un && a.MatKhau == pw);
         }
 
-        public void Add(TaiKhoan account)
+        public List<TaiKhoan> SearchAccountByUn(string un)
         {
-            dalAccount.Add(account);
+            return GetAccounts().Where(x => x.TenDangNhap.ToLower().Contains(un)).ToList();
         }
 
-        public void Update(TaiKhoan account)
+        public List<TaiKhoan> SearchAccountsByPositionID(string positionId)
         {
-            dalAccount.Update(account);
+            return GetAccounts().Where(x => x.MaQuyen == positionId).ToList();
         }
 
-        public void Delete(TaiKhoan account)
+        public bool Add(TaiKhoan account)
         {
-            dalAccount.Delete(account);
+            if (GetAccounts().SingleOrDefault(x => x.TenDangNhap == account.TenDangNhap) == null)
+            {
+                dalAccount.Add(account);
+                return true;
+            }
+            else return false;
+        }
+
+        public bool Update(TaiKhoan account)
+        {
+            if (GetAccounts().SingleOrDefault(x => x.TenDangNhap == account.TenDangNhap) != null)
+            {
+                dalAccount.Update(account);
+                return true;
+            }
+            else return false;
+        }
+
+        public bool Delete(string un)
+        {
+            TaiKhoan account = GetAccounts().SingleOrDefault(x => x.TenDangNhap == un);
+            if (account != null)
+            {
+                dalAccount.Delete(account);
+                return true;
+            }
+            else return false;
         }
     }
 }

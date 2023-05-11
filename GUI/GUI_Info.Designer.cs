@@ -60,7 +60,7 @@
             this.txtRePw.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRePw.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtRePw.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRePw.Location = new System.Drawing.Point(733, 363);
+            this.txtRePw.Location = new System.Drawing.Point(719, 372);
             this.txtRePw.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtRePw.Name = "txtRePw";
             this.txtRePw.PasswordChar = '●';
@@ -85,7 +85,7 @@
             this.txtNewPw.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNewPw.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtNewPw.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPw.Location = new System.Drawing.Point(733, 284);
+            this.txtNewPw.Location = new System.Drawing.Point(719, 284);
             this.txtNewPw.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtNewPw.Name = "txtNewPw";
             this.txtNewPw.PasswordChar = '●';

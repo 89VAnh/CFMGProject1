@@ -8,24 +8,29 @@ namespace BUS
     {
         private DAL_BillAtShop dalBillAtShop = new DAL_BillAtShop();
 
-        public List<HDTaiQuan> GetBillAtShopes()
+        public List<HDTaiQuan> GetAll()
         {
-            return dalBillAtShop.GetBillAtShopes();
+            return dalBillAtShop.GetAll();
+        }
+
+        public HDTaiQuan GetByID(int id)
+        {
+            return dalBillAtShop.GetByID(id);
         }
 
         public int GetNewID()
         {
-            return GetBillAtShopes().Count() == 0 ? 1 : GetBillAtShopes().Last().Ma + 1;
+            return GetAll().Count() == 0 ? 1 : GetAll().Last().Ma + 1;
         }
+
         public HDTaiQuan GetBillAtShopByTableID(int tableID)
         {
-            return GetBillAtShopes().SingleOrDefault(x => x.MaBan == tableID && x.ThoiGianRa == null);
+            return GetAll().SingleOrDefault(x => x.MaBan == tableID && x.ThoiGianRa == null);
         }
 
         public List<HDTaiQuan> GetBillTakeAwayUnPaid()
         {
-            var bills = GetBillAtShopes();
-            return GetBillAtShopes().Where(x => x.MaBan == null && x.ThoiGianRa == null).ToList();
+            return GetAll().Where(x => x.MaBan == null && x.ThoiGianRa == null).ToList();
         }
 
         public void SwapTable(int oldTableID, int newTableID)
@@ -40,14 +45,25 @@ namespace BUS
             dalBillAtShop.Add(billAtShop);
         }
 
-        public void Update(HDTaiQuan billAtShop)
+        public bool Update(HDTaiQuan billAtShop)
         {
-            dalBillAtShop.Update(billAtShop);
+            if (GetByID(billAtShop.Ma) != null)
+            {
+                dalBillAtShop.Update(billAtShop);
+                return true;
+            }
+            return false;
         }
 
-        public void Delete(HDTaiQuan billAtShop)
+        public bool Delete(int id)
         {
-            dalBillAtShop.Delete(billAtShop);
+            HDTaiQuan bill = GetByID(id);
+            if (bill != null)
+            {
+                dalBillAtShop.Delete(bill);
+                return true;
+            }
+            return false;
         }
     }
 }

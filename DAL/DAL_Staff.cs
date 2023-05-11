@@ -7,14 +7,14 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
-        public NhanVien GetStaffByID(string id)
-        {
-            return db.NhanViens.Find(id);
-        }
-
-        public List<NhanVien> GetStaffs()
+        public List<NhanVien> GetAll()
         {
             return db.NhanViens.ToList();
+        }
+
+        public NhanVien GetByID(string id)
+        {
+            return db.NhanViens.Find(id);
         }
 
         public void Add(NhanVien staff)

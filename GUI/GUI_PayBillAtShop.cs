@@ -1,5 +1,4 @@
-﻿using BUS;
-using DAL;
+﻿using DAL;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -10,17 +9,14 @@ namespace GUI
 {
     public partial class GUI_PayBillAtShop : Form
     {
-        private BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
-
-        private HDTaiQuan b;
-        private EventHandler AcceptPay;
+        private EventHandler _AcceptPay;
 
         public GUI_PayBillAtShop()
         {
             InitializeComponent();
         }
 
-        public GUI_PayBillAtShop(HDTaiQuan billAtShop, List<CTHDTaiQuan> billDetailAtShops, int totalPrice, EventHandler AcceptPay)
+        public GUI_PayBillAtShop(HDTaiQuan bill, List<CTHDTaiQuan> billDetails, int totalPrice, EventHandler AcceptPay)
         {
             InitializeComponent();
             var nfi = new NumberFormatInfo()
@@ -28,20 +24,17 @@ namespace GUI
                 NumberDecimalDigits = 0,
                 NumberGroupSeparator = "."
             };
-            lblTable.Text = billAtShop.Ban.Ten;
+            lblTable.Text = bill.Ban.Ten;
             lblTime.Text = DateTime.Now.ToString();
-            lblStaff.Text = billAtShop.MaNV;
+            lblStaff.Text = bill.MaNV;
             lblTotalPrice.Text = totalPrice.ToString("N", nfi) + " đ";
-            lblDiscount.Text = billAtShop.GiamGia;
-            lblPriceAfterDiscount.Text = billAtShop.TongTien.ToString("N", nfi) + " đ";
-            if (billAtShop.MaKH == null) lblCustomer.Text = "Khách hàng mới";
-            else lblCustomer.Text = billAtShop.MaKH.ToString();
+            lblDiscount.Text = bill.GiamGia;
+            lblPriceAfterDiscount.Text = bill.TongTien.ToString("N", nfi) + " đ";
+            if (bill.MaKH == null) lblCustomer.Text = "Khách hàng mới";
+            else lblCustomer.Text = bill.MaKH.ToString();
 
-            dgvBillAtShop.DataSource = billDetailAtShops.Select(b => new { b.Ma, b.SanPham.Ten, b.SoLuong, b.SanPham.DonGia, Total = b.SoLuong * b.SanPham.DonGia, b.GhiChu }).ToList();
-            this.AcceptPay = AcceptPay;
-
-            b = billAtShop;
-            b.ThoiGianRa = DateTime.Now;
+            dgvBillAtShop.DataSource = billDetails.Select(b => new { b.Ma, b.SanPham.Ten, b.SoLuong, b.SanPham.DonGia, Total = b.SoLuong * b.SanPham.DonGia, b.GhiChu }).ToList();
+            _AcceptPay = AcceptPay;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -53,9 +46,8 @@ namespace GUI
         {
             if (MessageBox.Show("Xác nhận hoàn tất thanh toán", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                busBillAtShop.Update(b);
                 MessageBox.Show("Thanh toán thành công!");
-                this.AcceptPay(sender, e);
+                _AcceptPay(sender, e);
                 this.Close();
             }
         }

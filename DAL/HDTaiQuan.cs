@@ -25,7 +25,7 @@ namespace DAL
         public string GiamGia { get; set; }
         public string MaNV { get; set; }
         public int TongTien { get; set; }
-        public Nullable<int> MaKH { get; set; }
+        public string MaKH { get; set; }
         public System.DateTime ThoiGianVao { get; set; }
         public Nullable<System.DateTime> ThoiGianRa { get; set; }
     

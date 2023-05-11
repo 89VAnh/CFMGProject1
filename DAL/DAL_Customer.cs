@@ -7,9 +7,14 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
-        public List<KhachHang> GetCustomers()
+        public List<KhachHang> GetAll()
         {
             return db.KhachHangs.ToList();
+        }
+
+        public KhachHang GetByID(string id)
+        {
+            return db.KhachHangs.Find(id);
         }
 
         public void Add(KhachHang customer)

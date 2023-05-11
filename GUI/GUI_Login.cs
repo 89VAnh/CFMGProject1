@@ -36,7 +36,7 @@ namespace GUI
                 }
                 else
                 {
-                    if (busAccount.CheckUn(un))
+                    if (busAccount.GetAccountByUn(un) != null)
                     {
                         MessageBox.Show("Mật khẩu không chính xác!");
                         txtPw.Focus();

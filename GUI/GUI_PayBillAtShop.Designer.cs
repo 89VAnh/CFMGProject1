@@ -278,7 +278,7 @@
             this.btnCancel.FillColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
-            this.btnCancel.Location = new System.Drawing.Point(380, 765);
+            this.btnCancel.Location = new System.Drawing.Point(336, 765);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(159, 45);
@@ -303,10 +303,10 @@
             this.btnAccept.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.btnAccept.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccept.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(222)))));
-            this.btnAccept.Location = new System.Drawing.Point(558, 765);
+            this.btnAccept.Location = new System.Drawing.Point(534, 765);
             this.btnAccept.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(159, 45);
+            this.btnAccept.Size = new System.Drawing.Size(183, 45);
             this.btnAccept.TabIndex = 0;
             this.btnAccept.Text = "Xác nhận";
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
@@ -434,7 +434,7 @@
             this.Controls.Add(this.btnAccept);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GUI_PayBillAtShop";
-            this.Text = "GUI_PayBillAtShop";
+            this.Text = "da";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillAtShop)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

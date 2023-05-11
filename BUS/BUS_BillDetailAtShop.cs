@@ -1,4 +1,5 @@
 ﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,14 +10,19 @@ namespace BUS
         private DAL_BillDetailAtShop dalBillDetailAtShop = new DAL_BillDetailAtShop();
         private BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
 
-        public List<CTHDTaiQuan> GetBillDetailAtShopes()
+        public List<CTHDTaiQuan> GetAll()
         {
-            return dalBillDetailAtShop.GetBillDetailAtShopes();
+            return dalBillDetailAtShop.GetAll();
+        }
+
+        public CTHDTaiQuan GetByID(int id)
+        {
+            return dalBillDetailAtShop.GetByID(id);
         }
 
         public List<CTHDTaiQuan> GetBillDetailByBillID(int id)
         {
-            return GetBillDetailAtShopes().Where(x => x.MaHD == id).ToList();
+            return GetAll().Where(x => x.MaHD == id).ToList();
         }
 
         public List<CTHDTaiQuan> GetBillDetailAtShopesInTable(int tableID)
@@ -29,7 +35,7 @@ namespace BUS
 
         public int GetNewID()
         {
-            return GetBillDetailAtShopes().Count() == 0 ? 1 : GetBillDetailAtShopes().Last().Ma + 1;
+            return GetAll().Count() == 0 ? 1 : GetAll().Last().Ma + 1;
         }
 
         public void AddAmount(CTHDTaiQuan bd, int amount, string note)
@@ -42,19 +48,50 @@ namespace BUS
             dalBillDetailAtShop.Update(bd);
         }
 
-        public void Add(CTHDTaiQuan billAtShopInfo)
+        public void Add(HDTaiQuan billAtShop, int? tableId, int productId, int amount, string note)
         {
-            dalBillDetailAtShop.Add(billAtShopInfo);
+            int id;
+
+            if (billAtShop == null)
+            {
+                id = busBillAtShop.GetNewID();
+                busBillAtShop.Add(new HDTaiQuan { Ma = id, MaBan = tableId, ThoiGianVao = DateTime.Now, TongTien = 0 });
+            }
+            else
+                id = billAtShop.Ma;
+            CTHDTaiQuan newBillDetail = new CTHDTaiQuan { Ma = GetNewID(), MaHD = id, MaSP = productId, SoLuong = amount, GhiChu = note };
+
+            CTHDTaiQuan billDetailAtShop = GetAll().SingleOrDefault(x => x.MaHD == id && x.MaSP == newBillDetail.MaSP);
+            if (billDetailAtShop == null)
+            {
+                dalBillDetailAtShop.Add(newBillDetail);
+            }
+            else
+            {
+                AddAmount(billDetailAtShop, newBillDetail.SoLuong, newBillDetail.GhiChu);
+            }
         }
 
-        public void Update(CTHDTaiQuan billAtShopInfo)
+        public bool Update(CTHDTaiQuan billDetailAtShop)
         {
-            dalBillDetailAtShop.Update(billAtShopInfo);
+            CTHDTaiQuan bd = GetAll().SingleOrDefault(x => x.Ma == billDetailAtShop.Ma);
+            if (bd != null)
+            {
+                dalBillDetailAtShop.Update(billDetailAtShop);
+                return true;
+            }
+            return false;
         }
 
-        public void Delete(CTHDTaiQuan billAtShopInfo)
+        public bool Delete(int billDetailId)
         {
-            dalBillDetailAtShop.Delete(billAtShopInfo);
+            CTHDTaiQuan bd = GetAll().SingleOrDefault(x => x.Ma == billDetailId);
+            if (bd != null)
+            {
+                dalBillDetailAtShop.Delete(bd);
+                return true;
+            }
+            return false;
         }
     }
 }

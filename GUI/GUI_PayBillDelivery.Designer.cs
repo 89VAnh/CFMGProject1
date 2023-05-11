@@ -239,7 +239,6 @@
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(395, 85);
             this.guna2HtmlLabel3.TabIndex = 41;
             this.guna2HtmlLabel3.Text = "THÔNG TIN HOÁ ĐƠN";
-            this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
             // 
             // lblTime
             // 

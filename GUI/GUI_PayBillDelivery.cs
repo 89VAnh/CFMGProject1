@@ -13,7 +13,6 @@ namespace GUI
         private BUS_BillDelivery busBillDelivery = new BUS_BillDelivery();
         private HDGiaoHang b;
         private EventHandler AcceptPay;
-        private int id;
 
         public GUI_PayBillDelivery()
         {
@@ -58,10 +57,6 @@ namespace GUI
                 this.AcceptPay(sender, e);
                 this.Close();
             }
-        }
-
-        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
-        {
         }
     }
 }

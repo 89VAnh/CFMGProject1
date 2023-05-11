@@ -7,9 +7,14 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
-        public List<HDTaiQuan> GetBillAtShopes()
+        public List<HDTaiQuan> GetAll()
         {
             return db.HDTaiQuans.ToList();
+        }
+
+        public HDTaiQuan GetByID(int id)
+        {
+            return db.HDTaiQuans.Find(id);
         }
 
         public void Add(HDTaiQuan billAtShop)

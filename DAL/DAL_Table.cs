@@ -7,9 +7,14 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
-        public List<Ban> GetTableCoffees()
+        public List<Ban> GetAll()
         {
             return db.Bans.ToList();
+        }
+
+        public Ban GetByID(int id)
+        {
+            return db.Bans.Find(id);
         }
 
         public void Add(Ban tableCoffee)

@@ -21,7 +21,7 @@ namespace DAL
             this.HDTaiQuans = new HashSet<HDTaiQuan>();
         }
     
-        public int Ma { get; set; }
+        public string Ma { get; set; }
         public string Ten { get; set; }
         public string GioiTinh { get; set; }
         public string SDT { get; set; }

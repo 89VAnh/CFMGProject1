@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tctBill = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabBillAtShop = new System.Windows.Forms.TabPage();
+            this.btnExcel1 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvBill1 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -68,11 +69,12 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearch2 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRefresh2 = new Guna.UI2.WinForms.Guna2Button();
             this.dtpTo2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpFrom2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnSearch2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRefresh2 = new Guna.UI2.WinForms.Guna2Button();
             this.tabBillDelivery = new System.Windows.Forms.TabPage();
+            this.btnExcel3 = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvBill3 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -82,10 +84,11 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearch3 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRefresh3 = new Guna.UI2.WinForms.Guna2Button();
             this.dtpTo3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpFrom3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnSearch3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRefresh3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExcel2 = new Guna.UI2.WinForms.Guna2Button();
             this.tctBill.SuspendLayout();
             this.tabBillAtShop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill1)).BeginInit();
@@ -130,6 +133,7 @@
             // tabBillAtShop
             // 
             this.tabBillAtShop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabBillAtShop.Controls.Add(this.btnExcel1);
             this.tabBillAtShop.Controls.Add(this.label1);
             this.tabBillAtShop.Controls.Add(this.label6);
             this.tabBillAtShop.Controls.Add(this.dgvBill1);
@@ -145,6 +149,32 @@
             this.tabBillAtShop.Size = new System.Drawing.Size(1136, 638);
             this.tabBillAtShop.TabIndex = 0;
             this.tabBillAtShop.Text = "Hoá đơn tại quán";
+            // 
+            // btnExcel1
+            // 
+            this.btnExcel1.AutoRoundedCorners = true;
+            this.btnExcel1.BackColor = System.Drawing.Color.Transparent;
+            this.btnExcel1.BorderRadius = 20;
+            this.btnExcel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcel1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExcel1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExcel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
+            this.btnExcel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.btnExcel1.Image = global::GUI.Properties.Resources.excel;
+            this.btnExcel1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnExcel1.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnExcel1.Location = new System.Drawing.Point(408, 156);
+            this.btnExcel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExcel1.Name = "btnExcel1";
+            this.btnExcel1.Size = new System.Drawing.Size(174, 43);
+            this.btnExcel1.TabIndex = 35;
+            this.btnExcel1.Text = "Xuất file excel";
+            this.btnExcel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnExcel1.UseTransparentBackground = true;
+            this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
             // 
             // label1
             // 
@@ -171,23 +201,23 @@
             // dgvBill1
             // 
             this.dgvBill1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle77.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle77.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvBill1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle77;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvBill1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvBill1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle78.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle78.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(237)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBill1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle78;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(237)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBill1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvBill1.ColumnHeadersHeight = 28;
             this.dgvBill1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvBill1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -199,26 +229,26 @@
             this.Column5,
             this.Column9,
             this.Column8});
-            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle79.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle79.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle79.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle79.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill1.DefaultCellStyle = dataGridViewCellStyle79;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBill1.DefaultCellStyle = dataGridViewCellStyle19;
             this.dgvBill1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBill1.Location = new System.Drawing.Point(1, 253);
             this.dgvBill1.Name = "dgvBill1";
             this.dgvBill1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle80.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle80.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle80.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle80.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle80.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBill1.RowHeadersDefaultCellStyle = dataGridViewCellStyle80;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBill1.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvBill1.RowHeadersVisible = false;
             this.dgvBill1.RowHeadersWidth = 51;
             this.dgvBill1.RowTemplate.Height = 28;
@@ -322,7 +352,7 @@
             this.btnSearch1.Location = new System.Drawing.Point(14, 156);
             this.btnSearch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch1.Name = "btnSearch1";
-            this.btnSearch1.Size = new System.Drawing.Size(119, 43);
+            this.btnSearch1.Size = new System.Drawing.Size(144, 43);
             this.btnSearch1.TabIndex = 29;
             this.btnSearch1.Text = "Tìm kiếm";
             this.btnSearch1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -345,10 +375,10 @@
             this.btnRefresh1.Image = global::GUI.Properties.Resources.refresh;
             this.btnRefresh1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnRefresh1.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnRefresh1.Location = new System.Drawing.Point(161, 156);
+            this.btnRefresh1.Location = new System.Drawing.Point(196, 156);
             this.btnRefresh1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefresh1.Name = "btnRefresh1";
-            this.btnRefresh1.Size = new System.Drawing.Size(116, 43);
+            this.btnRefresh1.Size = new System.Drawing.Size(146, 43);
             this.btnRefresh1.TabIndex = 30;
             this.btnRefresh1.Text = "Làm mới";
             this.btnRefresh1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -400,13 +430,14 @@
             // tabBillTakeAway
             // 
             this.tabBillTakeAway.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabBillTakeAway.Controls.Add(this.btnExcel2);
             this.tabBillTakeAway.Controls.Add(this.label2);
             this.tabBillTakeAway.Controls.Add(this.label3);
             this.tabBillTakeAway.Controls.Add(this.dgvBill2);
-            this.tabBillTakeAway.Controls.Add(this.btnSearch2);
-            this.tabBillTakeAway.Controls.Add(this.btnRefresh2);
             this.tabBillTakeAway.Controls.Add(this.dtpTo2);
             this.tabBillTakeAway.Controls.Add(this.dtpFrom2);
+            this.tabBillTakeAway.Controls.Add(this.btnSearch2);
+            this.tabBillTakeAway.Controls.Add(this.btnRefresh2);
             this.tabBillTakeAway.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabBillTakeAway.ForeColor = System.Drawing.Color.Transparent;
             this.tabBillTakeAway.Location = new System.Drawing.Point(4, 44);
@@ -441,23 +472,23 @@
             // dgvBill2
             // 
             this.dgvBill2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle81.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle81.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle81.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle81.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle81.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvBill2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle81;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvBill2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvBill2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle82.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle82.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle82.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(237)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBill2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle82;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(237)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBill2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvBill2.ColumnHeadersHeight = 28;
             this.dgvBill2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvBill2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -468,26 +499,26 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.Column2});
-            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle83.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle83.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle83.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill2.DefaultCellStyle = dataGridViewCellStyle83;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBill2.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgvBill2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBill2.Location = new System.Drawing.Point(2, 253);
             this.dgvBill2.Name = "dgvBill2";
             this.dgvBill2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle84.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle84.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle84.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBill2.RowHeadersDefaultCellStyle = dataGridViewCellStyle84;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBill2.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvBill2.RowHeadersVisible = false;
             this.dgvBill2.RowHeadersWidth = 51;
             this.dgvBill2.RowTemplate.Height = 28;
@@ -565,58 +596,6 @@
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             // 
-            // btnSearch2
-            // 
-            this.btnSearch2.AutoRoundedCorners = true;
-            this.btnSearch2.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch2.BorderRadius = 20;
-            this.btnSearch2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSearch2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSearch2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
-            this.btnSearch2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
-            this.btnSearch2.Image = global::GUI.Properties.Resources.search;
-            this.btnSearch2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSearch2.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnSearch2.Location = new System.Drawing.Point(15, 156);
-            this.btnSearch2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSearch2.Name = "btnSearch2";
-            this.btnSearch2.Size = new System.Drawing.Size(119, 43);
-            this.btnSearch2.TabIndex = 36;
-            this.btnSearch2.Text = "Tìm kiếm";
-            this.btnSearch2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnSearch2.UseTransparentBackground = true;
-            this.btnSearch2.Click += new System.EventHandler(this.btnSearch2_Click);
-            // 
-            // btnRefresh2
-            // 
-            this.btnRefresh2.AutoRoundedCorners = true;
-            this.btnRefresh2.BackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh2.BorderRadius = 20;
-            this.btnRefresh2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRefresh2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRefresh2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRefresh2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRefresh2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
-            this.btnRefresh2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
-            this.btnRefresh2.Image = global::GUI.Properties.Resources.refresh;
-            this.btnRefresh2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnRefresh2.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnRefresh2.Location = new System.Drawing.Point(162, 156);
-            this.btnRefresh2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRefresh2.Name = "btnRefresh2";
-            this.btnRefresh2.Size = new System.Drawing.Size(116, 43);
-            this.btnRefresh2.TabIndex = 37;
-            this.btnRefresh2.Text = "Làm mới";
-            this.btnRefresh2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnRefresh2.UseTransparentBackground = true;
-            this.btnRefresh2.Click += new System.EventHandler(this.btnRefresh2_Click);
-            // 
             // dtpTo2
             // 
             this.dtpTo2.Animated = true;
@@ -659,16 +638,69 @@
             this.dtpFrom2.UseTransparentBackground = true;
             this.dtpFrom2.Value = new System.DateTime(2022, 12, 26, 11, 5, 35, 484);
             // 
+            // btnSearch2
+            // 
+            this.btnSearch2.AutoRoundedCorners = true;
+            this.btnSearch2.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch2.BorderRadius = 20;
+            this.btnSearch2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSearch2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSearch2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
+            this.btnSearch2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.btnSearch2.Image = global::GUI.Properties.Resources.search;
+            this.btnSearch2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSearch2.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnSearch2.Location = new System.Drawing.Point(15, 156);
+            this.btnSearch2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSearch2.Name = "btnSearch2";
+            this.btnSearch2.Size = new System.Drawing.Size(144, 43);
+            this.btnSearch2.TabIndex = 36;
+            this.btnSearch2.Text = "Tìm kiếm";
+            this.btnSearch2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnSearch2.UseTransparentBackground = true;
+            this.btnSearch2.Click += new System.EventHandler(this.btnSearch2_Click);
+            // 
+            // btnRefresh2
+            // 
+            this.btnRefresh2.AutoRoundedCorners = true;
+            this.btnRefresh2.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh2.BorderRadius = 20;
+            this.btnRefresh2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefresh2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefresh2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
+            this.btnRefresh2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.btnRefresh2.Image = global::GUI.Properties.Resources.refresh;
+            this.btnRefresh2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnRefresh2.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnRefresh2.Location = new System.Drawing.Point(196, 156);
+            this.btnRefresh2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefresh2.Name = "btnRefresh2";
+            this.btnRefresh2.Size = new System.Drawing.Size(146, 43);
+            this.btnRefresh2.TabIndex = 37;
+            this.btnRefresh2.Text = "Làm mới";
+            this.btnRefresh2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnRefresh2.UseTransparentBackground = true;
+            this.btnRefresh2.Click += new System.EventHandler(this.btnRefresh2_Click);
+            // 
             // tabBillDelivery
             // 
             this.tabBillDelivery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabBillDelivery.Controls.Add(this.btnExcel3);
             this.tabBillDelivery.Controls.Add(this.label4);
             this.tabBillDelivery.Controls.Add(this.label5);
             this.tabBillDelivery.Controls.Add(this.dgvBill3);
-            this.tabBillDelivery.Controls.Add(this.btnSearch3);
-            this.tabBillDelivery.Controls.Add(this.btnRefresh3);
             this.tabBillDelivery.Controls.Add(this.dtpTo3);
             this.tabBillDelivery.Controls.Add(this.dtpFrom3);
+            this.tabBillDelivery.Controls.Add(this.btnSearch3);
+            this.tabBillDelivery.Controls.Add(this.btnRefresh3);
             this.tabBillDelivery.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabBillDelivery.ForeColor = System.Drawing.Color.Transparent;
             this.tabBillDelivery.Location = new System.Drawing.Point(4, 44);
@@ -676,6 +708,32 @@
             this.tabBillDelivery.Size = new System.Drawing.Size(1136, 638);
             this.tabBillDelivery.TabIndex = 2;
             this.tabBillDelivery.Text = "Hoá đơn giao hàng";
+            // 
+            // btnExcel3
+            // 
+            this.btnExcel3.AutoRoundedCorners = true;
+            this.btnExcel3.BackColor = System.Drawing.Color.Transparent;
+            this.btnExcel3.BorderRadius = 20;
+            this.btnExcel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcel3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExcel3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExcel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
+            this.btnExcel3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.btnExcel3.Image = global::GUI.Properties.Resources.excel;
+            this.btnExcel3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnExcel3.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnExcel3.Location = new System.Drawing.Point(408, 156);
+            this.btnExcel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExcel3.Name = "btnExcel3";
+            this.btnExcel3.Size = new System.Drawing.Size(174, 43);
+            this.btnExcel3.TabIndex = 40;
+            this.btnExcel3.Text = "Xuất file excel";
+            this.btnExcel3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnExcel3.UseTransparentBackground = true;
+            this.btnExcel3.Click += new System.EventHandler(this.btnExcel3_Click);
             // 
             // label4
             // 
@@ -702,23 +760,23 @@
             // dgvBill3
             // 
             this.dgvBill3.AllowUserToResizeRows = false;
-            dataGridViewCellStyle73.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle73.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle73.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvBill3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvBill3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvBill3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle74.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle74.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(237)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle74.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle74.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBill3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle74;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(237)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBill3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvBill3.ColumnHeadersHeight = 28;
             this.dgvBill3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvBill3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -728,26 +786,26 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15});
-            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle75.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle75.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle75.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle75.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle75.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle75.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill3.DefaultCellStyle = dataGridViewCellStyle75;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBill3.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvBill3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBill3.Location = new System.Drawing.Point(2, 253);
             this.dgvBill3.Name = "dgvBill3";
             this.dgvBill3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle76.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle76.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle76.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle76.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle76.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle76.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBill3.RowHeadersDefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBill3.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvBill3.RowHeadersVisible = false;
             this.dgvBill3.RowHeadersWidth = 51;
             this.dgvBill3.RowTemplate.Height = 28;
@@ -818,58 +876,6 @@
             this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
-            // btnSearch3
-            // 
-            this.btnSearch3.AutoRoundedCorners = true;
-            this.btnSearch3.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch3.BorderRadius = 20;
-            this.btnSearch3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSearch3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSearch3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
-            this.btnSearch3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
-            this.btnSearch3.Image = global::GUI.Properties.Resources.search;
-            this.btnSearch3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSearch3.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnSearch3.Location = new System.Drawing.Point(15, 156);
-            this.btnSearch3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSearch3.Name = "btnSearch3";
-            this.btnSearch3.Size = new System.Drawing.Size(119, 43);
-            this.btnSearch3.TabIndex = 36;
-            this.btnSearch3.Text = "Tìm kiếm";
-            this.btnSearch3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnSearch3.UseTransparentBackground = true;
-            this.btnSearch3.Click += new System.EventHandler(this.btnSearch3_Click);
-            // 
-            // btnRefresh3
-            // 
-            this.btnRefresh3.AutoRoundedCorners = true;
-            this.btnRefresh3.BackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh3.BorderRadius = 20;
-            this.btnRefresh3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRefresh3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRefresh3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRefresh3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRefresh3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
-            this.btnRefresh3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
-            this.btnRefresh3.Image = global::GUI.Properties.Resources.refresh;
-            this.btnRefresh3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnRefresh3.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnRefresh3.Location = new System.Drawing.Point(162, 156);
-            this.btnRefresh3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRefresh3.Name = "btnRefresh3";
-            this.btnRefresh3.Size = new System.Drawing.Size(116, 43);
-            this.btnRefresh3.TabIndex = 37;
-            this.btnRefresh3.Text = "Làm mới";
-            this.btnRefresh3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnRefresh3.UseTransparentBackground = true;
-            this.btnRefresh3.Click += new System.EventHandler(this.btnRefresh3_Click);
-            // 
             // dtpTo3
             // 
             this.dtpTo3.Animated = true;
@@ -911,6 +917,84 @@
             this.dtpFrom3.TabIndex = 34;
             this.dtpFrom3.UseTransparentBackground = true;
             this.dtpFrom3.Value = new System.DateTime(2022, 12, 26, 11, 5, 35, 484);
+            // 
+            // btnSearch3
+            // 
+            this.btnSearch3.AutoRoundedCorners = true;
+            this.btnSearch3.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch3.BorderRadius = 20;
+            this.btnSearch3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSearch3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSearch3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
+            this.btnSearch3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.btnSearch3.Image = global::GUI.Properties.Resources.search;
+            this.btnSearch3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSearch3.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnSearch3.Location = new System.Drawing.Point(15, 156);
+            this.btnSearch3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSearch3.Name = "btnSearch3";
+            this.btnSearch3.Size = new System.Drawing.Size(144, 43);
+            this.btnSearch3.TabIndex = 36;
+            this.btnSearch3.Text = "Tìm kiếm";
+            this.btnSearch3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnSearch3.UseTransparentBackground = true;
+            this.btnSearch3.Click += new System.EventHandler(this.btnSearch3_Click);
+            // 
+            // btnRefresh3
+            // 
+            this.btnRefresh3.AutoRoundedCorners = true;
+            this.btnRefresh3.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh3.BorderRadius = 20;
+            this.btnRefresh3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefresh3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefresh3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
+            this.btnRefresh3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.btnRefresh3.Image = global::GUI.Properties.Resources.refresh;
+            this.btnRefresh3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnRefresh3.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnRefresh3.Location = new System.Drawing.Point(196, 156);
+            this.btnRefresh3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefresh3.Name = "btnRefresh3";
+            this.btnRefresh3.Size = new System.Drawing.Size(146, 43);
+            this.btnRefresh3.TabIndex = 37;
+            this.btnRefresh3.Text = "Làm mới";
+            this.btnRefresh3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnRefresh3.UseTransparentBackground = true;
+            this.btnRefresh3.Click += new System.EventHandler(this.btnRefresh3_Click);
+            // 
+            // btnExcel2
+            // 
+            this.btnExcel2.AutoRoundedCorners = true;
+            this.btnExcel2.BackColor = System.Drawing.Color.Transparent;
+            this.btnExcel2.BorderRadius = 20;
+            this.btnExcel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcel2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExcel2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExcel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(104)))));
+            this.btnExcel2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.btnExcel2.Image = global::GUI.Properties.Resources.excel;
+            this.btnExcel2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnExcel2.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnExcel2.Location = new System.Drawing.Point(408, 156);
+            this.btnExcel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExcel2.Name = "btnExcel2";
+            this.btnExcel2.Size = new System.Drawing.Size(174, 43);
+            this.btnExcel2.TabIndex = 42;
+            this.btnExcel2.Text = "Xuất file excel";
+            this.btnExcel2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnExcel2.UseTransparentBackground = true;
+            this.btnExcel2.Click += new System.EventHandler(this.btnExcel2_Click);
             // 
             // GUI_Bills
             // 
@@ -983,5 +1067,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2Button btnExcel1;
+        private Guna.UI2.WinForms.Guna2Button btnExcel3;
+        private Guna.UI2.WinForms.Guna2Button btnExcel2;
     }
 }

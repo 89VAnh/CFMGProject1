@@ -84,10 +84,10 @@
             this.numTotalPrice = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.dgvBillDetailTakeAway = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cboStaff = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtCustomer = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.cboCustomer = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
@@ -683,9 +683,9 @@
             this.btnDelBill.Image = global::GUI.Properties.Resources.delete;
             this.btnDelBill.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDelBill.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnDelBill.Location = new System.Drawing.Point(1058, 10);
+            this.btnDelBill.Location = new System.Drawing.Point(1048, 12);
             this.btnDelBill.Name = "btnDelBill";
-            this.btnDelBill.Size = new System.Drawing.Size(172, 43);
+            this.btnDelBill.Size = new System.Drawing.Size(186, 43);
             this.btnDelBill.TabIndex = 9;
             this.btnDelBill.Text = "Xoá hoá đơn";
             this.btnDelBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -733,7 +733,7 @@
             this.btnAddBill.ImageSize = new System.Drawing.Size(28, 28);
             this.btnAddBill.Location = new System.Drawing.Point(828, 10);
             this.btnAddBill.Name = "btnAddBill";
-            this.btnAddBill.Size = new System.Drawing.Size(212, 43);
+            this.btnAddBill.Size = new System.Drawing.Size(203, 43);
             this.btnAddBill.TabIndex = 2;
             this.btnAddBill.Text = "Thêm hoá đơn";
             this.btnAddBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -744,21 +744,24 @@
             this.txtBillID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBillID.AutoRoundedCorners = true;
             this.txtBillID.BackColor = System.Drawing.Color.White;
-            this.txtBillID.BorderColor = System.Drawing.Color.Silver;
+            this.txtBillID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.txtBillID.BorderRadius = 17;
             this.txtBillID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBillID.DefaultText = "";
-            this.txtBillID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBillID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBillID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBillID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
+            this.txtBillID.DisabledState.FillColor = System.Drawing.Color.White;
+            this.txtBillID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtBillID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBillID.Enabled = false;
             this.txtBillID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBillID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBillID.ForeColor = System.Drawing.Color.Black;
             this.txtBillID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBillID.Location = new System.Drawing.Point(941, 128);
             this.txtBillID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBillID.Name = "txtBillID";
             this.txtBillID.PasswordChar = '\0';
+            this.txtBillID.PlaceholderForeColor = System.Drawing.Color.White;
             this.txtBillID.PlaceholderText = "";
             this.txtBillID.ReadOnly = true;
             this.txtBillID.SelectedText = "";
@@ -950,31 +953,6 @@
             this.cboStaff.Size = new System.Drawing.Size(186, 36);
             this.cboStaff.TabIndex = 0;
             // 
-            // txtCustomer
-            // 
-            this.txtCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCustomer.AutoRoundedCorners = true;
-            this.txtCustomer.BackColor = System.Drawing.Color.White;
-            this.txtCustomer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
-            this.txtCustomer.BorderRadius = 17;
-            this.txtCustomer.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomer.DefaultText = "";
-            this.txtCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomer.Location = new System.Drawing.Point(1233, 154);
-            this.txtCustomer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.PasswordChar = '\0';
-            this.txtCustomer.PlaceholderText = "";
-            this.txtCustomer.SelectedText = "";
-            this.txtCustomer.Size = new System.Drawing.Size(148, 36);
-            this.txtCustomer.TabIndex = 1;
-            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1011,16 +989,35 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Mã khách hàng :";
             // 
+            // cboCustomer
+            // 
+            this.cboCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCustomer.AutoRoundedCorners = true;
+            this.cboCustomer.BackColor = System.Drawing.Color.White;
+            this.cboCustomer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
+            this.cboCustomer.BorderRadius = 17;
+            this.cboCustomer.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCustomer.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboCustomer.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboCustomer.ItemHeight = 30;
+            this.cboCustomer.Location = new System.Drawing.Point(1233, 154);
+            this.cboCustomer.Name = "cboCustomer";
+            this.cboCustomer.Size = new System.Drawing.Size(186, 36);
+            this.cboCustomer.TabIndex = 17;
+            // 
             // GUI_BillTakeAway
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1470, 807);
+            this.Controls.Add(this.cboCustomer);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtCustomer);
             this.Controls.Add(this.cboStaff);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label1);
@@ -1087,7 +1084,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAddBillDetail;
         private Guna.UI2.WinForms.Guna2DataGridView dgvBillDetailTakeAway;
         private Guna.UI2.WinForms.Guna2ComboBox cboStaff;
-        private Guna.UI2.WinForms.Guna2TextBox txtCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
@@ -1099,5 +1095,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2ComboBox cboCustomer;
     }
 }

@@ -7,17 +7,27 @@ namespace BUS
     public class BUS_BillDetailDelivery
     {
         private DAL_BillDetailDelivery dalBillDetailDelivery = new DAL_BillDetailDelivery();
+        private BUS_BillDelivery busBillDelivery = new BUS_BillDelivery();
         private List<CTHDGiaoHang> billDetailDeliveries = new List<CTHDGiaoHang>();
 
-        public List<CTHDGiaoHang> GetBillDetailDeliveries()
+        public List<CTHDGiaoHang> GetAll()
         {
-            billDetailDeliveries = dalBillDetailDelivery.GetBillDetailDeliveries();
-            return billDetailDeliveries;
+            return dalBillDetailDelivery.GetAll();
+        }
+
+        public CTHDGiaoHang GetByID(int id)
+        {
+            return dalBillDetailDelivery.GetByID(id);
         }
 
         public int GetNewID()
         {
-            return GetBillDetailDeliveries().Count() == 0 ? 1 : GetBillDetailDeliveries().Last().Ma + 1;
+            return GetAll().Count() == 0 ? 1 : GetAll().Last().Ma + 1;
+        }
+
+        public List<CTHDGiaoHang> GetBillDetailsByBillID(int id)
+        {
+            return GetAll().Where(x => x.MaHD == id).ToList();
         }
 
         public void AddAmount(CTHDGiaoHang bd, int amount, string note)
@@ -30,19 +40,45 @@ namespace BUS
             dalBillDetailDelivery.Update(bd);
         }
 
-        public void Add(CTHDGiaoHang billDetail)
+        public bool Add(int billID, int productID, int amount, string note)
         {
-            dalBillDetailDelivery.Add(billDetail);
+            if (busBillDelivery.GetByID(billID) != null)
+            {
+                CTHDGiaoHang billDetailDelivery = GetAll().SingleOrDefault(x => x.MaHD == billID && x.MaSP == productID);
+                if (billDetailDelivery == null)
+                {
+                    CTHDGiaoHang newBillDetail = new CTHDGiaoHang { Ma = GetNewID(), MaHD = billID, MaSP = productID, SoLuong = amount, GhiChu = note };
+                    dalBillDetailDelivery.Add(newBillDetail);
+                }
+                else
+                {
+                    AddAmount(billDetailDelivery, amount, note);
+                }
+
+                return true;
+            }
+            else return false;
         }
 
-        public void Update(CTHDGiaoHang billDetail)
+        public bool Update(CTHDGiaoHang billDetail)
         {
-            dalBillDetailDelivery.Update(billDetail);
+            if (GetByID(billDetail.Ma) != null)
+            {
+                dalBillDetailDelivery.Update(billDetail);
+                return true;
+            }
+            return false;
         }
 
-        public void Delete(CTHDGiaoHang billDetail)
+        public bool Delete(int id)
         {
-            dalBillDetailDelivery.Delete(billDetail);
+            CTHDGiaoHang bd = GetByID(id);
+            if (bd != null)
+            {
+                dalBillDetailDelivery.Delete(bd);
+                return true;
+            }
+            return false;
         }
     }
 }

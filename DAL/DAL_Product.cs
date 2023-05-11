@@ -7,9 +7,14 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
-        public List<SanPham> GetProducts()
+        public List<SanPham> GetAll()
         {
             return db.SanPhams.ToList();
+        }
+
+        public SanPham GetByID(int id)
+        {
+            return db.SanPhams.Find(id);
         }
 
         public void Add(SanPham product)

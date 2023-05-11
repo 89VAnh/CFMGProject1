@@ -9,29 +9,31 @@ namespace GUI
 {
     public partial class GUI_Bills : Form
     {
-        BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
-        BUS_BillDelivery busBillDelivery = new BUS_BillDelivery();
+        private BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
+        private BUS_BillDelivery busBillDelivery = new BUS_BillDelivery();
+        private BUS_BillDetailAtShop busBillDetailAtShop = new BUS_BillDetailAtShop();
+        private BUS_BillDetailDelivery busBillDetailDelivery = new BUS_BillDetailDelivery();
 
-        List<HDTaiQuan> billAtShopes = new List<HDTaiQuan>();
-        List<HDTaiQuan> billTakeAways = new List<HDTaiQuan>();
-        List<HDGiaoHang> billDeliveries = new List<HDGiaoHang>();
+        private List<HDTaiQuan> billAtShopes = new List<HDTaiQuan>();
+        private List<HDTaiQuan> billTakeAways = new List<HDTaiQuan>();
+        private List<HDGiaoHang> billDeliveries = new List<HDGiaoHang>();
 
         public GUI_Bills()
         {
             InitializeComponent();
         }
 
-        void UpdateDgvBill1(List<HDTaiQuan> bills)
+        private void UpdateDgvBill1(List<HDTaiQuan> bills)
         {
             dgvBill1.DataSource = bills.Select(x => new { x.Ma, TenBan = x.Ban.Ten, x.MaNV, x.MaKH, x.GiamGia, x.TongTien, x.ThoiGianVao, x.ThoiGianRa }).ToList();
         }
 
-        void UpdateDgvBill2(List<HDTaiQuan> bills)
+        private void UpdateDgvBill2(List<HDTaiQuan> bills)
         {
             dgvBill2.DataSource = bills.Select(x => new { x.Ma, x.MaNV, x.MaKH, x.GiamGia, x.TongTien, x.ThoiGianVao, x.ThoiGianRa }).ToList();
         }
 
-        void UpdateDgvBill3(List<HDGiaoHang> bills)
+        private void UpdateDgvBill3(List<HDGiaoHang> bills)
         {
             dgvBill3.DataSource = bills.Select(x => new { x.Ma, x.MaKH, x.GiamGia, x.TongTien, x.DiaChi, x.ThoiGianNhan }).ToList();
         }
@@ -46,13 +48,13 @@ namespace GUI
             dtpTo2.Value = today;
             dtpTo3.Value = today;
 
-            billAtShopes = busBillAtShop.GetBillAtShopes().Where(x => x.MaBan != null).ToList();
+            billAtShopes = busBillAtShop.GetAll().Where(x => x.MaBan != null).ToList();
             UpdateDgvBill1(billAtShopes);
 
-            billTakeAways = busBillAtShop.GetBillAtShopes().Where(x => x.MaBan == null).ToList();
+            billTakeAways = busBillAtShop.GetAll().Where(x => x.MaBan == null).ToList();
             UpdateDgvBill2(billTakeAways);
 
-            billDeliveries = busBillDelivery.GetBillDeliveries();
+            billDeliveries = busBillDelivery.GetAll();
             UpdateDgvBill3(billDeliveries);
         }
 
@@ -102,6 +104,84 @@ namespace GUI
             UpdateDgvBill3(billDeliveries);
             dtpFrom3.Value = DateTime.Now;
             dtpTo3.Value = DateTime.Now;
+        }
+
+        private void btnExcel1_Click(object sender, EventArgs e)
+        {
+            //if (dgvBill1.Rows.Count > 0)
+            //{
+            //    Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
+
+            //    XcelApp.Application.Workbooks.Add(Type.Missing);
+
+            //    for (int i = 1; i < dgvBill1.Columns.Count + 1; i++)
+            //    {
+            //        XcelApp.Cells[1, i] = dgvBill1.Columns[i - 1].HeaderText;
+            //    }
+            //    for (int i = 0; i < dgvBill1.Rows.Count; i++)
+            //    {
+            //        for (int j = 0; j < dgvBill1.Columns.Count; j++)
+            //        {
+            //            var value = dgvBill1.Rows[i].Cells[j].Value;
+            //            if (value != null)
+            //                XcelApp.Cells[i + 2, j + 1] = value.ToString();
+            //        }
+            //    }
+            //    XcelApp.Columns.AutoFit();
+            //    XcelApp.Visible = true;
+            //}
+        }
+
+        private void btnExcel2_Click(object sender, EventArgs e)
+        {
+            //if (dgvBill2.Rows.Count > 0)
+            //{
+            //    Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
+
+            //    XcelApp.Application.Workbooks.Add(Type.Missing);
+
+            //    for (int i = 1; i < dgvBill2.Columns.Count + 1; i++)
+            //    {
+            //        XcelApp.Cells[1, i] = dgvBill2.Columns[i - 1].HeaderText;
+            //    }
+            //    for (int i = 0; i < dgvBill2.Rows.Count; i++)
+            //    {
+            //        for (int j = 0; j < dgvBill2.Columns.Count; j++)
+            //        {
+            //            var value = dgvBill2.Rows[i].Cells[j].Value;
+            //            if (value != null)
+            //                XcelApp.Cells[i + 2, j + 1] = value.ToString();
+            //        }
+            //    }
+            //    XcelApp.Columns.AutoFit();
+            //    XcelApp.Visible = true;
+            //}
+        }
+
+        private void btnExcel3_Click(object sender, EventArgs e)
+        {
+            //if (dgvBill3.Rows.Count > 0)
+            //{
+            //    Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
+
+            //    XcelApp.Application.Workbooks.Add(Type.Missing);
+
+            //    for (int i = 1; i < dgvBill3.Columns.Count + 1; i++)
+            //    {
+            //        XcelApp.Cells[1, i] = dgvBill3.Columns[i - 1].HeaderText;
+            //    }
+            //    for (int i = 0; i < dgvBill3.Rows.Count; i++)
+            //    {
+            //        for (int j = 0; j < dgvBill3.Columns.Count; j++)
+            //        {
+            //            var value = dgvBill3.Rows[i].Cells[j].Value;
+            //            if (value != null)
+            //                XcelApp.Cells[i + 2, j + 1] = value.ToString();
+            //        }
+            //    }
+            //    XcelApp.Columns.AutoFit();
+            //    XcelApp.Visible = true;
+            //}
         }
     }
 }

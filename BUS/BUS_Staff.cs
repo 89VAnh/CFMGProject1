@@ -1,5 +1,7 @@
 ﻿using DAL;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BUS
 {
@@ -7,29 +9,59 @@ namespace BUS
     {
         private DAL_Staff dalStaff = new DAL_Staff();
 
-        public NhanVien GetStaffByID(string id)
+        public List<NhanVien> GetAll()
         {
-            return dalStaff.GetStaffByID(id);
+            return dalStaff.GetAll();
         }
 
-        public List<NhanVien> GetStaffs()
+        public NhanVien GetByID(string id)
         {
-            return dalStaff.GetStaffs();
+            return dalStaff.GetByID(id);
         }
 
-        public void Add(NhanVien staff)
+        public string GetNewID(string position)
         {
+            int id = GetAll().Count() == 0 ? 1 : Int32.Parse(GetAll().Where(x => x.Ma.Contains(position)).Last().Ma.Substring(2)) + 1;
+            return position + id;
+        }
+
+        public List<NhanVien> SearchStaffsByName(string keyword)
+        {
+            return GetAll().Where(x => x.Ten.ToLower().Contains(keyword)).ToList();
+        }
+
+        public List<NhanVien> SearchStaffsByPosition(string id)
+        {
+            return GetAll()
+                    .Where(x => x.MaQuyen == id).ToList();
+        }
+
+        public bool Add(NhanVien staff)
+        {
+            staff.Ma = GetNewID(staff.MaQuyen);
             dalStaff.Add(staff);
+            return true;
         }
 
-        public void Update(NhanVien s)
+        public bool Update(NhanVien staff)
         {
-            dalStaff.Update(s);
+            if (GetByID(staff.Ma) != null)
+            {
+                dalStaff.Update(staff);
+                return true;
+            }
+            else return false;
         }
 
-        public void Delete(NhanVien staff)
+        public bool Delete(string id)
         {
-            dalStaff.Delete(staff);
+            NhanVien nhanVien = GetByID(id);
+            if (nhanVien != null)
+            {
+                dalStaff.Delete(nhanVien);
+                return true;
+            }
+            else return false;
         }
     }
 }

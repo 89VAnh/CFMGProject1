@@ -4,17 +4,17 @@ using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Utility;
 
 namespace GUI
 {
     public partial class GUI_Customer : Form
     {
         private BUS_Customer busCustomer = new BUS_Customer();
-        private int selectedCustomerID = 0;
-        private List<KhachHang> customerList = new List<KhachHang>();
+
         private KhachHang customerFromForm;
+        private string selectedCustomerID = "";
 
         public GUI_Customer()
         {
@@ -28,28 +28,26 @@ namespace GUI
 
         private void GUI_Customer_Load(object sender, EventArgs e)
         {
-            customerList = busCustomer.GetCustomers();
-            UpdateDgv(customerList);
+            UpdateDgv(busCustomer.GetAll());
         }
 
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                selectedCustomerID = Convert.ToInt32(dgvCustomer[0, e.RowIndex].Value.ToString());
-                KhachHang c = customerList.SingleOrDefault(x => x.Ma == selectedCustomerID);
-                txtName.Text = c.Ten;
-                txtGender.Text = c.GioiTinh;
-                txtPhone.Text = c.SDT;
-                txtEmail.Text = c.Email;
-                txtAddress.Text = c.DiaChi;
+                selectedCustomerID = dgvCustomer[0, e.RowIndex].Value.ToString();
+                txtName.Text = dgvCustomer[1, e.RowIndex].Value.ToString();
+                txtGender.Text = dgvCustomer[2, e.RowIndex].Value.ToString();
+                txtPhone.Text = dgvCustomer[3, e.RowIndex].Value.ToString();
+                txtEmail.Text = dgvCustomer[4, e.RowIndex].Value.ToString();
+                txtAddress.Text = dgvCustomer[5, e.RowIndex].Value.ToString();
             }
             catch { }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            UpdateDgv(customerList.Where(x => x.Ten.ToLower().Contains(txtSearch.Text)).ToList());
+            UpdateDgv(busCustomer.SearchCustomerByName(txtSearch.Text));
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -65,7 +63,7 @@ namespace GUI
             txtPhone.Clear();
             txtEmail.Clear();
             txtAddress.Clear();
-            UpdateDgv(customerList);
+            UpdateDgv(busCustomer.GetAll());
         }
 
         private bool checkTextBox(Guna2TextBox textBox)
@@ -78,27 +76,17 @@ namespace GUI
             else return true;
         }
 
-        private bool checkPhone(string phone)
-        {
-            return Regex.Match(phone, @"^\d{10}$").Success;
-        }
-
-        private bool checkEmail(string email)
-        {
-            return Regex.Match(email, @"^([\w\.-]+)@([\w-]+)((\.(\w){2,3})+)$").Success;
-        }
-
         private void GetCustomerFromForm()
         {
             if (checkTextBox(txtName) && checkTextBox(txtGender) && checkTextBox(txtPhone) && checkTextBox(txtEmail) && checkTextBox(txtAddress))
             {
-                if (checkPhone(txtPhone.Text))
+                if (Tools.CheckPhone(txtPhone.Text))
                 {
-                    if (checkEmail(txtEmail.Text))
+                    if (Tools.CheckEmail(txtEmail.Text))
                     {
                         customerFromForm = new KhachHang
                         {
-                            Ma = busCustomer.GetNewID(),
+                            Ma = selectedCustomerID,
                             Ten = txtName.Text,
                             GioiTinh = txtGender.Text,
                             SDT = txtPhone.Text,
@@ -133,9 +121,8 @@ namespace GUI
                 if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     busCustomer.Add(customerFromForm);
+                    UpdateDgv(busCustomer.GetAll());
                     MessageBox.Show("Thêm thành công!");
-                    customerList.Add(customerFromForm);
-                    UpdateDgv(customerList);
                 }
             }
         }
@@ -145,37 +132,31 @@ namespace GUI
             GetCustomerFromForm();
             if (customerFromForm != null)
             {
-                KhachHang customer = customerList.SingleOrDefault(x => x.Ma == Convert.ToInt32(selectedCustomerID));
-                if (customer != null)
+                if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (busCustomer.Update(customerFromForm))
                     {
-                        customerFromForm.Ma = selectedCustomerID;
-                        busCustomer.Update(customerFromForm);
+                        UpdateDgv(busCustomer.GetAll());
                         MessageBox.Show("Sửa thông tin thành công!");
-                        UpdateDgv(customerList);
                     }
+                    else MessageBox.Show("Mã khách hàng không tồn tại!");
                 }
-                else MessageBox.Show("Mã nhân viên không tồn tại!");
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
+            if (!String.IsNullOrWhiteSpace(selectedCustomerID))
             {
                 if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    KhachHang c = customerList.SingleOrDefault(x => x.Ma == Convert.ToInt32(selectedCustomerID));
-                    busCustomer.Delete(c);
-                    MessageBox.Show("Xoá thành công!");
-                    customerList.Remove(c);
-                    UpdateDgv(customerList);
+                    if (busCustomer.Delete(selectedCustomerID))
+                    {
+                        UpdateDgv(busCustomer.GetAll());
+                        MessageBox.Show("Xoá thành công!");
+                    }
+                    else MessageBox.Show("Mã khách hàng được chọn không hợp lệ!");
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Chưa có nhân viên nào được chọn!");
             }
         }
 

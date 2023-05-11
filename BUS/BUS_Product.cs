@@ -8,29 +8,61 @@ namespace BUS
     {
         private DAL_Product dalProduct = new DAL_Product();
 
-        public List<SanPham> GetProducts()
+        public List<SanPham> GetAll()
         {
-            return dalProduct.GetProducts();
+            return dalProduct.GetAll();
+        }
+
+        public SanPham GetByID(int id)
+        {
+            return dalProduct.GetByID(id);
         }
 
         public int GetNewID()
         {
-            return GetProducts().Count() == 0 ? 1 : GetProducts().Last().Ma + 1;
+            return GetAll().Count() == 0 ? 1 : GetAll().Last().Ma + 1;
+        }
+
+        public List<SanPham> SearchProductsByName(string keyword)
+        {
+            return GetAll().Where(x => x.Ten.ToLower().Contains(keyword.ToLower())).ToList();
+        }
+
+        public List<SanPham> SearchProductsByCategory(int categoryID)
+        {
+            return GetAll().Where(x => x.MaDM == categoryID).ToList();
+        }
+
+        public string GetProductName(int id)
+        {
+            return GetByID(id).Ten;
         }
 
         public void Add(SanPham product)
         {
+            product.Ma = GetNewID();
             dalProduct.Add(product);
         }
 
-        public void Update(SanPham product)
+        public bool Update(SanPham product)
         {
-            dalProduct.Update(product);
+            if (GetByID(product.Ma) != null)
+            {
+                dalProduct.Update(product);
+                return true;
+            }
+            return false;
         }
 
-        public void Delete(SanPham product)
+        public bool Delete(int productID)
         {
-            dalProduct.Delete(product);
+            SanPham product = GetByID(productID);
+            if (product != null)
+            {
+                dalProduct.Delete(product);
+                return true;
+            }
+            return false;
         }
     }
 }

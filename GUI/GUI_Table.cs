@@ -10,7 +10,6 @@ namespace GUI
     public partial class GUI_Table : Form
     {
         private BUS_Table busTable = new BUS_Table();
-        private List<Ban> tableList;
         private int selectedTableID = 0;
 
         public GUI_Table()
@@ -25,13 +24,12 @@ namespace GUI
 
         private void GUI_Table_Load(object sender, EventArgs e)
         {
-            tableList = busTable.GetTableCoffees();
-            UpdateDgv(tableList);
+            UpdateDgv(busTable.GetAll());
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            UpdateDgv(tableList.Where(x => x.Ten.ToLower().Contains(txtSearch.Text)).ToList());
+            UpdateDgv(busTable.GetAll());
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -41,20 +39,15 @@ namespace GUI
 
         private void dgvTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedTableID = (int)dgvTable.SelectedRows[0].Cells[0].Value;
-            txtName.Text = dgvTable.SelectedRows[0].Cells[1].Value.ToString();
+            selectedTableID = (int)dgvTable[0, e.RowIndex].Value;
+            txtName.Text = dgvTable[1, e.RowIndex].Value.ToString();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             txtSearch.Clear();
             txtName.Clear();
-            UpdateDgv(tableList);
-        }
-
-        private string getTableStatus(int tableID)
-        {
-            return tableList.SingleOrDefault(x => x.Ma == selectedTableID).TrangThai;
+            UpdateDgv(busTable.GetAll());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -70,9 +63,7 @@ namespace GUI
                         TrangThai = "Trống"
                     };
                     busTable.Add(newT);
-
-                    tableList.Add(newT);
-                    UpdateDgv(tableList);
+                    UpdateDgv(busTable.GetAll());
                     MessageBox.Show("Thêm bàn thành công!");
                 }
             }
@@ -81,42 +72,41 @@ namespace GUI
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (selectedTableID > 0)
+            if (txtName.Text.Length > 0)
             {
-                if (txtName.Text.Length > 0)
+                if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    Ban newTable = new Ban
                     {
-                        Ban newTable = new Ban
-                        {
-                            Ma = selectedTableID,
-                            Ten = txtName.Text,
-                            TrangThai = getTableStatus(selectedTableID)
-                        };
-                        busTable.Update(newTable);
-                        UpdateDgv(tableList);
+                        Ma = selectedTableID,
+                        Ten = txtName.Text,
+                        TrangThai = busTable.GetTableStatus(selectedTableID)
+                    };
+                    if (busTable.Update(newTable))
+                    {
+                        UpdateDgv(busTable.GetAll());
                         MessageBox.Show("Sửa tên bàn thành công!");
                     }
+                    else MessageBox.Show("Mã bàn được chọn không hợp lệ!", "Thao tác không hợp lệ");
                 }
                 else MessageBox.Show("Vui lòng nhập tên bàn");
             }
-            else MessageBox.Show("Vui lòng chọn 1 bàn!", "Thao tác không hợp lệ");
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (selectedTableID > 0)
             {
-                if (getTableStatus(selectedTableID) == "Trống")
+                if (busTable.GetTableStatus(selectedTableID) == "Trống")
                 {
-                    if (MessageBox.Show("Bạn có chắc chắn muốn xoá bàn này không?", "Cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show($"Bạn có chắc chắn muốn xoá bàn {selectedTableID} không?", "Cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        Ban t = tableList
-                            .SingleOrDefault(x => x.Ma == selectedTableID);
-                        busTable.Delete(t);
-                        tableList.Remove(t);
-                        UpdateDgv(tableList);
-                        MessageBox.Show("Xoá bàn thành công!");
+                        if (busTable.Delete(selectedTableID))
+                        {
+                            UpdateDgv(busTable.GetAll());
+                            MessageBox.Show("Xoá bàn thành công!");
+                        }
+                        else MessageBox.Show("Mã bàn được chọn không hợp lệ!");
                     }
                 }
                 else MessageBox.Show("Không cho phép xoá bàn có người!");

@@ -13,8 +13,6 @@ namespace GUI
         private BUS_Account busAccount = new BUS_Account();
         private BUS_Position busPosition = new BUS_Position();
 
-        private List<TaiKhoan> accountList = new List<TaiKhoan>();
-        private List<Quyen> positionList = new List<Quyen>();
         private TaiKhoan accountFromForm;
 
         public GUI_Account()
@@ -29,19 +27,17 @@ namespace GUI
 
         private void GUI_Account_Load(object sender, System.EventArgs e)
         {
-            positionList = busPosition.GetPositions();
-            cboPosition.DataSource = positionList;
+            cboPosition.DataSource = busPosition.GetAll();
             cboPosition.ValueMember = "Ma";
             cboPosition.DisplayMember = "Ten";
 
-            accountList = busAccount.GetAccounts();
-            UpdateDgv(accountList);
+            UpdateDgv(busAccount.GetAccounts());
         }
 
         private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string un = dgvAccount[0, e.RowIndex].Value.ToString();
-            TaiKhoan a = accountList.SingleOrDefault(x => x.TenDangNhap == un);
+            TaiKhoan a = busAccount.GetAccountByUn(un);
             txtUn.Text = un;
             txtPw.Text = a.MatKhau;
             txtEmail.Text = a.Email;
@@ -50,7 +46,7 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            UpdateDgv(accountList.Where(x => x.TenDangNhap.ToLower().Contains(txtSearch.Text)).ToList());
+            UpdateDgv(busAccount.SearchAccountByUn(txtSearch.Text));
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -65,7 +61,7 @@ namespace GUI
             txtPw.Clear();
             txtEmail.Clear();
             cboPosition.SelectedIndex = 0;
-            UpdateDgv(accountList);
+            UpdateDgv(busAccount.GetAccounts());
         }
 
         private bool checkTextBox(Guna2TextBox textBox)
@@ -80,8 +76,7 @@ namespace GUI
 
         private void cboPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdateDgv(accountList
-                .Where(x => x.MaQuyen == cboPosition.SelectedValue.ToString()).ToList());
+            UpdateDgv(busAccount.SearchAccountsByPositionID(cboPosition.SelectedValue.ToString()).ToList());
         }
 
         private void GetAccountFromForm()
@@ -108,22 +103,21 @@ namespace GUI
             GetAccountFromForm();
             if (accountFromForm != null)
             {
-                if (accountList.Where(x => x.TenDangNhap == accountFromForm.TenDangNhap).Count() == 0)
+                if (accountFromForm.MatKhau.Length >= 6)
                 {
-                    if (accountFromForm.MatKhau.Length >= 6)
+                    if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (busAccount.Add(accountFromForm))
                         {
-                            busAccount.Add(accountFromForm);
                             MessageBox.Show("Thêm thành công!");
-                            accountList.Add(accountFromForm);
-                            UpdateDgv(accountList);
+                            UpdateDgv(busAccount.GetAccounts());
                         }
+                        else MessageBox.Show("Tên đăng nhập đã tồn tại");
                     }
-                    else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
                 }
-                else MessageBox.Show("Tên tài khoản đã tồn tại!");
+                else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
             }
+            else MessageBox.Show("Tên tài khoản đã tồn tại!");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -131,21 +125,19 @@ namespace GUI
             GetAccountFromForm();
             if (accountFromForm != null)
             {
-                TaiKhoan account = accountList.SingleOrDefault(x => x.TenDangNhap == accountFromForm.TenDangNhap);
-                if (account != null)
+                if (accountFromForm.MatKhau.Length >= 6)
                 {
-                    if (accountFromForm.MatKhau.Length >= 6)
+                    if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (busAccount.Update(accountFromForm))
                         {
-                            busAccount.Update(accountFromForm);
                             MessageBox.Show("Sửa thông tin thành công!");
-                            UpdateDgv(accountList);
+                            UpdateDgv(busAccount.GetAccounts());
                         }
+                        else MessageBox.Show("Tên đăng nhập không tồn tại!");
                     }
-                    else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
                 }
-                else MessageBox.Show("Tên đăng nhập không tồn tại!");
+                else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
             }
         }
 
@@ -155,11 +147,11 @@ namespace GUI
             {
                 if (MessageBox.Show($"Xác nhận xoá tài khoản '{txtUn.Text}'", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    TaiKhoan a = accountList.SingleOrDefault(x => x.TenDangNhap == txtUn.Text);
-                    busAccount.Delete(a);
-                    MessageBox.Show("Xoá thành công!");
-                    accountList.Remove(a);
-                    UpdateDgv(accountList);
+                    if (busAccount.Delete(txtUn.Text))
+                    {
+                        MessageBox.Show("Xoá thành công!");
+                        UpdateDgv(busAccount.GetAccounts());
+                    }
                 }
             }
             else MessageBox.Show("Chưa có tài khoản nào được chọn!");

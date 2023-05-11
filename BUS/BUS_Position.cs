@@ -7,9 +7,9 @@ namespace BUS
     {
         private DAL_Position dalPosition = new DAL_Position();
 
-        public List<Quyen> GetPositions()
+        public List<Quyen> GetAll()
         {
-            return dalPosition.GetPositions();
+            return dalPosition.GetAll();
         }
     }
 }

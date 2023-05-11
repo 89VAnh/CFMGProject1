@@ -7,9 +7,14 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
-        public List<CTHDGiaoHang> GetBillDetailDeliveries()
+        public List<CTHDGiaoHang> GetAll()
         {
             return db.CTHDGiaoHangs.ToList();
+        }
+
+        public CTHDGiaoHang GetByID(int id)
+        {
+            return db.CTHDGiaoHangs.Find(id);
         }
 
         public void Add(CTHDGiaoHang billDetail)

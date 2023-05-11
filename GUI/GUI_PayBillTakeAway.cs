@@ -12,9 +12,7 @@ namespace GUI
     public partial class GUI_PayBillTakeAway : Form
     {
         private BUS_BillAtShop busBillAtShop = new BUS_BillAtShop();
-        private BUS_Customer busCustomer = new BUS_Customer();
 
-        private List<KhachHang> customers = new List<KhachHang>();
         private HDTaiQuan b;
         private EventHandler AcceptPay;
 
@@ -34,8 +32,7 @@ namespace GUI
 
             lblTime.Text = DateTime.Now.ToString();
             lblStaff.Text = billAtShop.MaNV;
-            if (billAtShop.MaKH == null) lblCustomer.Text = "Khách hàng mới";
-            else lblCustomer.Text = billAtShop.MaKH.ToString();
+            lblCustomer.Text = billAtShop.KhachHang.Ten;
             lblTotalPrice.Text = totalPrice.ToString("N", nfi) + " đ";
             lblDiscount.Text = billAtShop.GiamGia;
             lblPriceAfterDiscount.Text = billAtShop.TongTien.ToString("N", nfi) + " đ";
@@ -44,7 +41,6 @@ namespace GUI
 
             b = billAtShop;
             b.ThoiGianRa = DateTime.Now;
-            customers = busCustomer.GetCustomers();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

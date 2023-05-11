@@ -11,7 +11,6 @@ namespace GUI
     {
         private BUS_CategoryProduct busCategoryProduct = new BUS_CategoryProduct();
 
-        private List<DanhMucSanPham> categoryProductList;
         private int selectedCategoryProductID = 0;
 
         public GUI_CategoryProduct()
@@ -26,8 +25,7 @@ namespace GUI
 
         private void GUI_CategoryProduct_Load(object sender, EventArgs e)
         {
-            categoryProductList = busCategoryProduct.GetCategoryProducts();
-            UpdateDgv(categoryProductList);
+            UpdateDgv(busCategoryProduct.GetAll());
         }
 
         private void dgvCategoryProduct_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -38,7 +36,7 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            UpdateDgv(categoryProductList.Where(x => x.Ten.ToLower().Contains(txtSearch.Text)).ToList());
+            UpdateDgv(busCategoryProduct.SearchCategoryProductsByName(txtSearch.Text));
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -54,12 +52,10 @@ namespace GUI
                 {
                     DanhMucSanPham newCP = new DanhMucSanPham
                     {
-                        Ma = busCategoryProduct.GetNewID(),
                         Ten = txtName.Text
                     };
                     busCategoryProduct.Add(newCP);
-                    categoryProductList.Add(newCP);
-                    UpdateDgv(categoryProductList);
+                    UpdateDgv(busCategoryProduct.GetAll());
                     MessageBox.Show("Thêm danh mục món thành công!");
                 }
             }
@@ -78,7 +74,7 @@ namespace GUI
                         Ten = txtName.Text
                     };
                     busCategoryProduct.Update(cp);
-                    UpdateDgv(categoryProductList);
+                    UpdateDgv(busCategoryProduct.GetAll());
                     MessageBox.Show("Sửa danh mục món thành công!");
                 }
             }
@@ -89,14 +85,10 @@ namespace GUI
         {
             if (selectedCategoryProductID > 0)
             {
-                if (MessageBox.Show("Bạn có chắc chắn muốn xoá danh mục món không?\n Các món trong danh mục này sẽ bị xoá", "Cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Bạn có chắc chắn muốn xoá danh mục món này không?\n Các món trong danh mục này sẽ bị xoá", "Cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    DanhMucSanPham cp = categoryProductList
-                        .SingleOrDefault(x => x.Ma == selectedCategoryProductID);
-                    busCategoryProduct.Delete(cp);
-
-                    categoryProductList.Remove(cp);
-                    UpdateDgv(categoryProductList);
+                    busCategoryProduct.Delete(selectedCategoryProductID);
+                    UpdateDgv(busCategoryProduct.GetAll());
                     MessageBox.Show("Xoá thành công!");
                 }
             }
@@ -107,7 +99,7 @@ namespace GUI
         {
             txtSearch.Clear();
             txtName.Clear();
-            UpdateDgv(categoryProductList);
+            UpdateDgv(busCategoryProduct.GetAll());
         }
     }
 }

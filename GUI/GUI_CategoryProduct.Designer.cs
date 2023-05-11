@@ -180,7 +180,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = global::GUI.Properties.Resources.search;
-            this.btnSearch.Location = new System.Drawing.Point(363, 20);
+            this.btnSearch.Location = new System.Drawing.Point(461, 20);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(125, 36);
             this.btnSearch.TabIndex = 8;
@@ -207,9 +207,9 @@
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Tìm kiếm";
+            this.txtSearch.PlaceholderText = "Tìm kiếm loại sản phẩm bằng tên";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(287, 36);
+            this.txtSearch.Size = new System.Drawing.Size(378, 36);
             this.txtSearch.TabIndex = 7;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 

@@ -8,29 +8,51 @@ namespace BUS
     {
         private DAL_CategoryProduct dalCategoryProduct = new DAL_CategoryProduct();
 
-        public List<DanhMucSanPham> GetCategoryProducts()
+        public List<DanhMucSanPham> GetAll()
         {
-            return dalCategoryProduct.GetCategoryProducts();
+            return dalCategoryProduct.GetAll();
+        }
+
+        public DanhMucSanPham GetByID(int id)
+        {
+            return dalCategoryProduct.GetByID(id);
         }
 
         public int GetNewID()
         {
-            return GetCategoryProducts().Count() == 0 ? 1 : GetCategoryProducts().Last().Ma + 1;
+            return GetAll().Count() == 0 ? 1 : GetAll().Last().Ma + 1;
+        }
+
+        public List<DanhMucSanPham> SearchCategoryProductsByName(string keyword)
+        {
+            return GetAll().Where(x => x.Ten.ToLower().Contains(keyword)).ToList();
         }
 
         public void Add(DanhMucSanPham categoryProduct)
         {
+            categoryProduct.Ma = GetNewID();
             dalCategoryProduct.Add(categoryProduct);
         }
 
-        public void Update(DanhMucSanPham categoryProduct)
+        public bool Update(DanhMucSanPham categoryProduct)
         {
-            dalCategoryProduct.Update(categoryProduct);
+            if (GetByID(categoryProduct.Ma) != null)
+            {
+                dalCategoryProduct.Update(categoryProduct);
+                return true;
+            }
+            return false;
         }
 
-        public void Delete(DanhMucSanPham categoryProduct)
+        public bool Delete(int categoryProductID)
         {
-            dalCategoryProduct.Delete(categoryProduct);
+            DanhMucSanPham categoryProduct = GetByID(categoryProductID);
+            if (categoryProduct != null)
+            {
+                dalCategoryProduct.Delete(categoryProduct);
+                return true;
+            }
+            return false;
         }
     }
 }

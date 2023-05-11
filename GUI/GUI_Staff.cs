@@ -4,8 +4,8 @@ using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Utility;
 
 namespace GUI
 {
@@ -14,8 +14,6 @@ namespace GUI
         private BUS_Staff busStaff = new BUS_Staff();
         private BUS_Position busPosition = new BUS_Position();
 
-        private List<NhanVien> staffList = new List<NhanVien>();
-        private List<Quyen> positionList = new List<Quyen>();
         private NhanVien staffFromForm;
 
         public GUI_Staff()
@@ -30,31 +28,29 @@ namespace GUI
 
         private void GUI_Staff_Load(object sender, EventArgs e)
         {
-            positionList = busPosition.GetPositions();
-            cboPosition.DataSource = positionList;
+            cboPosition.DataSource = busPosition.GetAll();
             cboPosition.ValueMember = "Ma";
             cboPosition.DisplayMember = "Ten";
+            cboPosition.SelectedIndex = 0;
 
-            staffList = busStaff.GetStaffs();
-            UpdateDgv(staffList);
+            UpdateDgv(busStaff.GetAll());
         }
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string staffID = dgvStaff[0, e.RowIndex].Value.ToString();
-            NhanVien s = staffList.SingleOrDefault(x => x.Ma == staffID);
-            txtID.Text = staffID;
-            txtName.Text = s.Ten;
-            txtGender.Text = s.GioiTinh;
-            txtPhone.Text = s.SDT;
-            txtEmail.Text = s.Email;
-            txtAddress.Text = s.DiaChi;
-            cboPosition.SelectedValue = s.MaQuyen;
+            txtID.Text = dgvStaff[0, e.RowIndex].Value.ToString();
+            txtName.Text = dgvStaff[1, e.RowIndex].Value.ToString();
+            txtGender.Text = dgvStaff[2, e.RowIndex].Value.ToString();
+            txtPhone.Text = dgvStaff[3, e.RowIndex].Value.ToString();
+            txtEmail.Text = dgvStaff[4, e.RowIndex].Value.ToString();
+            txtAddress.Text = dgvStaff[5, e.RowIndex].Value.ToString();
+            cboPosition.SelectedValue = dgvStaff[6, e.RowIndex].Value.ToString();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            UpdateDgv(staffList.Where(x => x.Ten.ToLower().Contains(txtSearch.Text)).ToList());
+            UpdateDgv(busStaff.SearchStaffsByName(txtSearch.Text));
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -71,8 +67,8 @@ namespace GUI
             txtPhone.Clear();
             txtEmail.Clear();
             txtAddress.Clear();
-            cboPosition.SelectedIndex = -1;
-            UpdateDgv(staffList);
+            cboPosition.SelectedIndex = 1;
+            UpdateDgv(busStaff.GetAll());
         }
 
         private bool checkTextBox(Guna2TextBox textBox)
@@ -87,41 +83,34 @@ namespace GUI
 
         private void cboPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboPosition.SelectedIndex != -1)
+            if (cboPosition.SelectedIndex > 0)
             {
-                UpdateDgv(staffList
-                    .Where(x => x.MaQuyen == cboPosition.SelectedValue.ToString()).ToList());
+                UpdateDgv(busStaff.SearchStaffsByPosition(cboPosition.SelectedValue.ToString()));
             }
-        }
-
-        private bool checkPhone(string phone)
-        {
-            return Regex.Match(phone, @"^\d{10}$").Success;
-        }
-
-        private bool checkEmail(string email)
-        {
-            return Regex.Match(email, @"^([\w\.-]+)@([\w-]+)((\.(\w){2,3})+)$").Success;
         }
 
         private void GetStaffFromForm()
         {
             if (checkTextBox(txtID) && checkTextBox(txtName) && checkTextBox(txtGender) && checkTextBox(txtPhone) && checkTextBox(txtEmail) && checkTextBox(txtAddress))
             {
-                if (checkPhone(txtPhone.Text))
+                if (Tools.CheckPhone(txtPhone.Text))
                 {
-                    if (checkEmail(txtEmail.Text))
+                    if (Tools.CheckEmail(txtEmail.Text))
                     {
-                        staffFromForm = new NhanVien
+                        if (cboPosition.SelectedIndex >= 1)
                         {
-                            Ma = txtID.Text,
-                            Ten = txtName.Text,
-                            GioiTinh = txtGender.Text,
-                            SDT = txtPhone.Text,
-                            Email = txtEmail.Text,
-                            DiaChi = txtAddress.Text,
-                            MaQuyen = cboPosition.SelectedValue.ToString()
-                        };
+                            staffFromForm = new NhanVien
+                            {
+                                Ma = txtID.Text,
+                                Ten = txtName.Text,
+                                GioiTinh = txtGender.Text,
+                                SDT = txtPhone.Text,
+                                Email = txtEmail.Text,
+                                DiaChi = txtAddress.Text,
+                                MaQuyen = cboPosition.SelectedValue.ToString()
+                            };
+                        }
+                        else MessageBox.Show("Vui lòng chọn vị trí");
                     }
                     else
                     {
@@ -147,17 +136,15 @@ namespace GUI
             GetStaffFromForm();
             if (staffFromForm != null)
             {
-                if (staffList.Where(x => x.Ma == staffFromForm.Ma).Count() == 0)
+                if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (busStaff.Add(staffFromForm))
                     {
-                        busStaff.Add(staffFromForm);
                         MessageBox.Show("Thêm thành công!");
-                        staffList = busStaff.GetStaffs();
-                        UpdateDgv(staffList);
+                        UpdateDgv(busStaff.GetAll());
                     }
+                    else MessageBox.Show("Mã nhân viên đã tồn tại!");
                 }
-                else MessageBox.Show("Mã nhân viên đã tồn tại!");
             }
         }
 
@@ -166,16 +153,14 @@ namespace GUI
             GetStaffFromForm();
             if (staffFromForm != null)
             {
-                NhanVien staff = staffList.SingleOrDefault(x => x.Ma == staffFromForm.Ma);
-                if (staff != null)
+                if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (busStaff.Update(staffFromForm))
                     {
-                        busStaff.Update(staffFromForm);
+                        UpdateDgv(busStaff.GetAll());
                         MessageBox.Show("Sửa thông tin thành công!");
-                        staffList = busStaff.GetStaffs();
-                        UpdateDgv(staffList);
                     }
+                    else MessageBox.Show("Mã nhân viên không tồn tại");
                 }
                 else MessageBox.Show("Mã nhân viên không tồn tại!");
             }
@@ -187,11 +172,12 @@ namespace GUI
             {
                 if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    NhanVien a = staffList.SingleOrDefault(x => x.Ma == txtID.Text);
-                    busStaff.Delete(a);
-                    MessageBox.Show("Xoá thành công!");
-                    staffList = busStaff.GetStaffs();
-                    UpdateDgv(staffList);
+                    if (busStaff.Delete(txtID.Text))
+                    {
+                        UpdateDgv(busStaff.GetAll());
+                        MessageBox.Show("Xoá thành công!");
+                    }
+                    else MessageBox.Show("Mã nhân viên không tồn tại");
                 }
             }
             else MessageBox.Show("Chưa có nhân viên nào được chọn!");

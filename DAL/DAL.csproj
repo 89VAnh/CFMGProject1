@@ -35,10 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\GUI\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\GUI\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\GUI\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\GUI\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -54,13 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ban.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="CTHDGiaoHang.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="CTHDTaiQuan.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL_Account.cs" />
     <Compile Include="DAL_Bill.cs" />
@@ -75,81 +75,94 @@
     <Compile Include="DAL_Staff.cs" />
     <Compile Include="DAL_Table.cs" />
     <Compile Include="DanhMucSanPham.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DoanhThuTheoNam_Result.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DoanhThuTheoNgay_Result.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DoanhThuTheoThang_Result.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="HDGiaoHang.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="HDTaiQuan.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="KhachHang.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelCoffee.Context.cs">
+    <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelCoffee.Context.tt</DependentUpon>
+      <DependentUpon>Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelCoffee.cs">
+    <Compile Include="Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelCoffee.Designer.cs">
+    <Compile Include="Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelCoffee.edmx</DependentUpon>
+      <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="NhanVien.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quyen.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="SanPham.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="TaiKhoan.cs">
-      <DependentUpon>ModelCoffee.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeTheoNam_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeTheoNgay_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeTheoThang_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ModelCoffee.edmx">
+    <None Include="App.config" />
+    <EntityDeploy Include="Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelCoffee.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="ModelCoffee.edmx.diagram">
-      <DependentUpon>ModelCoffee.edmx</DependentUpon>
+    <None Include="Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModelCoffee.Context.tt">
+    <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelCoffee.Context.cs</LastGenOutput>
-      <DependentUpon>ModelCoffee.edmx</DependentUpon>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ModelCoffee.tt">
+    <Content Include="Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelCoffee.edmx</DependentUpon>
-      <LastGenOutput>ModelCoffee.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

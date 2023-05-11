@@ -7,17 +7,30 @@ namespace BUS
     public class BUS_Table
     {
         private DAL_Table dalTable = new DAL_Table();
-        private List<Ban> tableList = new List<Ban>();
 
-        public List<Ban> GetTableCoffees()
+        public List<Ban> GetAll()
         {
-            tableList = dalTable.GetTableCoffees();
-            return tableList;
+            return dalTable.GetAll();
+        }
+
+        public Ban GetByID(int id)
+        {
+            return dalTable.GetByID(id);
         }
 
         public int GetNewID()
         {
-            return GetTableCoffees().Count() > 0 ? 1 : GetTableCoffees().Last().Ma + 1;
+            return GetAll().Count() > 0 ? 1 : GetAll().Last().Ma + 1;
+        }
+
+        public List<Ban> GetEmptyTables()
+        {
+            return GetAll().Where(x => x.TrangThai == "Trống").ToList();
+        }
+
+        public List<Ban> SearchTableByName(string keyword)
+        {
+            return GetAll().Where(x => x.Ten.ToLower().Contains(keyword)).ToList();
         }
 
         public void Add(Ban table)
@@ -25,24 +38,40 @@ namespace BUS
             dalTable.Add(table);
         }
 
-        public void Update(Ban table)
+        public bool Update(Ban table)
         {
-            dalTable.Update(table);
+            if (GetByID(table.Ma) != null)
+            {
+                dalTable.Update(table);
+                return true;
+            }
+            return false;
         }
 
-        public void Delete(Ban table)
+        public bool Delete(int id)
         {
-            dalTable.Delete(table);
+            Ban t = GetByID(id);
+            if (t != null)
+            {
+                dalTable.Delete(t);
+                return true;
+            }
+            return false;
         }
 
         public void setTableStatus(int tableID, string status)
         {
-            Ban tb = tableList.SingleOrDefault(x => x.Ma == tableID);
+            Ban tb = GetByID(tableID);
             if (status != tb.TrangThai)
             {
                 tb.TrangThai = status;
                 Update(tb);
             }
+        }
+
+        public string GetTableStatus(int tableID)
+        {
+            return GetByID(tableID).TrangThai;
         }
     }
 }
