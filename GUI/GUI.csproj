@@ -175,6 +175,12 @@
     <Compile Include="GUI_Statistic.Designer.cs">
       <DependentUpon>GUI_Statistic.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_Statistic2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Statistic2.Designer.cs">
+      <DependentUpon>GUI_Statistic2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Table.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     <EmbeddedResource Include="GUI_Statistic.resx">
       <DependentUpon>GUI_Statistic.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Statistic2.resx">
+      <DependentUpon>GUI_Statistic2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_Table.resx">
       <DependentUpon>GUI_Table.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,8 +313,11 @@
     <Content Include="Resources\logout.png" />
     <Content Include="Resources\menu.png" />
     <None Include="Resources\print.png" />
+    <None Include="Resources\profit.png" />
+    <None Include="Resources\order.png" />
     <Content Include="Resources\pw.png" />
     <Content Include="Resources\refresh.png" />
+    <None Include="Resources\revenue.png" />
     <Content Include="Resources\salary.png" />
     <Content Include="Resources\search.png" />
     <None Include="Resources\shop.png" />

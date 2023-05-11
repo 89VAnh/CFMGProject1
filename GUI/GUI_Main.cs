@@ -142,7 +142,7 @@ namespace GUI
 
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
-            GUI_Statistic frm = new GUI_Statistic();
+            GUI_Statistic2 frm = new GUI_Statistic2();
             frm.MdiParent = this;
             frm.Show();
             frm.WindowState = FormWindowState.Maximized;
