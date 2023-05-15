@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DAL
@@ -7,19 +8,35 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
-        public List<DoanhThuTheoNgay_Result> GetRevenueByDate()
+        public List<DoanhThuTheoLoaiHD_Result> RevenueByBillType(DateTime startDate, DateTime endDate)
         {
-            return db.DoanhThuTheoNgay().ToList();
+            return db.DoanhThuTheoLoaiHD(startDate.Date, endDate.Date).ToList();
         }
 
-        public List<DoanhThuTheoThang_Result> GetRevenueByMonth()
+        public List<DoanhThuTheoNgay_Result> RevenueByDate(DateTime startDate, DateTime endDate)
         {
-            return db.DoanhThuTheoThang().ToList();
+            return db.DoanhThuTheoNgay(startDate, endDate).ToList();
         }
 
-        public List<DoanhThuTheoNam_Result> GetRevenueByYear()
+        public List<TopDoanhThuSP_Result> TopProduct(DateTime startDate, DateTime endDate)
         {
-            return db.DoanhThuTheoNam().ToList();
+            return db.TopDoanhThuSP(startDate.Date, endDate.Date).ToList();
+        }
+
+        public List<HDTaiQuan> GetBillAtShopUnPaied(DateTime startDate, DateTime endDate)
+        {
+            return db.HDTaiQuans.Where(x => x.MaBan != null &&
+            DateTime.Compare((DateTime)x.ThoiGianRa, startDate) != -1 && DateTime.Compare((DateTime)x.ThoiGianRa, endDate) != 1).ToList();
+        }
+
+        public List<HDTaiQuan> GetBillTakeAwayUnPaied(DateTime startDate, DateTime endDate)
+        {
+            return db.HDTaiQuans.Where(x => x.MaBan == null && DateTime.Compare((DateTime)x.ThoiGianRa, startDate) != -1 && DateTime.Compare((DateTime)x.ThoiGianRa, endDate) != 1).ToList();
+        }
+
+        public List<HDGiaoHang> GetBillDeliveryUnPaied(DateTime startDate, DateTime endDate)
+        {
+            return db.HDGiaoHangs.Where(x => DateTime.Compare((DateTime)x.ThoiGianNhan, startDate) != -1 && DateTime.Compare((DateTime)x.ThoiGianNhan, endDate) != 1).ToList();
         }
     }
 }

@@ -49,7 +49,6 @@
             this.btnInfo = new Guna.UI2.WinForms.Guna2Button();
             this.pnlManage = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_ThongKe = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_DoanhThu = new Guna.UI2.WinForms.Guna2Button();
             this.btnAccount = new Guna.UI2.WinForms.Guna2Button();
             this.btnStaff = new Guna.UI2.WinForms.Guna2Button();
             this.btnTable = new Guna.UI2.WinForms.Guna2Button();
@@ -372,7 +371,6 @@
             // 
             this.pnlManage.BackColor = System.Drawing.Color.Transparent;
             this.pnlManage.Controls.Add(this.btn_ThongKe);
-            this.pnlManage.Controls.Add(this.btn_DoanhThu);
             this.pnlManage.Controls.Add(this.btnAccount);
             this.pnlManage.Controls.Add(this.btnStaff);
             this.pnlManage.Controls.Add(this.btnTable);
@@ -399,7 +397,7 @@
             this.btn_ThongKe.Image = global::GUI.Properties.Resources.analytics;
             this.btn_ThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_ThongKe.ImageSize = new System.Drawing.Size(22, 22);
-            this.btn_ThongKe.Location = new System.Drawing.Point(21, 318);
+            this.btn_ThongKe.Location = new System.Drawing.Point(21, 267);
             this.btn_ThongKe.Name = "btn_ThongKe";
             this.btn_ThongKe.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btn_ThongKe.Size = new System.Drawing.Size(308, 45);
@@ -407,28 +405,6 @@
             this.btn_ThongKe.Text = "Thống kê";
             this.btn_ThongKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_ThongKe.Click += new System.EventHandler(this.btn_ThongKe_Click);
-            // 
-            // btn_DoanhThu
-            // 
-            this.btn_DoanhThu.Animated = true;
-            this.btn_DoanhThu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_DoanhThu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_DoanhThu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_DoanhThu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_DoanhThu.FillColor = System.Drawing.Color.Transparent;
-            this.btn_DoanhThu.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(32)))), ((int)(((byte)(13)))));
-            this.btn_DoanhThu.Image = global::GUI.Properties.Resources.salary;
-            this.btn_DoanhThu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_DoanhThu.ImageSize = new System.Drawing.Size(22, 22);
-            this.btn_DoanhThu.Location = new System.Drawing.Point(21, 267);
-            this.btn_DoanhThu.Name = "btn_DoanhThu";
-            this.btn_DoanhThu.Padding = new System.Windows.Forms.Padding(36, 0, 0, 0);
-            this.btn_DoanhThu.Size = new System.Drawing.Size(306, 45);
-            this.btn_DoanhThu.TabIndex = 5;
-            this.btn_DoanhThu.Text = "Doanh thu";
-            this.btn_DoanhThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_DoanhThu.Click += new System.EventHandler(this.btn_DoanhThu_Click);
             // 
             // btnAccount
             // 
@@ -648,7 +624,6 @@
         private Guna.UI2.WinForms.Guna2Button btnCategory;
         private Guna.UI2.WinForms.Guna2Button btnMenu;
         private Guna.UI2.WinForms.Guna2Button btnManage;
-        private Guna.UI2.WinForms.Guna2Button btn_DoanhThu;
         private Guna.UI2.WinForms.Guna2Button btnAccount;
         private Guna.UI2.WinForms.Guna2Button btnInfo;
         private Guna.UI2.WinForms.Guna2Button btn_ThongKe;

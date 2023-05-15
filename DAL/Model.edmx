@@ -113,13 +113,26 @@
           <Property Name="MaQuyen" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'QLCP.dbo.VW_DoanhThu' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+warning 6002: The table/view 'QLCP.dbo.VW_DoanhThu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_DoanhThu">
-          <Property Name="ThoiGian" Type="datetime" />
-          <Property Name="DoanhThuTaiQuan" Type="int" />
-          <Property Name="DoanhThuMangVe" Type="int" />
-          <Property Name="DoanhThuGiaoHang" Type="int" />
-        </EntityType>-->
+          <Key>
+            <PropertyRef Name="LoaiHD" />
+          </Key>
+          <Property Name="ThoiGian" Type="date" />
+          <Property Name="LoaiHD" Type="nvarchar" MaxLength="17" Nullable="false" />
+          <Property Name="TongTien" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VW_SoLuongSP">
+          <Key>
+            <PropertyRef Name="MaSP" />
+            <PropertyRef Name="SoLuong" />
+          </Key>
+          <Property Name="MaSP" Type="int" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="ThoiGian" Type="date" />
+        </EntityType>
         <Association Name="FK__CTHDGiaoHa__MaHD__571DF1D5">
           <End Role="HDGiaoHang" Type="Self.HDGiaoHang" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -274,43 +287,18 @@ warning 6013: The table/view 'QLCP.dbo.VW_DoanhThu' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="DoanhThuTheoNam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="DoanhThuTheoNgay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="DoanhThuTheoThang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        <Function Name="DoanhThuTheoLoaiHD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StartDate" Type="date" Mode="In" />
+          <Parameter Name="EndDate" Type="date" Mode="In" />
         </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        <Function Name="DoanhThuTheoNgay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StartDate" Type="date" Mode="In" />
+          <Parameter Name="EndDate" Type="date" Mode="In" />
         </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
+        <Function Name="TopDoanhThuSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StartDate" Type="date" Mode="In" />
+          <Parameter Name="EndDate" Type="date" Mode="In" />
         </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="ThongKeTheoNam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="ThongKeTheoNgay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="ThongKeTheoThang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="QLCPModelStoreContainer">
           <EntitySet Name="Ban" EntityType="Self.Ban" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CTHDGiaoHang" EntityType="Self.CTHDGiaoHang" Schema="dbo" store:Type="Tables" />
@@ -323,6 +311,20 @@ warning 6013: The table/view 'QLCP.dbo.VW_DoanhThu' does not have a primary key 
           <EntitySet Name="Quyen" EntityType="Self.Quyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VW_DoanhThu" EntityType="Self.VW_DoanhThu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VW_DoanhThu].[ThoiGian] AS [ThoiGian], 
+    [VW_DoanhThu].[LoaiHD] AS [LoaiHD], 
+    [VW_DoanhThu].[TongTien] AS [TongTien]
+    FROM [dbo].[VW_DoanhThu] AS [VW_DoanhThu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VW_SoLuongSP" EntityType="Self.VW_SoLuongSP" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VW_SoLuongSP].[MaSP] AS [MaSP], 
+    [VW_SoLuongSP].[SoLuong] AS [SoLuong], 
+    [VW_SoLuongSP].[ThoiGian] AS [ThoiGian]
+    FROM [dbo].[VW_SoLuongSP] AS [VW_SoLuongSP]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__CTHDGiaoHa__MaHD__571DF1D5" Association="Self.FK__CTHDGiaoHa__MaHD__571DF1D5">
             <End Role="HDGiaoHang" EntitySet="HDGiaoHang" />
             <End Role="CTHDGiaoHang" EntitySet="CTHDGiaoHang" />
@@ -502,6 +504,23 @@ warning 6013: The table/view 'QLCP.dbo.VW_DoanhThu' does not have a primary key 
           <Property Name="MaQuyen" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Quyen" Relationship="Self.FK__TaiKhoan__MaQuye__398D8EEE" FromRole="TaiKhoan" ToRole="Quyen" />
         </EntityType>
+        <EntityType Name="VW_DoanhThu">
+          <Key>
+            <PropertyRef Name="LoaiHD" />
+          </Key>
+          <Property Name="ThoiGian" Type="DateTime" Precision="0" />
+          <Property Name="LoaiHD" Type="String" MaxLength="17" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TongTien" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VW_SoLuongSP">
+          <Key>
+            <PropertyRef Name="MaSP" />
+            <PropertyRef Name="SoLuong" />
+          </Key>
+          <Property Name="MaSP" Type="Int32" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="ThoiGian" Type="DateTime" Precision="0" />
+        </EntityType>
         <Association Name="FK__HDTaiQuan__MaBan__4BAC3F29">
           <End Role="Ban" Type="Self.Ban" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -668,6 +687,8 @@ warning 6013: The table/view 'QLCP.dbo.VW_DoanhThu' does not have a primary key 
           <EntitySet Name="Quyens" EntityType="Self.Quyen" />
           <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
           <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+          <EntitySet Name="VW_DoanhThu" EntityType="Self.VW_DoanhThu" />
+          <EntitySet Name="VW_SoLuongSP" EntityType="Self.VW_SoLuongSP" />
           <AssociationSet Name="FK__HDTaiQuan__MaBan__4BAC3F29" Association="Self.FK__HDTaiQuan__MaBan__4BAC3F29">
             <End Role="Ban" EntitySet="Bans" />
             <End Role="HDTaiQuan" EntitySet="HDTaiQuans" />
@@ -712,87 +733,30 @@ warning 6013: The table/view 'QLCP.dbo.VW_DoanhThu' does not have a primary key 
             <End Role="Quyen" EntitySet="Quyens" />
             <End Role="TaiKhoan" EntitySet="TaiKhoans" />
           </AssociationSet>
-          <FunctionImport Name="DoanhThuTheoNam" ReturnType="Collection(QLCPModel.DoanhThuTheoNam_Result)" />
-          <FunctionImport Name="DoanhThuTheoNgay" ReturnType="Collection(QLCPModel.DoanhThuTheoNgay_Result)" />
-          <FunctionImport Name="DoanhThuTheoThang" ReturnType="Collection(QLCPModel.DoanhThuTheoThang_Result)" />
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
+          <FunctionImport Name="DoanhThuTheoLoaiHD" ReturnType="Collection(QLCPModel.DoanhThuTheoLoaiHD_Result)">
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
+          <FunctionImport Name="DoanhThuTheoNgay" ReturnType="Collection(QLCPModel.DoanhThuTheoNgay_Result)">
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          <FunctionImport Name="TopDoanhThuSP" ReturnType="Collection(QLCPModel.TopDoanhThuSP_Result)">
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QLCPModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QLCPModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
-          <FunctionImport Name="ThongKeTheoNam" ReturnType="Collection(QLCPModel.ThongKeTheoNam_Result)" />
-          <FunctionImport Name="ThongKeTheoNgay" ReturnType="Collection(QLCPModel.ThongKeTheoNgay_Result)" />
-          <FunctionImport Name="ThongKeTheoThang" ReturnType="Collection(QLCPModel.ThongKeTheoThang_Result)" />
         </EntityContainer>
-        <ComplexType Name="DoanhThuTheoNam_Result">
-          <Property Type="Int32" Name="ThoiGian" Nullable="true" />
-          <Property Type="Int32" Name="DoanhThuTaiQuan" Nullable="true" />
-          <Property Type="Int32" Name="DoanhThuMangVe" Nullable="true" />
-          <Property Type="Int32" Name="DoanhThuGiaoHang" Nullable="true" />
+        <ComplexType Name="DoanhThuTheoLoaiHD_Result">
+          <Property Type="String" Name="LoaiHD" Nullable="false" MaxLength="17" />
+          <Property Type="Int32" Name="TongTien" Nullable="true" />
         </ComplexType>
         <ComplexType Name="DoanhThuTheoNgay_Result">
           <Property Type="DateTime" Name="ThoiGian" Nullable="true" />
-          <Property Type="Int32" Name="DoanhThuTaiQuan" Nullable="true" />
-          <Property Type="Int32" Name="DoanhThuMangVe" Nullable="true" />
-          <Property Type="Int32" Name="DoanhThuGiaoHang" Nullable="true" />
+          <Property Type="Int32" Name="TongTien" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="DoanhThuTheoThang_Result">
-          <Property Type="String" Name="ThoiGian" Nullable="true" MaxLength="7" />
-          <Property Type="Int32" Name="DoanhThuTaiQuan" Nullable="true" />
-          <Property Type="Int32" Name="DoanhThuMangVe" Nullable="true" />
-          <Property Type="Int32" Name="DoanhThuGiaoHang" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="ThongKeTheoNam_Result">
-          <Property Type="Int32" Name="Nam" Nullable="true" />
-          <Property Type="Int32" Name="HDTaiQuan" Nullable="true" />
-          <Property Type="Int32" Name="HDMangVe" Nullable="true" />
-          <Property Type="Int32" Name="HDGiaoHang" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="ThongKeTheoNgay_Result">
-          <Property Type="DateTime" Name="Ngay" Nullable="true" />
-          <Property Type="Int32" Name="HDTaiQuan" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="ThongKeTheoThang_Result">
-          <Property Type="Int32" Name="Thang" Nullable="true" />
-          <Property Type="Int32" Name="HDTaiQuan" Nullable="true" />
-          <Property Type="Int32" Name="HDMangVe" Nullable="true" />
-          <Property Type="Int32" Name="HDGiaoHang" Nullable="true" />
+        <ComplexType Name="TopDoanhThuSP_Result">
+          <Property Type="String" Name="Ten" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="TongTien" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -918,13 +882,29 @@ warning 6013: The table/view 'QLCP.dbo.VW_DoanhThu' does not have a primary key 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="DoanhThuTheoNam" FunctionName="QLCPModel.Store.DoanhThuTheoNam">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLCPModel.DoanhThuTheoNam_Result">
+          <EntitySetMapping Name="VW_DoanhThu">
+            <EntityTypeMapping TypeName="QLCPModel.VW_DoanhThu">
+              <MappingFragment StoreEntitySet="VW_DoanhThu">
                 <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
-                <ScalarProperty Name="DoanhThuTaiQuan" ColumnName="DoanhThuTaiQuan" />
-                <ScalarProperty Name="DoanhThuMangVe" ColumnName="DoanhThuMangVe" />
-                <ScalarProperty Name="DoanhThuGiaoHang" ColumnName="DoanhThuGiaoHang" />
+                <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VW_SoLuongSP">
+            <EntityTypeMapping TypeName="QLCPModel.VW_SoLuongSP">
+              <MappingFragment StoreEntitySet="VW_SoLuongSP">
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DoanhThuTheoLoaiHD" FunctionName="QLCPModel.Store.DoanhThuTheoLoaiHD">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLCPModel.DoanhThuTheoLoaiHD_Result">
+                <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -932,71 +912,15 @@ warning 6013: The table/view 'QLCP.dbo.VW_DoanhThu' does not have a primary key 
             <ResultMapping>
               <ComplexTypeMapping TypeName="QLCPModel.DoanhThuTheoNgay_Result">
                 <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
-                <ScalarProperty Name="DoanhThuTaiQuan" ColumnName="DoanhThuTaiQuan" />
-                <ScalarProperty Name="DoanhThuMangVe" ColumnName="DoanhThuMangVe" />
-                <ScalarProperty Name="DoanhThuGiaoHang" ColumnName="DoanhThuGiaoHang" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="DoanhThuTheoThang" FunctionName="QLCPModel.Store.DoanhThuTheoThang">
+          <FunctionImportMapping FunctionImportName="TopDoanhThuSP" FunctionName="QLCPModel.Store.TopDoanhThuSP">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="QLCPModel.DoanhThuTheoThang_Result">
-                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
-                <ScalarProperty Name="DoanhThuTaiQuan" ColumnName="DoanhThuTaiQuan" />
-                <ScalarProperty Name="DoanhThuMangVe" ColumnName="DoanhThuMangVe" />
-                <ScalarProperty Name="DoanhThuGiaoHang" ColumnName="DoanhThuGiaoHang" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QLCPModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QLCPModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QLCPModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QLCPModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLCPModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QLCPModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLCPModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QLCPModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QLCPModel.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="ThongKeTheoNam" FunctionName="QLCPModel.Store.ThongKeTheoNam">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLCPModel.ThongKeTheoNam_Result">
-                <ScalarProperty Name="Nam" ColumnName="Nam" />
-                <ScalarProperty Name="HDTaiQuan" ColumnName="HDTaiQuan" />
-                <ScalarProperty Name="HDMangVe" ColumnName="HDMangVe" />
-                <ScalarProperty Name="HDGiaoHang" ColumnName="HDGiaoHang" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="ThongKeTheoNgay" FunctionName="QLCPModel.Store.ThongKeTheoNgay">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLCPModel.ThongKeTheoNgay_Result">
-                <ScalarProperty Name="Ngay" ColumnName="Ngay" />
-                <ScalarProperty Name="HDTaiQuan" ColumnName="HDTaiQuan" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="ThongKeTheoThang" FunctionName="QLCPModel.Store.ThongKeTheoThang">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLCPModel.ThongKeTheoThang_Result">
-                <ScalarProperty Name="Thang" ColumnName="Thang" />
-                <ScalarProperty Name="HDTaiQuan" ColumnName="HDTaiQuan" />
-                <ScalarProperty Name="HDMangVe" ColumnName="HDMangVe" />
-                <ScalarProperty Name="HDGiaoHang" ColumnName="HDGiaoHang" />
+              <ComplexTypeMapping TypeName="QLCPModel.TopDoanhThuSP_Result">
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

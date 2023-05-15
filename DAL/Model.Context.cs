@@ -14,7 +14,7 @@ namespace DAL
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    
+
     public partial class QLCPEntities : DbContext
     {
         System.Data.Entity.SqlServer.SqlProviderServices instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
@@ -23,12 +23,12 @@ namespace DAL
             : base("name=QLCPEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public virtual DbSet<Ban> Bans { get; set; }
         public virtual DbSet<CTHDGiaoHang> CTHDGiaoHangs { get; set; }
         public virtual DbSet<CTHDTaiQuan> CTHDTaiQuans { get; set; }
@@ -40,138 +40,46 @@ namespace DAL
         public virtual DbSet<Quyen> Quyens { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
-    
-        public virtual ObjectResult<DoanhThuTheoNam_Result> DoanhThuTheoNam()
+        public virtual DbSet<VW_DoanhThu> VW_DoanhThu { get; set; }
+        public virtual DbSet<VW_SoLuongSP> VW_SoLuongSP { get; set; }
+
+        public virtual ObjectResult<DoanhThuTheoLoaiHD_Result> DoanhThuTheoLoaiHD(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DoanhThuTheoNam_Result>("DoanhThuTheoNam");
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("StartDate", startDate) :
+                new ObjectParameter("StartDate", typeof(System.DateTime));
+
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("EndDate", endDate) :
+                new ObjectParameter("EndDate", typeof(System.DateTime));
+
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DoanhThuTheoLoaiHD_Result>("DoanhThuTheoLoaiHD", startDateParameter, endDateParameter);
         }
-    
-        public virtual ObjectResult<DoanhThuTheoNgay_Result> DoanhThuTheoNgay()
+
+        public virtual ObjectResult<DoanhThuTheoNgay_Result> DoanhThuTheoNgay(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DoanhThuTheoNgay_Result>("DoanhThuTheoNgay");
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("StartDate", startDate) :
+                new ObjectParameter("StartDate", typeof(System.DateTime));
+
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("EndDate", endDate) :
+                new ObjectParameter("EndDate", typeof(System.DateTime));
+
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DoanhThuTheoNgay_Result>("DoanhThuTheoNgay", startDateParameter, endDateParameter);
         }
-    
-        public virtual ObjectResult<DoanhThuTheoThang_Result> DoanhThuTheoThang()
+
+        public virtual ObjectResult<TopDoanhThuSP_Result> TopDoanhThuSP(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DoanhThuTheoThang_Result>("DoanhThuTheoThang");
-        }
-    
-        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
-        }
-    
-        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
-        }
-    
-        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var new_diagramnameParameter = new_diagramname != null ?
-                new ObjectParameter("new_diagramname", new_diagramname) :
-                new ObjectParameter("new_diagramname", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
-        }
-    
-        public virtual int sp_upgraddiagrams()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
-        }
-    
-        public virtual ObjectResult<ThongKeTheoNam_Result> ThongKeTheoNam()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ThongKeTheoNam_Result>("ThongKeTheoNam");
-        }
-    
-        public virtual ObjectResult<ThongKeTheoNgay_Result> ThongKeTheoNgay()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ThongKeTheoNgay_Result>("ThongKeTheoNgay");
-        }
-    
-        public virtual ObjectResult<ThongKeTheoThang_Result> ThongKeTheoThang()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ThongKeTheoThang_Result>("ThongKeTheoThang");
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("StartDate", startDate) :
+                new ObjectParameter("StartDate", typeof(System.DateTime));
+
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("EndDate", endDate) :
+                new ObjectParameter("EndDate", typeof(System.DateTime));
+
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TopDoanhThuSP_Result>("TopDoanhThuSP", startDateParameter, endDateParameter);
         }
     }
 }

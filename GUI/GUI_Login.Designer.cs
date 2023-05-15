@@ -241,7 +241,7 @@
             this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.btnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(205)))), ((int)(((byte)(255)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnLogin.Image = global::GUI.Properties.Resources.login2;
             this.btnLogin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnLogin.Location = new System.Drawing.Point(733, 368);

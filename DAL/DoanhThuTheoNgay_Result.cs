@@ -14,8 +14,6 @@ namespace DAL
     public partial class DoanhThuTheoNgay_Result
     {
         public Nullable<System.DateTime> ThoiGian { get; set; }
-        public Nullable<int> DoanhThuTaiQuan { get; set; }
-        public Nullable<int> DoanhThuMangVe { get; set; }
-        public Nullable<int> DoanhThuGiaoHang { get; set; }
+        public Nullable<int> TongTien { get; set; }
     }
 }

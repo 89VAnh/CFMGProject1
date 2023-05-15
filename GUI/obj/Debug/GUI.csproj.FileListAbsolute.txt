@@ -88,7 +88,6 @@ C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\C
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.dll
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Guna.UI2.dll
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Utility.dll
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
@@ -107,14 +106,12 @@ C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\C
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\DAL.dll.config
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Utility.pdb
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.xml
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.ResolveComReference.cache
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Account.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_BillAtShop.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_BillDelivery.resources
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Bills.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_BillTakeAway.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_CategoryProduct.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Customer.resources
@@ -159,3 +156,11 @@ D:\DATA\HOCTAP\CFMGProject1\GUI\obj\Debug\GUI.GUI_Bills.resources
 D:\DATA\HOCTAP\CFMGProject1\GUI\obj\Debug\GUI.GUI_Report.resources
 D:\DATA\HOCTAP\CFMGProject1\GUI\obj\Debug\GUI.GUI_Statistic.resources
 D:\DATA\HOCTAP\CFMGProject1\GUI\obj\Debug\GUI.GUI_Statistic2.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EPPlus.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EPPlus.xml
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml

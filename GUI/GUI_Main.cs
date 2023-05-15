@@ -132,17 +132,9 @@ namespace GUI
             frm.WindowState = FormWindowState.Maximized;
         }
 
-        private void btn_DoanhThu_Click(object sender, EventArgs e)
-        {
-            GUI_Bills frm = new GUI_Bills();
-            frm.MdiParent = this;
-            frm.Show();
-            frm.WindowState = FormWindowState.Maximized;
-        }
-
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
-            GUI_Statistic2 frm = new GUI_Statistic2();
+            GUI_Statistic frm = new GUI_Statistic();
             frm.MdiParent = this;
             frm.Show();
             frm.WindowState = FormWindowState.Maximized;
