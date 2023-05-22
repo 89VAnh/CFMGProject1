@@ -7,6 +7,18 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
+        public void Add(Ban tableCoffee)
+        {
+            db.Bans.Add(tableCoffee);
+            db.SaveChanges();
+        }
+
+        public void Delete(Ban tableCoffee)
+        {
+            db.Bans.Remove(tableCoffee);
+            db.SaveChanges();
+        }
+
         public List<Ban> GetAll()
         {
             return db.Bans.ToList();
@@ -17,22 +29,10 @@ namespace DAL
             return db.Bans.Find(id);
         }
 
-        public void Add(Ban tableCoffee)
-        {
-            db.Bans.Add(tableCoffee);
-            db.SaveChanges();
-        }
-
         public void Update(Ban tableCoffee)
         {
             Ban t = db.Bans.Find(tableCoffee.Ma);
             t.Ten = tableCoffee.Ten;
-            db.SaveChanges();
-        }
-
-        public void Delete(Ban tableCoffee)
-        {
-            db.Bans.Remove(tableCoffee);
             db.SaveChanges();
         }
     }

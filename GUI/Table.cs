@@ -18,6 +18,9 @@ namespace GUI
             this.btnTable.Click += table_Click;
         }
 
+        public string GetStatus()
+        { return status; }
+
         public void UpdateStatus(string status)
         {
             this.status = status;
@@ -31,8 +34,5 @@ namespace GUI
 
             this.btnTable.Image = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + "Resources/" + s + ".png");
         }
-
-        public string GetStatus()
-        { return status; }
     }
 }

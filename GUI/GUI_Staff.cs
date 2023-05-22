@@ -11,9 +11,8 @@ namespace GUI
 {
     public partial class GUI_Staff : Form
     {
-        private BUS_Staff busStaff = new BUS_Staff();
         private BUS_Position busPosition = new BUS_Position();
-
+        private BUS_Staff busStaff = new BUS_Staff();
         private NhanVien staffFromForm;
 
         public GUI_Staff()
@@ -21,41 +20,56 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void UpdateDgv(List<NhanVien> staffList)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            dgvStaff.DataSource = staffList.Select(x => new { x.Ma, x.Ten, x.GioiTinh, x.SDT, x.Email, x.DiaChi, ChucVu = x.Quyen.Ten }).ToList();
+            GetStaffFromForm();
+            if (staffFromForm != null)
+            {
+                if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (busStaff.Add(staffFromForm))
+                    {
+                        MessageBox.Show("Thêm thành công!");
+                        UpdateDgv(busStaff.GetAll());
+                    }
+                    else MessageBox.Show("Mã nhân viên đã tồn tại!");
+                }
+            }
         }
 
-        private void GUI_Staff_Load(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            cboPosition.DataSource = busPosition.GetAll();
-            cboPosition.ValueMember = "Ma";
-            cboPosition.DisplayMember = "Ten";
-            cboPosition.SelectedIndex = 0;
-
-            UpdateDgv(busStaff.GetAll());
+            if (checkTextBox(txtID))
+            {
+                if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (busStaff.Delete(txtID.Text))
+                    {
+                        UpdateDgv(busStaff.GetAll());
+                        MessageBox.Show("Xoá thành công!");
+                    }
+                    else MessageBox.Show("Mã nhân viên không tồn tại");
+                }
+            }
+            else MessageBox.Show("Chưa có nhân viên nào được chọn!");
         }
 
-        private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            string staffID = dgvStaff[0, e.RowIndex].Value.ToString();
-            txtID.Text = dgvStaff[0, e.RowIndex].Value.ToString();
-            txtName.Text = dgvStaff[1, e.RowIndex].Value.ToString();
-            txtGender.Text = dgvStaff[2, e.RowIndex].Value.ToString();
-            txtPhone.Text = dgvStaff[3, e.RowIndex].Value.ToString();
-            txtEmail.Text = dgvStaff[4, e.RowIndex].Value.ToString();
-            txtAddress.Text = dgvStaff[5, e.RowIndex].Value.ToString();
-            cboPosition.SelectedValue = dgvStaff[6, e.RowIndex].Value.ToString();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            UpdateDgv(busStaff.SearchStaffsByName(txtSearch.Text));
-        }
-
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
+            GetStaffFromForm();
+            if (staffFromForm != null)
+            {
+                if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (busStaff.Update(staffFromForm))
+                    {
+                        UpdateDgv(busStaff.GetAll());
+                        MessageBox.Show("Sửa thông tin thành công!");
+                    }
+                    else MessageBox.Show("Mã nhân viên không tồn tại");
+                }
+                else MessageBox.Show("Mã nhân viên không tồn tại!");
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -71,6 +85,19 @@ namespace GUI
             UpdateDgv(busStaff.GetAll());
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            UpdateDgv(busStaff.SearchStaffsByName(txtSearch.Text));
+        }
+
+        private void cboPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboPosition.SelectedIndex > 0)
+            {
+                UpdateDgv(busStaff.SearchStaffsByPosition(cboPosition.SelectedValue.ToString()));
+            }
+        }
+
         private bool checkTextBox(Guna2TextBox textBox)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
@@ -81,12 +108,16 @@ namespace GUI
             else return true;
         }
 
-        private void cboPosition_SelectedIndexChanged(object sender, EventArgs e)
+        private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (cboPosition.SelectedIndex > 0)
-            {
-                UpdateDgv(busStaff.SearchStaffsByPosition(cboPosition.SelectedValue.ToString()));
-            }
+            string staffID = dgvStaff[0, e.RowIndex].Value.ToString();
+            txtID.Text = dgvStaff[0, e.RowIndex].Value.ToString();
+            txtName.Text = dgvStaff[1, e.RowIndex].Value.ToString();
+            txtGender.Text = dgvStaff[2, e.RowIndex].Value.ToString();
+            txtPhone.Text = dgvStaff[3, e.RowIndex].Value.ToString();
+            txtEmail.Text = dgvStaff[4, e.RowIndex].Value.ToString();
+            txtAddress.Text = dgvStaff[5, e.RowIndex].Value.ToString();
+            cboPosition.SelectedValue = dgvStaff[6, e.RowIndex].Value.ToString();
         }
 
         private void GetStaffFromForm()
@@ -131,56 +162,29 @@ namespace GUI
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void GUI_Staff_Load(object sender, EventArgs e)
         {
-            GetStaffFromForm();
-            if (staffFromForm != null)
-            {
-                if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    if (busStaff.Add(staffFromForm))
-                    {
-                        MessageBox.Show("Thêm thành công!");
-                        UpdateDgv(busStaff.GetAll());
-                    }
-                    else MessageBox.Show("Mã nhân viên đã tồn tại!");
-                }
-            }
+            cboPosition.DataSource = busPosition.GetAll();
+            cboPosition.ValueMember = "Ma";
+            cboPosition.DisplayMember = "Ten";
+            cboPosition.SelectedIndex = 0;
+
+            UpdateDgv(busStaff.GetAll());
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void txtAddress_TextChanged(object sender, EventArgs e)
         {
-            GetStaffFromForm();
-            if (staffFromForm != null)
-            {
-                if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    if (busStaff.Update(staffFromForm))
-                    {
-                        UpdateDgv(busStaff.GetAll());
-                        MessageBox.Show("Sửa thông tin thành công!");
-                    }
-                    else MessageBox.Show("Mã nhân viên không tồn tại");
-                }
-                else MessageBox.Show("Mã nhân viên không tồn tại!");
-            }
+            errorProvider.Clear();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            if (checkTextBox(txtID))
-            {
-                if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    if (busStaff.Delete(txtID.Text))
-                    {
-                        UpdateDgv(busStaff.GetAll());
-                        MessageBox.Show("Xoá thành công!");
-                    }
-                    else MessageBox.Show("Mã nhân viên không tồn tại");
-                }
-            }
-            else MessageBox.Show("Chưa có nhân viên nào được chọn!");
+            errorProvider.Clear();
+        }
+
+        private void txtGender_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider.Clear();
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
@@ -193,24 +197,19 @@ namespace GUI
             errorProvider.Clear();
         }
 
-        private void txtGender_TextChanged(object sender, EventArgs e)
-        {
-            errorProvider.Clear();
-        }
-
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
-            errorProvider.Clear();
+            if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
         }
 
-        private void txtAddress_TextChanged(object sender, EventArgs e)
+        private void UpdateDgv(List<NhanVien> staffList)
         {
-            errorProvider.Clear();
+            dgvStaff.DataSource = staffList.Select(x => new { x.Ma, x.Ten, x.GioiTinh, x.SDT, x.Email, x.DiaChi, ChucVu = x.Quyen.Ten }).ToList();
         }
     }
 }

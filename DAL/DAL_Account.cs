@@ -7,15 +7,21 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
-        public List<TaiKhoan> GetAccounts()
-        {
-            return db.TaiKhoans.ToList();
-        }
-
         public void Add(TaiKhoan account)
         {
             db.TaiKhoans.Add(account);
             db.SaveChanges();
+        }
+
+        public void Delete(TaiKhoan account)
+        {
+            db.TaiKhoans.Remove(account);
+            db.SaveChanges();
+        }
+
+        public List<TaiKhoan> GetAll()
+        {
+            return db.TaiKhoans.ToList();
         }
 
         public void Update(TaiKhoan account)
@@ -24,12 +30,6 @@ namespace DAL
             a.MatKhau = account.MatKhau;
             a.Email = account.Email;
             a.MaQuyen = account.MaQuyen;
-            db.SaveChanges();
-        }
-
-        public void Delete(TaiKhoan account)
-        {
-            db.TaiKhoans.Remove(account);
             db.SaveChanges();
         }
     }

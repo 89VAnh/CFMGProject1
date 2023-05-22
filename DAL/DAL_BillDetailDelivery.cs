@@ -7,6 +7,19 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
+        public void Add(CTHDGiaoHang billDetail)
+        {
+            billDetail.SanPham = db.SanPhams.Find(billDetail.MaSP);
+            db.CTHDGiaoHangs.Add(billDetail);
+            db.SaveChanges();
+        }
+
+        public void Delete(CTHDGiaoHang billDetail)
+        {
+            db.CTHDGiaoHangs.Remove(billDetail);
+            db.SaveChanges();
+        }
+
         public List<CTHDGiaoHang> GetAll()
         {
             return db.CTHDGiaoHangs.ToList();
@@ -17,13 +30,6 @@ namespace DAL
             return db.CTHDGiaoHangs.Find(id);
         }
 
-        public void Add(CTHDGiaoHang billDetail)
-        {
-            billDetail.SanPham = db.SanPhams.Find(billDetail.MaSP);
-            db.CTHDGiaoHangs.Add(billDetail);
-            db.SaveChanges();
-        }
-
         public void Update(CTHDGiaoHang billDetail)
         {
             CTHDGiaoHang bd = db.CTHDGiaoHangs.Find(billDetail.Ma);
@@ -31,12 +37,6 @@ namespace DAL
             bd.MaSP = billDetail.MaSP;
             bd.SoLuong = billDetail.SoLuong;
             bd.GhiChu = billDetail.GhiChu;
-            db.SaveChanges();
-        }
-
-        public void Delete(CTHDGiaoHang billDetail)
-        {
-            db.CTHDGiaoHangs.Remove(billDetail);
             db.SaveChanges();
         }
     }

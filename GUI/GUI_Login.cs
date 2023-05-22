@@ -65,12 +65,12 @@ namespace GUI
             }
         }
 
-        private void txtUn_TextChanged(object sender, EventArgs e)
+        private void txtPw_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
         }
 
-        private void txtPw_TextChanged(object sender, EventArgs e)
+        private void txtUn_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
         }

@@ -36,15 +36,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -151,12 +142,6 @@
     <Compile Include="GUI_Product.Designer.cs">
       <DependentUpon>GUI_Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI_Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI_Report.Designer.cs">
-      <DependentUpon>GUI_Report.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI_Staff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,12 +162,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rptBillAtShop.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptBillAtShop.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Table.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,9 +207,6 @@
     <EmbeddedResource Include="GUI_Product.resx">
       <DependentUpon>GUI_Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI_Report.resx">
-      <DependentUpon>GUI_Report.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI_Staff.resx">
       <DependentUpon>GUI_Staff.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,10 +226,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="rptBillAtShop.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptBillAtShop.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Table.resx">
       <DependentUpon>Table.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +248,7 @@
     <Content Include="Resources\add.png" />
     <Content Include="Resources\analytics.png" />
     <Content Include="Resources\arrow.png" />
+    <None Include="Resources\word.png" />
     <None Include="Resources\bill.png" />
     <Content Include="Resources\blogger.png" />
     <Content Include="Resources\chair.png" />

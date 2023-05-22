@@ -9,6 +9,24 @@ namespace BUS
     {
         private DAL_Staff dalStaff = new DAL_Staff();
 
+        public bool Add(NhanVien staff)
+        {
+            staff.Ma = GetNewID(staff.MaQuyen);
+            dalStaff.Add(staff);
+            return true;
+        }
+
+        public bool Delete(string id)
+        {
+            NhanVien nhanVien = GetByID(id);
+            if (nhanVien != null)
+            {
+                dalStaff.Delete(nhanVien);
+                return true;
+            }
+            else return false;
+        }
+
         public List<NhanVien> GetAll()
         {
             return dalStaff.GetAll();
@@ -36,29 +54,11 @@ namespace BUS
                     .Where(x => x.MaQuyen == id).ToList();
         }
 
-        public bool Add(NhanVien staff)
-        {
-            staff.Ma = GetNewID(staff.MaQuyen);
-            dalStaff.Add(staff);
-            return true;
-        }
-
         public bool Update(NhanVien staff)
         {
             if (GetByID(staff.Ma) != null)
             {
                 dalStaff.Update(staff);
-                return true;
-            }
-            else return false;
-        }
-
-        public bool Delete(string id)
-        {
-            NhanVien nhanVien = GetByID(id);
-            if (nhanVien != null)
-            {
-                dalStaff.Delete(nhanVien);
                 return true;
             }
             else return false;

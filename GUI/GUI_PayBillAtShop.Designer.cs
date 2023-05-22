@@ -47,7 +47,6 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTable = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnAccept = new Guna.UI2.WinForms.Guna2Button();
             this.lblStaff = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -59,6 +58,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblCustomer = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnWord = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillAtShop)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,8 +78,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBillAtShop.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvBillAtShop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvBillAtShop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBillAtShop.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -264,28 +265,6 @@
             this.lblTable.TabIndex = 21;
             this.lblTable.Text = "lblTable";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancel.AutoRoundedCorners = true;
-            this.btnCancel.BorderRadius = 21;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.FillColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
-            this.btnCancel.Location = new System.Drawing.Point(336, 765);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(159, 45);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Huỷ";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
@@ -408,12 +387,61 @@
             this.lblCustomer.TabIndex = 90;
             this.lblCustomer.Text = "lblCustomer";
             // 
+            // btnWord
+            // 
+            this.btnWord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnWord.AutoRoundedCorners = true;
+            this.btnWord.BorderRadius = 21;
+            this.btnWord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWord.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnWord.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnWord.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnWord.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnWord.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnWord.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(222)))));
+            this.btnWord.Image = global::GUI.Properties.Resources.word;
+            this.btnWord.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnWord.Location = new System.Drawing.Point(246, 765);
+            this.btnWord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnWord.Name = "btnWord";
+            this.btnWord.Size = new System.Drawing.Size(282, 45);
+            this.btnWord.TabIndex = 91;
+            this.btnWord.Text = "Xác nhận và xuất word";
+            this.btnWord.Click += new System.EventHandler(this.btnWord_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancel.AutoRoundedCorners = true;
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
+            this.btnCancel.BorderRadius = 21;
+            this.btnCancel.BorderThickness = 1;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.FillColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(65, 765);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(159, 45);
+            this.btnCancel.TabIndex = 92;
+            this.btnCancel.Text = "Huỷ";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // GUI_PayBillAtShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(790, 834);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnWord);
             this.Controls.Add(this.lblCustomer);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -430,7 +458,6 @@
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblTable);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GUI_PayBillAtShop";
@@ -451,7 +478,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTime;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTable;
-        private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnAccept;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblStaff;
@@ -469,5 +495,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCustomer;
+        private Guna.UI2.WinForms.Guna2Button btnWord;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
     }
 }

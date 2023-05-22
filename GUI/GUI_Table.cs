@@ -17,39 +17,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void UpdateDgv(List<Ban> tables)
-        {
-            dgvTable.DataSource = tables.Select(x => new { x.Ma, x.Ten, x.TrangThai }).ToList();
-        }
-
-        private void GUI_Table_Load(object sender, EventArgs e)
-        {
-            UpdateDgv(busTable.GetAll());
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            UpdateDgv(busTable.GetAll());
-        }
-
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
-        }
-
-        private void dgvTable_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            selectedTableID = (int)dgvTable[0, e.RowIndex].Value;
-            txtName.Text = dgvTable[1, e.RowIndex].Value.ToString();
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            txtSearch.Clear();
-            txtName.Clear();
-            UpdateDgv(busTable.GetAll());
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtName.Text.Length > 0)
@@ -68,6 +35,27 @@ namespace GUI
                 }
             }
             else MessageBox.Show("Vui lòng nhập tên bàn!");
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedTableID > 0)
+            {
+                if (busTable.GetTableStatus(selectedTableID) == "Trống")
+                {
+                    if (MessageBox.Show($"Bạn có chắc chắn muốn xoá bàn {selectedTableID} không?", "Cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        if (busTable.Delete(selectedTableID))
+                        {
+                            UpdateDgv(busTable.GetAll());
+                            MessageBox.Show("Xoá bàn thành công!");
+                        }
+                        else MessageBox.Show("Mã bàn được chọn không hợp lệ!");
+                    }
+                }
+                else MessageBox.Show("Không cho phép xoá bàn có người!");
+            }
+            else MessageBox.Show("Vui lòng chọn 1 bàn!", "Thao tác không hợp lệ");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -93,25 +81,37 @@ namespace GUI
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            if (selectedTableID > 0)
-            {
-                if (busTable.GetTableStatus(selectedTableID) == "Trống")
-                {
-                    if (MessageBox.Show($"Bạn có chắc chắn muốn xoá bàn {selectedTableID} không?", "Cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        if (busTable.Delete(selectedTableID))
-                        {
-                            UpdateDgv(busTable.GetAll());
-                            MessageBox.Show("Xoá bàn thành công!");
-                        }
-                        else MessageBox.Show("Mã bàn được chọn không hợp lệ!");
-                    }
-                }
-                else MessageBox.Show("Không cho phép xoá bàn có người!");
-            }
-            else MessageBox.Show("Vui lòng chọn 1 bàn!", "Thao tác không hợp lệ");
+            txtSearch.Clear();
+            txtName.Clear();
+            UpdateDgv(busTable.GetAll());
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            UpdateDgv(busTable.GetAll());
+        }
+
+        private void dgvTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedTableID = (int)dgvTable[0, e.RowIndex].Value;
+            txtName.Text = dgvTable[1, e.RowIndex].Value.ToString();
+        }
+
+        private void GUI_Table_Load(object sender, EventArgs e)
+        {
+            UpdateDgv(busTable.GetAll());
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
+        }
+
+        private void UpdateDgv(List<Ban> tables)
+        {
+            dgvTable.DataSource = tables.Select(x => new { x.Ma, x.Ten, x.TrangThai }).ToList();
         }
     }
 }

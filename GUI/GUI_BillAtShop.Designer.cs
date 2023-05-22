@@ -428,6 +428,7 @@
             this.numTotalPrice.TabIndex = 6;
             this.numTotalPrice.ThousandsSeparator = true;
             this.numTotalPrice.UpDownButtonFillColor = System.Drawing.Color.Transparent;
+            this.numTotalPrice.UpDownButtonForeColor = System.Drawing.Color.Transparent;
             this.numTotalPrice.UseTransparentBackground = true;
             // 
             // btnDel
@@ -753,9 +754,9 @@
             this.btnPay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
             this.btnPay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(222)))));
-            this.btnPay.Location = new System.Drawing.Point(1268, 752);
+            this.btnPay.Location = new System.Drawing.Point(1184, 752);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(180, 52);
+            this.btnPay.Size = new System.Drawing.Size(328, 52);
             this.btnPay.TabIndex = 7;
             this.btnPay.Text = "THANH TOÁN";
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);

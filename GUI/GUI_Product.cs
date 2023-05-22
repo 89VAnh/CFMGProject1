@@ -9,63 +9,13 @@ namespace GUI
 {
     public partial class GUI_Product : Form
     {
-        private BUS_Product busProduct = new BUS_Product();
         private BUS_CategoryProduct busCategoryProduct = new BUS_CategoryProduct();
-
+        private BUS_Product busProduct = new BUS_Product();
         private int selectedProductID = 0;
 
         public GUI_Product()
         {
             InitializeComponent();
-        }
-
-        private void UpdateDgv(List<SanPham> productList)
-        {
-            dgvProduct.DataSource = productList.Select(x => new { x.Ma, x.Ten, TenDanhMuc = x.DanhMucSanPham.Ten, x.DonGia }).ToList();
-        }
-
-        private void GUI_Product_Load(object sender, EventArgs e)
-        {
-            cboCategoryProduct.DataSource = busCategoryProduct.GetAll();
-            cboCategoryProduct.ValueMember = "Ma";
-            cboCategoryProduct.DisplayMember = "Ten";
-            UpdateDgv(busProduct.GetAll());
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            UpdateDgv(busProduct.SearchProductsByName(txtSearch.Text));
-        }
-
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
-        }
-
-        private void cboCategoryProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateDgv(busProduct.SearchProductsByCategory(Convert.ToInt32(cboCategoryProduct.SelectedValue)).ToList());
-            }
-            catch { };
-        }
-
-        private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            selectedProductID = (int)dgvProduct[0, e.RowIndex].Value;
-            txtName.Text = dgvProduct[1, e.RowIndex].Value.ToString();
-            cboCategoryProduct.SelectedValue = dgvProduct[2, e.RowIndex].Value.ToString();
-            numPrice.Value = (int)dgvProduct[3, e.RowIndex].Value;
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            txtSearch.Clear();
-            txtName.Clear();
-            cboCategoryProduct.SelectedIndex = 0;
-            numPrice.Value = 0;
-            UpdateDgv(busProduct.GetAll());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -87,6 +37,19 @@ namespace GUI
                 }
             }
             else MessageBox.Show("Vui lòng nhập tên sản phẩm!");
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (busProduct.Delete(selectedProductID))
+                {
+                    UpdateDgv(busProduct.GetAll());
+                    MessageBox.Show("Xoá thành công!");
+                }
+                else MessageBox.Show("Vui lòng chọn đồ ăn!", "Thao tác không hợp lệ");
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -113,17 +76,58 @@ namespace GUI
             else MessageBox.Show("Vui lòng nhập tên đồ ăn!");
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            txtSearch.Clear();
+            txtName.Clear();
+            cboCategoryProduct.SelectedIndex = 0;
+            numPrice.Value = 0;
+            UpdateDgv(busProduct.GetAll());
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            UpdateDgv(busProduct.SearchProductsByName(txtSearch.Text));
+        }
+
+        private void cboCategoryProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
             {
-                if (busProduct.Delete(selectedProductID))
-                {
-                    UpdateDgv(busProduct.GetAll());
-                    MessageBox.Show("Xoá thành công!");
-                }
-                else MessageBox.Show("Vui lòng chọn đồ ăn!", "Thao tác không hợp lệ");
+                UpdateDgv(busProduct.SearchProductsByCategory(Convert.ToInt32(cboCategoryProduct.SelectedValue)).ToList());
             }
+            catch { };
+        }
+
+        private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedProductID = (int)dgvProduct[0, e.RowIndex].Value;
+                SanPham p = busProduct.GetByID(selectedProductID);
+                txtName.Text = p.Ten;
+                cboCategoryProduct.SelectedValue = p.MaDM;
+                numPrice.Value = p.DonGia;
+            }
+            catch { }
+        }
+
+        private void GUI_Product_Load(object sender, EventArgs e)
+        {
+            cboCategoryProduct.DataSource = busCategoryProduct.GetAll();
+            cboCategoryProduct.ValueMember = "Ma";
+            cboCategoryProduct.DisplayMember = "Ten";
+            UpdateDgv(busProduct.GetAll());
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
+        }
+
+        private void UpdateDgv(List<SanPham> productList)
+        {
+            dgvProduct.DataSource = productList.Select(x => new { x.Ma, x.Ten, TenDanhMuc = x.DanhMucSanPham.Ten, x.DonGia }).ToList();
         }
     }
 }

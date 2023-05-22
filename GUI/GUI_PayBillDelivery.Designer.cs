@@ -57,6 +57,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCustomer = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnWord = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDelivery)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,8 +70,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBillDelivery.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvBillDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvBillDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBillDelivery.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -266,7 +267,7 @@
             this.btnCancel.FillColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(340, 712);
+            this.btnCancel.Location = new System.Drawing.Point(57, 712);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(159, 45);
@@ -387,12 +388,36 @@
             this.lblCustomer.TabIndex = 53;
             this.lblCustomer.Text = "lblCustomer";
             // 
+            // btnWord
+            // 
+            this.btnWord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnWord.AutoRoundedCorners = true;
+            this.btnWord.BorderRadius = 21;
+            this.btnWord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWord.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnWord.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnWord.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnWord.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnWord.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnWord.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(222)))));
+            this.btnWord.Image = global::GUI.Properties.Resources.word;
+            this.btnWord.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnWord.Location = new System.Drawing.Point(251, 712);
+            this.btnWord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnWord.Name = "btnWord";
+            this.btnWord.Size = new System.Drawing.Size(282, 45);
+            this.btnWord.TabIndex = 93;
+            this.btnWord.Text = "Xác nhận và xuất word";
+            this.btnWord.Click += new System.EventHandler(this.btnWord_Click);
+            // 
             // GUI_PayBillDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(770, 780);
+            this.Controls.Add(this.btnWord);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -444,5 +469,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCustomer;
+        private Guna.UI2.WinForms.Guna2Button btnWord;
     }
 }

@@ -9,6 +9,23 @@ namespace BUS
     {
         private DAL_Customer dalCustomer = new DAL_Customer();
 
+        public void Add(KhachHang customer)
+        {
+            customer.Ma = GetNewID();
+            dalCustomer.Add(customer);
+        }
+
+        public bool Delete(string customerID)
+        {
+            KhachHang customer = GetByID(customerID);
+            if (customer != null)
+            {
+                dalCustomer.Delete(customer);
+                return true;
+            }
+            return false;
+        }
+
         public List<KhachHang> GetAll()
         {
             return dalCustomer.GetAll();
@@ -30,28 +47,11 @@ namespace BUS
             return GetAll().Where(x => x.Ten.ToLower().Contains(keyword)).ToList();
         }
 
-        public void Add(KhachHang customer)
-        {
-            customer.Ma = GetNewID();
-            dalCustomer.Add(customer);
-        }
-
         public bool Update(KhachHang customer)
         {
             if (GetByID(customer.Ma) != null)
             {
                 dalCustomer.Update(customer);
-                return true;
-            }
-            return false;
-        }
-
-        public bool Delete(string customerID)
-        {
-            KhachHang customer = GetByID(customerID);
-            if (customer != null)
-            {
-                dalCustomer.Delete(customer);
                 return true;
             }
             return false;

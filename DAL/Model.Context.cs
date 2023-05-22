@@ -18,7 +18,6 @@ namespace DAL
     public partial class QLCPEntities : DbContext
     {
         System.Data.Entity.SqlServer.SqlProviderServices instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
-
         public QLCPEntities()
             : base("name=QLCPEntities")
         {

@@ -7,6 +7,19 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
+        public void Add(HDTaiQuan billAtShop)
+        {
+            billAtShop.Ban = db.Bans.Find(billAtShop.MaBan);
+            db.HDTaiQuans.Add(billAtShop);
+            db.SaveChanges();
+        }
+
+        public void Delete(HDTaiQuan billAtShop)
+        {
+            db.HDTaiQuans.Remove(billAtShop);
+            db.SaveChanges();
+        }
+
         public List<HDTaiQuan> GetAll()
         {
             return db.HDTaiQuans.ToList();
@@ -15,13 +28,6 @@ namespace DAL
         public HDTaiQuan GetByID(int id)
         {
             return db.HDTaiQuans.Find(id);
-        }
-
-        public void Add(HDTaiQuan billAtShop)
-        {
-            billAtShop.Ban = db.Bans.Find(billAtShop.MaBan);
-            db.HDTaiQuans.Add(billAtShop);
-            db.SaveChanges();
         }
 
         public void Update(HDTaiQuan billAtShop)
@@ -34,12 +40,6 @@ namespace DAL
             b.MaKH = billAtShop.MaKH;
             b.ThoiGianVao = billAtShop.ThoiGianVao;
             b.ThoiGianRa = billAtShop.ThoiGianRa;
-            db.SaveChanges();
-        }
-
-        public void Delete(HDTaiQuan billAtShop)
-        {
-            db.HDTaiQuans.Remove(billAtShop);
             db.SaveChanges();
         }
     }

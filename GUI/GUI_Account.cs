@@ -10,48 +10,72 @@ namespace GUI
 {
     public partial class GUI_Account : Form
     {
+        private TaiKhoan accountFromForm;
         private BUS_Account busAccount = new BUS_Account();
         private BUS_Position busPosition = new BUS_Position();
-
-        private TaiKhoan accountFromForm;
 
         public GUI_Account()
         {
             InitializeComponent();
         }
 
-        private void UpdateDgv(List<TaiKhoan> accountList)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            dgvAccount.DataSource = accountList.Select(x => new { x.TenDangNhap, x.MatKhau, x.Email, Quyen = x.Quyen.Ten }).ToList();
+            GetAccountFromForm();
+            if (accountFromForm != null)
+            {
+                if (accountFromForm.MatKhau.Length >= 6)
+                {
+                    if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        if (busAccount.Add(accountFromForm))
+                        {
+                            MessageBox.Show("Thêm thành công!");
+                            UpdateDgv(busAccount.GetAll());
+                        }
+                        else MessageBox.Show("Tên đăng nhập đã tồn tại");
+                    }
+                }
+                else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
+            }
+            else MessageBox.Show("Tên tài khoản đã tồn tại!");
         }
 
-        private void GUI_Account_Load(object sender, System.EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            cboPosition.DataSource = busPosition.GetAll();
-            cboPosition.ValueMember = "Ma";
-            cboPosition.DisplayMember = "Ten";
-
-            UpdateDgv(busAccount.GetAccounts());
+            if (checkTextBox(txtUn))
+            {
+                if (MessageBox.Show($"Xác nhận xoá tài khoản '{txtUn.Text}'", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (busAccount.Delete(txtUn.Text))
+                    {
+                        MessageBox.Show("Xoá thành công!");
+                        UpdateDgv(busAccount.GetAll());
+                    }
+                }
+            }
+            else MessageBox.Show("Chưa có tài khoản nào được chọn!");
         }
 
-        private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            string un = dgvAccount[0, e.RowIndex].Value.ToString();
-            TaiKhoan a = busAccount.GetAccountByUn(un);
-            txtUn.Text = un;
-            txtPw.Text = a.MatKhau;
-            txtEmail.Text = a.Email;
-            cboPosition.SelectedValue = a.MaQuyen;
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            UpdateDgv(busAccount.SearchAccountByUn(txtSearch.Text));
-        }
-
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
+            GetAccountFromForm();
+            if (accountFromForm != null)
+            {
+                if (accountFromForm.MatKhau.Length >= 6)
+                {
+                    if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        if (busAccount.Update(accountFromForm))
+                        {
+                            MessageBox.Show("Sửa thông tin thành công!");
+                            UpdateDgv(busAccount.GetAll());
+                        }
+                        else MessageBox.Show("Tên đăng nhập không tồn tại!");
+                    }
+                }
+                else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -61,7 +85,17 @@ namespace GUI
             txtPw.Clear();
             txtEmail.Clear();
             cboPosition.SelectedIndex = 0;
-            UpdateDgv(busAccount.GetAccounts());
+            UpdateDgv(busAccount.GetAll());
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            UpdateDgv(busAccount.SearchAccountByUn(txtSearch.Text));
+        }
+
+        private void cboPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateDgv(busAccount.SearchAccountsByPositionID(cboPosition.SelectedValue.ToString()).ToList());
         }
 
         private bool checkTextBox(Guna2TextBox textBox)
@@ -74,9 +108,14 @@ namespace GUI
             else return true;
         }
 
-        private void cboPosition_SelectedIndexChanged(object sender, EventArgs e)
+        private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            UpdateDgv(busAccount.SearchAccountsByPositionID(cboPosition.SelectedValue.ToString()).ToList());
+            string un = dgvAccount[0, e.RowIndex].Value.ToString();
+            TaiKhoan a = busAccount.GetAccountByUn(un);
+            txtUn.Text = un;
+            txtPw.Text = a.MatKhau;
+            txtEmail.Text = a.Email;
+            cboPosition.SelectedValue = a.MaQuyen;
         }
 
         private void GetAccountFromForm()
@@ -98,66 +137,16 @@ namespace GUI
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void GUI_Account_Load(object sender, System.EventArgs e)
         {
-            GetAccountFromForm();
-            if (accountFromForm != null)
-            {
-                if (accountFromForm.MatKhau.Length >= 6)
-                {
-                    if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        if (busAccount.Add(accountFromForm))
-                        {
-                            MessageBox.Show("Thêm thành công!");
-                            UpdateDgv(busAccount.GetAccounts());
-                        }
-                        else MessageBox.Show("Tên đăng nhập đã tồn tại");
-                    }
-                }
-                else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
-            }
-            else MessageBox.Show("Tên tài khoản đã tồn tại!");
+            cboPosition.DataSource = busPosition.GetAll();
+            cboPosition.ValueMember = "Ma";
+            cboPosition.DisplayMember = "Ten";
+
+            UpdateDgv(busAccount.GetAll());
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            GetAccountFromForm();
-            if (accountFromForm != null)
-            {
-                if (accountFromForm.MatKhau.Length >= 6)
-                {
-                    if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        if (busAccount.Update(accountFromForm))
-                        {
-                            MessageBox.Show("Sửa thông tin thành công!");
-                            UpdateDgv(busAccount.GetAccounts());
-                        }
-                        else MessageBox.Show("Tên đăng nhập không tồn tại!");
-                    }
-                }
-                else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
-            }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (checkTextBox(txtUn))
-            {
-                if (MessageBox.Show($"Xác nhận xoá tài khoản '{txtUn.Text}'", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    if (busAccount.Delete(txtUn.Text))
-                    {
-                        MessageBox.Show("Xoá thành công!");
-                        UpdateDgv(busAccount.GetAccounts());
-                    }
-                }
-            }
-            else MessageBox.Show("Chưa có tài khoản nào được chọn!");
-        }
-
-        private void txtUn_TextChanged(object sender, EventArgs e)
+        private void txtEmail_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
         }
@@ -167,9 +156,19 @@ namespace GUI
             errorProvider.Clear();
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
+        }
+
+        private void txtUn_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
+        }
+
+        private void UpdateDgv(List<TaiKhoan> accountList)
+        {
+            dgvAccount.DataSource = accountList.Select(x => new { x.TenDangNhap, x.MatKhau, x.Email, Quyen = x.Quyen.Ten }).ToList();
         }
     }
 }

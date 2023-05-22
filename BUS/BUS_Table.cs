@@ -8,44 +8,9 @@ namespace BUS
     {
         private DAL_Table dalTable = new DAL_Table();
 
-        public List<Ban> GetAll()
-        {
-            return dalTable.GetAll();
-        }
-
-        public Ban GetByID(int id)
-        {
-            return dalTable.GetByID(id);
-        }
-
-        public int GetNewID()
-        {
-            return GetAll().Count() > 0 ? 1 : GetAll().Last().Ma + 1;
-        }
-
-        public List<Ban> GetEmptyTables()
-        {
-            return GetAll().Where(x => x.TrangThai == "Trống").ToList();
-        }
-
-        public List<Ban> SearchTableByName(string keyword)
-        {
-            return GetAll().Where(x => x.Ten.ToLower().Contains(keyword)).ToList();
-        }
-
         public void Add(Ban table)
         {
             dalTable.Add(table);
-        }
-
-        public bool Update(Ban table)
-        {
-            if (GetByID(table.Ma) != null)
-            {
-                dalTable.Update(table);
-                return true;
-            }
-            return false;
         }
 
         public bool Delete(int id)
@@ -59,6 +24,36 @@ namespace BUS
             return false;
         }
 
+        public List<Ban> GetAll()
+        {
+            return dalTable.GetAll();
+        }
+
+        public Ban GetByID(int id)
+        {
+            return dalTable.GetByID(id);
+        }
+
+        public List<Ban> GetEmptyTables()
+        {
+            return GetAll().Where(x => x.TrangThai == "Trống").ToList();
+        }
+
+        public int GetNewID()
+        {
+            return GetAll().Count() > 0 ? 1 : GetAll().Last().Ma + 1;
+        }
+
+        public string GetTableStatus(int tableID)
+        {
+            return GetByID(tableID).TrangThai;
+        }
+
+        public List<Ban> SearchTableByName(string keyword)
+        {
+            return GetAll().Where(x => x.Ten.ToLower().Contains(keyword)).ToList();
+        }
+
         public void setTableStatus(int tableID, string status)
         {
             Ban tb = GetByID(tableID);
@@ -69,9 +64,14 @@ namespace BUS
             }
         }
 
-        public string GetTableStatus(int tableID)
+        public bool Update(Ban table)
         {
-            return GetByID(tableID).TrangThai;
+            if (GetByID(table.Ma) != null)
+            {
+                dalTable.Update(table);
+                return true;
+            }
+            return false;
         }
     }
 }

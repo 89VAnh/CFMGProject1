@@ -7,6 +7,18 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
+        public void Add(NhanVien staff)
+        {
+            db.NhanViens.Add(staff);
+            db.SaveChanges();
+        }
+
+        public void Delete(NhanVien staff)
+        {
+            db.NhanViens.Remove(staff);
+            db.SaveChanges();
+        }
+
         public List<NhanVien> GetAll()
         {
             return db.NhanViens.ToList();
@@ -15,12 +27,6 @@ namespace DAL
         public NhanVien GetByID(string id)
         {
             return db.NhanViens.Find(id);
-        }
-
-        public void Add(NhanVien staff)
-        {
-            db.NhanViens.Add(staff);
-            db.SaveChanges();
         }
 
         public void Update(NhanVien staff)
@@ -32,12 +38,6 @@ namespace DAL
             s.Email = staff.Email;
             s.DiaChi = staff.DiaChi;
             s.MaQuyen = staff.MaQuyen;
-            db.SaveChanges();
-        }
-
-        public void Delete(NhanVien staff)
-        {
-            db.NhanViens.Remove(staff);
             db.SaveChanges();
         }
     }

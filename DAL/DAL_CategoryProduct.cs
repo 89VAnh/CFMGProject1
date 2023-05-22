@@ -7,6 +7,18 @@ namespace DAL
     {
         private QLCPEntities db = new QLCPEntities();
 
+        public void Add(DanhMucSanPham categoryProduct)
+        {
+            db.DanhMucSanPhams.Add(categoryProduct);
+            db.SaveChanges();
+        }
+
+        public void Delete(DanhMucSanPham categoryProduct)
+        {
+            db.DanhMucSanPhams.Remove(categoryProduct);
+            db.SaveChanges();
+        }
+
         public List<DanhMucSanPham> GetAll()
         {
             return db.DanhMucSanPhams.ToList();
@@ -17,22 +29,10 @@ namespace DAL
             return db.DanhMucSanPhams.Find(id);
         }
 
-        public void Add(DanhMucSanPham categoryProduct)
-        {
-            db.DanhMucSanPhams.Add(categoryProduct);
-            db.SaveChanges();
-        }
-
         public void Update(DanhMucSanPham categoryProduct)
         {
             DanhMucSanPham cp = db.DanhMucSanPhams.Find(categoryProduct.Ma);
             cp.Ten = categoryProduct.Ten;
-            db.SaveChanges();
-        }
-
-        public void Delete(DanhMucSanPham categoryProduct)
-        {
-            db.DanhMucSanPhams.Remove(categoryProduct);
             db.SaveChanges();
         }
     }

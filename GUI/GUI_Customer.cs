@@ -21,14 +21,77 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void UpdateDgv(List<KhachHang> customerList)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            dgvCustomer.DataSource = customerList.Select(x => new { x.Ma, x.Ten, x.GioiTinh, x.SDT, x.Email, x.DiaChi }).ToList();
+            GetCustomerFromForm();
+            if (customerFromForm != null)
+            {
+                if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    busCustomer.Add(customerFromForm);
+                    UpdateDgv(busCustomer.GetAll());
+                    MessageBox.Show("Thêm thành công!");
+                }
+            }
         }
 
-        private void GUI_Customer_Load(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (!String.IsNullOrWhiteSpace(selectedCustomerID))
+            {
+                if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (busCustomer.Delete(selectedCustomerID))
+                    {
+                        UpdateDgv(busCustomer.GetAll());
+                        MessageBox.Show("Xoá thành công!");
+                    }
+                    else MessageBox.Show("Mã khách hàng được chọn không hợp lệ!");
+                }
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            GetCustomerFromForm();
+            if (customerFromForm != null)
+            {
+                if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (busCustomer.Update(customerFromForm))
+                    {
+                        UpdateDgv(busCustomer.GetAll());
+                        MessageBox.Show("Sửa thông tin thành công!");
+                    }
+                    else MessageBox.Show("Mã khách hàng không tồn tại!");
+                }
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+            txtName.Clear();
+            txtGender.Clear();
+            txtPhone.Clear();
+            txtEmail.Clear();
+            txtAddress.Clear();
             UpdateDgv(busCustomer.GetAll());
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            UpdateDgv(busCustomer.SearchCustomerByName(txtSearch.Text));
+        }
+
+        private bool checkTextBox(Guna2TextBox textBox)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                errorProvider.SetError(textBox, "Vui lòng nhập trường này");
+                return false;
+            }
+            else return true;
         }
 
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -43,37 +106,6 @@ namespace GUI
                 txtAddress.Text = dgvCustomer[5, e.RowIndex].Value.ToString();
             }
             catch { }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            UpdateDgv(busCustomer.SearchCustomerByName(txtSearch.Text));
-        }
-
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            txtSearch.Clear();
-            txtName.Clear();
-            txtGender.Clear();
-            txtPhone.Clear();
-            txtEmail.Clear();
-            txtAddress.Clear();
-            UpdateDgv(busCustomer.GetAll());
-        }
-
-        private bool checkTextBox(Guna2TextBox textBox)
-        {
-            if (string.IsNullOrWhiteSpace(textBox.Text))
-            {
-                errorProvider.SetError(textBox, "Vui lòng nhập trường này");
-                return false;
-            }
-            else return true;
         }
 
         private void GetCustomerFromForm()
@@ -113,64 +145,12 @@ namespace GUI
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void GUI_Customer_Load(object sender, EventArgs e)
         {
-            GetCustomerFromForm();
-            if (customerFromForm != null)
-            {
-                if (MessageBox.Show("Xác nhận thêm", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    busCustomer.Add(customerFromForm);
-                    UpdateDgv(busCustomer.GetAll());
-                    MessageBox.Show("Thêm thành công!");
-                }
-            }
+            UpdateDgv(busCustomer.GetAll());
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            GetCustomerFromForm();
-            if (customerFromForm != null)
-            {
-                if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    if (busCustomer.Update(customerFromForm))
-                    {
-                        UpdateDgv(busCustomer.GetAll());
-                        MessageBox.Show("Sửa thông tin thành công!");
-                    }
-                    else MessageBox.Show("Mã khách hàng không tồn tại!");
-                }
-            }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrWhiteSpace(selectedCustomerID))
-            {
-                if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    if (busCustomer.Delete(selectedCustomerID))
-                    {
-                        UpdateDgv(busCustomer.GetAll());
-                        MessageBox.Show("Xoá thành công!");
-                    }
-                    else MessageBox.Show("Mã khách hàng được chọn không hợp lệ!");
-                }
-            }
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            errorProvider.Clear();
-        }
-
-        private void txtGender_TextChanged(object sender, EventArgs e)
-        {
-            errorProvider.Clear();
-        }
-
-        private void txtPhone_TextChanged(object sender, EventArgs e)
+        private void txtAddress_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
         }
@@ -180,9 +160,29 @@ namespace GUI
             errorProvider.Clear();
         }
 
-        private void txtAddress_TextChanged(object sender, EventArgs e)
+        private void txtGender_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider.Clear();
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider.Clear();
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
+        }
+
+        private void UpdateDgv(List<KhachHang> customerList)
+        {
+            dgvCustomer.DataSource = customerList.Select(x => new { x.Ma, x.Ten, x.GioiTinh, x.SDT, x.Email, x.DiaChi }).ToList();
         }
     }
 }

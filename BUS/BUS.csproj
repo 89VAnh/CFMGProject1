@@ -34,8 +34,8 @@
     <Reference Include="DocXCore, Version=1.0.0.23, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\GUI\packages\DocXCore.1.0.10\lib\net471\DocXCore.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus, Version=6.2.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\GUI\packages\EPPlus.6.2.3\lib\net462\EPPlus.dll</HintPath>
+    <Reference Include="EPPlus, Version=6.2.4.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\GUI\packages\EPPlus.6.2.4\lib\net462\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
       <HintPath>..\GUI\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
@@ -127,6 +127,8 @@
     <Compile Include="BUS_Product.cs" />
     <Compile Include="BUS_Staff.cs" />
     <Compile Include="BUS_Table.cs" />
+    <Compile Include="CustomExport\ExportDocx.cs" />
+    <Compile Include="Helper\DocxHelper.cs" />
     <Compile Include="Helper\ExcelHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -138,6 +140,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{a969a119-224e-4829-8e41-a2ac8ab98fdd}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{5EC9ABF3-C2E9-490B-AD3D-1185FACE8B29}</Project>
+      <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
