@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="20.7" version="20.7" Modules="simple" RootPath="." Language="en" Id="{791B7AF2-45EC-4E89-AB19-7EB1C2EC2263}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_BUS.dll" Value="..\BUS\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_BUS.dll_1" Value="..\BUS\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_BUS.pdb" Value="..\BUS\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DAL.dll" Value="..\DAL\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DAL.dll_1" Value="..\DAL\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DAL.dll_2" Value="..\DAL\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DAL.pdb" Value="..\DAL\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DocXCore.dll" Value="..\GUI\packages\DocXCore.1.0.10\lib\net471"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DocXCore.dll_1" Value="..\BUS\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPPlus.Interfaces.dll" Value="..\GUI\packages\EPPlus.Interfaces.6.1.1\lib\net462"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPPlus.Interfaces.dll_1" Value="..\BUS\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPPlus.System.Drawing.dll" Value="..\GUI\packages\EPPlus.System.Drawing.6.1.1\lib\net462"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPPlus.System.Drawing.dll_1" Value="..\BUS\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPPlus.dll" Value="..\GUI\packages\EPPlus.6.2.4\lib\net462"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EPPlus.dll_1" Value="..\BUS\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EntityFramework.SqlServer.dll" Value="..\DAL\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EntityFramework.SqlServer.dll_1" Value="..\GUI\packages\EntityFramework.6.4.4\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EntityFramework.SqlServer.dll_2" Value="..\DAL\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EntityFramework.dll" Value="..\DAL\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EntityFramework.dll_1" Value="..\GUI\packages\EntityFramework.6.4.4\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_EntityFramework.dll_2" Value="..\GUI\packages\EntityFramework.6.4.4\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Guna.UI2.dll" Value="..\GUI\packages\Guna.UI2.WinForms.2.0.4.4\lib\net48"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll" Value="..\GUI\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.DependencyModel.dll" Value="..\GUI\packages\Microsoft.Extensions.DependencyModel.7.0.0\lib\net462"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll" Value="..\GUI\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll_1" Value="..\BUS\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_QunlbnhngAcoffee.exe" Value="..\GUI\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_QunlbnhngAcoffee.exe.config" Value="..\GUI\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_QunlbnhngAcoffee.pdb" Value="..\GUI\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Buffers.dll" Value="..\GUI\packages\System.Buffers.4.5.1\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Drawing.Common.dll" Value="..\GUI\packages\System.Drawing.Common.7.0.0\lib\net462"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.Packaging.dll" Value="..\GUI\packages\System.IO.Packaging.7.0.0\lib\net462"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Memory.dll" Value="..\GUI\packages\System.Memory.4.5.5\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Numerics.Vectors.dll" Value="..\GUI\packages\System.Numerics.Vectors.4.5.0\lib\net46"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Reflection.TypeExtensions.dll" Value="..\GUI\packages\System.Reflection.TypeExtensions.4.7.0\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Value="..\GUI\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Security.Principal.Windows.dll" Value="..\GUI\packages\System.Security.Principal.Windows.5.0.0\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Text.Encodings.Web.dll" Value="..\GUI\packages\System.Text.Encodings.Web.7.0.0\lib\net462"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Text.Json.dll" Value="..\GUI\packages\System.Text.Json.7.0.2\lib\net462"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Threading.Tasks.Extensions.dll" Value="..\GUI\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll" Value="..\GUI\packages\System.ValueTuple.4.5.0\lib\net47"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Utility.dll" Value="..\Utility\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Utility.dll_1" Value="..\Utility\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Utility.dll_2" Value="..\Utility\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Utility.pdb" Value="..\Utility\bin\Release"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_BUS.dll" Value="BUS.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_BUS.dll_1" Value="BUS.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_BUS.pdb" Value="BUS.pdb"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DAL.dll" Value="DAL.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DAL.dll_1" Value="DAL.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DAL.dll_2" Value="DAL.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DAL.pdb" Value="DAL.pdb"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DocXCore.dll" Value="DocXCore.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DocXCore.dll_1" Value="DocXCore.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EPPlus.Interfaces.dll" Value="EPPlus.Interfaces.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EPPlus.Interfaces.dll_1" Value="EPPlus.Interfaces.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EPPlus.System.Drawing.dll" Value="EPPlus.System.Drawing.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EPPlus.System.Drawing.dll_1" Value="EPPlus.System.Drawing.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EPPlus.dll" Value="EPPlus.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EPPlus.dll_1" Value="EPPlus.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.SqlServer.dll" Value="EntityFramework.SqlServer.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.SqlServer.dll_1" Value="EntityFramework.SqlServer.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.SqlServer.dll_2" Value="EntityFramework.SqlServer.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.dll" Value="EntityFramework.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.dll_1" Value="EntityFramework.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.dll_2" Value="EntityFramework.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Guna.UI2.dll" Value="Guna.UI2.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll" Value="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyModel.dll" Value="Microsoft.Extensions.DependencyModel.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll" Value="Microsoft.IO.RecyclableMemoryStream.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll_1" Value="Microsoft.IO.RecyclableMemoryStream.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_QunlbnhngAcoffee.exe" Value="Quản lý bán hàng A-coffee.exe"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_QunlbnhngAcoffee.exe.config" Value="Quản lý bán hàng A-coffee.exe.config"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_QunlbnhngAcoffee.pdb" Value="Quản lý bán hàng A-coffee.pdb"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Buffers.dll" Value="System.Buffers.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Drawing.Common.dll" Value="System.Drawing.Common.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.IO.Packaging.dll" Value="System.IO.Packaging.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Memory.dll" Value="System.Memory.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll" Value="System.Numerics.Vectors.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Reflection.TypeExtensions.dll" Value="System.Reflection.TypeExtensions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Value="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Security.Principal.Windows.dll" Value="System.Security.Principal.Windows.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Text.Encodings.Web.dll" Value="System.Text.Encodings.Web.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Text.Json.dll" Value="System.Text.Json.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll" Value="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll" Value="System.ValueTuple.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Utility.dll" Value="Utility.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Utility.dll_1" Value="Utility.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Utility.dll_2" Value="Utility.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Utility.pdb" Value="Utility.pdb"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPPRODUCTICON" Value="logoicon.exe" Type="8"/>
+    <ROW Property="ProductCode" Value="1033:{C9995619-B149-44BE-88ED-CA0A2998401D} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Quản lý bán hàng A-Coffee"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Options="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{88A4C15A-8574-48FB-9FE7-29A8C325838F}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="BUS_Dir" Directory_Parent="APPDIR" DefaultDir="BUS"/>
+    <ROW Directory="DAL_Dir" Directory_Parent="APPDIR" DefaultDir="DAL"/>
+    <ROW Directory="GUI_Dir" Directory_Parent="APPDIR" DefaultDir="GUI"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="Utility_Dir" Directory_Parent="APPDIR" DefaultDir="Utility"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{12FBF717-DE21-4BEA-9387-849945607965}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="BUS_PrimaryOutput" ComponentId="{E1D1B3C1-A82A-4D4C-B958-8FC5E9C031D3}" Directory_="BUS_Dir" Attributes="0" KeyPath="BUS.dll"/>
+    <ROW Component="BUS_References" ComponentId="{831B4388-C4A7-452E-848F-2CD747DDFECE}" Directory_="BUS_Dir" Attributes="0" KeyPath="EntityFramework.SqlServer.dll"/>
+    <ROW Component="BUS_SymbolsOutput" ComponentId="{8C4E8E1A-7D41-49E3-B979-16F052F2F24C}" Directory_="BUS_Dir" Attributes="0" KeyPath="BUS.pdb"/>
+    <ROW Component="DAL_PrimaryOutput" ComponentId="{AECC382D-5C11-457B-97C6-C3F0514BC3B9}" Directory_="DAL_Dir" Attributes="0" KeyPath="DAL.dll_1"/>
+    <ROW Component="DAL_References" ComponentId="{E4A7679F-8F26-40DD-BCA7-8E035FFE3169}" Directory_="DAL_Dir" Attributes="0" KeyPath="EntityFramework.SqlServer.dll_1"/>
+    <ROW Component="DAL_SymbolsOutput" ComponentId="{AA4BE800-550F-43F8-9702-30A2A1D90CCC}" Directory_="DAL_Dir" Attributes="0" KeyPath="DAL.pdb"/>
+    <ROW Component="GUI_PrimaryOutput" ComponentId="{6EB378A3-AD76-497A-AC5F-97953090CB4F}" Directory_="GUI_Dir" Attributes="0" KeyPath="QunlbnhngAcoffee.exe"/>
+    <ROW Component="GUI_References" ComponentId="{45440E47-1BFA-4507-91CA-E39F0D77D7D4}" Directory_="GUI_Dir" Attributes="0" KeyPath="Microsoft.IO.RecyclableMemoryStream.dll_1"/>
+    <ROW Component="GUI_SymbolsOutput" ComponentId="{FD24DE1B-578F-4378-944D-E371B72B83A4}" Directory_="GUI_Dir" Attributes="0" KeyPath="QunlbnhngAcoffee.pdb"/>
+    <ROW Component="ProductInformation" ComponentId="{2C59A64F-97C2-4EAD-9AC2-E87753B7C0A5}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{3AC46F5F-CC8D-4BD1-B51F-C9912DAE1E40}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="Utility_PrimaryOutput" ComponentId="{A0BE506F-DF80-439E-A8B7-C4EF887B3C4A}" Directory_="Utility_Dir" Attributes="0" KeyPath="Utility.dll_2"/>
+    <ROW Component="Utility_SymbolsOutput" ComponentId="{BF65C9EC-3AFF-4547-901C-5D164D4DC714}" Directory_="Utility_Dir" Attributes="0" KeyPath="Utility.pdb"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="BUS.dll" Component_="BUS_PrimaryOutput" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_BUS.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_BUS.dll&gt;" SelfReg="false"/>
+    <ROW File="DAL.dll" Component_="BUS_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_DAL.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_DAL.dll&gt;" SelfReg="false"/>
+    <ROW File="DocXCore.dll" Component_="BUS_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_DocXCore.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_DocXCore.dll&gt;" SelfReg="false"/>
+    <ROW File="EPPlus.dll" Component_="BUS_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EPPlus.dll&gt;" SelfReg="false"/>
+    <ROW File="EPPlus.Interfaces.dll" Component_="BUS_References" FileName="EPPLUS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.Interfaces.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EPPlus.Interfaces.dll&gt;" SelfReg="false"/>
+    <ROW File="EPPlus.System.Drawing.dll" Component_="BUS_References" FileName="EPPLUS~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.System.Drawing.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EPPlus.System.Drawing.dll&gt;" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="BUS_References" FileName="MICROS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll&gt;" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.DependencyModel.dll" Component_="BUS_References" FileName="MICROS~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyModel.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Extensions.DependencyModel.dll&gt;" SelfReg="false"/>
+    <ROW File="Microsoft.IO.RecyclableMemoryStream.dll" Component_="BUS_References" FileName="MICROS~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="BUS_References" FileName="SYSTEM~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Buffers.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Buffers.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Drawing.Common.dll" Component_="BUS_References" FileName="SYSTEM~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Drawing.Common.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Drawing.Common.dll&gt;" SelfReg="false"/>
+    <ROW File="System.IO.Packaging.dll" Component_="BUS_References" FileName="SYSTEM~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.Packaging.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.IO.Packaging.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="BUS_References" FileName="SYSTEM~5.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Memory.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Memory.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="BUS_References" FileName="SYSTEM~6.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Numerics.Vectors.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Reflection.TypeExtensions.dll" Component_="BUS_References" FileName="SYSTEM~7.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Reflection.TypeExtensions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Reflection.TypeExtensions.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="BUS_References" FileName="SYSTEM~8.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Security.Principal.Windows.dll" Component_="BUS_References" FileName="SYSTEM~9.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Principal.Windows.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Security.Principal.Windows.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.dll" Component_="BUS_References" FileName="SYSTE~10.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Text.Encodings.Web.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Text.Encodings.Web.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Text.Json.dll" Component_="BUS_References" FileName="SYSTE~11.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Text.Json.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Text.Json.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="BUS_References" FileName="SYSTE~12.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Threading.Tasks.Extensions.dll&gt;" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll" Component_="BUS_References" FileName="SYSTE~13.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ValueTuple.dll&gt;" SelfReg="false"/>
+    <ROW File="Utility.dll" Component_="BUS_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_Utility.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Utility.dll&gt;" SelfReg="false"/>
+    <ROW File="EntityFramework.dll" Component_="BUS_References" FileName="ENTITY~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EntityFramework.dll&gt;" SelfReg="false"/>
+    <ROW File="EntityFramework.SqlServer.dll" Component_="BUS_References" FileName="ENTITY~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.SqlServer.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EntityFramework.SqlServer.dll&gt;" SelfReg="false"/>
+    <ROW File="BUS.pdb" Component_="BUS_SymbolsOutput" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_BUS.pdb]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_BUS.pdb&gt;" SelfReg="false"/>
+    <ROW File="DAL.dll_1" Component_="DAL_PrimaryOutput" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_DAL.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_DAL.dll_1&gt;" SelfReg="false"/>
+    <ROW File="EntityFramework.dll_1" Component_="DAL_References" FileName="ENTITY~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EntityFramework.dll_1&gt;" SelfReg="false"/>
+    <ROW File="EntityFramework.SqlServer.dll_1" Component_="DAL_References" FileName="ENTITY~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.SqlServer.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EntityFramework.SqlServer.dll_1&gt;" SelfReg="false"/>
+    <ROW File="DAL.pdb" Component_="DAL_SymbolsOutput" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_DAL.pdb]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_DAL.pdb&gt;" SelfReg="false"/>
+    <ROW File="QunlbnhngAcoffee.exe" Component_="GUI_PrimaryOutput" FileName="QUẢNLÝ~2.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_QunlbnhngAcoffee.exe]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_QunlbnhngAcoffee.exe&gt;" SelfReg="false" DigSign="true"/>
+    <ROW File="QunlbnhngAcoffee.exe.config" Component_="GUI_PrimaryOutput" FileName="QUẢNLÝ~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_QunlbnhngAcoffee.exe.config]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_QunlbnhngAcoffee.exe.config&gt;" SelfReg="false"/>
+    <ROW File="BUS.dll_1" Component_="GUI_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_BUS.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_BUS.dll_1&gt;" SelfReg="false"/>
+    <ROW File="DAL.dll_2" Component_="GUI_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_DAL.dll_2]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_DAL.dll_2&gt;" SelfReg="false"/>
+    <ROW File="EntityFramework.dll_2" Component_="GUI_References" FileName="ENTITY~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.dll_2]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EntityFramework.dll_2&gt;" SelfReg="false"/>
+    <ROW File="Guna.UI2.dll" Component_="GUI_References" FileName="GUNAUI~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Guna.UI2.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Guna.UI2.dll&gt;" SelfReg="false"/>
+    <ROW File="Utility.dll_1" Component_="GUI_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_Utility.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Utility.dll_1&gt;" SelfReg="false"/>
+    <ROW File="DocXCore.dll_1" Component_="GUI_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_DocXCore.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_DocXCore.dll_1&gt;" SelfReg="false"/>
+    <ROW File="EPPlus.dll_1" Component_="GUI_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EPPlus.dll_1&gt;" SelfReg="false"/>
+    <ROW File="EntityFramework.SqlServer.dll_2" Component_="GUI_References" FileName="ENTITY~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.SqlServer.dll_2]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EntityFramework.SqlServer.dll_2&gt;" SelfReg="false"/>
+    <ROW File="EPPlus.Interfaces.dll_1" Component_="GUI_References" FileName="EPPLUS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.Interfaces.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EPPlus.Interfaces.dll_1&gt;" SelfReg="false"/>
+    <ROW File="EPPlus.System.Drawing.dll_1" Component_="GUI_References" FileName="EPPLUS~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.System.Drawing.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_EPPlus.System.Drawing.dll_1&gt;" SelfReg="false"/>
+    <ROW File="Microsoft.IO.RecyclableMemoryStream.dll_1" Component_="GUI_References" FileName="MICROS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll_1&gt;" SelfReg="false"/>
+    <ROW File="QunlbnhngAcoffee.pdb" Component_="GUI_SymbolsOutput" FileName="QUẢNLÝ~2.PDB|[|AI_PROPPATH_FILENAME_PERBUILD_QunlbnhngAcoffee.pdb]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_QunlbnhngAcoffee.pdb&gt;" SelfReg="false"/>
+    <ROW File="Utility.dll_2" Component_="Utility_PrimaryOutput" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_Utility.dll_2]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Utility.dll_2&gt;" SelfReg="false"/>
+    <ROW File="Utility.pdb" Component_="Utility_SymbolsOutput" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_Utility.pdb]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Utility.pdb&gt;" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
+    <ROW Name="AI_APPPATH_PERBUILD_BUS.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_BUS.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_BUS.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_BUS.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_BUS.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_BUS.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_BUS.pdb" Path="[|AI_PROPPATH_DIR_PERBUILD_BUS.pdb]\[|AI_PROPPATH_FILENAME_PERBUILD_BUS.pdb]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_DAL.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_DAL.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_DAL.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_DAL.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_DAL.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_DAL.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_DAL.dll_2" Path="[|AI_PROPPATH_DIR_PERBUILD_DAL.dll_2]\[|AI_PROPPATH_FILENAME_PERBUILD_DAL.dll_2]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_DAL.pdb" Path="[|AI_PROPPATH_DIR_PERBUILD_DAL.pdb]\[|AI_PROPPATH_FILENAME_PERBUILD_DAL.pdb]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_DocXCore.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_DocXCore.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_DocXCore.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_DocXCore.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_DocXCore.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_DocXCore.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EPPlus.Interfaces.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_EPPlus.Interfaces.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.Interfaces.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EPPlus.Interfaces.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_EPPlus.Interfaces.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.Interfaces.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EPPlus.System.Drawing.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_EPPlus.System.Drawing.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.System.Drawing.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EPPlus.System.Drawing.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_EPPlus.System.Drawing.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.System.Drawing.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EPPlus.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_EPPlus.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EPPlus.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_EPPlus.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_EPPlus.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EntityFramework.SqlServer.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_EntityFramework.SqlServer.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.SqlServer.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EntityFramework.SqlServer.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_EntityFramework.SqlServer.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.SqlServer.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EntityFramework.SqlServer.dll_2" Path="[|AI_PROPPATH_DIR_PERBUILD_EntityFramework.SqlServer.dll_2]\[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.SqlServer.dll_2]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EntityFramework.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_EntityFramework.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EntityFramework.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_EntityFramework.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_EntityFramework.dll_2" Path="[|AI_PROPPATH_DIR_PERBUILD_EntityFramework.dll_2]\[|AI_PROPPATH_FILENAME_PERBUILD_EntityFramework.dll_2]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Guna.UI2.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Guna.UI2.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Guna.UI2.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Extensions.DependencyModel.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Extensions.DependencyModel.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Extensions.DependencyModel.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.IO.RecyclableMemoryStream.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_QunlbnhngAcoffee.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_QunlbnhngAcoffee.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_QunlbnhngAcoffee.exe]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_QunlbnhngAcoffee.exe.config" Path="[|AI_PROPPATH_DIR_PERBUILD_QunlbnhngAcoffee.exe.config]\[|AI_PROPPATH_FILENAME_PERBUILD_QunlbnhngAcoffee.exe.config]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_QunlbnhngAcoffee.pdb" Path="[|AI_PROPPATH_DIR_PERBUILD_QunlbnhngAcoffee.pdb]\[|AI_PROPPATH_FILENAME_PERBUILD_QunlbnhngAcoffee.pdb]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Buffers.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Buffers.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Buffers.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Drawing.Common.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Drawing.Common.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Drawing.Common.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.IO.Packaging.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.IO.Packaging.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.Packaging.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Memory.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Memory.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Memory.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Numerics.Vectors.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Numerics.Vectors.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Reflection.TypeExtensions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Reflection.TypeExtensions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Reflection.TypeExtensions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Security.Principal.Windows.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Security.Principal.Windows.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Security.Principal.Windows.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Text.Encodings.Web.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Text.Encodings.Web.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Text.Encodings.Web.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Text.Json.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Text.Json.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Text.Json.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Threading.Tasks.Extensions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Threading.Tasks.Extensions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.ValueTuple.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Utility.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Utility.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Utility.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Utility.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_Utility.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_Utility.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Utility.dll_2" Path="[|AI_PROPPATH_DIR_PERBUILD_Utility.dll_2]\[|AI_PROPPATH_FILENAME_PERBUILD_Utility.dll_2]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Utility.pdb" Path="[|AI_PROPPATH_DIR_PERBUILD_Utility.pdb]\[|AI_PROPPATH_FILENAME_PERBUILD_Utility.pdb]" Type="2" Content="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="Themes.aip" Path="&lt;AI_FRAGS&gt;Themes.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="BUS_PrimaryOutput"/>
+    <ROW Feature_="MainFeature" Component_="BUS_References"/>
+    <ROW Feature_="MainFeature" Component_="BUS_SymbolsOutput"/>
+    <ROW Feature_="MainFeature" Component_="DAL_PrimaryOutput"/>
+    <ROW Feature_="MainFeature" Component_="DAL_References"/>
+    <ROW Feature_="MainFeature" Component_="DAL_SymbolsOutput"/>
+    <ROW Feature_="MainFeature" Component_="GUI_PrimaryOutput"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="GUI_References"/>
+    <ROW Feature_="MainFeature" Component_="GUI_SymbolsOutput"/>
+    <ROW Feature_="MainFeature" Component_="Utility_PrimaryOutput"/>
+    <ROW Feature_="MainFeature" Component_="Utility_SymbolsOutput"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="logoicon.exe" SourcePath="..\GUI\Resources\logo-icon.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Manufacturer" Root="-1" Key="Software\[Manufacturer]" Name="\"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="ProductName" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="\"/>
+    <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="QunlbnhngAcoffee" Directory_="SHORTCUTDIR" Name="QUẢNLÝ~1|Quản lý bán hàng A-coffee" Component_="GUI_PrimaryOutput" Target="[#QunlbnhngAcoffee.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.VsProjectComponent">
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="PrimaryOutput" OutputFile="BUS.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="DAL.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="DocXCore.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="EPPlus.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="EPPlus.Interfaces.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="EPPlus.System.Drawing.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="Microsoft.Extensions.DependencyModel.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="Microsoft.IO.RecyclableMemoryStream.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.Buffers.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.Drawing.Common.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.IO.Packaging.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.Memory.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.Numerics.Vectors.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.Reflection.TypeExtensions.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.Security.Principal.Windows.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.Text.Encodings.Web.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.Text.Json.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.Threading.Tasks.Extensions.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="System.ValueTuple.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="Utility.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="EntityFramework.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="References" OutputFile="EntityFramework.SqlServer.dll"/>
+    <ROW ProjectId="{d1187549-a8ca-43ef-a700-de2f4f6d98ee}" ProjectName="BUS" OutputGroup="SymbolsOutput" OutputFile="BUS.pdb"/>
+    <ROW ProjectId="{a969a119-224e-4829-8e41-a2ac8ab98fdd}" ProjectName="DAL" OutputGroup="PrimaryOutput" OutputFile="DAL.dll_1"/>
+    <ROW ProjectId="{a969a119-224e-4829-8e41-a2ac8ab98fdd}" ProjectName="DAL" OutputGroup="References" OutputFile="EntityFramework.dll_1"/>
+    <ROW ProjectId="{a969a119-224e-4829-8e41-a2ac8ab98fdd}" ProjectName="DAL" OutputGroup="References" OutputFile="EntityFramework.SqlServer.dll_1"/>
+    <ROW ProjectId="{a969a119-224e-4829-8e41-a2ac8ab98fdd}" ProjectName="DAL" OutputGroup="SymbolsOutput" OutputFile="DAL.pdb"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="PrimaryOutput" OutputFile="QunlbnhngAcoffee.exe" OutputFileShortcut="QunlbnhngAcoffee"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="PrimaryOutput" OutputFile="QunlbnhngAcoffee.exe.config"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="BUS.dll_1"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="DAL.dll_2"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="EntityFramework.dll_2"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="Guna.UI2.dll"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="Utility.dll_1"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="DocXCore.dll_1"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="EPPlus.dll_1"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="EntityFramework.SqlServer.dll_2"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="EPPlus.Interfaces.dll_1"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="EPPlus.System.Drawing.dll_1"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="References" OutputFile="Microsoft.IO.RecyclableMemoryStream.dll_1"/>
+    <ROW ProjectId="{a51f516b-b777-462b-b89a-740c7dab2cb8}" ProjectName="GUI" OutputGroup="SymbolsOutput" OutputFile="QunlbnhngAcoffee.pdb"/>
+    <ROW ProjectId="{5ec9abf3-c2e9-490b-ad3d-1185face8b29}" ProjectName="Utility" OutputGroup="PrimaryOutput" OutputFile="Utility.dll_2"/>
+    <ROW ProjectId="{5ec9abf3-c2e9-490b-ad3d-1185face8b29}" ProjectName="Utility" OutputGroup="SymbolsOutput" OutputFile="Utility.pdb"/>
+  </COMPONENT>
+</DOCUMENT>

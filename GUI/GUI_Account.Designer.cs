@@ -77,7 +77,7 @@
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(148, 43);
-            this.btnRefresh.TabIndex = 10;
+            this.btnRefresh.TabIndex = 7;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnRefresh.UseTransparentBackground = true;
@@ -103,7 +103,7 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(113, 43);
-            this.btnDelete.TabIndex = 9;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Xoá ";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDelete.UseTransparentBackground = true;
@@ -129,7 +129,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(128, 43);
-            this.btnAdd.TabIndex = 7;
+            this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAdd.UseTransparentBackground = true;
@@ -159,7 +159,7 @@
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(118, 43);
-            this.btnEdit.TabIndex = 8;
+            this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnEdit.UseTransparentBackground = true;
@@ -188,7 +188,7 @@
             this.txtSearch.PlaceholderText = "Tìm kiếm";
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(336, 36);
-            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TabIndex = 9;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // dgvAccount
@@ -242,7 +242,7 @@
             this.dgvAccount.RowHeadersWidth = 51;
             this.dgvAccount.RowTemplate.Height = 28;
             this.dgvAccount.Size = new System.Drawing.Size(1066, 312);
-            this.dgvAccount.TabIndex = 0;
+            this.dgvAccount.TabIndex = 8;
             this.dgvAccount.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.dgvAccount.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.dgvAccount.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -316,7 +316,7 @@
             this.btnSearch.Location = new System.Drawing.Point(544, 14);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(127, 36);
-            this.btnSearch.TabIndex = 2;
+            this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseTransparentBackground = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -342,7 +342,8 @@
             this.txtPw.PlaceholderText = "";
             this.txtPw.SelectedText = "";
             this.txtPw.Size = new System.Drawing.Size(244, 36);
-            this.txtPw.TabIndex = 4;
+            this.txtPw.TabIndex = 1;
+            this.txtPw.TextChanged += new System.EventHandler(this.txtPw_TextChanged);
             // 
             // txtUn
             // 
@@ -365,7 +366,8 @@
             this.txtUn.PlaceholderText = "";
             this.txtUn.SelectedText = "";
             this.txtUn.Size = new System.Drawing.Size(244, 36);
-            this.txtUn.TabIndex = 3;
+            this.txtUn.TabIndex = 0;
+            this.txtUn.TextChanged += new System.EventHandler(this.txtUn_TextChanged);
             // 
             // txtEmail
             // 
@@ -388,7 +390,8 @@
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(309, 36);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 2;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // cboPosition
             // 
@@ -406,7 +409,7 @@
             this.cboPosition.Location = new System.Drawing.Point(605, 173);
             this.cboPosition.Name = "cboPosition";
             this.cboPosition.Size = new System.Drawing.Size(208, 36);
-            this.cboPosition.TabIndex = 6;
+            this.cboPosition.TabIndex = 3;
             this.cboPosition.SelectedIndexChanged += new System.EventHandler(this.cboPosition_SelectedIndexChanged);
             // 
             // label8

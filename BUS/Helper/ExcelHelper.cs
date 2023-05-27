@@ -715,7 +715,7 @@ namespace BUS.Helper
                             {
                                 newRow[cell.Start.Column - 1] = cell.Value == null ? DBNull.Value : cell.Value;
                             }
-                            catch (Exception ex)
+                            catch
                             {
                                 newRow[cell.Start.Column - 1] = DBNull.Value;
                             }
