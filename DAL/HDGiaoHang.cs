@@ -22,7 +22,7 @@ namespace DAL
     
         public int Ma { get; set; }
         public string GiamGia { get; set; }
-        public Nullable<int> TongTien { get; set; }
+        public int TongTien { get; set; }
         public string MaKH { get; set; }
         public string DiaChi { get; set; }
         public Nullable<System.DateTime> ThoiGianNhan { get; set; }

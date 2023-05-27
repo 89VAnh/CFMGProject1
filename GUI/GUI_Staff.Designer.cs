@@ -85,7 +85,7 @@
             this.cboPosition.Location = new System.Drawing.Point(769, 165);
             this.cboPosition.Name = "cboPosition";
             this.cboPosition.Size = new System.Drawing.Size(208, 36);
-            this.cboPosition.TabIndex = 45;
+            this.cboPosition.TabIndex = 4;
             this.cboPosition.SelectedIndexChanged += new System.EventHandler(this.cboPosition_SelectedIndexChanged);
             // 
             // txtAddress
@@ -108,7 +108,7 @@
             this.txtAddress.PlaceholderText = "";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(386, 36);
-            this.txtAddress.TabIndex = 44;
+            this.txtAddress.TabIndex = 6;
             this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // txtEmail
@@ -131,7 +131,7 @@
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(246, 36);
-            this.txtEmail.TabIndex = 43;
+            this.txtEmail.TabIndex = 5;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtPhone
@@ -154,7 +154,7 @@
             this.txtPhone.PlaceholderText = "";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(208, 36);
-            this.txtPhone.TabIndex = 42;
+            this.txtPhone.TabIndex = 3;
             this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // txtSearch
@@ -179,7 +179,7 @@
             this.txtSearch.PlaceholderText = "Tìm kiếm";
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(370, 36);
-            this.txtSearch.TabIndex = 51;
+            this.txtSearch.TabIndex = 12;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // txtName
@@ -202,7 +202,7 @@
             this.txtName.PlaceholderText = "";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(208, 36);
-            this.txtName.TabIndex = 41;
+            this.txtName.TabIndex = 1;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // dgvStaff
@@ -214,8 +214,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvStaff.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
@@ -259,7 +259,7 @@
             this.dgvStaff.RowHeadersWidth = 51;
             this.dgvStaff.RowTemplate.Height = 28;
             this.dgvStaff.Size = new System.Drawing.Size(1252, 314);
-            this.dgvStaff.TabIndex = 50;
+            this.dgvStaff.TabIndex = 11;
             this.dgvStaff.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.dgvStaff.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.dgvStaff.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -362,7 +362,7 @@
             this.txtGender.PlaceholderText = "";
             this.txtGender.SelectedText = "";
             this.txtGender.Size = new System.Drawing.Size(208, 36);
-            this.txtGender.TabIndex = 59;
+            this.txtGender.TabIndex = 2;
             this.txtGender.TextChanged += new System.EventHandler(this.txtGender_TextChanged);
             // 
             // btnRefresh
@@ -385,7 +385,7 @@
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(137, 43);
-            this.btnRefresh.TabIndex = 49;
+            this.btnRefresh.TabIndex = 10;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnRefresh.UseTransparentBackground = true;
@@ -411,7 +411,7 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(196, 43);
-            this.btnDelete.TabIndex = 48;
+            this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Xoá nhân viên";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDelete.UseTransparentBackground = true;
@@ -437,7 +437,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(199, 43);
-            this.btnAdd.TabIndex = 46;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Thêm nhân viên";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAdd.UseTransparentBackground = true;
@@ -463,7 +463,7 @@
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(181, 43);
-            this.btnEdit.TabIndex = 47;
+            this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "Sửa nhân viên";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnEdit.UseTransparentBackground = true;
@@ -486,7 +486,7 @@
             this.btnSearch.Location = new System.Drawing.Point(564, 20);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(132, 36);
-            this.btnSearch.TabIndex = 53;
+            this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseTransparentBackground = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -512,7 +512,7 @@
             this.txtID.ReadOnly = true;
             this.txtID.SelectedText = "";
             this.txtID.Size = new System.Drawing.Size(208, 36);
-            this.txtID.TabIndex = 61;
+            this.txtID.TabIndex = 0;
             this.txtID.TabStop = false;
             // 
             // label8
@@ -620,7 +620,7 @@
             this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.btnSearch);
             this.Name = "GUI_Staff";
-            this.Text = "frmStaff";
+            this.Text = "Nhân viên";
             this.Load += new System.EventHandler(this.GUI_Staff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();

@@ -191,6 +191,11 @@ namespace GUI
             Int32.TryParse(cboProduct.SelectedValue.ToString(), out selectedProductID);
         }
 
+        private void cboTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateDgvBillDetail();
+        }
+
         private void dgvBillAtShop_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -310,11 +315,15 @@ namespace GUI
 
         private void UpdateDgvBillDetail()
         {
-            var bill = busBillAtShop.GetBillUnPaied().SingleOrDefault(x => x.MaBan == (int)cboTable.SelectedValue);
-            var id = bill != null ? bill.Ma : 0;
-            dgvBillDetail.DataSource = busBillDetailAtShop.GetBillDetailByBillID(id).Select(b =>
-               new { b.Ma, b.SanPham.Ten, b.SoLuong, b.SanPham.DonGia, ThanhTien = b.SoLuong * b.SanPham.DonGia, b.GhiChu }
-               ).ToList();
+            try
+            {
+                var bill = busBillAtShop.GetBillUnPaied().SingleOrDefault(x => x.MaBan == (int)cboTable.SelectedValue);
+                var id = bill != null ? bill.Ma : 0;
+                dgvBillDetail.DataSource = busBillDetailAtShop.GetBillDetailByBillID(id).Select(b =>
+                   new { b.Ma, b.SanPham.Ten, b.SoLuong, b.SanPham.DonGia, ThanhTien = b.SoLuong * b.SanPham.DonGia, b.GhiChu }
+                   ).ToList();
+            }
+            catch { }
         }
 
         private void UpdateDgvProduct(List<SanPham> products)

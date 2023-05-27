@@ -23,7 +23,7 @@ namespace BUS
 
         public void ExportBillAtShopToExcel(DateTime startDate, DateTime endDate, string templatePath, string exportPath)
         {
-            var list = dalBill.GetBillAtShopUnPaied(startDate, endDate);
+            var list = dalBill.GetBillAtShopPaied(startDate, endDate);
 
             DataTable dataExport = new DataTable();
             dataExport.Columns.Add("Ma", typeof(int));
@@ -84,7 +84,7 @@ namespace BUS
 
         public void ExportBillDeliveryToExcel(DateTime startDate, DateTime endDate, string templatePath, string exportPath)
         {
-            var list = dalBill.GetBillDeliveryUnPaied(startDate, endDate);
+            var list = dalBill.GetBillDeliveryPaied(startDate, endDate);
 
             DataTable dataExport = new DataTable();
             dataExport.Columns.Add("Ma", typeof(int));
@@ -139,7 +139,7 @@ namespace BUS
 
         public void ExportBillTakeAwayToExcel(DateTime startDate, DateTime endDate, string templatePath, string exportPath)
         {
-            var list = dalBill.GetBillTakeAwayUnPaied(startDate, endDate);
+            var list = dalBill.GetBillTakeAwayPaied(startDate, endDate);
 
             DataTable dataExport = new DataTable();
             dataExport.Columns.Add("Ma", typeof(int));

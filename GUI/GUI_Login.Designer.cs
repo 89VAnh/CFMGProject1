@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Login));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -42,11 +43,11 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtUn = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPw = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2ControlBox5 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox6 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.txtPw = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -55,7 +56,7 @@
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 40;
+            this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
             // 
             // guna2DragControl1
@@ -157,7 +158,8 @@
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(911, 90);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(124, 40);
-            this.guna2HtmlLabel2.TabIndex = 23;
+            this.guna2HtmlLabel2.TabIndex = 6;
+            this.guna2HtmlLabel2.TabStop = false;
             this.guna2HtmlLabel2.Text = "A-Coffee";
             // 
             // guna2HtmlLabel1
@@ -169,7 +171,8 @@
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(767, 96);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(150, 40);
-            this.guna2HtmlLabel1.TabIndex = 22;
+            this.guna2HtmlLabel1.TabIndex = 5;
+            this.guna2HtmlLabel1.TabStop = false;
             this.guna2HtmlLabel1.Text = "Welcome To ";
             // 
             // txtUn
@@ -198,6 +201,59 @@
             this.txtUn.TabIndex = 0;
             this.txtUn.TextOffset = new System.Drawing.Point(8, 0);
             this.txtUn.TextChanged += new System.EventHandler(this.txtUn_TextChanged);
+            // 
+            // guna2ControlBox5
+            // 
+            this.guna2ControlBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox5.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2ControlBox5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox5.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox5.HoverState.IconColor = System.Drawing.Color.SkyBlue;
+            this.guna2ControlBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(68)))), ((int)(((byte)(72)))));
+            this.guna2ControlBox5.Location = new System.Drawing.Point(984, -3);
+            this.guna2ControlBox5.Name = "guna2ControlBox5";
+            this.guna2ControlBox5.Size = new System.Drawing.Size(38, 35);
+            this.guna2ControlBox5.TabIndex = 3;
+            this.guna2ControlBox5.TabStop = false;
+            // 
+            // guna2ControlBox6
+            // 
+            this.guna2ControlBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2ControlBox6.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox6.HoverState.FillColor = System.Drawing.Color.Red;
+            this.guna2ControlBox6.HoverState.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(68)))), ((int)(((byte)(72)))));
+            this.guna2ControlBox6.Location = new System.Drawing.Point(1030, -3);
+            this.guna2ControlBox6.Name = "guna2ControlBox6";
+            this.guna2ControlBox6.Size = new System.Drawing.Size(60, 35);
+            this.guna2ControlBox6.TabIndex = 4;
+            this.guna2ControlBox6.TabStop = false;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.AutoRoundedCorners = true;
+            this.btnLogin.BorderRadius = 22;
+            this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
+            this.btnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(205)))), ((int)(((byte)(255)))));
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnLogin.Image = global::GUI.Properties.Resources.login2;
+            this.btnLogin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnLogin.Location = new System.Drawing.Point(733, 368);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(166, 47);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabStop = false;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPw
             // 
@@ -229,29 +285,6 @@
             this.txtPw.IconRightClick += new System.EventHandler(this.txtPw_IconRightClick);
             this.txtPw.TextChanged += new System.EventHandler(this.txtPw_TextChanged);
             // 
-            // btnLogin
-            // 
-            this.btnLogin.AutoRoundedCorners = true;
-            this.btnLogin.BorderRadius = 22;
-            this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLogin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(189)))));
-            this.btnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(205)))), ((int)(((byte)(255)))));
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnLogin.Image = global::GUI.Properties.Resources.login2;
-            this.btnLogin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnLogin.Location = new System.Drawing.Point(733, 368);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(166, 47);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Image = global::GUI.Properties.Resources.coffee1;
@@ -263,33 +296,6 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 21;
             this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // guna2ControlBox5
-            // 
-            this.guna2ControlBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox5.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ControlBox5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox5.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox5.HoverState.IconColor = System.Drawing.Color.SkyBlue;
-            this.guna2ControlBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(68)))), ((int)(((byte)(72)))));
-            this.guna2ControlBox5.Location = new System.Drawing.Point(984, -3);
-            this.guna2ControlBox5.Name = "guna2ControlBox5";
-            this.guna2ControlBox5.Size = new System.Drawing.Size(38, 35);
-            this.guna2ControlBox5.TabIndex = 36;
-            // 
-            // guna2ControlBox6
-            // 
-            this.guna2ControlBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ControlBox6.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox6.HoverState.FillColor = System.Drawing.Color.Red;
-            this.guna2ControlBox6.HoverState.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(68)))), ((int)(((byte)(72)))));
-            this.guna2ControlBox6.Location = new System.Drawing.Point(1030, -3);
-            this.guna2ControlBox6.Name = "guna2ControlBox6";
-            this.guna2ControlBox6.Size = new System.Drawing.Size(60, 35);
-            this.guna2ControlBox6.TabIndex = 37;
             // 
             // GUI_Login
             // 
@@ -313,9 +319,10 @@
             this.Controls.Add(this.guna2ControlBox1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GUI_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLogin";
+            this.Text = "Đăng nhập";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

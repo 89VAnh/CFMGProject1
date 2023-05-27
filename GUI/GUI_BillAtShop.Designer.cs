@@ -98,6 +98,11 @@
             this.numAmount.ForeColor = System.Drawing.Color.Maroon;
             this.numAmount.Location = new System.Drawing.Point(218, 183);
             this.numAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numAmount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numAmount.Name = "numAmount";
             this.numAmount.Size = new System.Drawing.Size(140, 28);
             this.numAmount.TabIndex = 2;
@@ -652,6 +657,7 @@
             this.cboTable.Name = "cboTable";
             this.cboTable.Size = new System.Drawing.Size(130, 36);
             this.cboTable.TabIndex = 2;
+            this.cboTable.SelectedIndexChanged += new System.EventHandler(this.cboTable_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -896,7 +902,7 @@
             this.Controls.Add(this.flpTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "GUI_BillAtShop";
-            this.Text = "frmBillAtShop";
+            this.Text = "Hoá đơn tại quán";
             this.Load += new System.EventHandler(this.GUI_BillAtShop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();

@@ -45,14 +45,19 @@ namespace GUI
         {
             if (checkTextBox(txtUn))
             {
-                if (MessageBox.Show($"Xác nhận xoá tài khoản '{txtUn.Text}'", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (txtUn.Text != BUS_Account.currentAccount.TenDangNhap)
                 {
-                    if (busAccount.Delete(txtUn.Text))
+                    if (MessageBox.Show($"Xác nhận xoá tài khoản '{txtUn.Text}'", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        MessageBox.Show("Xoá thành công!");
-                        UpdateDgv(busAccount.GetAll());
+                        if (busAccount.Delete(txtUn.Text))
+                        {
+                            MessageBox.Show("Xoá thành công!");
+                            UpdateDgv(busAccount.GetAll());
+                        }
+                        else MessageBox.Show("Tên đăng nhập không tồn tại!");
                     }
                 }
+                else MessageBox.Show("Không thể xoá tài khoản khi đang đăng nhập");
             }
             else MessageBox.Show("Chưa có tài khoản nào được chọn!");
         }

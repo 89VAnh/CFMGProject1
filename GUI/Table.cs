@@ -1,13 +1,12 @@
 ﻿using DAL;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class Table : UserControl
     {
-        private string status = "Trống";
+        private string _status = "Trống";
 
         public Table(Ban t, EventHandler table_Click)
         {
@@ -19,20 +18,17 @@ namespace GUI
         }
 
         public string GetStatus()
-        { return status; }
+        { return _status; }
 
         public void UpdateStatus(string status)
         {
-            this.status = status;
-            string s = "";
+            _status = status;
             switch (status)
             {
-                case "Có người": s = "table"; break;
-                case "Trống": s = "tableEmpty"; break;
+                case "Có người": btnTable.Image = global::GUI.Properties.Resources.table; ; break;
+                case "Trống": btnTable.Image = global::GUI.Properties.Resources.tableEmpty; break;
                 default: break;
             }
-
-            this.btnTable.Image = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + "Resources/" + s + ".png");
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using BUS;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI
@@ -19,33 +18,33 @@ namespace GUI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string un = txtUn.Text, pw = txtPw.Text;
-            if (string.IsNullOrWhiteSpace(un) || string.IsNullOrWhiteSpace(pw))
+            if (string.IsNullOrWhiteSpace(un)) { errorProvider.SetError(txtUn, "Vui lòng nhập trường này"); txtUn.Focus(); return; }
+            if (string.IsNullOrWhiteSpace(pw)) { errorProvider.SetError(txtPw, "Vui lòng nhập trường này"); txtPw.Focus(); return; }
+
+            if (un.Length > 100) { errorProvider.SetError(txtUn, "Tên đăng nhập không vượt quá 100 ký tự!"); txtUn.Focus(); return; }
+            if (pw.Length > 100) { errorProvider.SetError(txtPw, "Mật khẩu không vượt quá 100 ký tự!"); txtPw.Focus(); return; }
+
+            if (pw.Length < 6) { errorProvider.SetError(txtPw, "Mật khẩu tối thiểu 6 ký tự!"); txtPw.Focus(); return; }
+
+            if (busAccount.GetAccount(un, pw) != null)
             {
-                if (string.IsNullOrWhiteSpace(un)) errorProvider.SetError(txtUn, "Vui lòng nhập trường này");
-                if (string.IsNullOrWhiteSpace(pw)) errorProvider.SetError(txtPw, "Vui lòng nhập trường này");
+                BUS_Account.currentAccount = busAccount.GetAccount(un, pw);
+                GUI_Main mdi = new GUI_Main();
+                this.Hide();
+                mdi.ShowDialog();
+                this.Close();
             }
             else
             {
-                if (busAccount.GetAccount(un, pw) != null)
+                if (busAccount.GetAccountByUn(un) != null)
                 {
-                    BUS_Account.currentAccount = busAccount.GetAccount(un, pw);
-                    GUI_Main mdi = new GUI_Main();
-                    this.Hide();
-                    mdi.ShowDialog();
-                    this.Close();
+                    MessageBox.Show("Mật khẩu không chính xác!");
+                    txtPw.Focus();
                 }
                 else
                 {
-                    if (busAccount.GetAccountByUn(un) != null)
-                    {
-                        MessageBox.Show("Mật khẩu không chính xác!");
-                        txtPw.Focus();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Tên tài khoản không chính xác!");
-                        txtUn.Focus();
-                    }
+                    MessageBox.Show("Tên tài khoản không chính xác!");
+                    txtUn.Focus();
                 }
             }
         }
@@ -55,12 +54,13 @@ namespace GUI
             isHidePw = !isHidePw;
             if (isHidePw)
             {
-                txtPw.IconRight = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + "Resources/show-pw.png");
+                txtPw.IconRight = global::GUI.Properties.Resources.show_pw;
+
                 txtPw.PasswordChar = '●';
             }
             else
             {
-                txtPw.IconRight = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + "Resources/hide-pw.png");
+                txtPw.IconRight = global::GUI.Properties.Resources.hide_pw;
                 txtPw.PasswordChar = '\0';
             }
         }

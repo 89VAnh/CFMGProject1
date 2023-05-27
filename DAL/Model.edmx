@@ -21,7 +21,7 @@
           <Property Name="MaHD" Type="int" Nullable="false" />
           <Property Name="MaSP" Type="int" Nullable="false" />
           <Property Name="SoLuong" Type="int" Nullable="false" />
-          <Property Name="GhiChu" Type="nvarchar(max)" />
+          <Property Name="GhiChu" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="CTHDTaiQuan">
           <Key>
@@ -31,7 +31,7 @@
           <Property Name="MaHD" Type="int" Nullable="false" />
           <Property Name="MaSP" Type="int" Nullable="false" />
           <Property Name="SoLuong" Type="int" Nullable="false" />
-          <Property Name="GhiChu" Type="nvarchar(max)" />
+          <Property Name="GhiChu" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="DanhMucSanPham">
           <Key>
@@ -46,9 +46,9 @@
           </Key>
           <Property Name="Ma" Type="int" Nullable="false" />
           <Property Name="GiamGia" Type="nvarchar" MaxLength="20" />
-          <Property Name="TongTien" Type="int" />
-          <Property Name="MaKH" Type="varchar" MaxLength="10" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
+          <Property Name="TongTien" Type="int" Nullable="false" />
+          <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="ThoiGianNhan" Type="datetime" />
         </EntityType>
         <EntityType Name="HDTaiQuan">
@@ -58,9 +58,9 @@
           <Property Name="Ma" Type="int" Nullable="false" />
           <Property Name="MaBan" Type="int" />
           <Property Name="GiamGia" Type="nvarchar" MaxLength="20" />
-          <Property Name="MaNV" Type="varchar" MaxLength="10" />
+          <Property Name="MaNV" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TongTien" Type="int" Nullable="false" />
-          <Property Name="MaKH" Type="varchar" MaxLength="10" />
+          <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="ThoiGianVao" Type="datetime" Nullable="false" />
           <Property Name="ThoiGianRa" Type="datetime" />
         </EntityType>
@@ -71,9 +71,9 @@
           <Property Name="Ma" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Ten" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
-          <Property Name="SDT" Type="varchar" MaxLength="10" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
-          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="SDT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -109,7 +109,7 @@
           </Key>
           <Property Name="TenDangNhap" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="MatKhau" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="MaQuyen" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -133,7 +133,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           <Property Name="SoLuong" Type="int" Nullable="false" />
           <Property Name="ThoiGian" Type="date" />
         </EntityType>
-        <Association Name="FK__CTHDGiaoHa__MaHD__571DF1D5">
+        <Association Name="FK__CTHDGiaoHa__MaHD__5EBF139D">
           <End Role="HDGiaoHang" Type="Self.HDGiaoHang" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -147,7 +147,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CTHDGiaoHa__MaSP__5812160E">
+        <Association Name="FK__CTHDGiaoHa__MaSP__5FB337D6">
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -161,7 +161,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CTHDTaiQua__MaHD__5070F446">
+        <Association Name="FK__CTHDTaiQua__MaHD__5535A963">
           <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -175,7 +175,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CTHDTaiQua__MaSP__5165187F">
+        <Association Name="FK__CTHDTaiQua__MaSP__5629CD9C">
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -189,8 +189,8 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HDGiaoHang__MaKH__5441852A">
-          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1">
+        <Association Name="FK__HDGiaoHang__MaKH__5AEE82B9">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="HDGiaoHang" Type="Self.HDGiaoHang" Multiplicity="*" />
@@ -203,7 +203,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HDTaiQuan__MaBan__4BAC3F29">
+        <Association Name="FK__HDTaiQuan__MaBan__4D94879B">
           <End Role="Ban" Type="Self.Ban" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -217,8 +217,8 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HDTaiQuan__MaKH__4D94879B">
-          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1">
+        <Association Name="FK__HDTaiQuan__MaKH__5070F446">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="*" />
@@ -231,8 +231,8 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HDTaiQuan__MaNV__4CA06362">
-          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1">
+        <Association Name="FK__HDTaiQuan__MaNV__4E88ABD4">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="*" />
@@ -245,7 +245,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NhanVien__MaQuye__3D5E1FD2">
+        <Association Name="FK__NhanVien__MaQuye__3E52440B">
           <End Role="Quyen" Type="Self.Quyen" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -259,7 +259,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SanPham__MaDM__4222D4EF">
+        <Association Name="FK__SanPham__MaDM__4316F928">
           <End Role="DanhMucSanPham" Type="Self.DanhMucSanPham" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -273,7 +273,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TaiKhoan__MaQuye__398D8EEE">
+        <Association Name="FK__TaiKhoan__MaQuye__3A81B327">
           <End Role="Quyen" Type="Self.Quyen" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -325,47 +325,47 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
     [VW_SoLuongSP].[ThoiGian] AS [ThoiGian]
     FROM [dbo].[VW_SoLuongSP] AS [VW_SoLuongSP]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__CTHDGiaoHa__MaHD__571DF1D5" Association="Self.FK__CTHDGiaoHa__MaHD__571DF1D5">
+          <AssociationSet Name="FK__CTHDGiaoHa__MaHD__5EBF139D" Association="Self.FK__CTHDGiaoHa__MaHD__5EBF139D">
             <End Role="HDGiaoHang" EntitySet="HDGiaoHang" />
             <End Role="CTHDGiaoHang" EntitySet="CTHDGiaoHang" />
           </AssociationSet>
-          <AssociationSet Name="FK__CTHDGiaoHa__MaSP__5812160E" Association="Self.FK__CTHDGiaoHa__MaSP__5812160E">
+          <AssociationSet Name="FK__CTHDGiaoHa__MaSP__5FB337D6" Association="Self.FK__CTHDGiaoHa__MaSP__5FB337D6">
             <End Role="SanPham" EntitySet="SanPham" />
             <End Role="CTHDGiaoHang" EntitySet="CTHDGiaoHang" />
           </AssociationSet>
-          <AssociationSet Name="FK__CTHDTaiQua__MaHD__5070F446" Association="Self.FK__CTHDTaiQua__MaHD__5070F446">
+          <AssociationSet Name="FK__CTHDTaiQua__MaHD__5535A963" Association="Self.FK__CTHDTaiQua__MaHD__5535A963">
             <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
             <End Role="CTHDTaiQuan" EntitySet="CTHDTaiQuan" />
           </AssociationSet>
-          <AssociationSet Name="FK__CTHDTaiQua__MaSP__5165187F" Association="Self.FK__CTHDTaiQua__MaSP__5165187F">
+          <AssociationSet Name="FK__CTHDTaiQua__MaSP__5629CD9C" Association="Self.FK__CTHDTaiQua__MaSP__5629CD9C">
             <End Role="SanPham" EntitySet="SanPham" />
             <End Role="CTHDTaiQuan" EntitySet="CTHDTaiQuan" />
           </AssociationSet>
-          <AssociationSet Name="FK__HDGiaoHang__MaKH__5441852A" Association="Self.FK__HDGiaoHang__MaKH__5441852A">
+          <AssociationSet Name="FK__HDGiaoHang__MaKH__5AEE82B9" Association="Self.FK__HDGiaoHang__MaKH__5AEE82B9">
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="HDGiaoHang" EntitySet="HDGiaoHang" />
           </AssociationSet>
-          <AssociationSet Name="FK__HDTaiQuan__MaBan__4BAC3F29" Association="Self.FK__HDTaiQuan__MaBan__4BAC3F29">
+          <AssociationSet Name="FK__HDTaiQuan__MaBan__4D94879B" Association="Self.FK__HDTaiQuan__MaBan__4D94879B">
             <End Role="Ban" EntitySet="Ban" />
             <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
           </AssociationSet>
-          <AssociationSet Name="FK__HDTaiQuan__MaKH__4D94879B" Association="Self.FK__HDTaiQuan__MaKH__4D94879B">
+          <AssociationSet Name="FK__HDTaiQuan__MaKH__5070F446" Association="Self.FK__HDTaiQuan__MaKH__5070F446">
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
           </AssociationSet>
-          <AssociationSet Name="FK__HDTaiQuan__MaNV__4CA06362" Association="Self.FK__HDTaiQuan__MaNV__4CA06362">
+          <AssociationSet Name="FK__HDTaiQuan__MaNV__4E88ABD4" Association="Self.FK__HDTaiQuan__MaNV__4E88ABD4">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="HDTaiQuan" EntitySet="HDTaiQuan" />
           </AssociationSet>
-          <AssociationSet Name="FK__NhanVien__MaQuye__3D5E1FD2" Association="Self.FK__NhanVien__MaQuye__3D5E1FD2">
+          <AssociationSet Name="FK__NhanVien__MaQuye__3E52440B" Association="Self.FK__NhanVien__MaQuye__3E52440B">
             <End Role="Quyen" EntitySet="Quyen" />
             <End Role="NhanVien" EntitySet="NhanVien" />
           </AssociationSet>
-          <AssociationSet Name="FK__SanPham__MaDM__4222D4EF" Association="Self.FK__SanPham__MaDM__4222D4EF">
+          <AssociationSet Name="FK__SanPham__MaDM__4316F928" Association="Self.FK__SanPham__MaDM__4316F928">
             <End Role="DanhMucSanPham" EntitySet="DanhMucSanPham" />
             <End Role="SanPham" EntitySet="SanPham" />
           </AssociationSet>
-          <AssociationSet Name="FK__TaiKhoan__MaQuye__398D8EEE" Association="Self.FK__TaiKhoan__MaQuye__398D8EEE">
+          <AssociationSet Name="FK__TaiKhoan__MaQuye__3A81B327" Association="Self.FK__TaiKhoan__MaQuye__3A81B327">
             <End Role="Quyen" EntitySet="Quyen" />
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
@@ -382,7 +382,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           <Property Name="Ma" Type="Int32" Nullable="false" />
           <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TrangThai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="HDTaiQuans" Relationship="Self.FK__HDTaiQuan__MaBan__4BAC3F29" FromRole="Ban" ToRole="HDTaiQuan" />
+          <NavigationProperty Name="HDTaiQuans" Relationship="Self.FK__HDTaiQuan__MaBan__4D94879B" FromRole="Ban" ToRole="HDTaiQuan" />
         </EntityType>
         <EntityType Name="CTHDGiaoHang">
           <Key>
@@ -392,9 +392,9 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           <Property Name="MaHD" Type="Int32" Nullable="false" />
           <Property Name="MaSP" Type="Int32" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="HDGiaoHang" Relationship="Self.FK__CTHDGiaoHa__MaHD__571DF1D5" FromRole="CTHDGiaoHang" ToRole="HDGiaoHang" />
-          <NavigationProperty Name="SanPham" Relationship="Self.FK__CTHDGiaoHa__MaSP__5812160E" FromRole="CTHDGiaoHang" ToRole="SanPham" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HDGiaoHang" Relationship="Self.FK__CTHDGiaoHa__MaHD__5EBF139D" FromRole="CTHDGiaoHang" ToRole="HDGiaoHang" />
+          <NavigationProperty Name="SanPham" Relationship="Self.FK__CTHDGiaoHa__MaSP__5FB337D6" FromRole="CTHDGiaoHang" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="CTHDTaiQuan">
           <Key>
@@ -404,9 +404,9 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           <Property Name="MaHD" Type="Int32" Nullable="false" />
           <Property Name="MaSP" Type="Int32" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="HDTaiQuan" Relationship="Self.FK__CTHDTaiQua__MaHD__5070F446" FromRole="CTHDTaiQuan" ToRole="HDTaiQuan" />
-          <NavigationProperty Name="SanPham" Relationship="Self.FK__CTHDTaiQua__MaSP__5165187F" FromRole="CTHDTaiQuan" ToRole="SanPham" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HDTaiQuan" Relationship="Self.FK__CTHDTaiQua__MaHD__5535A963" FromRole="CTHDTaiQuan" ToRole="HDTaiQuan" />
+          <NavigationProperty Name="SanPham" Relationship="Self.FK__CTHDTaiQua__MaSP__5629CD9C" FromRole="CTHDTaiQuan" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="DanhMucSanPham">
           <Key>
@@ -414,7 +414,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           </Key>
           <Property Name="Ma" Type="Int32" Nullable="false" />
           <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaDM__4222D4EF" FromRole="DanhMucSanPham" ToRole="SanPham" />
+          <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaDM__4316F928" FromRole="DanhMucSanPham" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="HDGiaoHang">
           <Key>
@@ -422,12 +422,12 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           </Key>
           <Property Name="Ma" Type="Int32" Nullable="false" />
           <Property Name="GiamGia" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="TongTien" Type="Int32" />
-          <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TongTien" Type="Int32" Nullable="false" />
+          <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ThoiGianNhan" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="CTHDGiaoHangs" Relationship="Self.FK__CTHDGiaoHa__MaHD__571DF1D5" FromRole="HDGiaoHang" ToRole="CTHDGiaoHang" />
-          <NavigationProperty Name="KhachHang" Relationship="Self.FK__HDGiaoHang__MaKH__5441852A" FromRole="HDGiaoHang" ToRole="KhachHang" />
+          <NavigationProperty Name="CTHDGiaoHangs" Relationship="Self.FK__CTHDGiaoHa__MaHD__5EBF139D" FromRole="HDGiaoHang" ToRole="CTHDGiaoHang" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK__HDGiaoHang__MaKH__5AEE82B9" FromRole="HDGiaoHang" ToRole="KhachHang" />
         </EntityType>
         <EntityType Name="HDTaiQuan">
           <Key>
@@ -436,15 +436,15 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           <Property Name="Ma" Type="Int32" Nullable="false" />
           <Property Name="MaBan" Type="Int32" />
           <Property Name="GiamGia" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TongTien" Type="Int32" Nullable="false" />
-          <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ThoiGianVao" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ThoiGianRa" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Ban" Relationship="Self.FK__HDTaiQuan__MaBan__4BAC3F29" FromRole="HDTaiQuan" ToRole="Ban" />
-          <NavigationProperty Name="CTHDTaiQuans" Relationship="Self.FK__CTHDTaiQua__MaHD__5070F446" FromRole="HDTaiQuan" ToRole="CTHDTaiQuan" />
-          <NavigationProperty Name="KhachHang" Relationship="Self.FK__HDTaiQuan__MaKH__4D94879B" FromRole="HDTaiQuan" ToRole="KhachHang" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK__HDTaiQuan__MaNV__4CA06362" FromRole="HDTaiQuan" ToRole="NhanVien" />
+          <NavigationProperty Name="Ban" Relationship="Self.FK__HDTaiQuan__MaBan__4D94879B" FromRole="HDTaiQuan" ToRole="Ban" />
+          <NavigationProperty Name="CTHDTaiQuans" Relationship="Self.FK__CTHDTaiQua__MaHD__5535A963" FromRole="HDTaiQuan" ToRole="CTHDTaiQuan" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK__HDTaiQuan__MaKH__5070F446" FromRole="HDTaiQuan" ToRole="KhachHang" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK__HDTaiQuan__MaNV__4E88ABD4" FromRole="HDTaiQuan" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -453,11 +453,11 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           <Property Name="Ma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="SDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="HDGiaoHangs" Relationship="Self.FK__HDGiaoHang__MaKH__5441852A" FromRole="KhachHang" ToRole="HDGiaoHang" />
-          <NavigationProperty Name="HDTaiQuans" Relationship="Self.FK__HDTaiQuan__MaKH__4D94879B" FromRole="KhachHang" ToRole="HDTaiQuan" />
+          <Property Name="SDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="HDGiaoHangs" Relationship="Self.FK__HDGiaoHang__MaKH__5AEE82B9" FromRole="KhachHang" ToRole="HDGiaoHang" />
+          <NavigationProperty Name="HDTaiQuans" Relationship="Self.FK__HDTaiQuan__MaKH__5070F446" FromRole="KhachHang" ToRole="HDTaiQuan" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -470,8 +470,8 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaQuyen" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="HDTaiQuans" Relationship="Self.FK__HDTaiQuan__MaNV__4CA06362" FromRole="NhanVien" ToRole="HDTaiQuan" />
-          <NavigationProperty Name="Quyen" Relationship="Self.FK__NhanVien__MaQuye__3D5E1FD2" FromRole="NhanVien" ToRole="Quyen" />
+          <NavigationProperty Name="HDTaiQuans" Relationship="Self.FK__HDTaiQuan__MaNV__4E88ABD4" FromRole="NhanVien" ToRole="HDTaiQuan" />
+          <NavigationProperty Name="Quyen" Relationship="Self.FK__NhanVien__MaQuye__3E52440B" FromRole="NhanVien" ToRole="Quyen" />
         </EntityType>
         <EntityType Name="Quyen">
           <Key>
@@ -479,8 +479,8 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           </Key>
           <Property Name="Ma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="NhanViens" Relationship="Self.FK__NhanVien__MaQuye__3D5E1FD2" FromRole="Quyen" ToRole="NhanVien" />
-          <NavigationProperty Name="TaiKhoans" Relationship="Self.FK__TaiKhoan__MaQuye__398D8EEE" FromRole="Quyen" ToRole="TaiKhoan" />
+          <NavigationProperty Name="NhanViens" Relationship="Self.FK__NhanVien__MaQuye__3E52440B" FromRole="Quyen" ToRole="NhanVien" />
+          <NavigationProperty Name="TaiKhoans" Relationship="Self.FK__TaiKhoan__MaQuye__3A81B327" FromRole="Quyen" ToRole="TaiKhoan" />
         </EntityType>
         <EntityType Name="SanPham">
           <Key>
@@ -490,9 +490,9 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaDM" Type="Int32" Nullable="false" />
           <Property Name="DonGia" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CTHDGiaoHangs" Relationship="Self.FK__CTHDGiaoHa__MaSP__5812160E" FromRole="SanPham" ToRole="CTHDGiaoHang" />
-          <NavigationProperty Name="CTHDTaiQuans" Relationship="Self.FK__CTHDTaiQua__MaSP__5165187F" FromRole="SanPham" ToRole="CTHDTaiQuan" />
-          <NavigationProperty Name="DanhMucSanPham" Relationship="Self.FK__SanPham__MaDM__4222D4EF" FromRole="SanPham" ToRole="DanhMucSanPham" />
+          <NavigationProperty Name="CTHDGiaoHangs" Relationship="Self.FK__CTHDGiaoHa__MaSP__5FB337D6" FromRole="SanPham" ToRole="CTHDGiaoHang" />
+          <NavigationProperty Name="CTHDTaiQuans" Relationship="Self.FK__CTHDTaiQua__MaSP__5629CD9C" FromRole="SanPham" ToRole="CTHDTaiQuan" />
+          <NavigationProperty Name="DanhMucSanPham" Relationship="Self.FK__SanPham__MaDM__4316F928" FromRole="SanPham" ToRole="DanhMucSanPham" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
@@ -500,9 +500,9 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           </Key>
           <Property Name="TenDangNhap" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MatKhau" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaQuyen" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Quyen" Relationship="Self.FK__TaiKhoan__MaQuye__398D8EEE" FromRole="TaiKhoan" ToRole="Quyen" />
+          <NavigationProperty Name="Quyen" Relationship="Self.FK__TaiKhoan__MaQuye__3A81B327" FromRole="TaiKhoan" ToRole="Quyen" />
         </EntityType>
         <EntityType Name="VW_DoanhThu">
           <Key>
@@ -521,7 +521,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="ThoiGian" Type="DateTime" Precision="0" />
         </EntityType>
-        <Association Name="FK__HDTaiQuan__MaBan__4BAC3F29">
+        <Association Name="FK__HDTaiQuan__MaBan__4D94879B">
           <End Role="Ban" Type="Self.Ban" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -535,7 +535,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CTHDGiaoHa__MaHD__571DF1D5">
+        <Association Name="FK__CTHDGiaoHa__MaHD__5EBF139D">
           <End Role="HDGiaoHang" Type="Self.HDGiaoHang" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -549,7 +549,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CTHDGiaoHa__MaSP__5812160E">
+        <Association Name="FK__CTHDGiaoHa__MaSP__5FB337D6">
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -563,7 +563,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CTHDTaiQua__MaHD__5070F446">
+        <Association Name="FK__CTHDTaiQua__MaHD__5535A963">
           <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -577,7 +577,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CTHDTaiQua__MaSP__5165187F">
+        <Association Name="FK__CTHDTaiQua__MaSP__5629CD9C">
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -591,7 +591,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SanPham__MaDM__4222D4EF">
+        <Association Name="FK__SanPham__MaDM__4316F928">
           <End Role="DanhMucSanPham" Type="Self.DanhMucSanPham" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -605,8 +605,8 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HDGiaoHang__MaKH__5441852A">
-          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1">
+        <Association Name="FK__HDGiaoHang__MaKH__5AEE82B9">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="HDGiaoHang" Type="Self.HDGiaoHang" Multiplicity="*" />
@@ -619,8 +619,8 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HDTaiQuan__MaKH__4D94879B">
-          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1">
+        <Association Name="FK__HDTaiQuan__MaKH__5070F446">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="*" />
@@ -633,8 +633,8 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HDTaiQuan__MaNV__4CA06362">
-          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1">
+        <Association Name="FK__HDTaiQuan__MaNV__4E88ABD4">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="HDTaiQuan" Type="Self.HDTaiQuan" Multiplicity="*" />
@@ -647,7 +647,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NhanVien__MaQuye__3D5E1FD2">
+        <Association Name="FK__NhanVien__MaQuye__3E52440B">
           <End Role="Quyen" Type="Self.Quyen" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -661,7 +661,7 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TaiKhoan__MaQuye__398D8EEE">
+        <Association Name="FK__TaiKhoan__MaQuye__3A81B327">
           <End Role="Quyen" Type="Self.Quyen" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -689,47 +689,47 @@ warning 6002: The table/view 'QLCP.dbo.VW_SoLuongSP' does not have a primary key
           <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
           <EntitySet Name="VW_DoanhThu" EntityType="Self.VW_DoanhThu" />
           <EntitySet Name="VW_SoLuongSP" EntityType="Self.VW_SoLuongSP" />
-          <AssociationSet Name="FK__HDTaiQuan__MaBan__4BAC3F29" Association="Self.FK__HDTaiQuan__MaBan__4BAC3F29">
+          <AssociationSet Name="FK__HDTaiQuan__MaBan__4D94879B" Association="Self.FK__HDTaiQuan__MaBan__4D94879B">
             <End Role="Ban" EntitySet="Bans" />
             <End Role="HDTaiQuan" EntitySet="HDTaiQuans" />
           </AssociationSet>
-          <AssociationSet Name="FK__CTHDGiaoHa__MaHD__571DF1D5" Association="Self.FK__CTHDGiaoHa__MaHD__571DF1D5">
+          <AssociationSet Name="FK__CTHDGiaoHa__MaHD__5EBF139D" Association="Self.FK__CTHDGiaoHa__MaHD__5EBF139D">
             <End Role="HDGiaoHang" EntitySet="HDGiaoHangs" />
             <End Role="CTHDGiaoHang" EntitySet="CTHDGiaoHangs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CTHDGiaoHa__MaSP__5812160E" Association="Self.FK__CTHDGiaoHa__MaSP__5812160E">
+          <AssociationSet Name="FK__CTHDGiaoHa__MaSP__5FB337D6" Association="Self.FK__CTHDGiaoHa__MaSP__5FB337D6">
             <End Role="SanPham" EntitySet="SanPhams" />
             <End Role="CTHDGiaoHang" EntitySet="CTHDGiaoHangs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CTHDTaiQua__MaHD__5070F446" Association="Self.FK__CTHDTaiQua__MaHD__5070F446">
+          <AssociationSet Name="FK__CTHDTaiQua__MaHD__5535A963" Association="Self.FK__CTHDTaiQua__MaHD__5535A963">
             <End Role="HDTaiQuan" EntitySet="HDTaiQuans" />
             <End Role="CTHDTaiQuan" EntitySet="CTHDTaiQuans" />
           </AssociationSet>
-          <AssociationSet Name="FK__CTHDTaiQua__MaSP__5165187F" Association="Self.FK__CTHDTaiQua__MaSP__5165187F">
+          <AssociationSet Name="FK__CTHDTaiQua__MaSP__5629CD9C" Association="Self.FK__CTHDTaiQua__MaSP__5629CD9C">
             <End Role="SanPham" EntitySet="SanPhams" />
             <End Role="CTHDTaiQuan" EntitySet="CTHDTaiQuans" />
           </AssociationSet>
-          <AssociationSet Name="FK__SanPham__MaDM__4222D4EF" Association="Self.FK__SanPham__MaDM__4222D4EF">
+          <AssociationSet Name="FK__SanPham__MaDM__4316F928" Association="Self.FK__SanPham__MaDM__4316F928">
             <End Role="DanhMucSanPham" EntitySet="DanhMucSanPhams" />
             <End Role="SanPham" EntitySet="SanPhams" />
           </AssociationSet>
-          <AssociationSet Name="FK__HDGiaoHang__MaKH__5441852A" Association="Self.FK__HDGiaoHang__MaKH__5441852A">
+          <AssociationSet Name="FK__HDGiaoHang__MaKH__5AEE82B9" Association="Self.FK__HDGiaoHang__MaKH__5AEE82B9">
             <End Role="KhachHang" EntitySet="KhachHangs" />
             <End Role="HDGiaoHang" EntitySet="HDGiaoHangs" />
           </AssociationSet>
-          <AssociationSet Name="FK__HDTaiQuan__MaKH__4D94879B" Association="Self.FK__HDTaiQuan__MaKH__4D94879B">
+          <AssociationSet Name="FK__HDTaiQuan__MaKH__5070F446" Association="Self.FK__HDTaiQuan__MaKH__5070F446">
             <End Role="KhachHang" EntitySet="KhachHangs" />
             <End Role="HDTaiQuan" EntitySet="HDTaiQuans" />
           </AssociationSet>
-          <AssociationSet Name="FK__HDTaiQuan__MaNV__4CA06362" Association="Self.FK__HDTaiQuan__MaNV__4CA06362">
+          <AssociationSet Name="FK__HDTaiQuan__MaNV__4E88ABD4" Association="Self.FK__HDTaiQuan__MaNV__4E88ABD4">
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="HDTaiQuan" EntitySet="HDTaiQuans" />
           </AssociationSet>
-          <AssociationSet Name="FK__NhanVien__MaQuye__3D5E1FD2" Association="Self.FK__NhanVien__MaQuye__3D5E1FD2">
+          <AssociationSet Name="FK__NhanVien__MaQuye__3E52440B" Association="Self.FK__NhanVien__MaQuye__3E52440B">
             <End Role="Quyen" EntitySet="Quyens" />
             <End Role="NhanVien" EntitySet="NhanViens" />
           </AssociationSet>
-          <AssociationSet Name="FK__TaiKhoan__MaQuye__398D8EEE" Association="Self.FK__TaiKhoan__MaQuye__398D8EEE">
+          <AssociationSet Name="FK__TaiKhoan__MaQuye__3A81B327" Association="Self.FK__TaiKhoan__MaQuye__3A81B327">
             <End Role="Quyen" EntitySet="Quyens" />
             <End Role="TaiKhoan" EntitySet="TaiKhoans" />
           </AssociationSet>

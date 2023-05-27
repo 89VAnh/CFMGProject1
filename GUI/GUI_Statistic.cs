@@ -153,8 +153,11 @@ namespace GUI
         {
             DateTime startDate = dtpStartDate.Value,
                     endDate = dtpEndDate.Value;
+
             lblNumOrder.Text = busBill.CountNumBills(startDate, endDate).ToString();
+
             lblTotalSales.Text = Tools.ConvertToCurrency(busBill.GetTotalSale(startDate, endDate));
+
             dgvTopProducts.DataSource = busBill.TopProducts(startDate, endDate).Select(x => new { x.Ten, TongTien = Tools.ConvertToCurrency((int)x.TongTien) }).ToList();
 
             chartRevenue.ResetAutoValues();

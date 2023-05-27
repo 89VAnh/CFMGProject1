@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e18ab02a2a6844bea8872a07ae6ebd84" Name="Diagram1">
+      <Diagram DiagramId="bc056adf5c544389bb067e1bffe7185f" Name="Diagram1">
         <EntityTypeShape EntityType="QLCPModel.Ban" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QLCPModel.CTHDGiaoHang" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLCPModel.CTHDTaiQuan" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
@@ -18,17 +18,17 @@
         <EntityTypeShape EntityType="QLCPModel.TaiKhoan" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLCPModel.VW_DoanhThu" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLCPModel.VW_SoLuongSP" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="QLCPModel.FK__HDTaiQuan__MaBan__4BAC3F29" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCPModel.FK__CTHDGiaoHa__MaHD__571DF1D5" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCPModel.FK__CTHDGiaoHa__MaSP__5812160E" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCPModel.FK__CTHDTaiQua__MaHD__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCPModel.FK__CTHDTaiQua__MaSP__5165187F" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCPModel.FK__SanPham__MaDM__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCPModel.FK__HDGiaoHang__MaKH__5441852A" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCPModel.FK__HDTaiQuan__MaKH__4D94879B" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCPModel.FK__HDTaiQuan__MaNV__4CA06362" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCPModel.FK__NhanVien__MaQuye__3D5E1FD2" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCPModel.FK__TaiKhoan__MaQuye__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__HDTaiQuan__MaBan__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__CTHDGiaoHa__MaHD__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__CTHDGiaoHa__MaSP__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__CTHDTaiQua__MaHD__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__CTHDTaiQua__MaSP__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__SanPham__MaDM__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__HDGiaoHang__MaKH__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__HDTaiQuan__MaKH__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__HDTaiQuan__MaNV__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__NhanVien__MaQuye__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCPModel.FK__TaiKhoan__MaQuye__3A81B327" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

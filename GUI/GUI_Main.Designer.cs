@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Main));
             this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.lbTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblName = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -358,7 +359,7 @@
             this.btnInfo.Image = global::GUI.Properties.Resources.system;
             this.btnInfo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnInfo.ImageSize = new System.Drawing.Size(33, 33);
-            this.btnInfo.Location = new System.Drawing.Point(0, 851);
+            this.btnInfo.Location = new System.Drawing.Point(0, 798);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnInfo.Size = new System.Drawing.Size(297, 45);
@@ -380,7 +381,7 @@
             this.pnlManage.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlManage.Location = new System.Drawing.Point(0, 479);
             this.pnlManage.Name = "pnlManage";
-            this.pnlManage.Size = new System.Drawing.Size(297, 372);
+            this.pnlManage.Size = new System.Drawing.Size(297, 319);
             this.pnlManage.TabIndex = 5;
             this.pnlManage.Visible = false;
             // 
@@ -580,14 +581,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::GUI.Properties.Resources.cup_of_coffee;
             this.ClientSize = new System.Drawing.Size(1282, 958);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GUI_Main";
-            this.Text = "frmMain";
+            this.Text = "Quản lý A-coffee";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Main_Load);
             this.guna2Panel2.ResumeLayout(false);

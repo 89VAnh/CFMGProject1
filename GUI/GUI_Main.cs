@@ -132,6 +132,8 @@ namespace GUI
                 btnManage.Visible = false;
                 pnlManage.Visible = false;
             }
+
+            btnBillAtShop_Click(sender, e);
         }
 
         private void timerTime_Tick(object sender, System.EventArgs e)

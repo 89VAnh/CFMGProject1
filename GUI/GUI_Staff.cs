@@ -92,7 +92,7 @@ namespace GUI
 
         private void cboPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboPosition.SelectedIndex > 0)
+            if (cboPosition.SelectedIndex >= 0)
             {
                 UpdateDgv(busStaff.SearchStaffsByPosition(cboPosition.SelectedValue.ToString()));
             }
@@ -111,13 +111,14 @@ namespace GUI
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string staffID = dgvStaff[0, e.RowIndex].Value.ToString();
-            txtID.Text = dgvStaff[0, e.RowIndex].Value.ToString();
-            txtName.Text = dgvStaff[1, e.RowIndex].Value.ToString();
-            txtGender.Text = dgvStaff[2, e.RowIndex].Value.ToString();
-            txtPhone.Text = dgvStaff[3, e.RowIndex].Value.ToString();
-            txtEmail.Text = dgvStaff[4, e.RowIndex].Value.ToString();
-            txtAddress.Text = dgvStaff[5, e.RowIndex].Value.ToString();
-            cboPosition.SelectedValue = dgvStaff[6, e.RowIndex].Value.ToString();
+            NhanVien staff = busStaff.GetByID(staffID);
+            txtID.Text = staffID;
+            txtName.Text = staff.Ten;
+            txtGender.Text = staff.GioiTinh;
+            txtPhone.Text = staff.SDT;
+            txtEmail.Text = staff.Email;
+            txtAddress.Text = staff.DiaChi;
+            cboPosition.SelectedValue = staff.MaQuyen;
         }
 
         private void GetStaffFromForm()

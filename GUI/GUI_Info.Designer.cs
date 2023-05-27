@@ -308,7 +308,7 @@
             this.Controls.Add(this.guna2HtmlLabel10);
             this.Controls.Add(this.btnSave);
             this.Name = "GUI_Info";
-            this.Text = "GUI_Info";
+            this.Text = "Thông tin tài khoản";
             this.Load += new System.EventHandler(this.GUI_Info_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

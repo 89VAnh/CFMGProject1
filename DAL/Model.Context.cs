@@ -14,7 +14,7 @@ namespace DAL
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-
+    
     public partial class QLCPEntities : DbContext
     {
         System.Data.Entity.SqlServer.SqlProviderServices instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
@@ -22,12 +22,12 @@ namespace DAL
             : base("name=QLCPEntities")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<Ban> Bans { get; set; }
         public virtual DbSet<CTHDGiaoHang> CTHDGiaoHangs { get; set; }
         public virtual DbSet<CTHDTaiQuan> CTHDTaiQuans { get; set; }
@@ -41,43 +41,43 @@ namespace DAL
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<VW_DoanhThu> VW_DoanhThu { get; set; }
         public virtual DbSet<VW_SoLuongSP> VW_SoLuongSP { get; set; }
-
+    
         public virtual ObjectResult<DoanhThuTheoLoaiHD_Result> DoanhThuTheoLoaiHD(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
         {
             var startDateParameter = startDate.HasValue ?
                 new ObjectParameter("StartDate", startDate) :
                 new ObjectParameter("StartDate", typeof(System.DateTime));
-
+    
             var endDateParameter = endDate.HasValue ?
                 new ObjectParameter("EndDate", endDate) :
                 new ObjectParameter("EndDate", typeof(System.DateTime));
-
+    
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DoanhThuTheoLoaiHD_Result>("DoanhThuTheoLoaiHD", startDateParameter, endDateParameter);
         }
-
+    
         public virtual ObjectResult<DoanhThuTheoNgay_Result> DoanhThuTheoNgay(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
         {
             var startDateParameter = startDate.HasValue ?
                 new ObjectParameter("StartDate", startDate) :
                 new ObjectParameter("StartDate", typeof(System.DateTime));
-
+    
             var endDateParameter = endDate.HasValue ?
                 new ObjectParameter("EndDate", endDate) :
                 new ObjectParameter("EndDate", typeof(System.DateTime));
-
+    
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DoanhThuTheoNgay_Result>("DoanhThuTheoNgay", startDateParameter, endDateParameter);
         }
-
+    
         public virtual ObjectResult<TopDoanhThuSP_Result> TopDoanhThuSP(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
         {
             var startDateParameter = startDate.HasValue ?
                 new ObjectParameter("StartDate", startDate) :
                 new ObjectParameter("StartDate", typeof(System.DateTime));
-
+    
             var endDateParameter = endDate.HasValue ?
                 new ObjectParameter("EndDate", endDate) :
                 new ObjectParameter("EndDate", typeof(System.DateTime));
-
+    
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TopDoanhThuSP_Result>("TopDoanhThuSP", startDateParameter, endDateParameter);
         }
     }
