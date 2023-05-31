@@ -99,6 +99,11 @@ D:\DATA\HOCTAP\CFMGProject1\GUI\obj\Debug\GUI.GUI_Bills.resources
 D:\DATA\HOCTAP\CFMGProject1\GUI\obj\Debug\GUI.GUI_Report.resources
 D:\DATA\HOCTAP\CFMGProject1\GUI\obj\Debug\GUI.GUI_Statistic.resources
 D:\DATA\HOCTAP\CFMGProject1\GUI\obj\Debug\GUI.GUI_Statistic2.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Quản lý bán hàng A-coffee.exe.config
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Quản lý bán hàng A-coffee.exe.manifest
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Quản lý bán hàng A-coffee.application
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Quản lý bán hàng A-coffee.exe
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Quản lý bán hàng A-coffee.pdb
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\BUS.dll
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\DAL.dll
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\EntityFramework.dll
@@ -138,17 +143,12 @@ C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\C
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Staff.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Statistic.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.GUI_Table.resources
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.Properties.Resources.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.Table.resources
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.CopyComplete
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Quản lý bán hàng A-coffee.exe.config
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Quản lý bán hàng A-coffee.exe.manifest
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Quản lý bán hàng A-coffee.application
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Quản lý bán hàng A-coffee.exe
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\bin\Debug\Quản lý bán hàng A-coffee.pdb
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\Quản lý bán hàng A-coffee.exe.manifest
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\Quản lý bán hàng A-coffee.application
+C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\Quản lý bán hàng A-coffee.exe
 C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\Quản lý bán hàng A-coffee.pdb
-C:\Users\admin\OneDrive\Documents\12521097_Nguyễn Việt Anh_125211_project1\CFMGProject1\GUI\obj\Debug\GUI.Properties.Resources.resources

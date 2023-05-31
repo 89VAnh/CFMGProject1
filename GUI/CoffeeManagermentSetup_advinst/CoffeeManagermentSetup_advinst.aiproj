@@ -2,23 +2,28 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">All</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>3918b8cc-27f6-4570-a526-9eee8599eaa6</ProjectGuid>
+    <ProjectGuid>08c999f5-9816-42ae-811a-51a31b005c34</ProjectGuid>
     <OutputType>msi</OutputType>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CFMGSetup.aip</StartupFile>
+    <StartupFile>CoffeeManagermentSetup_advinst.aip</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <IsWindowsApplication>True</IsWindowsApplication>
-    <AssemblyName>CFMGSetup</AssemblyName>
-    <Name>CFMGSetup</Name>
-    <RootNamespace>CFMGSetup</RootNamespace>
+    <AssemblyName>CoffeeManagermentSetup_advinst</AssemblyName>
+    <Name>CoffeeManagermentSetup_advinst</Name>
+    <RootNamespace>CoffeeManagermentSetup_advinst</RootNamespace>
     <LoadFromTemplate>
     </LoadFromTemplate>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'DefaultBuild' " />
+  <PropertyGroup Condition=" '$(Configuration)' == 'All' ">
+    <DebugSymbols>false</DebugSymbols>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' " />
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' " />
   <ItemGroup>
-    <Compile Include="CFMGSetup.aip">
+    <Compile Include="CoffeeManagermentSetup_advinst.aip">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

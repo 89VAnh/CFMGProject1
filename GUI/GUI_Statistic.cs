@@ -151,8 +151,8 @@ namespace GUI
 
         private void LoadInfo()
         {
-            DateTime startDate = dtpStartDate.Value,
-                    endDate = dtpEndDate.Value;
+            DateTime startDate = dtpStartDate.Value.Date,
+                    endDate = dtpEndDate.Value.Date;
 
             lblNumOrder.Text = busBill.CountNumBills(startDate, endDate).ToString();
 

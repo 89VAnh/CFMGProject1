@@ -16,9 +16,9 @@ namespace BUS
         public int CountNumBills(DateTime startDate, DateTime endDate)
         {
             return dalBillAtShop.GetAll()
-                .Where(x => x.ThoiGianRa >= startDate && x.ThoiGianRa <= endDate).Count() +
+                .Where(x => ((DateTime)x.ThoiGianRa).Date >= startDate && ((DateTime)x.ThoiGianRa).Date <= endDate).Count() +
                 dalBillDelivery.GetAll()
-                .Where(x => x.ThoiGianNhan >= startDate && x.ThoiGianNhan <= endDate).Count();
+                .Where(x => ((DateTime)x.ThoiGianNhan).Date >= startDate && ((DateTime)x.ThoiGianNhan).Date <= endDate).Count();
         }
 
         public void ExportBillAtShopToExcel(DateTime startDate, DateTime endDate, string templatePath, string exportPath)
