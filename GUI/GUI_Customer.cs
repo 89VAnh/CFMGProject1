@@ -37,7 +37,7 @@ namespace GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrWhiteSpace(selectedCustomerID))
+            if (!String.IsNullOrWhiteSpace(selectedCustomerID) && selectedCustomerID != "KH0")
             {
                 if (MessageBox.Show("Xác nhận xoá", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -49,12 +49,13 @@ namespace GUI
                     else MessageBox.Show("Mã khách hàng được chọn không hợp lệ!");
                 }
             }
+            else MessageBox.Show("Vui lòng chọn khách hàng hợp lệ");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             GetCustomerFromForm();
-            if (customerFromForm != null)
+            if (customerFromForm != null && selectedCustomerID != "KH0")
             {
                 if (MessageBox.Show("Xác nhận sửa", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -130,7 +131,6 @@ namespace GUI
                     {
                         customerFromForm = null;
                         MessageBox.Show("Email không đúng định dạng");
-                        return null;
                     }
                 }
                 else

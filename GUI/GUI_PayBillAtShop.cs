@@ -15,14 +15,16 @@ namespace GUI
         private EventHandler _AcceptPay;
         private HDTaiQuan _bill;
         private List<CTHDTaiQuan> _billDetails;
+        private string _discount;
         private int _totalPrice;
+        private int _totalPriceAfterDiscount;
 
         public GUI_PayBillAtShop()
         {
             InitializeComponent();
         }
 
-        public GUI_PayBillAtShop(HDTaiQuan bill, List<CTHDTaiQuan> billDetails, int totalPrice, EventHandler AcceptPay)
+        public GUI_PayBillAtShop(HDTaiQuan bill, List<CTHDTaiQuan> billDetails, string discount, int totalPriceAfterDiscount, int totalPrice, EventHandler AcceptPay)
         {
             InitializeComponent();
 
@@ -40,31 +42,40 @@ namespace GUI
 
             lblTotalPrice.Text = Tools.ConvertToCurrency(totalPrice);
 
-            lblDiscount.Text = bill.GiamGia;
+            lblDiscount.Text = discount;
 
-            lblPriceAfterDiscount.Text = Tools.ConvertToCurrency(bill.TongTien);
+            lblPriceAfterDiscount.Text = Tools.ConvertToCurrency(totalPriceAfterDiscount);
 
             dgvBillAtShop.DataSource = billDetails.Select(b => new { b.Ma, b.SanPham.Ten, b.SoLuong, b.SanPham.DonGia, Total = b.SoLuong * b.SanPham.DonGia, b.GhiChu }).ToList();
-
-            bill.ThoiGianRa = DateTime.Now;
 
             _AcceptPay = AcceptPay;
             _totalPrice = totalPrice;
             _billDetails = billDetails;
             _bill = bill;
+            _discount = discount;
+            _totalPriceAfterDiscount = totalPriceAfterDiscount;
+        }
+
+        private void AcceptPay(object sender, EventArgs e)
+        {
+            _bill.ThoiGianRa = DateTime.Now;
+            _bill.GiamGia = _discount;
+            _bill.TongTien = _totalPriceAfterDiscount;
+
+            if (busBillAtShop.Update(_bill))
+            {
+                MessageBox.Show("Thanh toán thành công!");
+                _AcceptPay(sender, e);
+                this.Close();
+            }
+            else MessageBox.Show("Mã hoá đơn không hợp lệ!");
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Xác nhận hoàn tất thanh toán", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (busBillAtShop.Update(_bill))
-                {
-                    MessageBox.Show("Thanh toán thành công!");
-                    _AcceptPay(sender, e);
-                    this.Close();
-                }
-                else MessageBox.Show("Mã hoá đơn không hợp lệ!");
+                AcceptPay(sender, e);
             }
         }
 
@@ -83,16 +94,10 @@ namespace GUI
             {
                 try
                 {
+                    AcceptPay(sender, e);
+
                     busBillAtShop.ExportBillAtShopToWord(_bill, _billDetails, _totalPrice, @"Template\HDTaiQuan_Template.docx", saveFileDialog.FileName);
                     Process.Start(saveFileDialog.FileName);
-
-                    if (busBillAtShop.Update(_bill))
-                    {
-                        MessageBox.Show("Thanh toán thành công!");
-                        _AcceptPay(sender, e);
-                        this.Close();
-                    }
-                    else MessageBox.Show("Mã hoá đơn không hợp lệ!");
                 }
                 catch (Exception ex)
                 {

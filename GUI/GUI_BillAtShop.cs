@@ -131,10 +131,7 @@ namespace GUI
                 {
                     if (dgvBillDetail.Rows.Count > 0)
                     {
-                        billAtShop.GiamGia = discount;
-                        billAtShop.TongTien = (int)numTotalPrice.Value;
-
-                        GUI_PayBillAtShop f = new GUI_PayBillAtShop(billAtShop, busBillDetailAtShop.GetBillDetailByBillID(billAtShop.Ma), totalPrice, AcceptPay);
+                        GUI_PayBillAtShop f = new GUI_PayBillAtShop(billAtShop, busBillDetailAtShop.GetBillDetailByBillID(billAtShop.Ma), discount, (int)numTotalPrice.Value, totalPrice, AcceptPay);
                         f.ShowDialog();
                     }
                     else MessageBox.Show("Bàn chưa chọn món");

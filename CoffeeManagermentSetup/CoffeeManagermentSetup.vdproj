@@ -117,7 +117,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_6AE9467B45F0455BB58DB7CB1F6A2E62"
+        "MsmKey" = "8:_605050F897AD41F7AC7E38904CD400EC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -149,12 +149,6 @@
         {
         "MsmKey" = "8:_8487DD18335E4C54E66AAEEE417A3E85"
         "OwnerKey" = "8:_7EACCCE710CF47E9934EAF91EA4B9242"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8CC77213775D4B88B2851C3615FC8BAB"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -231,30 +225,30 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CD339BD2968B47CC5D37C884FD06A2A6"
-        "OwnerKey" = "8:_0BCD8AC254138F319A28BF5C51068052"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CD339BD2968B47CC5D37C884FD06A2A6"
-        "OwnerKey" = "8:_7EACCCE710CF47E9934EAF91EA4B9242"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CD339BD2968B47CC5D37C884FD06A2A6"
-        "OwnerKey" = "8:_72B6F49E008D4A7A83316A9DC0E55922"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CF04B8B2B46748009C113C523783291F"
+        "MsmKey" = "8:_CC6B58C582CC4C3DB8FB6F7ABE07021B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_CD339BD2968B47CC5D37C884FD06A2A6"
+        "OwnerKey" = "8:_0BCD8AC254138F319A28BF5C51068052"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CD339BD2968B47CC5D37C884FD06A2A6"
+        "OwnerKey" = "8:_7EACCCE710CF47E9934EAF91EA4B9242"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CD339BD2968B47CC5D37C884FD06A2A6"
+        "OwnerKey" = "8:_72B6F49E008D4A7A83316A9DC0E55922"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D8EC825B8CBCB0CE244F01FC85BD6C9D"
         "OwnerKey" = "8:_0BCD8AC254138F319A28BF5C51068052"
         "MsmSig" = "8:_UNDEFINED"
@@ -269,6 +263,12 @@
         {
         "MsmKey" = "8:_D8EC825B8CBCB0CE244F01FC85BD6C9D"
         "OwnerKey" = "8:_72B6F49E008D4A7A83316A9DC0E55922"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FA5C1E02CFDC438588DB9D2F9DB34950"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -631,7 +631,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6AE9467B45F0455BB58DB7CB1F6A2E62"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_605050F897AD41F7AC7E38904CD400EC"
             {
             "SourcePath" = "8:..\\GUI\\bin\\Debug\\Template\\HDMangVe_Template.docx"
             "TargetName" = "8:HDMangVe_Template.docx"
@@ -700,26 +700,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8CC77213775D4B88B2851C3615FC8BAB"
-            {
-            "SourcePath" = "8:..\\GUI\\bin\\Debug\\Template\\HDTaiQuan_Template.docx"
-            "TargetName" = "8:HDTaiQuan_Template.docx"
-            "Tag" = "8:"
-            "Folder" = "8:_A5A3C552620A4A40BCDF9B4914B23C1A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8D8EDC8EE848853672906E8A917DCB07"
@@ -866,6 +846,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CC6B58C582CC4C3DB8FB6F7ABE07021B"
+            {
+            "SourcePath" = "8:..\\GUI\\bin\\Debug\\Template\\HDGiaoHang_Template.docx"
+            "TargetName" = "8:HDGiaoHang_Template.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_A5A3C552620A4A40BCDF9B4914B23C1A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CD339BD2968B47CC5D37C884FD06A2A6"
             {
             "AssemblyRegister" = "3:1"
@@ -897,26 +897,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CF04B8B2B46748009C113C523783291F"
-            {
-            "SourcePath" = "8:..\\GUI\\bin\\Debug\\Template\\HDGiaoHang_Template.docx"
-            "TargetName" = "8:HDGiaoHang_Template.docx"
-            "Tag" = "8:"
-            "Folder" = "8:_A5A3C552620A4A40BCDF9B4914B23C1A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D8EC825B8CBCB0CE244F01FC85BD6C9D"
             {
             "AssemblyRegister" = "3:1"
@@ -946,6 +926,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FA5C1E02CFDC438588DB9D2F9DB34950"
+            {
+            "SourcePath" = "8:..\\GUI\\bin\\Debug\\Template\\HDTaiQuan_Template.docx"
+            "TargetName" = "8:HDTaiQuan_Template.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_A5A3C552620A4A40BCDF9B4914B23C1A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FAAF180836DB4FB99DE69A7928F11348"
