@@ -130,6 +130,7 @@ namespace GUI
                     {
                         customerFromForm = null;
                         MessageBox.Show("Email không đúng định dạng");
+                        return null;
                     }
                 }
                 else
